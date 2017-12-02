@@ -1,0 +1,51 @@
+---
+title: "ToC"
+author: "Irina Georgievová"
+date: "25.2.2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+# I. Teorie
+##1. Vizualizace dat 
+  - základní grafy, elementy, jejich popis, výhody/nevýhody, high-level/low-level atd.
+  - zásady tvorby grafů, cíle
+  - historie (Playfair, Minard)
+  - špatné/dobré grafy, chyby, eliminace chyb, "živé" grafy
+  - (htmlwidgets, shiny apod.)
+  
+##2. Grammar of Grafics
+  - Object-oriented programming (OOP), 
+  - Tufte, Cleveland..?
+  
+##3. Průzkumové analýzy dat
+  - Fisher, Tukey
+  - práce s odlehlými hodnotami
+  - náhrada chybějících hodnot
+  - transformace dat
+  - změna typu proměnných
+  - ověřování normality 
+  
+# II. Praktická část
+## Vizualizace dat v prostredí R
+  - co je R, historie, alternativy (Saz, Matlab, Phyton, atd.), kontext Rka (2 stránky max)
+  - základy práce v R (je treba?)
+  - balíčky (lattice, grid, ggplot2, raster, rasterVis), jejich popis, obsah (důležité funkce), využití  
+  - základní příklady
+  - aplikace na hydr. datech
+  - (htmlwidgets, shiny...)
+
+__Pozn.:__ _nějaká šalona na psani v markdownu?_ _jak moc do podrobna?_
+
+_reference a citáty_
+
+_český název pro GG?_
+
+_jaké kapitoly GG zvolit?_
+
+_propojeni GG a teorii Vizualizaci dat: základy tvorby gragů_
+        
+
+ 
+
+

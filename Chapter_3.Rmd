@@ -1,0 +1,79 @@
+## 3 Průzkumová analýza dat
+
+```{r diagram_img, fig.align='center', fig.cap="\\label{fig9} Posloupnost datové analýzy",out.width= '100%', fig.pos='H', echo=FALSE}
+knitr::include_graphics("fig/EDA_diagram2.png")
+```
+
+\qquad Úkolem průzkumové analýzy dat (*Explanatory Data Analysis*, zkráceně EDA) je vizualizace a transformace dat systematickým způsobem za účelem maximálního pochopení dat, určení vztahu mezi nimi a posouzení jejích kvality. Průzkumová analýza dat není specifikována jako konkretní soubor pravidel a postupu. EDA je důležitou části datové analýzy a měla by být jedním z jejích prvních kroků. [@grolemund_wickham2016]
+
+Fisher & Tukey [@tukey1977]
+
+### 3.1 Odlehlá pozorování
+
+\qquad Odlehlá pozorování (*outliers*) jsou pozorování, která jsou vzdálená vůči ostatním hodnotám datasetu. Definice toho, jak moc vzdálené takováto pozorování mají být je na analytikovi, který to určí na základě pozorování daných konkretním datasetem a kontextu problematiky. Tato pozorování mohou být indikátorem chybných dat nebo vzácných událostí a mělo by být pečlivě zkoumány proč se vyskytli a jak moc ovlivňují zájmový dataset.
+
+\qquad Hledání odlehlých, vybočujících pozorování a jiných anomálií datasetu grafický pro jednotlivé veličiny se dá udělat pomoci boxplotu (viz. sekce [2.3.2](#boxplot)), bodových grafů ([2.1](#scatterplot)) nebo číslicových histogramů ([2.4.3](#stem-and-leaf)). Dají se také vypočítat pomocí různých statistik, například metoda *Jacknife*, která bude popsána v následující kapitole.
+
+\qquad V momentech, kdy je vizualizace obtížná (velké datasety, větší množství proměnných, atd.), využivají se nástroje vícerozměrné, například Mahalanobisovy vzdalenosti (*Mahalanobis distance*), Leverages, OLS $\dots$
+
+#### 3.1.1 *Jacknife*
+
+#### 3.1.2 Mahalanobisovy vzdalenosti
+
+#### 3.1.3 Leverages
+
+#### 3.1.4 OLS
+
+### 3.2 Náhrada chybějících pozorování
+
+### 3.3 Transformace dat
+
+### 3.4 Změna typu proměnných
+
+### 3.5 Ověřování normality
+
+# Praktická část {-}
+
+## 4 Praktická vizualizace dat
+
+### 4.1 Prostředí R
+
+#### 4.1.1 Balíčky
+
+#### 4.1.2 ...
+
+### 4.2 Balíčky pro vizualizaci dat
+
+#### 4.2.1 ggplot2
+
+#### 4.2.2 lattice
+
+#### 4.2.3 rgl
+
+### 4.3 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
+
+#### 4.3.1 plotly
+
+#### 4.3.2 dygraphs
+
+#### 4.3.3 leaflet
+
+#### 4.3.4 ggvis
+
+### 4.4 Balíčky pro prostorová data
+
+#### 4.4.1 ggmap
+
+### 4.5 ...
+
+#### 4.5.1 raster
+
+#### 4.5.2 rasterVis
+
+### 4.6 Balíčky pro webové aplikace
+
+#### 4.6.1 shiny
+
+#### 4.6.2 flexdashboard
+
+#### 4.6.3 dashboard

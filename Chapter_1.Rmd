@@ -1,0 +1,18 @@
+# Teoretická část {-}
+
+## 1 Grammar of graphics
+
+### 1.1 Historie vizualizace dat (stručná)
+
+#### 1.1.1 Minard & Playfair
+
+### 1.2 Zásady vizualizace dat
+
+#### 1.2.1 Tuft 
+
+(*The Visual Display of Quantitative Information*; *Tufte's principles*) 
+
+#### 1.2.2 Cleveland 
+
+(*Elements of Graphing Data*; *Visualizing Data*)
+

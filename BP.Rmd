@@ -1,0 +1,45 @@
+---
+output: pdf_document
+fontsize: 12pt
+geometry: "left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
+fig_caption: yes
+bibliography: ["Bibliografie.bib"]
+csl: acm.csl
+header-includes: \usepackage[czech]{babel}
+                 \usepackage{docmute}
+                 \usepackage{float}
+                 \usepackage{booktabs}
+                 \setcounter{tocdepth}{5}
+---
+
+```{r setup, include=FALSE, cache = TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+require("ggplot2") 
+require("markdown")
+require("knitr")
+require("plotrix")
+set.seed(666)
+x <- rnorm(100, 0, 1)
+```
+
+\input{Tit_list.tex}
+
+\tableofcontents
+\newpage
+
+```{r, child = 'Chapter_0.Rmd'}
+```
+\newpage
+
+```{r, child = 'Chapter_1.Rmd'}
+```
+\newpage
+
+```{r, child = 'Chapter_2.Rmd'}
+```
+\newpage
+
+```{r, child = 'Chapter_3.Rmd'}
+```
+
+#Literatura
