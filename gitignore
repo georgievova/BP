@@ -6,6 +6,8 @@ packrat/lib*/
 markdown*/*
 *.zip
 tex2pdf.*/*
+BP_cache/*
+BP_files/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
