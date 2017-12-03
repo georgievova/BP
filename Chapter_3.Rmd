@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 ## 3 Průzkumová analýza dat
 
 ```{r diagram_img, fig.align='center', fig.cap="\\label{fig9} Posloupnost datové analýzy",out.width= '100%', fig.pos='H', echo=FALSE}
@@ -6,7 +11,7 @@ knitr::include_graphics("fig/EDA_diagram2.png")
 
 \qquad Úkolem průzkumové analýzy dat (*Explanatory Data Analysis*, zkráceně EDA) je vizualizace a transformace dat systematickým způsobem za účelem maximálního pochopení dat, určení vztahu mezi nimi a posouzení jejích kvality. Průzkumová analýza dat není specifikována jako konkretní soubor pravidel a postupu. EDA je důležitou části datové analýzy a měla by být jedním z jejích prvních kroků. [@grolemund_wickham2016]
 
-\qquad Vhodné zařazení průzkumové analýzy dat do procesu analýzy dat je zobrazeno v diagramu \ref{fig9}, kde importem je míněno n
+\qquad Zařazení průzkumové analýzy dat do procesu datové analýzy je zobrazeno v diagramu \ref{fig9}. Prvním krokem datové analýzy je **import** dat. Obecně v tomto případě to znamená nahrání obdržených dat ze souboru či databaze do prostředí R. Bez tohoto kroku datová nalýza nemůže být vykonána. V momentě když data jsou importována do R je dobře je **očístit** neboli **přípravit**. Tím je myšleno ukládání dat v kontzístentní a systematické formě, odpovídající semantice původního datasetu. Zkratka očíštěné data jsou taková data, ve kterých sloupce odpovídají proměnným a řadky odpovídají pozorováním. Taková příprava dat usnadňuje další práci s nimi. Jakmile data jsou očištěná obvýklým krokem je jejich **transformace**. Transformaci se rozumí omezení pozorování (například dle zajmového území), vytvaření nových proměnných, na základě již existujících, agregace a výpočet souhrných statistik. Po tom co jsou data očíštěná a obsahují veškeré potřebné proměnné je možné na ně aplikovat dva nejdůležitěší nástroje k zjištění informaci: **vizualizaci** a **modelování**. Tyto nástroje mají svoje výhody a nevýhody a jakákoliv skutečná analýza se na ně opakováně obrácí. [@grolemund_wickham2016] 
 
 Fisher & Tukey [@tukey1977]
 
