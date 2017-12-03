@@ -9,6 +9,7 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{docmute}
                  \usepackage{float}
                  \usepackage{booktabs}
+                 \usepackage{pdfpages}
                  \setcounter{tocdepth}{5}
 ---
 
