@@ -230,3 +230,7 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+*.knit.md
+*.utf8.md
+PIE.R

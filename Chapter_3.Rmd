@@ -1,12 +1,12 @@
 ## 3 Průzkumová analýza dat
 
-\qquad 
-
 ```{r diagram_img, fig.align='center', fig.cap="\\label{fig9} Posloupnost datové analýzy",out.width= '100%', fig.pos='H', echo=FALSE}
 knitr::include_graphics("fig/EDA_diagram2.png")
 ```
 
 \qquad Úkolem průzkumové analýzy dat (*Explanatory Data Analysis*, zkráceně EDA) je vizualizace a transformace dat systematickým způsobem za účelem maximálního pochopení dat, určení vztahu mezi nimi a posouzení jejích kvality. Průzkumová analýza dat není specifikována jako konkretní soubor pravidel a postupu. EDA je důležitou části datové analýzy a měla by být jedním z jejích prvních kroků. [@grolemund_wickham2016]
+
+\qquad Vhodné zařazení průzkumové analýzy dat do procesu analýzy dat je zobrazeno v diagramu \ref{fig9}, kde importem je míněno n
 
 Fisher & Tukey [@tukey1977]
 

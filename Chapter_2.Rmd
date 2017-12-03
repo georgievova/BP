@@ -216,6 +216,25 @@ cs <- rainbow(length(b))
 pie(b, labels, col=cs)
 ```
 
+
+<!--  Koláčové grafy se mnohdy používají nekorektně, vnímání takových grafu je obtížné. Následující graf je takovým příkladem. -->
+<!-- ```{r pie_3D, echo=FALSE, fig.align = 'center', out.width='75%'} -->
+<!--  slices <- c(2,2,3,3) -->
+<!--  lbls <- c("Zavádějící (20%)", "Matoucí (20%)", "Dobré (30%)", "Nečitelné (30%)") -->
+<!--  lp <- pie3D(slices, radius=1.19, height = 0.16, theta=pi/20, start=0.8, shade=0.5, main="Vnimání 3D koláčových grafů", border=NA) -->
+<!--   -->
+<!--  pie3D.labels(lp, labels = lbls, labelcex = 1.2, labelrad = 1.8) -->
+<!--  ``` -->
+<!--  Jednotlivé kategorie tohoto grafu mají podobné procentuální zastoupení, ale protože modrá výseč se nachází nejblíž, vnímá se jako dominantní. Přestože tento příklad se považuje za extrémní, 3D koláčové grafy i s malým počtem kategorii se těžce rozlišují. -->
+<!--   -->
+<!--  ```{r, echo=FALSE, fig.align = 'center', out.width = '65%', eval=FALSE} -->
+<!--  knitr::include_graphics("3Dpie.png") -->
+<!--  ``` -->
+<!--  Další častou chybou je nekorektní vyznačení procentuálního zastoupení jednotlivých kategorii. ?? -->
+<!-- x <- rnorm(300, 4, 2.5) -->
+<!-- boxplot(x) -->
+
+
 #### 2.4.3 Číslicový histogram (*stem-and-leaf*) {#stem-and-leaf}
 
 \qquad Číslicový histogram je jinak známy jako *stem-and-leaf plot* a podobně histogramu pomáhá vizualizovat tvar rozdělení. Jedná se spíš o historický typ grafu, populární v osmdesátých letech, kdy vykreslování velkých datasetu bylo obtížnější. Vstupní údaje se rozdělí na dva sloupce rozdělené vertikální linii. Pravý sloupec obsahuje listy (*leaf*)&nbsp;-&nbsp;poslední číslici čísla či číslo po desetinné čárce a levý sloupec obsahuje stonek (*stem*)&nbsp;-&nbsp;zbylé číslice (čísla před desetinnou čárkou). Každý stonek se uvádí pouze jednou, aniž by se nějaký vynechal i kdyby to znamenalo, že nebude mít žádné listy. Listy se uvádějí v rostoucím pořadí. Tak v příkladu uvedeným níže, v prvním řádku stonkem je číslice -2, listy jsou číslice 9 a 2 a tak víme že v datasetu se vyskytli čísla -2.9 a -2.2. Tento typ grafu v prostředí R se vykresluje pomoci funkci `stem()`:  
