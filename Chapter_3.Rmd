@@ -19,17 +19,17 @@ knitr::include_graphics("fig/EDA_diagram2.png")
 
 \qquad **Modelování** je doplňek vizualizace. Jedná se o zásadně matematický a výpočetní nástroj, který se obecně hodí i na větší datasety. Téměř každý model musí splňovat své předpoklady, které by měli být ověřené před jejich aplikaci, na rozdíl od vizualizace, která žádnými předpoklady nedisponuje.[@grolemund_wickham2016] 
 
-
+\qquad Důležitou součásti analýzy je **interpretace** výsledků a formulace závěrů. Vyhodnocuje se to, jak dobře zvolený model či vizualizace slouží k pochopení dat a jejich popisu. Je také důležitý si uvědomit komu se výsledky interpretují, kdo je cílová skupina. Dobře provedené grafické výstupy podložené jejich správnou interpretaci jsou jednim z nejlepších způsobů prezentaci dát. 
 
 Fisher & Tukey [@tukey1977]
 
 ### 3.1 Odlehlá pozorování
 
-\qquad Odlehlá pozorování (*outliers*) jsou pozorování, která jsou vzdálená vůči ostatním hodnotám datasetu. Definice toho, jak moc vzdálené takováto pozorování mají být je na analytikovi, který to určí na základě pozorování daných konkretním datasetem a kontextu problematiky. Tato pozorování mohou být indikátorem chybných dat nebo vzácných událostí a mělo by být pečlivě zkoumány proč se vyskytli a jak moc ovlivňují zájmový dataset.
+\qquad Odlehlá pozorování (*outliers*) jsou významě odlíšná vůči ostatním hodnotám datasetu. Definice toho, jak moc odlišná taková pozorování mají být je dáno analytiken na základě konkretního datasetu a kontextu problematiky. Tato pozorování mohou být indikátorem chybných dat nebo vzácných událostí. Důvody proč se tatoto pozorování vyskytují by měli by být pečlivě zkoumány. Dále je důležité posoudit jak je jimi ovlivněn výsledek analýzy. Případně zdali je předpoklady metody přípouštějí. 
 
-\qquad Hledání odlehlých, vybočujících pozorování a jiných anomálií datasetu grafický pro jednotlivé veličiny se dá udělat pomoci boxplotu (viz. sekce [2.3.2](#boxplot)), bodových grafů ([2.1](#scatterplot)) nebo číslicových histogramů ([2.4.3](#stem-and-leaf)). Dají se také vypočítat pomocí různých statistik, například metoda *Jacknife*, která bude popsána v následující kapitole.
+\qquad Hledání odlehlých, vybočujících pozorování a jiných anomálií pro jednotlivé veličiny se dá udělat graficky například pomoci boxplotu (viz. sekce [2.3.2](#boxplot)), bodových grafů ([2.1](#scatterplot)) nebo číslicových histogramů ([2.4.3](#stem-and-leaf)). Dají se také vypočítat pomocí různých statistik, například metoda *Jacknife*, která bude popsána v následující kapitole.
 
-\qquad V momentech, kdy je vizualizace obtížná (velké datasety, větší množství proměnných, atd.), využivají se nástroje vícerozměrné, například Mahalanobisovy vzdalenosti (*Mahalanobis distance*), Leverages, OLS $\dots$
+\qquad V momentech, kdy je vizualizace obtížná (velké datasety, větší množství navzájem se ovlivňujících proměnných, atd.), využivají se nástroje vícerozměrné, například Mahalanobisovy vzdalenosti (*Mahalanobis distance*), Leverages, $\dots$
 
 #### 3.1.1 *Jacknife*
 
