@@ -10,6 +10,7 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{float}
                  \usepackage{booktabs}
                  \usepackage{pdfpages}
+                 \usepackage{bm}
                  \setcounter{tocdepth}{5}
 ---
 
@@ -43,4 +44,5 @@ x <- rnorm(100, 0, 1)
 ```{r, child = 'Chapter_3.Rmd'}
 ```
 
+\newpage
 #Literatura

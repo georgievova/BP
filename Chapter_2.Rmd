@@ -55,7 +55,7 @@ plot(pressure, type="h",xlab=" ", ylab=" ", sub="(d)")
 
 Popis a všechny atributy dalších parametrů funkce `plot()` lze nalézt v nápovědě zadáním příkazu `?plot()`.
 
-### 2.3 Vykreslení rozdělení v R
+### 2.3 Vykreslení rozdělení v R {#distribution}
 
 \qquad Teorie pravděpodobnosti je základem statistiky a R má hodně nástrojů pro práci s pravděpodobnosti, rozdělením pravděpodobnosti a náhodnými proměnnými. R má zkrácený název pro každé  rozdělení pravděpodobnosti. [@teetor2011] Tyto názvy slouží k&nbsp;identifikaci funkcí spojených s rozděleními. Například zkrácený název "norm" pro normální rozdělení, "exp" pro exponenciální rozdělení a další. Funkce pak mají formu:
 
@@ -88,11 +88,11 @@ curve(pnorm(x), xlim = c(-4, 4), sub = "(b)", ylab = 'pravděpodobnost')
 
 \newpage
 
-#### 2.3.1 Q-Q graf a P-P graf
+#### 2.3.1 Q-Q graf a P-P graf {#qqpp}
 
-\qquad Q-Q (_quantile-quantile_) graf a P-P (_probability–probability_ nebo _percent–percent_) graf (Obrázek \ref{fig3}) se používají hlavně k testování normality při průzkumové analýze dat. Další způsob, jak zjistit zda-li data mají normální rozdělení je sestrojení histogramu (viz. sekce [ 1.4.1](#hist)), avšak použití Q-Q grafu je přesnější. 
+\qquad Q-Q (_quantile-quantile_) graf a P-P (_probability–probability_ nebo _percent–percent_) graf (Obrázek \ref{fig3}) se používají hlavně k testování normality při průzkumové analýze dat [3.4](#normtests). Další způsob, jak zjistit zda-li data mají normální rozdělení je sestrojení histogramu (viz. sekce [ 1.4.1](#hist)), avšak použití Q-Q grafu je přesnější. 
 
-\qquad Princip Q-Q grafu spočívá v porovnání dvou rozdělení pravděpodobnosti pomocí vykreslení jejich kvantilů proti sobě. Na jedné ose se nacházejí teoretické kvantily normálního rozdělení a na druhé ose kvantily naměřené (pozorované). Pokud data mají přesně normální rozdělení, všechny body grafu leží na přímce 45°. [@teetor2011] [@cleveland1994] 
+\qquad Princip Q-Q grafu spočívá v porovnání dvou rozdělení pravděpodobnosti pomocí vykreslení jejich kvantilů proti sobě. Na jedné ose se nacházejí teoretické kvantily normálního rozdělení a na druhé ose kvantily naměřené (pozorované). Pokud data mají přesně normální rozdělení, všechny body grafu leží na přímce 45°. Vztah hustoty rozdělení a Q-Q grafu je znázorněn na obrázku \ref{fig12}. [@teetor2011] [@cleveland1994] 
 
 \qquad Princip P-P grafu je obdobný jako u Q-Q grafu: vykreslují se dvě distribuční funkcí proti sobě (jedná teoretická a jedná pozorovaná) a pokud všechny body grafu leží přibližně na přímce, jedná se o normální rozdělení. Z velké části se P-P graf používá k vyhodnocení koeficientu šikmosti rozdělení.[@pp_wiki]
 
