@@ -237,10 +237,10 @@ pie(b, labels, col=cs)
 
 #### 2.4.3 Číslicový histogram (*stem-and-leaf*) {#stem-and-leaf}
 
-\qquad Číslicový histogram je jinak známy jako *stem-and-leaf plot* a podobně histogramu pomáhá vizualizovat tvar rozdělení. Jedná se spíš o historický typ grafu, populární v osmdesátých letech, kdy vykreslování velkých datasetu bylo obtížnější. Vstupní údaje se rozdělí na dva sloupce rozdělené vertikální linii. Pravý sloupec obsahuje listy (*leaf*)&nbsp;-&nbsp;poslední číslici čísla či číslo po desetinné čárce a levý sloupec obsahuje stonek (*stem*)&nbsp;-&nbsp;zbylé číslice (čísla před desetinnou čárkou). Každý stonek se uvádí pouze jednou, aniž by se nějaký vynechal i kdyby to znamenalo, že nebude mít žádné listy. Listy se uvádějí v rostoucím pořadí. Tak v příkladu uvedeným níže, v prvním řádku stonkem je číslice -2, listy jsou číslice 9 a 2 a tak víme že v datasetu se vyskytli čísla -2.9 a -2.2. Tento typ grafu v prostředí R se vykresluje pomoci funkci `stem()`:  
+\qquad Číslicový histogram, jinak známy jako *stem-and-leaf plot*, podobně jako histogram pomáhá vizualizovat tvar rozdělení. Jedná se spíše o historický typ grafu, který byl populární v osmdesátých letech, kvůli obtížnějšímu vykreslování velkých datasetu. Vstupní údaje jsou rozdělené vertikální linií na dva sloupce. Pravý sloupec obsahuje listy (*leaf*)&nbsp;-&nbsp;poslední číslice po desetinné čárce a levý sloupec obsahuje stonek (*stem*)&nbsp;-&nbsp;číslice před desetinnou čárkou. Každý stonek je uveden pouze jednou i pokud neobsahuje žádné listy. Listy se uvádějí od nejmenšího po největší. [@tukey1977] Proto v příkladu uvedeném níže je v prvním řádku stonkem číslice -2 a listy jsou číslice 9 a 2. Víme tak, že v datasetu se vyskytli čísla -2.9 a -2.2. Tento typ grafu v prostředí R se vykresluje pomoci funkce `stem()`:  
 
 ```{r stem-and-leaf}
 stem(x)
 ```
 
-Fisher & Tukey [@tukey1977]
+
