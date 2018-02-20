@@ -9,7 +9,7 @@ require("ggplot2")
 require("gridExtra")
 ```
 
-## 3 Průzkumová analýza dat
+## 3 Průzkumová analýza dat {#EDA}
 
 ```{r diagram_img, fig.align='center', fig.cap="\\label{fig9} Posloupnost datové analýzy",out.width= '100%', fig.pos='H', echo=FALSE}
 knitr::include_graphics("fig/EDA_diagram2.png")
