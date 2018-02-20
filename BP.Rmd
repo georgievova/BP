@@ -15,6 +15,7 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{graphicx}
                  \graphicspath{ {fig/} }
                  \usepackage{array}
+                 \usepackage{wrapfig}
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
