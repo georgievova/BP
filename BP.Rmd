@@ -3,7 +3,7 @@ output: pdf_document
 fontsize: 12pt
 geometry: "left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
 fig_caption: yes
-bibliography: ["Bibliografie.bib"]
+bibliography: Bibliografie.bib
 csl: acm.csl
 header-includes: \usepackage[czech]{babel}
                  \usepackage{docmute}
@@ -12,6 +12,9 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{pdfpages}
                  \usepackage{bm}
                  \setcounter{tocdepth}{5}
+                 \usepackage{graphicx}
+                 \graphicspath{ {fig/} }
+                 \usepackage{array}
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
@@ -29,10 +32,6 @@ x <- rnorm(100, 0, 1)
 \tableofcontents
 \newpage
 
-```{r, child = 'Chapter_0.Rmd'}
-```
-\newpage
-
 ```{r, child = 'Chapter_1.Rmd'}
 ```
 \newpage
@@ -45,4 +44,14 @@ x <- rnorm(100, 0, 1)
 ```
 
 \newpage
-#Literatura
+
+\addcontentsline{toc}{section}{\listfigurename}
+\addcontentsline{toc}{section}{\listtablename}
+
+\listoffigures
+ 
+\listoftables
+
+\newpage
+
+# Literatura
