@@ -13,13 +13,13 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{bm}
                  \setcounter{tocdepth}{5}
                  \usepackage{graphicx}
-                 \graphicspath{ {fig/} }
                  \usepackage{array}
                  \usepackage{wrapfig}
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
 require("ggplot2") 
 require("markdown")
 require("knitr")

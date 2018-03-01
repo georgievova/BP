@@ -80,7 +80,7 @@ curve(dnorm(x))
 curve(pnorm(x))
 ```
 
-```{r normal, fig.height=5, fig.width=10, echo=FALSE, fig.align='center', fig.pos='H', fig.cap="\\label{fig2} Hustota pravděpodobnosti normálního rozdělení (a) a její distribuční funkce (b)"}
+```{r normal, warning=FALSE, fig.height=5, fig.width=10, echo=FALSE, fig.align='center', fig.pos='H', fig.cap="\\label{fig2} Hustota pravděpodobnosti normálního rozdělení (a) a její distribuční funkce (b)"}
 par(mfrow=c(1,2))
 curve(dnorm(x), xlim = c(-4, 4), ylim=c(0,0.4), sub = "(a)", ylab = 'pravděpodobnost')
 curve(pnorm(x), xlim = c(-4, 4), sub = "(b)", ylab = 'pravděpodobnost')
@@ -105,15 +105,15 @@ qqline(x)
 
 P-P graf v R lze vykreslit například následovně:
 
-```{r pp kod, eval=FALSE}
+```{r pp kod, eval=FALSE, warning=FALSE}
 plot(ppoints(length(x)), sort(pnorm(x)))
 abline(0,1)
 ```
 ```{r pp-qq plots, fig.height=5, fig.width=10, echo=FALSE, fig.align='center', fig.pos='H', fig.cap="\\label{fig3} Q-Q Graf (a) a P-P Graf (b)"}
 par(mfrow=c(1,2))
-qqnorm(x, sub = "(a)", main=" ", xlab="Teoretické kvantily", ylab="Pozorované kvantily")
+qqnorm(x, sub = "(a)", main=" ", xlab="Teoreticke kvantily", ylab="Pozorovane kvantily")
 qqline(x)
-plot(ppoints(length(x)), sort(pnorm(x)), sub = "(b)", xlab = "Teoretické kumulativní rozdělení", ylab = "Empirické kumulativní rozdělení")
+plot(ppoints(length(x)), sort(pnorm(x)), sub = "(b)", xlab = "Teoreticke kumulativni rozdeleni", ylab = "Empiricke kumulativni rozdeleni")
 abline(0,1)
 ```
 

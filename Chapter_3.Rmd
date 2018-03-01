@@ -119,7 +119,7 @@ Většina statistických testů a metod se zakládá na předpokladu, že promě
 
 \qquad Zjistit zda-li vzorek pochází z normálního rozdělení lze grafickým posouzením nebo pomocí testů normality. Mezi nástroje grafického posouzení normality se řadí histogram rozdělení četnosti (kapitola [2.4.1](#hist)), graf výběrové distribuční funkce ([2.3](#distribution)), Q-Q graf a P-P graf ([2.3.1](#qqpp)). Vztah hustoty rozdělení a Q-Q grafu je znázorněn na obrázku \ref{fig12}. Dále existuje řada testů normality, zde jsou popsany testy Shapiro-Wilk (SW) a Jarqua-Bera (JB). 
 
-```{r density_qq_plot, echo=FALSE, out.width='95%', fig.align='center', fig.cap="\\label{fig12} Vztah hustoty rozdělení a Q-Q grafu pro různá narušení normality", fig.pos='H'}
+```{r density_qq_plot, echo=FALSE, out.width='95%', fig.align='center', fig.cap="\\label{fig12} Vztah hustoty rozdělení a Q-Q grafu pro různá narušení normality", fig.pos='H', warning=FALSE}
 x1 <-  rlnorm(45,0,.6)
 x2 <-  -rlnorm(45,0,.6)
 x3 <- runif(300,-2,2)

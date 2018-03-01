@@ -21,29 +21,39 @@
 knitr::include_graphics("fig/Playfair_taxes_population.jpg")
 ```
 \newpage
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}[17]{R}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{fig/Minard_1858}
+    \includegraphics[width=0.42\textwidth]{fig/Minard_1858}
     \caption{Dobytek odeslaný z celé Francie ke spotřebě v Paříži, Minard 1858}
     \label{fig01}
 \end{wrapfigure}
 
-\qquad V polovině 19. století byly vytvořeny všechny podmínky pro rychlý růst vizualizace. V důsledku rostoucí významnosti číselných informací pro sociální plánovaní, industrializaci, obchod a dopravu, byli zřízeny oficiální statistické úřady po celé Evropě. Vývoj statistické teorie, iniciovaný Gaussem a Laplacem, měl odezvu ve společností a poskytl prostředky ke zpracování velkého množství dat. Pro vizualizaci se stalo dat období 1850-1900 "Zlatý věkem", s jedinečnou krásou a velkým množstvím inovací. S těmito inovacemi je hlavně spojené jméno Charlese Josepha Minarda (1781-1870). Například, Minardem bylo zavedeno použítí koláčových grafů s výsečemi na mapách (obrázek \ref{fig01}), kde velikost koláčového grafu ukazuje sumu za oblast neboli každý grafický region na mapě a výseče reprezentují dílčí součty za jednotlivé kategorie.
+\qquad V polovině 19. století byly vytvořeny všechny podmínky pro rychlý růst vizualizace. V důsledku rostoucí významnosti číselných informací pro sociální plánovaní, industrializaci, obchod a dopravu, byli zřízeny oficiální statistické úřady po celé Evropě. Vývoj statistické teorie, iniciovaný Gaussem a Laplacem, měl odezvu ve společností a poskytl prostředky ke zpracování velkého množství dat. Pro vizualizaci se stalo dat období 1850-1900 "Zlatý věkem", s jedinečnou krásou a velkým množstvím inovací. S těmito inovacemi je hlavně spojené jméno Charlese Josepha Minarda (1781-1870). Například, Minardem bylo zavedeno použítí koláčových grafů s výsečemi na mapách (obrázek \ref{fig01}), kde velikost koláčového grafu ukazuje sumu za oblast neboli každý grafický region na mapě a výseče reprezentují dílčí součty za jednotlivé kategorie. Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. \ Tento \ typ vizualizace \ se nazývá
 
-\begin{minipage}[H]{0.525\textwidth}
-```{r minard, fig.align='center', fig.cap="\\label{fig02} Mapa světové migrace, Minard 1858", out.width= '100%', fig.pos='H', echo=FALSE}
-knitr::include_graphics("fig/minard_flow_map.jpg")
-```
-\end{minipage}
-\begin{minipage}[H]{0.025\textwidth}
-```{r blank0, fig.pos='H', echo=FALSE}
-knitr::include_graphics("fig/blank_v.png")
-```
-\end{minipage}
-\begin{minipage}[H]{0.45\textwidth}
-Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. Tento typ vizualizace se nazývá *"flow maps"*, viz obrázek \ref{fig02}.Jednou z nejslavnějších jeho práci je zobrazení postupných ztrát mužů francouzské armády během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek \ref{fig03}). Je považovaná za nejlepší informativní vizualizací. I přestože v tomto grafu je celkem 6 proměnných (množství, lokace ve dvou rozměrech, postup armády, teplota, datum a skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný a matoucí.
-\end{minipage}
+\begin{wrapfigure}[12]{L}{0.51\textwidth}
+    \centering
+    \vspace{-10pt}
+    \includegraphics[width=0.5\textwidth]{fig/minard_flow_map.jpg}
+    \vspace{-10pt}
+    \caption{Mapa světové migrace, Minard 1858}
+    \label{fig02}
+\end{wrapfigure}
+\vspace{-7pt}
+\textit{"flow maps"}, viz obrázek \ref{fig02}. Jednou z nejslavnějších jeho práci je zobrazení postupných ztrát mužů francouzské armády během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek \ref{fig03}). Je považovaná za nejlepší informativní vizualizací. I přestože v tomto grafu je celkem 6 proměnných (množství, lokace ve dvou rozměrech, postup armády, teplota, datum a skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný a matoucí.
 
+<!-- \begin{minipage}[H]{0.5\textwidth} -->
+<!-- ```{r minard, fig.align='center', fig.cap="\\label{fig02} Mapa světové migrace, Minard 1858", out.width= '100%', fig.pos='H', echo=FALSE} -->
+<!-- knitr::include_graphics("fig/minard_flow_map.jpg") -->
+<!-- ``` -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}[H]{0.025\textwidth} -->
+<!-- ```{r blank0, fig.pos='H', echo=FALSE} -->
+<!-- knitr::include_graphics("fig/blank_v.png") -->
+<!-- ``` -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}[H]{0.475\textwidth} -->
+<!-- Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. Tento typ vizualizace se nazývá \textit{"flow maps"}, viz obrázek \ref{fig02}.Jednou z nejslavnějších jeho práci je zobrazení postupných ztrát mužů francouzské armády během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek \ref{fig03}). Je považovaná za nejlepší informativní vizualizací. I přestože v tomto grafu je celkem 6 proměnných (množství, lokace ve dvou rozměrech, postup armády, teplota, datum a skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný a matoucí. -->
+<!-- \end{minipage} -->
 \newpage
 
 \begin{figure}[H]
@@ -59,7 +69,9 @@ Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zb
 knitr::include_graphics("fig/brinton.png")
 ```
 
-\qquad Ke "znovuzrození" vizualizace došlo v polovině šedesatých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlíšného od matematické statistiky. Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tematem "průzkumové analýzy dat" (popsáno v kapitole [3](#EDA)). Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používano ve statisticé praci a implementovano do většiny softwarů. [@dataviz_history]
+\qquad Ke "znovuzrození" vizualizace došlo v polovině šedesatých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlíšného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tematem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tematu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používano ve statisticé praci a implementovano do většiny softwarů. [@dataviz_history] 
+
+\qquad Od roku 1975 vizualizace se vyznačuje jako kvalitní, interaktivní a dynamické zpracovávání dat. 
 
 ### 1.2 Zásady vizualizace dat
 
