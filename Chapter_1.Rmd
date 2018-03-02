@@ -8,14 +8,13 @@
 
 # Teoretická část {-}
 
-## 1 Grammar of graphics
+## 1 Vizualizace dat
 
-\newpage
 ### 1.1 Historie vizualizace dat
 
 \qquad Před 17. stoletím jediné co by se dalo klasifikovat jako vizualizaci dat byly mapy pro navigaci a průzkum, ale také diagramy, geometrická schémata a tabulky pozic hvězd a jiných nebeských těles. Postupný vývoj statistické teorie a růst zájmu o data na konci 18. století vedly k inovacím a expanzi nových grafických forem. Kartografové se pokoušeli zaznamenat vice, než pouhou geografickou polohu na mapě a objevili se první pokusy o tematické mapování geologických, ekonomických a medicínských dat.
 
-\qquad Wiliam Playfair (1759-1823) je obecně znám jako průkopník v oblasti vizualizace dat a je považován za vynalezce několika typů grafů. Například liniový a sloupcový grafy a grafy časových řád byly popsány v jeho práci z roku 1786 \textit{"Commercial and Political Atlas"}^[\textit{"Commercial and Political Atlas: Representing, by Copper-Plate Charts, the Progress of the Commerce, Revenues, Expenditure, and Debts of England, during the Whole of the Eighteenth Century"}]. Později popsal i koláčový graf ve své práci \textit{"Statistical Breviary"} v roce 1801. Obrázek \ref{fig0} ukazuje příklad jeho kreativní kombinace různých vizuálizačních technik (kruhy, koláče, linie), pomocí které se snažil porovnat daňovou zátěž mezi Británii a dalšími zeměmi. Na tomto grafu také ukázal možnost použíti více měřítek pro různé ukazatele (v grafu populace a daně).
+\qquad Wiliam Playfair (1759-1823) je obecně znám jako průkopník v oblasti vizualizace dat a je považován za vynálezce několika typů grafů. Například liniový a sloupcový grafy a grafy časových řád byly popsány v jeho práci z roku 1786 \textit{"Commercial and Political Atlas"}^[\textit{"Commercial and Political Atlas: Representing, by Copper-Plate Charts, the Progress of the Commerce, Revenues, Expenditure, and Debts of England, during the Whole of the Eighteenth Century"}]. Později popsal i koláčový graf ve své práci \textit{"Statistical Breviary"} v roce 1801. Obrázek \ref{fig0} ukazuje příklad jeho kreativní kombinace různých vizualizačních technik (kruhy, koláče, linie), pomocí které se snažil porovnat daňovou zátěž mezi Británii a dalšími zeměmi. Na tomto grafu také ukázal možnost použíti více měřítek pro různé ukazatele (v grafu populace a daně).
 
 ```{r playfair, fig.align='center', fig.cap="\\label{fig0} Kombinace různých vuzuálních techník, Playfair 1801", out.width= '100%', fig.pos='H', echo=FALSE}
 knitr::include_graphics("fig/Playfair_taxes_population.jpg")
@@ -28,7 +27,7 @@ knitr::include_graphics("fig/Playfair_taxes_population.jpg")
     \label{fig01}
 \end{wrapfigure}
 
-\qquad V polovině 19. století byly vytvořeny všechny podmínky pro rychlý růst vizualizace. V důsledku rostoucí významnosti číselných informací pro sociální plánovaní, industrializaci, obchod a dopravu, byli zřízeny oficiální statistické úřady po celé Evropě. Vývoj statistické teorie, iniciovaný Gaussem a Laplacem, měl odezvu ve společností a poskytl prostředky ke zpracování velkého množství dat. Pro vizualizaci se stalo dat období 1850-1900 "Zlatý věkem", s jedinečnou krásou a velkým množstvím inovací. S těmito inovacemi je hlavně spojené jméno Charlese Josepha Minarda (1781-1870). Například, Minardem bylo zavedeno použítí koláčových grafů s výsečemi na mapách (obrázek \ref{fig01}), kde velikost koláčového grafu ukazuje sumu za oblast neboli každý grafický region na mapě a výseče reprezentují dílčí součty za jednotlivé kategorie. Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. \ Tento \ typ vizualizace \ se nazývá
+\qquad V polovině 19. století byly vytvořeny všechny podmínky pro rychlý růst vizualizace. V důsledku rostoucí významnosti číselných informací pro sociální plánovaní, industrializaci, obchod a dopravu, byli zřízeny oficiální statistické úřady po celé Evropě. Vývoj statistické teorie, iniciovaný Gaussem a Laplacem, měl odezvu ve společností a poskytl prostředky ke zpracování velkého množství dat. Pro vizualizaci se stalo dat období 1850-1900 "Zlatý věkem", s jedinečnou krásou a velkým množstvím inovací. S těmito inovacemi je hlavně spojené jméno Charlese Josepha Minarda (1781-1870). Například, Minardem bylo zavedeno použití koláčových grafů s výsečemi na mapách (obrázek \ref{fig01}), kde velikost koláčového grafu ukazuje sumu za oblast neboli každý grafický region na mapě a výseče reprezentují dílčí součty za jednotlivé kategorie. Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. \ Tento \ typ vizualizace \ se nazývá
 
 \begin{wrapfigure}[12]{L}{0.51\textwidth}
     \centering
@@ -69,13 +68,20 @@ knitr::include_graphics("fig/Playfair_taxes_population.jpg")
 knitr::include_graphics("fig/brinton.png")
 ```
 
-\qquad Ke "znovuzrození" vizualizace došlo v polovině šedesatých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlíšného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tematem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tematu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používano ve statisticé praci a implementovano do většiny softwarů. [@dataviz_history] 
+\qquad Ke "znovuzrození" vizualizace došlo v polovině šedesátých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlišného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tématem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tématu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používáno ve statistické praxi a implementováno do většiny softwarů. [@dataviz_history] 
 
-\qquad Od roku 1975 vizualizace se vyznačuje jako kvalitní, interaktivní a dynamické zpracovávání dat. 
+\qquad Od roku 1975 se vyvíjí statistické vypočetní systémy a s nimi i analýza dat a jejich vizualizace. V tomto období se vizualizace začala být vnímána jako vláštní odvětví, hlavně díky Williamu S. Clevelandu a Edwardu Tufte, které založili věděcké základ problematiky. Tufte vyvinul a popularizoval zakladní principy grafické integrity a terminologii. Clveland se zabívál studii grafického vnímání a kognitivních procesů, které lidi používají k pochopení grafů, rozvijel teorii o spravném provedení vizualizaci. [@cleveland_priceonomics] V důsledku jejich práci současná doba se vyznačuje kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
 
 ### 1.2 Zásady vizualizace dat
 
-\qquad $\dots$ **Wiliam S. Cleveland** (*The Elements of Graphing Data* a *Visualizing Data*)
+#### 1.2.2 Edward Tufte
 
-\qquad Kromě práci Wiliama S. Clevelanda se za revoluční průlom považují kniha **Edwarda Tufte** *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěma následně publikovanými pracemi *Envisioning Information* a *Visual Explanations* se říká že Tufte našel autentický způsob k definování standardu tématu. [@datavis_rahlf]
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěma následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 jsou to nejznamější práce na téma vizualizace dat a říká se, že Tufte našel autentický způsob k definování jejího "standardu". [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je ztručný, elegantní a informativní graf, jakým je například graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat.
 
+#### 1.2.1 Wiliam S. Cleveland
+
+\qquad Kromě práci Edwarda Tufte.. Wiliam S. Cleveland ve své práci *The Elements of Graphing Data* z roku 1994
+
+*Visualizing Data* 1993
+
+### 1.3 Grammar of graphics

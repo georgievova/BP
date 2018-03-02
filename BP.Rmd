@@ -43,6 +43,10 @@ x <- rnorm(100, 0, 1)
 
 ```{r, child = 'Chapter_3.Rmd'}
 ```
+\newpage
+
+```{r, child = 'Chapter_4.Rmd'}
+```
 
 \newpage
 
