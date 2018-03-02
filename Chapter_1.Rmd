@@ -76,7 +76,14 @@ knitr::include_graphics("fig/brinton.png")
 
 #### 1.2.2 Edward Tufte
 
-\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěma následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 jsou to nejznamější práce na téma vizualizace dat a říká se, že Tufte našel autentický způsob k definování jejího "standardu". [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je ztručný, elegantní a informativní graf, jakým je například graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat.
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěma následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 jsou to nejznamější práce na téma vizualizace dat a říká se, že Tufte našel autentický způsob k definování jejího "standardu". [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je ztručný, elegantní a informativní graf, jakým je například graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [tufte1990] Taftovy principy lze shrnout do nasledujícího seznamu:
+* **Grafem se ukazují data** - předvedení dat bez jejích zkreslení, "data nade vše"
+* **Malé násobky** - pochopení jedné části usnadňuje pochopení zbytku
+* **\textit{Lie factor}** - ukazaný efekt oproti efektu ve skutečnosti
+* **Grafická celivost a jednoznačnost** - nelhat, nechat data se kolisat (?), nevymyšlet
+* **Sparklines** ?
+* **Chartjunk**
+* **Powerpoint** ?
 
 #### 1.2.1 Wiliam S. Cleveland
 
