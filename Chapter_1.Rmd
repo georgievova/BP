@@ -70,20 +70,58 @@ knitr::include_graphics("fig/brinton.png")
 
 \qquad Ke "znovuzrození" vizualizace došlo v polovině šedesátých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlišného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tématem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tématu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používáno ve statistické praxi a implementováno do většiny softwarů. [@dataviz_history] 
 
-\qquad Od roku 1975 se vyvíjí statistické vypočetní systémy a s nimi i analýza dat a jejich vizualizace. V tomto období se vizualizace začala být vnímána jako vláštní odvětví, hlavně díky Williamu S. Clevelandu a Edwardu Tufte, které založili věděcké základ problematiky. Tufte vyvinul a popularizoval zakladní principy grafické integrity a terminologii. Clveland se zabívál studii grafického vnímání a kognitivních procesů, které lidi používají k pochopení grafů, rozvijel teorii o spravném provedení vizualizaci. [@cleveland_priceonomics] V důsledku jejich práci současná doba se vyznačuje kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
+\qquad Od roku 1975 se vyvíjí statistické vypočetní systémy a s nimi i nové metody analýzy a vizualizace dat. V tomto období vizualizace začala být vnímána jako vlastní odvětví a to především díky Williamu S. Clevelandu a Edwardu Tufte, kteří položili věděcké základy tohoto odvětví. Tufte vyvinul a popularizoval terminologii a zakladní principy grafické integrity. Clveland se zabívál studii grafického vnímání, kognitivních procesů, které lidi používají k pochopení grafů, a rozvijel teorii o spravném provedení vizualizaci. [@cleveland_priceonomics] Důsledek jejich práce se promítá i do současné doby kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
 
 ### 1.2 Zásady vizualizace dat
 
 #### 1.2.2 Edward Tufte
 
-\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěma následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 jsou to nejznamější práce na téma vizualizace dat a říká se, že Tufte našel autentický způsob k definování jejího "standardu". [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je ztručný, elegantní a informativní graf, jakým je například graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [tufte1990] Taftovy principy lze shrnout do nasledujícího seznamu:
-* **Grafem se ukazují data** - předvedení dat bez jejích zkreslení, "data nade vše"
-* **Malé násobky** - pochopení jedné části usnadňuje pochopení zbytku
-* **\textit{Lie factor}** - ukazaný efekt oproti efektu ve skutečnosti
-* **Grafická celivost a jednoznačnost** - nelhat, nechat data se kolisat (?), nevymyšlet
-* **Sparklines** ?
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 to jsou nejznamější publikace na téma vizualizace dat a právě v nich Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [tufte1990] Tafte vypracoval základní principy vizualizace: 
+
+* **Grafická dokonalost** - grafika by měla:
+  + být o datech a o předvedení dat bez jejích zkreslení
+  + vyvolávat otázky o datech, ne o metodologii a technikách vizualizace
+  + ukazovat velké množství dat v malém prostoru
+  + předvadět velké datasety souvisle a logicky promyšleně
+  + sloužit rozumnému a jasnému cíli (popisu, průzkumu, $\dots$)
+  + být jednotná se statistickým nebo slovním popisem datasetu
+* **Grafická integrita** neboli grafická celistvost a jednoznačnost
+  + reprezentace čísel, zobrazené v grafu by měli být přímo úměrné číselným veličinam datasetu
+  + jasné, detailní a svědomité označení v grafech by mělo potlačit zkreslení, nejasnost a dvojznačnost, popisky jsou důležitá
+  + ukazovat variaci dat, nikoliv designu
+  + v případě časových řad, představujících peníze, použivat obecně známé jednotky
+  + počet rozměrů představených v grafu by neměl přesahovat počet proměnných datasetu
+  + reprezentace by neměla zahrnovat neúmyslný kontext
+
+\begin{minipage}[H]{0.4\textwidth}
+ \begin{figure}[H]
+\centering
+    \includegraphics[height = 13cm]{fig/tufte_shrinking_doctor}
+    \caption{Zmenšující se rodinný lékař, Los Angeles Times, 1979}
+    \label{fig05}
+ \end{figure}
+\end{minipage}
+\begin{minipage}[H]{0.6\textwidth}
+ \begin{figure}[H]
+\centering
+    \includegraphics[height = 11cm]{fig/data_ink}
+    \caption{Vztah skutečné míry volební registrace k předpovídáným hodnotam, přetištěno E. Tufte, 1983}
+    \label{fig06}
+ \end{figure}
+\end{minipage}
+
+Ve spojení s těmito principy byly zavedeny Edwardem Tuftem následující terminy:
+
+* **Lie factor** je definován jako poměr velikosti efektu zobrázeného v grafu oproti velikosti efektu v datech. Pokud se rovná jedničce, považuji se reprezentované hodnoty za přesné. Pokud je faktor větší než 1.05 či menší než 0.95, indikuje se podstatné zkreslení, přesahující míru drobných nepřesnosti vyskytujících se při vykreslovani grafů. Tafte ve své práci úvádí jako jeden z příkladů graf na obrázku \ref{fig05}. Tento graf zobrazující zmenšující se procento lékařů věnujících se výhradně rodinné praxi má *lie factor* odpovídající hodnotě 2.8, tedy skutečný pokles je značně nadhodnocen.
+* **Data ink ratio** - poměr, který vyhodnocuje hustotu grafu a obsah informací. Dal by se vyjadřit vzorcem 
+$$\textit{Data ink ratio} = \cfrac{\textit{data-ink}}{\textit{celkový inkoust použitý v datech}}$$,
+kde $\textit{data-ink}$ je nevynechatelné jádro grafu a smazání jakékoliv jeho části znamená ztrátu informaci. 
+Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dálo by se to také vyjadřit vztahem $1 - \textit{podíl grafiky, která může být vymazána bez ztraty informací}$. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontalním referenčním liniím).
+
 * **Chartjunk**
-* **Powerpoint** ?
+* **Malé násobky** - pochopení jedné části usnadňuje pochopení zbytku
+
+[@tufte1983]
 
 #### 1.2.1 Wiliam S. Cleveland
 

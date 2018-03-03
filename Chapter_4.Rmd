@@ -1,4 +1,4 @@
-## 4 Praktická vizualizace dat
+## 4 Pokročilá vizualizace v R
 
 ### 4.1 Prostředí R
 
