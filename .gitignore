@@ -8,6 +8,7 @@ markdown*/*
 tex2pdf.*/*
 BP_cache/*
 BP_files/*
+Chapter_2_files/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -234,3 +235,5 @@ TSWLatexianTemp*
 *.knit.md
 *.utf8.md
 PIE.R
+
+acm.csl
