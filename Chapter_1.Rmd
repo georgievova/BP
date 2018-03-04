@@ -76,7 +76,7 @@ knitr::include_graphics("fig/brinton.png")
 
 #### 1.2.2 Edward Tufte
 
-\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 to jsou nejznamější publikace na téma vizualizace dat a právě v nich Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [tufte1990] Tafte vypracoval základní principy vizualizace: 
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 to jsou nejznamější publikace na téma vizualizace dat a právě v nich Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [@tufte1990] Tafte vypracoval základní principy vizualizace: 
 
 * **Grafická dokonalost** - grafika by měla:
   + být o datech a o předvedení dat bez jejích zkreslení
@@ -93,15 +93,18 @@ knitr::include_graphics("fig/brinton.png")
   + počet rozměrů představených v grafu by neměl přesahovat počet proměnných datasetu
   + reprezentace by neměla zahrnovat neúmyslný kontext
 
-\begin{minipage}[H]{0.4\textwidth}
+\begin{minipage}[H]{0.475\textwidth}
  \begin{figure}[H]
 \centering
-    \includegraphics[height = 13cm]{fig/tufte_shrinking_doctor}
+    \includegraphics[height = 11cm]{fig/tufte_shrinking_doctor}
     \caption{Zmenšující se rodinný lékař, Los Angeles Times, 1979}
     \label{fig05}
  \end{figure}
 \end{minipage}
-\begin{minipage}[H]{0.6\textwidth}
+\begin{minipage}[H]{0.05\textwidth}
+ \includegraphics[height = 9cm]{fig/blank_v}
+\end{minipage}
+\begin{minipage}[H]{0.475\textwidth}
  \begin{figure}[H]
 \centering
     \includegraphics[height = 11cm]{fig/data_ink}
@@ -114,19 +117,41 @@ Ve spojení s těmito principy byly zavedeny Edwardem Tuftem následující term
 
 * **Lie factor** je definován jako poměr velikosti efektu zobrázeného v grafu oproti velikosti efektu v datech. Pokud se rovná jedničce, považuji se reprezentované hodnoty za přesné. Pokud je faktor větší než 1.05 či menší než 0.95, indikuje se podstatné zkreslení, přesahující míru drobných nepřesnosti vyskytujících se při vykreslovani grafů. Tafte ve své práci úvádí jako jeden z příkladů graf na obrázku \ref{fig05}. Tento graf zobrazující zmenšující se procento lékařů věnujících se výhradně rodinné praxi má *lie factor* odpovídající hodnotě 2.8, tedy skutečný pokles je značně nadhodnocen.
 * **Data ink ratio** - poměr, který vyhodnocuje hustotu grafu a obsah informací. Dal by se vyjadřit vzorcem 
-$$\textit{Data ink ratio} = \cfrac{\textit{data-ink}}{\textit{celkový inkoust použitý v datech}}$$,
+$$\textit{Data ink ratio} = \cfrac{\textit{data-ink}}{\textit{celkový inkoust použitý v datech}},$$
 kde $\textit{data-ink}$ je nevynechatelné jádro grafu a smazání jakékoliv jeho části znamená ztrátu informaci. 
-Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dálo by se to také vyjadřit vztahem $1 - \textit{podíl grafiky, která může být vymazána bez ztraty informací}$. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontalním referenčním liniím).
-
-* **Chartjunk**
-* **Malé násobky** - pochopení jedné části usnadňuje pochopení zbytku
-
-[@tufte1983]
+Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dálo by se to také vyjadřit vztahem $1 - \textit{podíl grafiky, která může být vymazána bez ztraty informací}$. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontalním referenčním liniím). V příkladu na obrázku \ref{fig06} jsou zobrazene dvě verze stejného grafu. Horní má hodnotu *data ink ratio* kolem 0.7, dolní graf ale neobsahuje informaci o datech, pouze napomocné čáry, proto *data ink ratio* se rovná nule. 
+* **Chartjunk** - se vztahuje ke všem vizuálním elementam, které  neslouží ke komunikaci informací zobrazených v grafu nebo odvádějí pozornost od těchto informací. [@tufte1983]
 
 #### 1.2.1 Wiliam S. Cleveland
 
-\qquad Kromě práci Edwarda Tufte.. Wiliam S. Cleveland ve své práci *The Elements of Graphing Data* z roku 1994
+\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. 
+Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 se zabýval principy visualizace. 
+Definuje čtyři hlavní kategorie: Jasnou vizi, jasnou srozumintelnsot, rozsah a obecnou strategii. 
 
-*Visualizing Data* 1993
+* **Jasná vize**
+  + Data by měla mluvit sama za sebe. 
+  + Výrazné grafické prvky musí ukazovat data. 
+  + Prostor grafu by neměl být přeplněný. 
+  + Pokud je to vhodné referenční linie by měly být použity, ale nesmějí zasahovat do dat. 
+  + Popisky dat a legendy nesmějí zasahovat do dat a nesmějí znepřehlednovat graf. 
+  + Překrývající se symboly musí být visuálně rozpoznatelné. 
+  + Vizuální srozumitelnsot musí být zachována i po reprodukci a i při snížení kvality a změnšení.
+  
+* **Jasná srozumitelnost**
+  + Hlavní závěry by měli být obsaženy i v grafické formě. Legendy by měli být srozumitelné a vyčerpávající.
+  + Grafy by měli být korektovány.
+  + Hlavními cíly vizualizace by měli být jasnost, srozumitelnost, jednoznačnost. 
+  
+* **Rozshah**
+  + Volit rozshah dat tak, aby obsahoval, případně téměr obsahoval, rozsah dat. 
+  + Volit takové měřítko, aby data vyplňovala co největší prostor. 
+  + Volit vhodné měřítko podkud jsou dva a více grafy porovnávány.
+  
+* **Obecná strategie**
+  + Velké množsví kvantitavitní informace by měla být vměsnáno do relativně smalých oblastí. 
+  + Tvorba grafů by měla být iterativní činnost, experimentální proces
+  + Užitečné grafy vyžadůjí pečlivou a detilní práci.
+
+
 
 ### 1.3 Grammar of graphics

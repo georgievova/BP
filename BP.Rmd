@@ -4,7 +4,7 @@ fontsize: 12pt
 geometry: "left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
 fig_caption: yes
 bibliography: Bibliografie.bib
-csl: acm.csl
+csl: vhtei.csl
 header-includes: \usepackage[czech]{babel}
                  \usepackage{docmute}
                  \usepackage{float}
