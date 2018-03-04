@@ -40,19 +40,6 @@ knitr::include_graphics("fig/Playfair_taxes_population.jpg")
 \vspace{-7pt}
 \textit{"flow maps"}, viz obrázek \ref{fig02}. Jednou z nejslavnějších jeho práci je zobrazení postupných ztrát mužů francouzské armády během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek \ref{fig03}). Je považovaná za nejlepší informativní vizualizací. I přestože v tomto grafu je celkem 6 proměnných (množství, lokace ve dvou rozměrech, postup armády, teplota, datum a skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný a matoucí.
 
-<!-- \begin{minipage}[H]{0.5\textwidth} -->
-<!-- ```{r minard, fig.align='center', fig.cap="\\label{fig02} Mapa světové migrace, Minard 1858", out.width= '100%', fig.pos='H', echo=FALSE} -->
-<!-- knitr::include_graphics("fig/minard_flow_map.jpg") -->
-<!-- ``` -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}[H]{0.025\textwidth} -->
-<!-- ```{r blank0, fig.pos='H', echo=FALSE} -->
-<!-- knitr::include_graphics("fig/blank_v.png") -->
-<!-- ``` -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}[H]{0.475\textwidth} -->
-<!-- Dále se také zabýval znázorněním geografických pohybu a dopravy lidí, zboží, importu a exportu úměrně jejich velikostí. Tento typ vizualizace se nazývá \textit{"flow maps"}, viz obrázek \ref{fig02}.Jednou z nejslavnějších jeho práci je zobrazení postupných ztrát mužů francouzské armády během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek \ref{fig03}). Je považovaná za nejlepší informativní vizualizací. I přestože v tomto grafu je celkem 6 proměnných (množství, lokace ve dvou rozměrech, postup armády, teplota, datum a skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný a matoucí. -->
-<!-- \end{minipage} -->
 \newpage
 
 \begin{figure}[H]
@@ -124,9 +111,7 @@ Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslen
 
 #### 1.2.1 Wiliam S. Cleveland
 
-\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. 
-Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 se zabýval principy visualizace. 
-Definuje čtyři hlavní kategorie: Jasnou vizi, jasnou srozumintelnsot, rozsah a obecnou strategii. 
+\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. [@cleveland_mcgill]  Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. Z tohoto důvodu se tato forma grafů nepoužívá ve vážných kvantitativních výzkumech. [@cleveland_priceonomics] Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace. Definuje čtyři hlavní kategorie: jasnou vizi, jasnou srozumintelnsot, rozsah a obecnou strategii. [@cleveland1994] Nekteré z ních jsou podobné principů Tufte, ačkoli jeho práce v této oblasti předcházela práci Tufte.
 
 * **Jasná vize**
   + Data by měla mluvit sama za sebe. 
