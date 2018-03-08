@@ -111,15 +111,17 @@ Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslen
 
 #### 1.2.1 Wiliam S. Cleveland
 
-\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. [@cleveland_mcgill]  Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. Z tohoto důvodu se tato forma grafů nepoužívá ve vážných kvantitativních výzkumech. [@cleveland_priceonomics] Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace. Definuje čtyři hlavní kategorie: jasnou vizi, jasnou srozumintelnsot, rozsah a obecnou strategii. [@cleveland1994] Nekteré z ních jsou podobné principů Tufte, ačkoli jeho práce v této oblasti předcházela práci Tufte.
+\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. [@cleveland_mcgill]  Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. Z tohoto důvodu se tato forma grafů nepoužívá ve vážných kvantitativních výzkumech. [@cleveland_priceonomics] Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace. Nekteré z těchto principů se schodují s principy vymezené Tuftem, avšak práce Clevelanda v této oblasti předcházela práci Tufte. Přehled zásad a principů dle Clevelandů by se se dalo zhrnout následně [@cleveland1994]: 
 
 * **Jasná vize**
-  + Data by měla mluvit sama za sebe. 
-  + Výrazné grafické prvky musí ukazovat data. 
-  + Prostor grafu by neměl být přeplněný. 
-  + Pokud je to vhodné referenční linie by měly být použity, ale nesmějí zasahovat do dat. 
-  + Popisky dat a legendy nesmějí zasahovat do dat a nesmějí znepřehlednovat graf. 
-  + Překrývající se symboly musí být visuálně rozpoznatelné. 
+  + Data by měla vyčnívat, vyhnout se vykreslení nadbytečných prvků (neboli tvorbě *chartjunk*).
+  + Ke zobrazení dat by se měli používat výrazné grafické prvky. 
+  + Pro každou proměnnou by měla být použita dvojice os, prostor v takto vytvořeným obdélníku je určen k vykreslení grafu, úsečky na osách by měli směrovat mímo oblast grafu.
+  + Prostor grafu by neměl být přeplněný (legenda mimo oblast grafu atd.). 
+  + S počtem úseček na osách by se nemělo přehánět. 
+  + Pokud je vhodné, referenční linie mohou být použity, avšak nesmějí zasahovat do dat. 
+  + Popisky dat by neměli  zasahovat do dat a nesmějí znepřehlednovat graf. 
+  + Překrývající se data sety či symboly musí být visuálně snadně rozpoznatelné. 
   + Vizuální srozumitelnsot musí být zachována i po reprodukci a i při snížení kvality a změnšení.
   
 * **Jasná srozumitelnost**
@@ -137,6 +139,10 @@ Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslen
   + Tvorba grafů by měla být iterativní činnost, experimentální proces
   + Užitečné grafy vyžadůjí pečlivou a detilní práci.
 
+* **Technika**
 
+* **Tři a více proměnných**
+
+* **Vnímání**
 
 ### 1.3 Grammar of graphics
