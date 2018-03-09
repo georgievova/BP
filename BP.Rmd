@@ -15,6 +15,7 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{graphicx}
                  \usepackage{array}
                  \usepackage{wrapfig}
+                 \usepackage{subcaption}
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}

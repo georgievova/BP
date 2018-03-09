@@ -111,38 +111,63 @@ Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslen
 
 #### 1.2.1 Wiliam S. Cleveland
 
-\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání a také prováděl studie na toto téma. [@cleveland_mcgill]  Jedená z nejvíc známých je studie, kterou provedli mezi svými studenty, na rozdíl ve vnímání koláčových a sloupcových grafů. Studenti systematicky odhadováli hodnoty sloupcového grafu přesnějí oproti kolačovému grafu. Z tohoto důvodu se tato forma grafů nepoužívá ve vážných kvantitativních výzkumech. [@cleveland_priceonomics] Ve svých prácích *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace. Nekteré z těchto principů se schodují s principy vymezené Tuftem, avšak práce Clevelanda v této oblasti předcházela práci Tufte. Přehled zásad a principů dle Clevelandů by se se dalo zhrnout následně [@cleveland1994]: 
+\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání. [@cleveland_mcgill] Prováděli studie na rozdíl ve vnímání sloupcových grafů (pozice a obecné měřítko), koláčových grafů (úhel), skládaných sloupcových grafů (plocha), barevných a stínovaných map (saturace barev a stínování) a další. [@cleveland_priceonomics] Ve svých prácích  *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace, grafickými metody a techniky, vykreslením tři a více proměnných. Nekteré z jeho principů se schodují s principy vymezené Tuftem, avšak práce Clevelanda v této oblasti předcházela práci Tufte. Zásady a principy dle Clevelanda by se se dali shrnout do čtyř hlavních kategorií: jasný vzhled, jasná srozumitelnost, měřitka, obecná strategie. [@cleveland1994]
 
-* **Jasná vize**
-  + Data by měla vyčnívat, vyhnout se vykreslení nadbytečných prvků (neboli tvorbě *chartjunk*).
+* **Jasný vzhled**
+  + Data by měla vyčnívat, vykreslení nadbytečných prvků (neboli *chartjunk* dle Tufte) by se mělo vyhnout.
   + Ke zobrazení dat by se měli používat výrazné grafické prvky. 
   + Pro každou proměnnou by měla být použita dvojice os, prostor v takto vytvořeným obdélníku je určen k vykreslení grafu, úsečky na osách by měli směrovat mímo oblast grafu.
   + Prostor grafu by neměl být přeplněný (legenda mimo oblast grafu atd.). 
   + S počtem úseček na osách by se nemělo přehánět. 
   + Pokud je vhodné, referenční linie mohou být použity, avšak nesmějí zasahovat do dat. 
-  + Popisky dat by neměli  zasahovat do dat a nesmějí znepřehlednovat graf. 
+  + Popisky by neměli  zasahovat  do kvantitativních dat a nesmějí znepřehlednovat graf. 
+  + Značky a klíče by měli vyskytovat mimo oblast grafu (přip. v legendě), totéž se týká poznámek a nadpisů, které můžou být také umíštěny do textu.
   + Překrývající se data sety či symboly musí být visuálně snadně rozpoznatelné. 
-  + Vizuální srozumitelnsot musí být zachována i po reprodukci a i při snížení kvality a změnšení.
-  
+  + Jasnost obrazu musí být zachována při reprodukci i snížení kvality a změnšení.
+
+Následující příklad na obrázku \ref{fig07a} je zobrazením množství izotopu xenonu ${}^{133}\mbox{Xe}$ ve vzduchu ($pCi.m^{-3}$) v Albany, New York koncem března a začatkem dubna roku 1979. Spodní část grafu ukazuje časově zprůměrované odhady uníků z reaktoru při havárie elektrárny Three Mile Island, na detailu jsou zobrazeny hodnoty vzorků vzduchu (měření plynů) a současné průměrné hodnoty  pro okolní vzduch. Zkratka LT znamená *less than* (méně než). Všechno, včetně popisků os, klíčů a popisků bylo umíštěno do oblasti grafu, není dodržená žádná ze zásad Clevelanda. Vysledkem je matoucí graf, který je obtížno číst.  Stejný graf na obrázku \ref{fig07b} byl vytvořen Clevelandem s dodržením veškerých zásad: odstranění zbytečných objektů a detailu z oblasti grafu, rozlišné datasety se zobrazují ve vlastních panelech, oprava popisků, popísujících měření. 
+
+\vspace*{-0.69cm}
+\begin{figure}[H]
+  \begin{subfigure}{0.57\textwidth}
+  \centering
+    \vspace*{0.65cm}
+      \includegraphics[width=\textwidth]{fig/cleveland_xenon_133}
+      \vspace*{0.2cm}
+      \caption{}
+      \label{fig07a}
+  \end{subfigure}%
+  \begin{subfigure}[H]{0.43\textwidth}
+  \centering
+      \includegraphics[width=\textwidth]{fig/cleveland_xenon_opr}
+      \vspace*{-0.8cm}
+      \caption{}
+      \label{fig07b}
+  \end{subfigure}
+\vspace*{-0.25cm}
+\caption{Rádioaktivní oblak při havárie elektrárny Three Mile Island: ${}^{133}\mbox{Xe}$ ve vzduchu ve vzdalenosti 375 km (a) a stejný graf přeprácovaný Clevelandem (b), 1994}
+\label{fig07}
+\end{figure}  
+
 * **Jasná srozumitelnost**
-  + Hlavní závěry by měli být obsaženy i v grafické formě. Legendy by měli být srozumitelné a vyčerpávající.
-  + Grafy by měli být korektovány.
-  + Hlavními cíly vizualizace by měli být jasnost, srozumitelnost, jednoznačnost. 
+  + Hlavní závěry by měli být obsaženy v grafické formě. Legenda a nadpisy by měli být srozumitelné a vyčerpávající.
+  + Při vykreslení logaritmu proměnné, hodnoty na ose by měly odpovídat popisu osy.
+  + Grafy by měli být zkorigovany.
+  + Mělo by se usilovat o přehlednost (viz "jasný vzhled").
   
-* **Rozshah**
-  + Volit rozshah dat tak, aby obsahoval, případně téměr obsahoval, rozsah dat. 
+* **Měřitka**
+  + Volit rozshah os tak, aby obsahoval, případně téměr obsahoval, rozsah dat. 
   + Volit takové měřítko, aby data vyplňovala co největší prostor. 
-  + Volit vhodné měřítko podkud jsou dva a více grafy porovnávány.
+  + Občas je užitečný mít pro proměnnou dvě osy pro rozdílná měřítka.
+  + Volit vhodné měřítko podkud data jsou porovnávány na více panelech.
+  + Osy grafu nemusejí vždy nutně zahrnovat nulu pro ukazku rozsahu.
+  + Použit logaritmická měřitka, když je důležitý pochopit procentní změny nebo multiplikativní faktory. 
+  + Použit přerušené měřitko pouze v případě potřeby. Logoritmování může zbavit této potřeby.
   
 * **Obecná strategie**
-  + Velké množsví kvantitavitní informace by měla být vměsnáno do relativně smalých oblastí. 
-  + Tvorba grafů by měla být iterativní činnost, experimentální proces
+  + Velké množsví kvantitavitní informace může být vměsnáno do relativně malých oblastí. 
+  + Tvorba grafů by měla být opakující se experimentální činností.
+  + Data můžou být vykreslené dva a vícekrát pokud je to potřeba.
   + Užitečné grafy vyžadůjí pečlivou a detilní práci.
-
-* **Technika**
-
-* **Tři a více proměnných**
-
-* **Vnímání**
 
 ### 1.3 Grammar of graphics
