@@ -57,29 +57,30 @@ knitr::include_graphics("fig/brinton.png")
 
 \qquad Ke "znovuzrození" vizualizace došlo v polovině šedesátých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlišného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tématem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tématu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používáno ve statistické praxi a implementováno do většiny softwarů. [@dataviz_history] 
 
-\qquad Od roku 1975 se vyvíjí statistické vypočetní systémy a s nimi i nové metody analýzy a vizualizace dat. V tomto období vizualizace začala být vnímána jako vlastní odvětví a to především díky Williamu S. Clevelandu a Edwardu Tufte, kteří položili věděcké základy tohoto odvětví. Tufte vyvinul a popularizoval terminologii a zakladní principy grafické integrity. Clveland se zabívál studii grafického vnímání, kognitivních procesů, které lidi používají k pochopení grafů, a rozvijel teorii o spravném provedení vizualizaci. [@cleveland_priceonomics] Důsledek jejich práce se promítá i do současné doby kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
+\qquad Od roku 1975 se vyvíjí statistické výpočetní systémy a s nimi i nové metody analýzy a vizualizace dat. V tomto období vizualizace začala být vnímána jako vlastní odvětví a to především díky Williamu S. Clevelandu a Edwardu Tufte, kteří položili věděcké základy tohoto odvětví. Tufte vyvinul a popularizoval terminologii a základní principy grafické integrity. Cleveland se zabýval studii grafického vnímání, kognitivních procesů, které lidi používají k pochopení grafů, a rozvíjel teorii o správném provedení vizualizaci. [@cleveland_priceonomics] Důsledek jejich práce se promítá i do současné doby kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
 
 ### 1.2 Zásady vizualizace dat
 
 #### 1.2.2 Edward Tufte
 
-\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983. V kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997 to jsou nejznamější publikace na téma vizualizace dat a právě v nich Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Idealní způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [@tufte1990] Tafte vypracoval základní principy vizualizace: 
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983, v kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997, patří mezi nejznámější publikace na téma vizualizace dat. Právě v těcho pubikacích Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Ideální způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [@tufte1990] Tafte formuluje základní principy vizualizace jako grafickou dokonalost a grafickou integritu. 
 
 * **Grafická dokonalost** - grafika by měla:
-  + být o datech a o předvedení dat bez jejích zkreslení
+  + být o datech a během jejich předvedení by nemělo dojít ke zkreslení
   + vyvolávat otázky o datech, ne o metodologii a technikách vizualizace
   + ukazovat velké množství dat v malém prostoru
-  + předvadět velké datasety souvisle a logicky promyšleně
+  + předvádět velké datasety souvisle a logicky promyšleně
   + sloužit rozumnému a jasnému cíli (popisu, průzkumu, $\dots$)
   + být jednotná se statistickým nebo slovním popisem datasetu
 * **Grafická integrita** neboli grafická celistvost a jednoznačnost
-  + reprezentace čísel, zobrazené v grafu by měli být přímo úměrné číselným veličinam datasetu
+  + reprezentace čísel, zobrazené v grafu by měli být přímo úměrné číselným veličinám datasetu
   + jasné, detailní a svědomité označení v grafech by mělo potlačit zkreslení, nejasnost a dvojznačnost, popisky jsou důležitá
   + ukazovat variaci dat, nikoliv designu
-  + v případě časových řad, představujících peníze, použivat obecně známé jednotky
+  + v případě časových řad, představujících peníze, používat obecně známé jednotky
   + počet rozměrů představených v grafu by neměl přesahovat počet proměnných datasetu
   + reprezentace by neměla zahrnovat neúmyslný kontext
 
+\vspace*{-1cm}
 \begin{minipage}[H]{0.475\textwidth}
  \begin{figure}[H]
 \centering
@@ -95,39 +96,39 @@ knitr::include_graphics("fig/brinton.png")
  \begin{figure}[H]
 \centering
     \includegraphics[height = 11cm]{fig/data_ink}
-    \caption{Vztah skutečné míry volební registrace k předpovídáným hodnotam, přetištěno E. Tufte, 1983}
+    \caption{Vztah skutečné míry volební registrace k předpovídaným hodnotám, přetištěno E. Tufte, 1983}
     \label{fig06}
  \end{figure}
 \end{minipage}
 
 Ve spojení s těmito principy byly zavedeny Edwardem Tuftem následující terminy:
 
-* **Lie factor** je definován jako poměr velikosti efektu zobrázeného v grafu oproti velikosti efektu v datech. Pokud se rovná jedničce, považuji se reprezentované hodnoty za přesné. Pokud je faktor větší než 1.05 či menší než 0.95, indikuje se podstatné zkreslení, přesahující míru drobných nepřesnosti vyskytujících se při vykreslovani grafů. Tafte ve své práci úvádí jako jeden z příkladů graf na obrázku \ref{fig05}. Tento graf zobrazující zmenšující se procento lékařů věnujících se výhradně rodinné praxi má *lie factor* odpovídající hodnotě 2.8, tedy skutečný pokles je značně nadhodnocen.
-* **Data ink ratio** - poměr, který vyhodnocuje hustotu grafu a obsah informací. Dal by se vyjadřit vzorcem 
+* **Lie factor** je definován jako poměr velikosti efektu zobrazeného v grafu oproti velikosti efektu v datech. Pokud se rovná jedničce, považuji se reprezentované hodnoty za přesné. Pokud je faktor větší než 1.05 či menší než 0.95, indikuje se podstatné zkreslení, přesahující míru drobných nepřesnosti vyskytujících se při vykreslováni grafů. Tafte ve své práci uvádí jako jeden z příkladů graf na obrázku \ref{fig05}. Tento graf zobrazující zmenšující se procento lékařů věnujících se výhradně rodinné praxi má *lie factor* odpovídající hodnotě 2.8, tedy skutečný pokles je značně nadhodnocen.
+* **Data ink ratio** - poměr, který vyhodnocuje hustotu grafu a obsah informací. Dal by se vyjádřit vzorcem 
 $$\textit{Data ink ratio} = \cfrac{\textit{data-ink}}{\textit{celkový inkoust použitý v datech}},$$
-kde $\textit{data-ink}$ je nevynechatelné jádro grafu a smazání jakékoliv jeho části znamená ztrátu informaci. 
-Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dálo by se to také vyjadřit vztahem $1 - \textit{podíl grafiky, která může být vymazána bez ztraty informací}$. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontalním referenčním liniím). V příkladu na obrázku \ref{fig06} jsou zobrazene dvě verze stejného grafu. Horní má hodnotu *data ink ratio* kolem 0.7, dolní graf ale neobsahuje informaci o datech, pouze napomocné čáry, proto *data ink ratio* se rovná nule. 
-* **Chartjunk** - se vztahuje ke všem vizuálním elementam, které  neslouží ke komunikaci informací zobrazených v grafu nebo odvádějí pozornost od těchto informací. [@tufte1983]
+kde $\textit{data-ink}$ je nezbytné jádro grafu a smazání jakékoliv jeho části znamená ztrátu informaci. 
+Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dalo by se to také vyjádřit jako jedna mínus \textit{podíl grafiky, která může být vymazána bez ztráty informací}. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontálním referenčním liniím). V příkladu na obrázku \ref{fig06} jsou zobrazené dvě verze stejného grafu. Horní má hodnotu *data ink ratio* kolem 0.7, dolní graf ale neobsahuje informaci o datech, pouze nápomocné čáry, proto *data ink ratio* se rovná nule. 
+* **Chartjunk** - se vztahuje ke všem vizuálním elementům, které  neslouží ke komunikaci informací zobrazených v grafu nebo odvádějí pozornost od těchto informací. [@tufte1983]
 
 #### 1.2.1 Wiliam S. Cleveland
 
-\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání. [@cleveland_mcgill] Prováděli studie na rozdíl ve vnímání sloupcových grafů (pozice a obecné měřítko), koláčových grafů (úhel), skládaných sloupcových grafů (plocha), barevných a stínovaných map (saturace barev a stínování) a další. [@cleveland_priceonomics] Ve svých prácích  *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy visualizace, grafickými metody a techniky, vykreslením tři a více proměnných. Nekteré z jeho principů se schodují s principy vymezené Tuftem, avšak práce Clevelanda v této oblasti předcházela práci Tufte. Zásady a principy dle Clevelanda by se se dali shrnout do čtyř hlavních kategorií: jasný vzhled, jasná srozumitelnost, měřitka, obecná strategie. [@cleveland1994]
+\qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání [@cleveland_mcgill]. Prováděli studie na rozdíl ve vnímání sloupcových grafů (pozice a obecné měřítko), koláčových grafů (úhel), skládaných sloupcových grafů (plocha), barevných a stínovaných map (saturace barev a stínování) a další. [@cleveland_priceonomics] Ve svých pracích  *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy vizualizace, grafickými metodami a technikami, vykreslením tři a více proměnných (rozměrů). Některé z jeho principů se schodují s principy vymezenými Tuftem, avšak práce Clevelanda v této oblasti přesahovala práci Tufte. Zásady a principy dle Clevelanda by se dali shrnout do čtyř hlavních kategorií: jasný vzhled, jasná srozumitelnost, měřítka, obecné postupy. [@cleveland1994]
 
 * **Jasný vzhled**
-  + Data by měla vyčnívat, vykreslení nadbytečných prvků (neboli *chartjunk* dle Tufte) by se mělo vyhnout.
+  + Data by měla vyčnívat, vykreslení nadbytečných prvků (neboli *chartjunk* dle Tufta) by se mělo vyhnout.
   + Ke zobrazení dat by se měli používat výrazné grafické prvky. 
-  + Pro každou proměnnou by měla být použita dvojice os, prostor v takto vytvořeným obdélníku je určen k vykreslení grafu, úsečky na osách by měli směrovat mímo oblast grafu.
+  + Pro každou proměnnou by měla být použita dvojice os, prostor v takto vytvořeným obdélníku je určen k vykreslení grafu, značky na osách by měli směrovat mimo oblast grafu.
   + Prostor grafu by neměl být přeplněný (legenda mimo oblast grafu atd.). 
-  + S počtem úseček na osách by se nemělo přehánět. 
+  + S počtem zanček na osách by se nemělo přehánět. 
   + Pokud je vhodné, referenční linie mohou být použity, avšak nesmějí zasahovat do dat. 
-  + Popisky by neměli  zasahovat  do kvantitativních dat a nesmějí znepřehlednovat graf. 
-  + Značky a klíče by měli vyskytovat mimo oblast grafu (přip. v legendě), totéž se týká poznámek a nadpisů, které můžou být také umíštěny do textu.
+  + Popisky by neměli  zasahovat  do kvantitativních dat a nesmějí znepřehledňovat graf. 
+  + Značky a klíče by měli vyskytovat mimo oblast grafu (případně v legendě), totéž se týká poznámek a nadpisů, které mohou být také umístěny do textu.
   + Překrývající se data sety či symboly musí být visuálně snadně rozpoznatelné. 
-  + Jasnost obrazu musí být zachována při reprodukci i snížení kvality a změnšení.
+  + Jasnost obrazu musí být zachována při reprodukci i při snížení kvality a zmenšení rozlišení.
 
-Následující příklad na obrázku \ref{fig07a} je zobrazením množství izotopu xenonu ${}^{133}\mbox{Xe}$ ve vzduchu ($pCi.m^{-3}$) v Albany, New York koncem března a začatkem dubna roku 1979. Spodní část grafu ukazuje časově zprůměrované odhady uníků z reaktoru při havárie elektrárny Three Mile Island, na detailu jsou zobrazeny hodnoty vzorků vzduchu (měření plynů) a současné průměrné hodnoty  pro okolní vzduch. Zkratka LT znamená *less than* (méně než). Všechno, včetně popisků os, klíčů a popisků bylo umíštěno do oblasti grafu, není dodržená žádná ze zásad Clevelanda. Vysledkem je matoucí graf, který je obtížno číst.  Stejný graf na obrázku \ref{fig07b} byl vytvořen Clevelandem s dodržením veškerých zásad: odstranění zbytečných objektů a detailu z oblasti grafu, rozlišné datasety se zobrazují ve vlastních panelech, oprava popisků, popísujících měření. 
+Cleveland jako příklad špatně zpracované vizualizace vybral graf \ref{fig07a}, na kterém je zobrazeno množství izotopu xenonu ${}^{133}\mbox{Xe}$ ve vzduchu ($pCi.m^{-3}$) po havárii elektrárny Three Mile Island v Albany, New York koncem března a začátkem dubna roku 1979. Vše, včetně popisků os, klíčů a popisků dat bylo umístěno do oblasti grafu, není dodržená žádná ze zásad Clevelanda. Výsledkem je matoucí graf, který je obtížné číst. Stejná data byla vizualizována Clevelandem na grafu \ref{fig07b} s dodržením veškerých zásad: odstranění zbytečných objektů a detailu z oblasti grafu, rozlišné datasety se zobrazují ve vlastních panelech, oprava popisků popisujících měření. 
 
-\vspace*{-0.69cm}
+\vspace*{-0.6cm}
 \begin{figure}[H]
   \begin{subfigure}{0.57\textwidth}
   \centering
@@ -145,29 +146,31 @@ Následující příklad na obrázku \ref{fig07a} je zobrazením množství izot
       \label{fig07b}
   \end{subfigure}
 \vspace*{-0.25cm}
-\caption{Rádioaktivní oblak při havárie elektrárny Three Mile Island: ${}^{133}\mbox{Xe}$ ve vzduchu ve vzdalenosti 375 km (a) a stejný graf přeprácovaný Clevelandem (b), 1994}
+\caption{Radioaktivní oblak při havárie elektrárny Three Mile Island: ${}^{133}\mbox{Xe}$ ve vzduchu ve vzdálenosti 375 km (a) a stejný graf přepracovaný Clevelandem (b), 1994}
 \label{fig07}
 \end{figure}  
 
 * **Jasná srozumitelnost**
   + Hlavní závěry by měli být obsaženy v grafické formě. Legenda a nadpisy by měli být srozumitelné a vyčerpávající.
-  + Při vykreslení logaritmu proměnné, hodnoty na ose by měly odpovídat popisu osy.
-  + Grafy by měli být zkorigovany.
+  + Grafy by měli být zkontrolovany.
   + Mělo by se usilovat o přehlednost (viz "jasný vzhled").
   
 * **Měřitka**
-  + Volit rozshah os tak, aby obsahoval, případně téměr obsahoval, rozsah dat. 
+  + Volit rozsah os tak, aby obsahoval, případně téměř obsahoval, rozsah dat. 
   + Volit takové měřítko, aby data vyplňovala co největší prostor. 
   + Občas je užitečný mít pro proměnnou dvě osy pro rozdílná měřítka.
-  + Volit vhodné měřítko podkud data jsou porovnávány na více panelech.
-  + Osy grafu nemusejí vždy nutně zahrnovat nulu pro ukazku rozsahu.
-  + Použit logaritmická měřitka, když je důležitý pochopit procentní změny nebo multiplikativní faktory. 
-  + Použit přerušené měřitko pouze v případě potřeby. Logoritmování může zbavit této potřeby.
+  + Volit vhodné měřítko pokud data jsou porovnávány na více panelech.
+  + Osy grafu nemusejí vždy nutně zahrnovat nulu pro ukázku rozsahu.
+  + Použit logaritmická měřítka, když je důležitý pochopit procentní změny nebo multiplikativní faktory. 
+  + Použit přerušené měřítko pouze v případě potřeby. Logaritmování může zbavit této potřeby.
   
-* **Obecná strategie**
-  + Velké množsví kvantitavitní informace může být vměsnáno do relativně malých oblastí. 
-  + Tvorba grafů by měla být opakující se experimentální činností.
-  + Data můžou být vykreslené dva a vícekrát pokud je to potřeba.
-  + Užitečné grafy vyžadůjí pečlivou a detilní práci.
+* **Obecné postupy**
+  + Velké množství kvantitativní informace může být vměstnáno do relativně malých oblastí. 
+  + Tvorba grafů by měla být opakující, iterativní, experimentální činností.
+  + Data by měla být vykreslena tolikrát kolikrát je třeba. 
+  + Užitečné grafy vyžadují pečlivou a detailní práci.
 
 ### 1.3 Grammar of graphics
+
+\qquad *The Grammar of Graphics* publikovana Lelandem Wilkinsonem v roce 2005, detailně popisuje prvky, které tvořejí základ všech statistických grafů. Tato publikace popisuje statistickou grafiku jako mapovani  [@wickham_ggplot]
+a měla extrémně velký vliv na myšlení o grafech. V tomto kontextu *grammar* znamená "pravidla pro umělectví a vědu". Práce specifikuje pravidla jak matematicky tak i esteticky. Dříve se soustředilo na estetiku statického kontentu. Dinamicke grafy a vědecky založená vizualitace kontrastne požaduje sofistikovaný design pro umožnění přiblížení, propojování, kartačování. *The Grammar of Gpraphics* se jednoduše přizpůsobuje tomuto přisstupu.  
