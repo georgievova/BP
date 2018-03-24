@@ -1,45 +1,39 @@
 ## 4 Pokročilá vizualizace v R
 
-### 4.1 Prostředí R
+### 4.1 Balíčky pro vizualizaci dat
 
-#### 4.1.1 Balíčky
+#### 4.1.1 ggplot2 {#ggplot}
 
-#### 4.1.2 ...
+#### 4.1.2 lattice
 
-### 4.2 Balíčky pro vizualizaci dat
+#### 4.1.3 rgl
 
-#### 4.2.1 ggplot2 {#ggplot}
+### 4.2 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
 
-#### 4.2.2 lattice
+#### 4.2.1 plotly
 
-#### 4.2.3 rgl
+#### 4.2.2 dygraphs
 
-### 4.3 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
+#### 4.2.3 leaflet
 
-#### 4.3.1 plotly
+#### 4.2.4 ggvis
 
-#### 4.3.2 dygraphs
+### 4.3 Balíčky pro prostorová data
 
-#### 4.3.3 leaflet
+#### 4.3.1 ggmap
 
-#### 4.3.4 ggvis
+### 4.4 ...
 
-### 4.4 Balíčky pro prostorová data
+#### 4.4.1 raster
 
-#### 4.4.1 ggmap
+#### 4.4.2 rasterVis
 
-### 4.5 ...
+### 4.5 Balíčky pro webové aplikace
 
-#### 4.5.1 raster
+#### 4.5.1 shiny
 
-#### 4.5.2 rasterVis
+#### 4.5.2 flexdashboard
 
-### 4.6 Balíčky pro webové aplikace
-
-#### 4.6.1 shiny
-
-#### 4.6.2 flexdashboard
-
-#### 4.6.3 dashboard
+#### 4.5.3 dashboard
 
 # Praktická část {-}

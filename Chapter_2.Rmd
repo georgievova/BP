@@ -198,7 +198,7 @@ lines(density(x, adjust=2))
 
 #### 2.4.2 Koláčový graf
 
-\qquad Koláčový graf představuje plný kruh (360°), který je rozdělen na jednotlivé výseče pro znázornění číselných proporci mezi proměnnými. Koláčový graf je tvořen transformaci skládaného sloupcového grafu do polárního souřadnicového systému (Obrázek \ref{fig7}). [@wilkinson2006] 
+\qquad Koláčový graf představuje plný kruh (360°), který je rozdělen na jednotlivé výseče pro znázornění číselných proporci mezi proměnnými. Koláčový graf je tvořen transformaci skládaného sloupcového grafu do polárního souřadnicového systému (Obrázek \ref{fig7}). [@wilkinson2005] 
 
 ```{r barplot_to_pie, echo=FALSE, out.width='65%', fig.align='center', fig.cap="\\label{fig7} Skládaný sloupcový graf transformovaný do polárního souřadnicového systému", fig.pos='H'}
 counts <- table(mtcars$cyl, rep(1,length(mtcars$cyl)))

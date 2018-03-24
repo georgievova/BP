@@ -57,11 +57,11 @@ knitr::include_graphics("fig/brinton.png")
 
 \qquad Ke "znovuzrození" vizualizace došlo v polovině šedesátých let 20. století, po napsaní Johnem W. Tukey [1915-2000] článku \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k uznání analýzy dat jako samostatného oboru statistiky odlišného od matematické statistiky. [@tukey1962] Brzy poté začal Tukey s vývojem široké řady nových a efektivních grafů pod společným tématem "průzkumové analýzy dat" (popsány v jeho práci \textit{"Explanatory Data Analysis"} z roku 1977, viz o tématu kapitola [3](#EDA)). [@tukey1977] Mezi těmito novými grafy jsou například číslicový histogram (popsaný v kapitole [2.4.3](#stem-and-leaf)), boxplot nebo krabicový graf (popsaný v kapitole [2.3.2](#boxplot)) a další. Mnoho z nich je aktivně používáno ve statistické praxi a implementováno do většiny softwarů. [@dataviz_history] 
 
-\qquad Od roku 1975 se vyvíjí statistické výpočetní systémy a s nimi i nové metody analýzy a vizualizace dat. V tomto období vizualizace začala být vnímána jako vlastní odvětví a to především díky Williamu S. Clevelandu a Edwardu Tufte, kteří položili věděcké základy tohoto odvětví. Tufte vyvinul a popularizoval terminologii a základní principy grafické integrity. Cleveland se zabýval studii grafického vnímání, kognitivních procesů, které lidi používají k pochopení grafů, a rozvíjel teorii o správném provedení vizualizaci. [@cleveland_priceonomics] Důsledek jejich práce se promítá i do současné doby kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]  
-
 ### 1.2 Zásady vizualizace dat
 
-#### 1.2.2 Edward Tufte
+\qquad Od roku 1975 se vyvíjí statistické výpočetní systémy a s nimi i nové metody analýzy a vizualizace dat. V tomto období vizualizace začala být vnímána jako vlastní odvětví a to především díky Williamu S. Clevelandu a Edwardu Tufte, kteří položili věděcké základy tohoto odvětví. Tufte vyvinul a popularizoval terminologii a základní principy grafické integrity. Cleveland se zabýval studii grafického vnímání, kognitivních procesů, které lidi používají k pochopení grafů, a rozvíjel teorii o správném provedení vizualizaci. [@cleveland_priceonomics] Důsledek jejich práce se promítá i do současné doby kvalitní, interaktivní a dynamickou vizualizaci. [@dataviz_history]
+
+#### 1.2.1 Edward Tufte {#tufte}
 
 \qquad Za revoluční průlom se považuje kniha Edwarda Tufte *The Visual Display of Quantitative Information* z roku 1983, v kombinaci s dvěmi následně publikovanými pracemi *Envisioning Information* z roku 1990 a *Visual Explanations* z roku 1997, patří mezi nejznámější publikace na téma vizualizace dat. Právě v těcho pubikacích Tufte originálním způsobem definuje  "standard" vizualizace. [@datavis_rahlf] Ideální způsob vizualizace dle Tufte je stručný, elegantní a informativní. Příkladem ideálního grafu je pro Tufte graf postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází v jednoduchosti návrhu a komplexnosti dat. [@tufte1990] Tafte formuluje základní principy vizualizace jako grafickou dokonalost a grafickou integritu. 
 
@@ -80,11 +80,11 @@ knitr::include_graphics("fig/brinton.png")
   + počet rozměrů představených v grafu by neměl přesahovat počet proměnných datasetu
   + reprezentace by neměla zahrnovat neúmyslný kontext
 
-\vspace*{-1cm}
+\vspace*{-0.75cm}
 \begin{minipage}[H]{0.475\textwidth}
  \begin{figure}[H]
 \centering
-    \includegraphics[height = 11cm]{fig/tufte_shrinking_doctor}
+    \includegraphics[height = 10.5cm]{fig/tufte_shrinking_doctor}
     \caption{Zmenšující se rodinný lékař, Los Angeles Times, 1979}
     \label{fig05}
  \end{figure}
@@ -95,7 +95,7 @@ knitr::include_graphics("fig/brinton.png")
 \begin{minipage}[H]{0.475\textwidth}
  \begin{figure}[H]
 \centering
-    \includegraphics[height = 11cm]{fig/data_ink}
+    \includegraphics[height = 10.5cm]{fig/data_ink}
     \caption{Vztah skutečné míry volební registrace k předpovídaným hodnotám, přetištěno E. Tufte, 1983}
     \label{fig06}
  \end{figure}
@@ -110,7 +110,7 @@ kde $\textit{data-ink}$ je nezbytné jádro grafu a smazání jakékoliv jeho č
 Tento vztah také odpovídá podílu grafického inkoustu požitého k vykreslení nepodstatných informací. Dalo by se to také vyjádřit jako jedna mínus \textit{podíl grafiky, která může být vymazána bez ztráty informací}. Tafte doporučuje tento faktor maximalizovat v rozumných mezích, nejlépe se  vyhnout těžkým mřížkovým liniím na pozadí (dokonce i horizontálním referenčním liniím). V příkladu na obrázku \ref{fig06} jsou zobrazené dvě verze stejného grafu. Horní má hodnotu *data ink ratio* kolem 0.7, dolní graf ale neobsahuje informaci o datech, pouze nápomocné čáry, proto *data ink ratio* se rovná nule. 
 * **Chartjunk** - se vztahuje ke všem vizuálním elementům, které  neslouží ke komunikaci informací zobrazených v grafu nebo odvádějí pozornost od těchto informací. [@tufte1983]
 
-#### 1.2.1 Wiliam S. Cleveland
+#### 1.2.2 Wiliam S. Cleveland {#cleveland}
 
 \qquad Kromě práci Edwarda Tufte velký vliv měli i publikace Wiliama S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v roce 1984 článek o grafickém vnímání [@cleveland_mcgill]. Prováděli studie na rozdíl ve vnímání sloupcových grafů (pozice a obecné měřítko), koláčových grafů (úhel), skládaných sloupcových grafů (plocha), barevných a stínovaných map (saturace barev a stínování) a další. [@cleveland_priceonomics] Ve svých pracích  *Visualizing data* z roku 1993 a *The Elements of Graphing Data* z roku 1994 Cleveland se zabýval principy vizualizace, grafickými metodami a technikami, vykreslením tři a více proměnných (rozměrů). Některé z jeho principů se schodují s principy vymezenými Tuftem, avšak práce Clevelanda v této oblasti přesahovala práci Tufte. Zásady a principy dle Clevelanda by se dali shrnout do čtyř hlavních kategorií: jasný vzhled, jasná srozumitelnost, měřítka, obecné postupy. [@cleveland1994]
 
@@ -150,6 +150,7 @@ Cleveland jako příklad špatně zpracované vizualizace vybral graf \ref{fig07
 \label{fig07}
 \end{figure}  
 
+\newpage
 * **Jasná srozumitelnost**
   + Hlavní závěry by měli být obsaženy v grafické formě. Legenda a nadpisy by měli být srozumitelné a vyčerpávající.
   + Grafy by měli být zkontrolovany.
@@ -172,14 +173,17 @@ Cleveland jako příklad špatně zpracované vizualizace vybral graf \ref{fig07
 
 ### 1.3 Grammar of graphics
 
-\qquad \textit{The Grammar of Graphics} publikovana Lelandem Wilkinsonem v roce 2005, detailně popisuje prvky, které tvořejí základ všech statistických grafů, a odpovídá na základní otázku: co je statistická grafika? [@wickham_ggplot] Tato publikace měla extrémně velký vliv na myšlení o grafech. Hadley Wickham na základě Wilkinsonovy gramatiky publikoval v roce 2009 článek *A Layered Grammar of Graphics* [@layered-grammar], který se zaměřuje primárně na vrstvy a jejich zapojení do R. Následně také pro něj posloužila jako inspirace pro tvorbu balíčku `ggplot` (viz kapitola [4.2.1](#ggplot)). 
+\qquad \textit{The Grammar of Graphics} publikovana Lelandem Wilkinsonem v roce 2005 [@wilkinson2005], detailně popisuje prvky, které tvořejí základ všech statistických grafů, a odpovídá na základní otázku: co je statistická grafika? [@wickham_ggplot] Tato publikace měla extrémně velký vliv na myšlení o grafech. Hadley Wickham na základě Wilkinsonovy gramatiky publikoval v roce 2009 článek *A Layered Grammar of Graphics* [@layered-grammar], který se zaměřuje primárně na vrstvy a jejich zapojení do R. Následně také pro něj posloužila jako inspirace pro tvorbu balíčku `ggplot` (viz kapitola [4.2.1](#ggplot)). 
 
-\qquad \textit{The Grammar of Graphics} říká, že statistická grafy jsou mapováním z dat k estetickým atributům (barva, tvar, velikost) nebo geometrickým objektům (body, linie, sloupce). Graf také může obsahovat statistickou transformaci dat a být vykreslen ve specifickým souřadnicovým systému. *Faceting* může být použito k vygenerování stejného grafů pro různé podmnožiny datasetu. Kombinace těchto nezavislých komponent tvoří grafiku. [@wickham_ggplot]
+\qquad \textit{The Grammar of Graphics} říká, že statistické grafy jsou mapováním z dat k estetickým atributům (barva, tvar, velikost) nebo geometrickým objektům (body, linie, sloupce). Graf také může obsahovat statistickou transformaci dat a být vykreslen ve specifickém souřadnicovém systému. *Faceting* může být použito k vygenerování stejného grafů pro různé podmnožiny datasetu. Kombinace těchto nezavislých komponent tvoří grafiku.
 
-\qquad Popis jednotlivých komponent a termínů, tak, jak je popisuje Wilkinson, by se dalo zapsat následovně: 
+\qquad Jednotlivé komponenty tvořící graf, dle Wilkinsonovy sintaxe, by se dalo zapsat následovně:
 
-* Zobrazované **data** a soubor estetických **mapování** 
+* Vizualizované **data** a soubor estetických mapování (**mapping**s), popisujících, jak proměnné z dat jsou mapovány na vnímané estetické atributy.
+* Geometrické objekty (**geom**s) reprezentují to, co je doopravdy na grafu: body, linie, polygony atd.
+* Statistické transformace (**stat**s) sumarizují data mnoha užitečnými způsoby. Jako příklad by se dály použit vypočty intervalů a počtu pozorování při tvorbě histogramu (kapitola [2.4.1](#hist)) nebo tvorbu lineárního modelu. Statistické transformace patří k nepovinným, ale velmi užitečným komponentům.
+* Měřitka (**scale**s) reprezentují hodnoty v datovém prostoru převedené na hodnoty v estetickém prostoru, ať už se jedná o barvu, velikost či tvar. Na měřítku závísí legenda a osy, tvořené inverzním mapováním, umožňující číst z grafu původní hodnoty datasetu.
+* Sořadnicový systém (**coord**) popisuje, jak jsou souřadnice dat mapovány do roviny grafiky. Rovněž poskytuje osy a mřížky, umožňující čtení grafů. Běžně se používá kartézský souřadnicový systém, ale je k dispozici i řada dalších systémů, včetně polárních souřadnicích a mapových projekcí.
+* Specifikace **facet**ing popisuje, jaké proměnné by měli být použity k rozdělení dat na podmnožiny a jak tyto podmnožiny by měly být uspořádány. Jedná se o mocný nástroj pro zkoumání toho, zda jsou modely stejné nebo odlišné v různých podmínkách.
 
-Práce specifikuje pravidla jak matematicky tak i esteticky. Dříve se soustředilo na estetiku statického kontentu. Dinamicke grafy a vědecky založená vizualitace kontrastne požaduje sofistikovaný design pro umožnění přiblížení, propojování, kartačování. *The Grammar of Gpraphics* se jednoduše přizpůsobuje tomuto přisstupu.  
-
-
+\qquad Je také důležité zmínit, o čem Wilkinsova gramatika není. Nenaznačuje, jaký typ grafů by se měl použit k zodpovězení otázek o datech, jak to dělali Cleveland [@cleveland1993] nebo Tukey [@tukey1977], zaměřuje se konkretně na jejich tvorbu. Ironií je, že \textit{The Grammar of Graphics} neurčuje, jak by měla vypadat grafika, nespecifikuje velikost písma ani barvu pozadí. Otázkou vzhledu grafů se zabývalí Tufte a Cleveland (kapitoly [1.2.1](#tufte) a [1.2.2](#cleveland)). Dále Wilkinsova gramatika nepopisuje interakce, obsahuje pouze statické grafy. Při tvorbě dynamických či interaktivních grafů je třeba se obratit na jiný zdroj. [@wickham_ggplot]
