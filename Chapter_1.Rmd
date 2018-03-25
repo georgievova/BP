@@ -171,7 +171,7 @@ Cleveland jako příklad špatně zpracované vizualizace vybral graf \ref{fig07
   + Data by měla být vykreslena tolikrát kolikrát je třeba. 
   + Užitečné grafy vyžadují pečlivou a detailní práci.
 
-### 1.3 Grammar of graphics
+### 1.3 Grammar of graphics {#gg}
 
 \qquad \textit{The Grammar of Graphics} publikovana Lelandem Wilkinsonem v roce 2005 [@wilkinson2005], detailně popisuje prvky, které tvořejí základ všech statistických grafů, a odpovídá na základní otázku: co je statistická grafika? [@wickham_ggplot] Tato publikace měla extrémně velký vliv na myšlení o grafech. Hadley Wickham na základě Wilkinsonovy gramatiky publikoval v roce 2009 článek *A Layered Grammar of Graphics* [@layered-grammar], který se zaměřuje primárně na vrstvy a jejich zapojení do R. Následně také pro něj posloužila jako inspirace pro tvorbu balíčku `ggplot` (viz kapitola [4.2.1](#ggplot)). 
 

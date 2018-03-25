@@ -1,4 +1,4 @@
-## 2 Základní grafy v R
+## 2 Základní grafy v R {#base}
 
 \qquad Pro vytváření základních grafů v R používáme vestavěný balíček `graphics` [@graphics], který obsahuje mnoho užitečných funkcí pro tvorbu grafických prvků. První kapitola se soustředí na tyto funkce tohoto balíčku a&nbsp;v&nbsp;dalších kapitolách jsou popsány funkce balíčků dalších (například `lattice`, `ggplot2`,...), které zastávají podobné funkce, avšak s různým rozsahem nastavení [@teetor2011].
 

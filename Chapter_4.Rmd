@@ -2,38 +2,44 @@
 
 ### 4.1 Balíčky pro vizualizaci dat
 
-#### 4.1.1 ggplot2 {#ggplot}
+\qquad Vestavený balíček `base` byl vyvinut Rossem Ihaka na základě zkušeností s implementací grafických ovladačů do S (předchůdce R). Grafy v `base` mají charakter grafů na papíře: stávající obsah nelze modifikovat, ani odstranit. Do grafu lze přidávat potřebné prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou být dále měněny. V `base` neexistuje jiná uživateli přístupná reprezentace, než ta, co se objeví na obrazovce. `base` obsahuje nástroje pro kreslení jak primitivních, tak i kompletních výkresů. Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti. [@wilkinson2005] Vykreslení základních grafů v R je popsány v kapitole [2](#base).
 
-#### 4.1.2 lattice
+\qquad Mimo `base` uživatel má možnost využit rozsahlou nabídku dalších balíčků. Následující kapitoly obsahují jejich kratky popis. Pro instalaci balíčků se používá příkaz `install.packages()`.
 
-#### 4.1.3 rgl
+#### 4.1.1 `lattice`
+
+#### 4.1.2 `ggplot2` {#ggplot}
+
+\qquad Balíček `ggplot2` byl vyvinut v roce 2005 Hadley Wickhamem na základě *The Grammar of Graphics* Lelanda Wilkinsona. `ggplot2` přebírá přednosti balíčků `base` a `lattice` a vylepšuje je silným základním modelem, který podporuje tvorbu libovolného statistického grafu, založeného na principech popsaných v kapitole [1.3](#gg). 
+
+#### 4.1.3 `rgl`
 
 ### 4.2 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
 
-#### 4.2.1 plotly
+#### 4.2.1 `plotly`
 
-#### 4.2.2 dygraphs
+#### 4.2.2 `dygraphs`
 
-#### 4.2.3 leaflet
+#### 4.2.3 `leaflet`
 
-#### 4.2.4 ggvis
+#### 4.2.4 `ggvis`
 
 ### 4.3 Balíčky pro prostorová data
 
-#### 4.3.1 ggmap
+#### 4.3.1 `ggmap`
 
 ### 4.4 ...
 
-#### 4.4.1 raster
+#### 4.4.1 `raster`
 
-#### 4.4.2 rasterVis
+#### 4.4.2 `rasterVis`
 
 ### 4.5 Balíčky pro webové aplikace
 
-#### 4.5.1 shiny
+#### 4.5.1 `shiny`
 
-#### 4.5.2 flexdashboard
+#### 4.5.2 `flexdashboard`
 
-#### 4.5.3 dashboard
+#### 4.5.3 `dashboard`
 
 # Praktická část {-}
