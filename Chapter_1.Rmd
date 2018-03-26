@@ -171,13 +171,20 @@ Cleveland jako příklad špatně zpracované vizualizace vybral graf \ref{fig07
   + Data by měla být vykreslena tolikrát kolikrát je třeba. 
   + Užitečné grafy vyžadují pečlivou a detailní práci.
 
+\qquad Cleveland se mimo jiné podílel na tvorbě řády technik pro prohlížení komplexních datových sad s více proměnnými, kterým se říká \textit{Trellis Graphics} nebo \textit{Trellis Plots}. Technika obdržela svůj název \textit{trellis} kvůli obvyklému výsledku řady obdélníkových grafů, připomínajících zahradní mříž. Na obrázku \ref{fig08} je ukazka *trellis* grafu, zobrazující údaje o emisích motoru. [@trellisplot]
+\vspace*{-0.42cm}
+\begin{figure}[H]
+\centering
+    \includegraphics[height = 8.2cm]{fig/trellis}
+    \caption{\textit{Trellis} graf, zobrazující údaje o emisích motoru, Becker et al., 1996}
+    \label{fig08}
+ \end{figure}
+
 ### 1.3 Grammar of graphics {#gg}
 
 \qquad \textit{The Grammar of Graphics} publikována Lelandem Wilkinsonem v roce 2005 [@wilkinson2005], detailně popisuje prvky, které tvoří základ všech statistických grafů, a odpovídá na základní otázku: co je statistická grafika? [@wickham_ggplot] Tato publikace měla extrémně velký vliv na myšlení o grafech. Hadley Wickham na základě Wilkinsonovy gramatiky publikoval v roce 2009 článek *A Layered Grammar of Graphics* [@layered-grammar], který se zaměřuje primárně na vrstvy a jejich zapojení do R. Následně také pro něj posloužila jako inspirace pro tvorbu balíčku `ggplot` (viz kapitola [4.2.1](#ggplot)). 
 
-\qquad \textit{The Grammar of Graphics} říká, že statistické grafy jsou mapováním z dat k estetickým atributům (barva, tvar, velikost) nebo geometrickým objektům (body, linie, sloupce). Graf také může obsahovat statistickou transformaci dat a být vykreslen ve specifickém souřadnicovém systému. *Faceting* může být použito k vygenerování stejného grafů pro různé podmnožiny datasetu. Kombinace těchto nezávislých komponent tvoří grafiku.
-
-\qquad Jednotlivé komponenty tvořící graf, dle Wilkinsonovy syntaxe, by se dalo zapsat následovně:
+\qquad \textit{The Grammar of Graphics} říká, že statistické grafy jsou mapováním z dat k estetickým atributům (barva, tvar, velikost) nebo geometrickým objektům (body, linie, sloupce). Graf také může obsahovat statistickou transformaci dat a být vykreslen ve specifickém souřadnicovém systému. *Faceting* může být použito k vygenerování stejného grafů pro různé podmnožiny datasetu. Kombinace těchto nezávislých komponent tvoří grafiku. Jednotlivé komponenty tvořící graf, dle Wilkinsonovy syntaxe, lze zapsat následovně:
 
 * Vizualizované **data** a soubor estetických mapování (**mapping**s), popisujících, jak proměnné z dat jsou mapovány na vnímané estetické atributy.
 * Geometrické objekty (**geom**s) reprezentují to, co je doopravdy na grafu: body, linie, polygony atd.
