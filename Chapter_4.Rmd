@@ -2,9 +2,9 @@
 
 ### 4.1 Balíčky pro vizualizaci dat
 
-\qquad Vestavený balíček `base` byl vyvinut Rossem Ihaka na základě zkušeností s implementací grafických ovladačů do S (předchůdce R). Grafy v `base` mají charakter grafů na papíře: stávající obsah nelze modifikovat, ani odstranit. Do grafu lze přidávat potřebné prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou být dále měněny. V `base` neexistuje jiná uživateli přístupná reprezentace, než ta, co se objeví na obrazovce. `base` obsahuje nástroje pro kreslení jak primitivních, tak i kompletních výkresů. Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti. [@wilkinson2005] Vykreslení základních grafů v R je popsány v kapitole [2](#base).
+\qquad Vestavený balíček `base` byl vyvinut Rossem Ihaka na základě zkušeností s implementací grafických ovladačů do S (předchůdce R). Grafy v `base` mají charakter grafů na papíře: stávající obsah nelze modifikovat, ani odstranit. Do grafu lze přidávat potřebné prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou být dále měněny. V `base` neexistuje jiná uživateli přístupná reprezentace, než ta, co se objeví na obrazovce. `base` obsahuje nástroje pro kreslení jak primitivních, tak i kompletních výkresů. Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti. Vykreslení základních grafů v R je popsány v kapitole [2](#base).
 
-\qquad Mimo `base` uživatel má možnost využit rozsahlou nabídku dalších balíčků. Následující kapitoly obsahují kratký popis vybraných balíčku. Pro jejich instalaci se používá příkaz `install.packages()`.
+\qquad Mimo `base` uživatel má možnost využit rozsahlou nabídku dalších balíčků. Následující kapitoly obsahují kratký popis vybraných balíčku (`grid`, `lattice`, `ggplot2`). V R existuje mnoho dalších balíčků, například `vcd`, `plotrix` a `gplot`, které implementují speciální grafiku, avšak žádný z nich neposkytuje rámec pro tvorbu statistických grafů. Pro instalaci balíčků se používá příkaz `install.packages()`. Komplexní zdroj, úvádějící všechny grafické funkce dostupné v ostatních příspěšných baličcích lze nalézt na stránce http://cran.r-project.org/web/views/Graphics.html. [@wilkinson2005]
 
 #### 4.1.1 `grid`
 
@@ -12,11 +12,11 @@
 
 #### 4.1.2 `lattice`
 
-\qquad `lattice` vyvinutý Deepayanem Sarkarem používá grafiku `grid` k implementaci Clevelandového mřížkového grafického systému, což vedlo k značnému vylepšení grafiky oproti `base`. 
+\qquad Vyvinutý Deepayanem Sarkarem balíček `lattice` používá grafiku `grid` k implementaci Clevelandového *trellis* grafického systému (viz kapitola [1.2.2](#cleveland)), což vedlo k značnému vylepšení grafiky oproti `base`. Pomocí  `lattice` jednoduše lze vykreslit *trellis* graf a některé detaily výkresu, jako například legenda, se vytváří automaticky. Avšak `lattice` postrádá formální model, což může ztížit jeho rozšíření. Tento balíček je dostačující pro typycké grafické potřeby a je dostatečně flexibilní i pro zvladnutí většiny nestandardních požádavků.
 
 #### 4.1.3 `ggplot2` {#ggplot}
 
-\qquad Balíček `ggplot2` byl vyvinut v roce 2005 Hadley Wickhamem na základě *The Grammar of Graphics* Lelanda Wilkinsona. `ggplot2` přebírá přednosti balíčků `base` a `lattice` a vylepšuje je silným základním modelem, který podporuje tvorbu libovolného statistického grafu, založeného na principech popsaných v kapitole [1.3](#gg). 
+\qquad Balíček `ggplot2` byl vyvinut v roce 2005 Hadley Wickhamem na základě *The Grammar of Graphics* Lelanda Wilkinsona. `ggplot2` přebírá přednosti balíčků `base` a `lattice` a vylepšuje je silným základním modelem, který podporuje tvorbu libovolného statistického grafu, založeného na principech popsaných v kapitole [1.3](#gg). Díky silnému základnímu modelu `ggplot2` lze jednoduše použit širokou škálu grafů, kompaktnost syntaxe a nezavislost komponentů také napomáhá jejích jednoduchému rozšíření. Obdobně `lattice`, `ggplot2` využívá mřížky k vykreslení grafů, což znamená vynaložení mnohem menšího úsílí nad kontrolou vzhledu. 
 
 ### 4.2 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
 
