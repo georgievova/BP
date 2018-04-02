@@ -20,6 +20,8 @@
 
 ### 4.2 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
 
+\qquad Výhodou dynamických a interakticních grafů je například možnost příblížit, filtrovat či obdržet podrobnosti o grafu na požádání. 
+
 #### 4.2.1 `plotly`
 
 #### 4.2.2 `dygraphs`
