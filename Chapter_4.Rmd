@@ -20,7 +20,7 @@
 
 ### 4.2 Balíčky pro interaktivní vizualizaci dat (htmlwidgets)
 
-\qquad Výhodou dynamických a interakticních grafů je například možnost příblížit, filtrovat či obdržet podrobnosti o grafu na požádání. 
+\qquad Možnost příblížit, filtrovat či obdržet podrobnosti grafu na požádání je Výhodou dynamických a interakticních grafů.
 
 #### 4.2.1 `plotly`
 
