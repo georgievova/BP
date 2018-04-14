@@ -29,11 +29,11 @@ knitr::include_graphics("fig/EDA_diagram2.png")
 
 \qquad Průzkumová analýza dat není specifikována jako konkrétní soubor pravidel a postupů, ale jako přístup k analýze dat. Obvykle zahrnuje následující kroky:
 
-* vyhledávání vybočujících (odlehlých) pozorování
-* náhrada chybějících hodnot
-* transformace dat
-* změny typu proměnných
-* ověřování normality
+* Vyhledávání vybočujících (odlehlých) pozorování
+* Náhrada chybějících hodnot
+* Transformace dat
+* Změny typu proměnných
+* Ověřování normality
 
 ### 3.1 Odlehlá pozorování
 
