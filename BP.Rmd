@@ -1,21 +1,27 @@
 ---
-output: pdf_document
-fontsize: 12pt
-geometry: "left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
-fig_caption: yes
 bibliography: Bibliografie.bib
 csl: vhtei.csl
-header-includes: \usepackage[czech]{babel}
-                 \usepackage{docmute}
+fig_caption: yes
+fontsize: 12pt
+geometry: left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm
+header-includes: \usepackage[czech]{babel} 
+                 \usepackage{docmute} 
                  \usepackage{float}
-                 \usepackage{booktabs}
-                 \usepackage{pdfpages}
-                 \usepackage{bm}
-                 \setcounter{tocdepth}{5}
-                 \usepackage{graphicx}
-                 \usepackage{array}
-                 \usepackage{wrapfig}
+                 \usepackage{booktabs} 
+                 \usepackage{pdfpages} 
+                 \usepackage{bm} 
+                 \setcounter{tocdepth}{4}
+                 \usepackage{graphicx} 
+                 \usepackage{array} 
+                 \usepackage{wrapfig} 
                  \usepackage{subcaption}
+                 \usepackage{siunitx}
+                 \usepackage{csquotes}
+                 \MakeOuterQuote{"}
+                 
+output:
+  pdf_document: 
+    keep_tex: yes
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
@@ -51,13 +57,24 @@ x <- rnorm(100, 0, 1)
 
 \newpage
 
-\addcontentsline{toc}{section}{\listfigurename}
-\addcontentsline{toc}{section}{\listtablename}
-
-\listoffigures
- 
-\listoftables
+```{r, child = 'Chapter_5.Rmd'}
+```
 
 \newpage
 
-# Literatura
+# Přílohy {-}
+
+\addcontentsline{toc}{subsection}{\listfigurename}
+<!-- \addcontentsline{toc}{subsection}{\listtablename} -->
+
+\listoffigures
+
+<!-- \listoftables -->
+
+\newpage
+
+## R kód
+
+\newpage
+
+## Literatura
