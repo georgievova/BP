@@ -1,13 +1,12 @@
 ---
 bibliography: Bibliografie.bib
-csl: vhtei.csl
+csl: iso690-author-date-cs.csl
 fig_caption: yes
 fontsize: 12pt
 geometry: left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm
 header-includes: \usepackage[czech]{babel} 
                  \usepackage{docmute} 
                  \usepackage{float}
-                 \usepackage{booktabs} 
                  \usepackage{pdfpages} 
                  \usepackage{bm} 
                  \setcounter{tocdepth}{4}
@@ -18,6 +17,7 @@ header-includes: \usepackage[czech]{babel}
                  \usepackage{siunitx}
                  \usepackage{csquotes}
                  \MakeOuterQuote{"}
+                 \usepackage{natbib}
                  
 output:
   pdf_document: 
@@ -38,18 +38,31 @@ x <- rnorm(100, 0, 1)
 \input{Tit_list.tex}
 
 \tableofcontents
+
+\newpage
+
+\listoffigures
+\listoftables
+
+\newpage
+
+```{r, child = 'Chapter_0.Rmd'}
+```
+
 \newpage
 
 ```{r, child = 'Chapter_1.Rmd'}
 ```
-\newpage
+
 
 ```{r, child = 'Chapter_2.Rmd'}
 ```
+
 \newpage
 
 ```{r, child = 'Chapter_3.Rmd'}
 ```
+
 \newpage
 
 ```{r, child = 'Chapter_4.Rmd'}
@@ -62,19 +75,27 @@ x <- rnorm(100, 0, 1)
 
 \newpage
 
-# Přílohy {-}
-
-\addcontentsline{toc}{subsection}{\listfigurename}
-<!-- \addcontentsline{toc}{subsection}{\listtablename} -->
-
-\listoffigures
-
-<!-- \listoftables -->
+```{r, child = 'Chapter_6.Rmd'}
+```
 
 \newpage
+
+# Literatura
+\label{literatura}
+
+<div id="refs"></div>
+
+\newpage
+
+# Přílohy {-}
+\label{prilohy}
 
 ## R kód
 
 \newpage
 
-## Literatura
+\section*{Poznamky}
+
+ \thispagestyle{empty}
+ 
+[@minard1858] [@palsky1996]

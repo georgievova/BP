@@ -120,16 +120,22 @@
   \predate{}\postdate{}
 
 \usepackage[czech]{babel} \usepackage{docmute} \usepackage{float}
-\usepackage{booktabs} \usepackage{pdfpages} \usepackage{bm}
-\setcounter{tocdepth}{4} \usepackage{graphicx} \usepackage{array}
-\usepackage{wrapfig} \usepackage{subcaption} \usepackage{siunitx}
-\usepackage{csquotes} \MakeOuterQuote{"}
+\usepackage{pdfpages} \usepackage{bm} \setcounter{tocdepth}{4}
+\usepackage{graphicx} \usepackage{array} \usepackage{wrapfig}
+\usepackage{subcaption} \usepackage{siunitx} \usepackage{csquotes}
+\MakeOuterQuote{"} \usepackage{natbib}
 
 \begin{document}
 
 \input{Tit_list.tex}
 
 \tableofcontents
+
+\newpage
+
+\listoffigures
+\listoftables
+
 \newpage
 
 \section{Úvod}\label{uvod}
@@ -150,27 +156,26 @@
 \subsubsection{1.1 Historie vizualizace
 dat}\label{historie-vizualizace-dat}
 
-\qquad Do 17. století jediné, co by se dalo klasifikovat jako
-vizualizace dat byly mapy pro navigaci a průzkum, ale také diagramy,
-geometrická schémata a tabulky pozic hvězd a jiných nebeských těles.
-Postupný vývoj statistické teorie a růst zájmu o data na konci 18.
-století vedly k inovacím a expanzi nových grafických forem. Kartografové
-se pokoušeli zaznamenat více, než pouhou geografickou polohu na mapě a
-objevily se první pokusy o tematické mapování geologických, ekonomických
-a medicínských dat.
+\qquad Do 17. století jediné, co by se dalo nazvat jako vizualizace dat
+byly mapy pro navigaci a průzkum, ale také diagramy, geometrická
+schémata a tabulky pozic hvězd a jiných nebeských těles. Postupný vývoj
+statistické teorie a růst zájmu o data na konci 18. století vedly k
+inovacím a expanzi nových grafických forem. Kartografové se pokoušeli
+zaznamenat více, než pouhou geografickou polohu na mapě a objevily se
+první pokusy o tematické mapování geologických, ekonomických a
+medicínských dat.
 
 \qquad Wiliam Playfair (1759-1823) je obecně znám jako průkopník v
 oblasti vizualizace dat a je považován za vynálezce několika typů grafů.
 Například liniový a sloupcový graf či grafy časových řad byly popsány v
-jeho atlasu z roku 1786
-\textit{"Commercial and Political Atlas"}\footnote{\textit{"Commercial and Political Atlas: Representing, by Copper-Plate Charts, the Progress of the Commerce, Revenues, Expenditure, and Debts of England, during the Whole of the Eighteenth Century"}}.
-Později popsal i koláčový graf ve svém breviáři
-\textit{"Statistical Breviary"} z roku 1801. Obrázek \ref{fig0} ukazuje
-příklad jeho kreativní kombinace různých vizualizačních technik (kruhy,
-koláče, linie), pomocí kterých se snažil porovnat daňovou zátěž mezi
-Británii a dalšími zeměmi. Na tomto grafu také ukázal možnost použití
-více měřítek pro různé ukazatele (graficky vyjádřena populace a výše
-daní).
+jeho atlasu z roku 1786 \textit{"Commercial and Political Atlas"}
+(Playfair 1786). Později popsal i koláčový graf ve svém breviáři
+\textit{"Statistical Breviary"} z roku 1801 (Playfair 1801). Obrázek
+\ref{fig:ch1.0} ukazuje příklad jeho kreativní kombinace různých
+vizualizačních technik (kruhy, koláče, linie), pomocí kterých se snažil
+porovnat daňovou zátěž mezi Británii a dalšími zeměmi. Na tomto grafu
+také ukázal možnost použití více měřítek pro různé ukazatele (graficky
+vyjádřena populace a výše daní).
 
 \begin{figure}[H]
 
@@ -178,7 +183,7 @@ daní).
 
 }
 
-\caption{\label{fig0} Kombinace různých vuzuálních techník, Playfair 1801}\label{fig:playfair}
+\caption{\label{fig:ch1.0} Kombinace různých vizuálních techník, (Playfair 1801)}\label{fig:playfair}
 \end{figure}
 
 \newpage
@@ -187,40 +192,41 @@ daní).
     \centering
     \includegraphics[width=0.42\textwidth]{fig/Minard_1858}
     \vspace{-5pt}
-    \caption{Dobytek odeslaný z celé Francie ke spotřebě v Paříži, Minard 1858}
-    \label{fig01}
+    \caption{Dobytek odeslaný z celé Francie ke spotřebě v Paříži, Minard (1858), převzato z (Palsky 1996)}
+    \label{fig:ch1.1}
 \end{wrapfigure}
 
 \qquad V polovině 19. století byly vytvořeny všechny podmínky pro rychlý
-růst vizualizace. V důsledku rostoucí významnosti číselných informací
+vývoj vizualizace. V důsledku rostoucí významnosti číselných informací
 pro sociální plánovaní, industrializaci, obchod a dopravu byly zřízeny
 oficiální statistické úřady po celé Evropě. Rozvoj statistické teorie,
 iniciovaný Johannem Carlem Friedrichem Gaussem a Pierrem Simonem de
 Laplacem, měl odezvu ve společností a poskytl prostředky ke zpracování
-velkého množství dat. Pro vizualizaci dat se stalo období 1850-1900
-\enquote{zlatým věkem}, s velkým množstvím inovací. S těmito inovacemi
-je hlavně spojeno jméno Charlese Josepha Minarda {[}1781-1870{]}.
-Minardem bylo například zavedeno použití koláčových grafů s výsečemi na
-mapách (obrázek \ref{fig01}), kde velikost koláčového grafu ukazuje sumu
-sledované proměnné pro každou oblast na mapě a výseče reprezentují dílčí
-součty za jednotlivé kategorie. Dále se také zabýval znázorněním
-geografických pohybů úměrně jejich velikostí jako je přeprava lidí,
-zboží, import či export. Tento typ vizualizace se nazývá
-\textit{"flow maps"}, viz obrázek \ref{fig02}. Jednou z jeho
+velkého množství dat. Pro vizualizaci dat se stalo období
+\mbox{1850-1900} \enquote{zlatým věkem}, s velkým množstvím inovací. S
+těmito inovacemi je hlavně spojeno jméno Charlese Josepha Minarda
+{[}1781-1870{]}. Minardem bylo například zavedeno použití koláčových
+grafů s výsečemi na mapách (obrázek \ref{fig:ch1.1}), kde velikost
+koláčového grafu ukazuje sumu sledované proměnné pro každou oblast na
+mapě a výseče reprezentují dílčí součty za jednotlivé kategorie. Dále se
+také zabýval znázorněním geografických pohybů úměrně jejich velikostí
+jako je přeprava lidí, zboží, import či export. Tento typ vizualizace se
+nazývá \textit{"flow maps"}, viz obrázek \ref{fig:ch1.2}. Jednou z jeho
 nejslavnějších prací je zobrazení postupných ztrát francouzské armády
 během Napoleonského tažení na Moskvu v letech 1812-1813 (obrázek
-\ref{fig03}). Je považována za nejlepší informativní vizualizaci vůbec.
-I přestože v~tomto grafu je celkem 6 proměnných (množství, lokace ve
-dvou rozměrech, postup armády, teplota, datum a~skupiny), podařilo vše
-zobrazit tak, aniž by graf byl přeplněný a~\mbox{matoucí.}
+\ref{fig:ch1.3}), která je považována za nejlepší informativní
+vizualizaci vůbec. I přestože v~tomto grafu je celkem 6 proměnných
+(množství, lokace ve dvou rozměrech, postup armády, teplota, datum
+a~skupiny), podařilo vše zobrazit tak, aniž by graf byl přeplněný
+a~\mbox{matoucí.}
 
 \begin{wrapfigure}[12]{L}{0.51\textwidth}
     \centering
     \vspace*{-20pt}
     \includegraphics[width=0.5\textwidth]{fig/minard_flow_map.jpg}
     \vspace{-5pt}
-    \caption{Mapa světové migrace, Minard 1858}
-    \label{fig02}
+    \caption{Mapa světové migrace, (Minard 1858)}
+    \label{fig:ch1.2}
 \end{wrapfigure}
 
 \vspace{2.5pt} \qquad Začátek 20. století je občas nazýván
@@ -229,29 +235,29 @@ málo inovací. Nadšení pro vizualizací, které charakterizovalo 19.
 století bylo nahrazeno formálními (z velké části statistickými) grafy a
 modely z oblasti sociologie. Hlavní zájem byl o přesná čísla, odhady
 parametrů a směrodatné odchylky. Vizualizace byla považována za pouhé
-hezké obrázky bez schopnosti podat přesná data. {[}1{]}
+hezké obrázky bez schopnosti podat přesná data. (Friendly 2006)
 
 \begin{figure}[H]
 \centering
 \includegraphics[width = \textwidth]{fig/Minard_1869}
-\caption{Postup Napoleonských vojsk v letech 1812-13, Minard 1869}
-\label{fig03}
+\caption{Postup Napoleonských vojsk v letech 1812-13, Minard (1869)}
+\label{fig:ch1.3}
 \end{figure}
 
 \qquad Ve své knize \textit{"Graphic Methods for Presenting Facts"} z
-roku 1919 Willord C. Brinton {[}1880-1957{]} kritizoval a vysvětloval
+roku 1919, Willord C. Brinton {[}1880-1957{]} kritizoval a vysvětloval
 chyby takovýchto grafů. Například koláčový graf rozdělení rodinných
-příjmů (od 900\$ do 1000\$) na obrázku \ref{fig04}. Tento graf je
+příjmů (od 900\$ do 1000\$) na obrázku \ref{fig:ch1.4}. Tento graf je
 příkladem nepovedené vizualizace: oko preferenčně soudí dle velikostí
-obrázků a ne dle uhlů výsečí. Obrázek uprostřed znázorňuje druhy
-utracení: je to zábavný způsob vizualizace, avšak nelze přesně určit
-velikost brašen, ani je porovnat mezi sebou. Další obrázek by měl
+obrázků a ne dle uhlů výsečí. Obrázek uprostřed znázorňuje výdaje za
+různé komodity: je to zábavný způsob vizualizace, avšak nelze přesně
+určit velikost brašen, ani je porovnat mezi sebou. Další obrázek by měl
 čtenáři sdělit informaci, že prodej praček za poslední tří roky vzrostl
 sedmkrát. Z obrázku není patrný poměr sedmi ku jedné ani přesné roky kdy
 bylo provedeno porovnání údajů. Dále Brinton ve své práci upozorňoval,
 že neúspěšná prezentace dat může vést k chybným závěrům a také zmiňoval
 potřebu jakéhosi standardu, souhrnu \enquote{gramatických pravidel pro
-grafický jazyk}. {[}2{]}
+grafický jazyk} (Brinton 1919).
 
 \begin{figure}[H]
 
@@ -259,7 +265,7 @@ grafický jazyk}. {[}2{]}
 
 }
 
-\caption{\label{fig04} Ukázky vizualizací ze začátku 20. století, Brinton 1919}\label{fig:brinton}
+\caption{\label{fig:ch1.4} Ukázky vizualizací ze začátku 20. století, Brinton 1919}\label{fig:brinton}
 \end{figure}
 
 \newpage
@@ -268,44 +274,45 @@ grafický jazyk}. {[}2{]}
 let 20. století po zveřejnění článku Johna W. Tukeyho {[}1915-2000{]}
 \textit{"The Future of Data Analysis"}, ve kterém vyzývá společnost k
 uznání analýzy dat jako samostatného oboru statistiky odlišného od
-statistiky matematické. {[}3{]} Brzy poté začal Tukey s vývojem široké
-řady nových a efektivních grafů pod společným názvem \enquote{průzkumová
-analýza dat} (popsáno v jeho knize \textit{"Explanatory Data Analysis"}
-z roku 1977, viz o tématu kapitola~\protect\hyperlink{EDA}{3}).~{[}4{]}
-Mezi těmito novými grafy je například číslicový histogram (popsaný
-v~kapitole \protect\hyperlink{stem-and-leaf}{2.4.3}), boxplot nebo
-krabicový graf (popsaný v kapitole \protect\hyperlink{boxplot}{2.3.2}) a
-další. Mnoho z nich je aktivně používáno ve statistické praxi a
-implementováno do většiny softwarů.~{[}1{]}
+statistiky matematické (Tukey 1962). Brzy poté začal Tukey s vývojem
+široké řady nových a efektivních grafů pod společným názvem
+\enquote{průzkumová analýza dat} (popsáno v jeho knize
+\textit{"Explanatory Data Analysis"} z roku 1977, více o tématu viz
+kapitola~\protect\hyperlink{EDA}{3})~(Tukey 1977). Mezi těmito novými
+grafy je například číslicový histogram (popsaný v~kapitole
+\protect\hyperlink{stem-and-leaf}{2.4.3}), boxplot neboli krabicový graf
+(popsaný v kapitole \protect\hyperlink{boxplot}{2.3.2}) a další. Mnoho z
+nich je aktivně používáno ve statistické praxi a implementováno do
+většiny softwarů~(Friendly 2006).
 
 \subsubsection{1.2 Zásady vizualizace dat}\label{zasady-vizualizace-dat}
 
 \qquad Od roku 1975 se vyvíjí statistické výpočetní systémy a s nimi i
 nové metody analýzy a vizualizace dat. V tomto období vizualizace začala
 být vnímána jako vlastní odvětví a to především díky Williamu S.
-Clevelandu a Edwardu Tuftemu, kteří položili vědecké základy tohoto
+Clevelandovi a Edwardu Tuftemu, kteří položili vědecké základy tohoto
 odvětví. Tufte vyvinul a popularizoval terminologii a základní principy
-grafické integrity. Cleveland se zabýval studií grafického vnímání,
+grafické integrity. Cleveland se zabýval studiemi grafického vnímání,
 kognitivních procesů, které lidé používají k pochopení grafů, a rozvíjel
-teorii o správném provedení vizualizace. {[}5{]} Výsledek jejich práce
-se promítá i do současné doby kvalitní, interaktivní a dynamickou
-vizualizací. {[}1{]}
+teorii o správném provedení vizualizace. Výsledek jejich práce se
+promítá i do současné doby v podobě kvalitních, interaktivních a
+dynamických vizualizací (Friendly 2006).
 
 \hypertarget{tufte}{\paragraph{1.2.1 Edward Tufte}\label{tufte}}
 
-\qquad Za revoluční průlom se považuje kniha Edwarda Tufte \emph{The
+\qquad Za revoluční průlom se považuje kniha Edwarda Tufteho \emph{The
 Visual Display of Quantitative Information} z roku 1983, v kombinaci se
 dvěma posléze publikovanými knihami \emph{Envisioning Information} a
 \emph{Visual Explanations} z roku 1990, resp. 1997, patří mezi
 nejznámější publikace na téma vizualizace dat. Právě v těchto
 publikacích Tufte originálním způsobem definuje \enquote{standard}
-vizualizace. {[}6{]} Ideální vizualizace dle Tufteho je stručná,
+vizualizace (Rahlf 2017). Ideální vizualizace dle Tufteho je stručná,
 elegantní a informativní. Příkladem ideálního grafu je pro Tufteho graf
 postupu Napoleonských vojsk v letech 1812-13, vytvořený Minardem (viz
-obrázek \ref{fig03}). Tufte říká, že grafická elegance se často nachází
-v jednoduchosti návrhu a komplexnosti dat. {[}7{]} Tafte formuluje
-základní principy vizualizace jako grafickou dokonalost a grafickou
-integritu.
+obrázek \ref{fig:ch1.3}). Tufte říká, že grafická elegance se často
+nachází v jednoduchosti návrhu a komplexnosti dat (Tufte 1990). Tufte
+formuluje základní principy vizualizace jako grafickou dokonalost a
+grafickou integritu.
 
 \begin{itemize}
 \tightlist
@@ -322,7 +329,7 @@ integritu.
   \item
     ukazovat velké množství dat na malém prostoru
   \item
-    podávat velké datasety souvisle a logicky
+    prezentovat velké datasety souvisle a logicky
   \item
     sloužit rozumnému a jasnému cíli (popisu, průzkumu, \(\dots\))
   \item
@@ -357,7 +364,7 @@ integritu.
     počet rozměrů představených v grafu by neměl přesahovat počet
     proměnných datasetu
   \item
-    reprezentace by neměla zahrnovat neúmyslný kontext
+    reprezentace by neměla zahrnovat zavádějící kontext
   \end{itemize}
 \end{itemize}
 
@@ -366,7 +373,7 @@ integritu.
 \centering
     \includegraphics[height = 10.5cm]{fig/tufte_shrinking_doctor}
     \caption{Snižující se procento rodinných lékařů, Los Angeles Times, 1979}
-    \label{fig05}
+    \label{fig:ch1.5}
  \end{figure}
 \end{minipage}\begin{minipage}[H]{0.05\textwidth}
  \includegraphics[height = 9cm]{fig/blank_v}
@@ -375,7 +382,7 @@ integritu.
 \centering
     \includegraphics[height = 10.5cm]{fig/data_ink}
     \caption{Vztah skutečné míry volební registrace k předpovídaným hodnotám, převzato E. Tuftem, 1983}
-    \label{fig06}
+    \label{fig:ch1.6}
  \end{figure}
 \end{minipage}
 
@@ -389,8 +396,8 @@ termíny:
   jedné, považují se reprezentované hodnoty za přesné. Pokud je faktor
   větší než 1.05 či menší než 0.95, indikuje podstatné zkreslení,
   přesahující míru drobných nepřesností vyskytujících se při
-  vykreslování grafu. Tafte ve své práci uvádí jako jeden z příkladů
-  graf na obrázku \ref{fig05}. Tento graf zobrazující snižující se
+  vykreslování grafu. Tufte ve své práci uvádí jako jeden z příkladů
+  graf na obrázku \ref{fig:ch1.5}. Tento graf zobrazující snižující se
   procento lékařů věnujících se výhradně rodinné praxi má \emph{lie
   factor} odpovídající hodnotě 2.8, tedy skutečný pokles je značně
   nadhodnocen.
@@ -403,35 +410,36 @@ termíny:
   grafického inkoustu požitého k vykreslení nepodstatných informací.
   Dalo by se to také vyjádřit jako jedna mínus
   \textit{podíl grafiky, která může být vymazána bez ztráty informací}.
-  Tafte doporučuje tento faktor maximalizovat v rozumných mezích,
+  Tufte doporučuje tento faktor maximalizovat v rozumných mezích,
   nejlépe se vyhnout těžkým mřížkovým liniím na pozadí (dokonce i
-  horizontálním referenčním liniím). V příkladu na obrázku \ref{fig06}
-  jsou zobrazeny dvě verze stejného grafu. Horní má hodnotu \emph{data
-  ink ratio} kolem 0.7, dolní graf, však protože neobsahuje informaci o
-  datech, pouze nápomocné čáry, má \emph{data ink ratio} roven nule.
+  horizontálním referenčním liniím). V příkladu na obrázku
+  \ref{fig:ch1.6} jsou zobrazeny dvě verze stejného grafu. Horní má
+  hodnotu \emph{data ink ratio} kolem 0.7, dolní graf však, protože
+  neobsahuje informaci o datech, pouze nápomocné čáry, má \emph{data ink
+  ratio} roven nule.
 \item
   \textbf{Chartjunk} - se vztahuje ke všem vizuálním elementům, které
   neslouží ke komunikaci informací zobrazených v grafu nebo odvádějí
-  pozornost od těchto informací. {[}8{]}
+  pozornost od těchto informací (Tufte 1983).
 \end{itemize}
 
 \hypertarget{cleveland}{\paragraph{1.2.2 Wiliam S.
 Cleveland}\label{cleveland}}
 
-\qquad Kromě práce Edwarda Tufte velkýho měly vliv i publikace Wiliama
+\qquad Kromě práce Edwarda Tufteho měly velký vliv i publikace Wiliama
 S. Clevelanda. Cleveland se svým kolegou Robertem McGillem publikovali v
-roce 1984 článek o grafickém vnímání {[}9{]}. Prováděli studie
-zabývající se rozdílem ve vnímání sloupcových grafů (pozice a obecné
-měřítko), koláčových grafů (úhel), skládaných sloupcových grafů
-(plocha), barevných a stínovaných map (saturace barev a stínování) a
-dalších. {[}5{]} Ve svých knihách \emph{Visualizing data} z roku 1993 a
-\emph{The Elements of Graphing Data} z roku 1994 se Cleveland zabýval
-principy vizualizace, grafickými metodami a technikami či vykreslením
-tří a více proměnných (rozměrů). Některé z jeho principů se shodují s
-principy vymezenými Tuftem, avšak výzkum Clevelanda v této oblasti
-přesahovala práci Tufteho. Zásady a principy dle Clevelanda by se daly
-shrnout do čtyř hlavních kategorií: jasná vize, srozumitelnost, měřítka
-a obecné postupy. {[}10{]}
+roce 1984 článek o grafickém vnímání (Cleveland a McGill 1984).
+Prováděli studie zabývající se rozdílem ve vnímání sloupcových grafů
+(pozice a obecné měřítko), koláčových grafů (úhel), skládaných
+sloupcových grafů (plocha), barevných a stínovaných map (saturace barev
+a stínování) a dalších. Ve svých knihách \emph{Visualizing data} z roku
+1993 a \emph{The Elements of Graphing Data} z roku 1994 se Cleveland
+zabýval principy vizualizace, grafickými metodami a technikami či
+vykreslením tří a více proměnných (rozměrů). Některé z jeho principů se
+shodují s principy vymezenými Tuftem, avšak výzkum Clevelanda v této
+oblasti přesahoval práci Tufteho. Zásady a principy dle Clevelanda by se
+daly shrnout do čtyř hlavních kategorií: jasná vize, srozumitelnost,
+měřítka a obecné postupy (Cleveland 1994).
 
 \begin{itemize}
 \tightlist
@@ -441,8 +449,8 @@ a obecné postupy. {[}10{]}
   \begin{itemize}
   \tightlist
   \item
-    Data by měla vyčnívat, bez vykreslení nadbytečných prvků (neboli
-    \emph{chartjunk} dle Tufteho)
+    Data by měla být středem vizualizace, bez vykreslení nadbytečných
+    prvků (neboli \emph{chartjunk} dle Tufteho)
   \item
     K zobrazení dat by se měly používat výrazné grafické prvky.
   \item
@@ -453,7 +461,7 @@ a obecné postupy. {[}10{]}
     Prostor grafu by neměl být přeplněný (legenda mimo oblast grafu
     atd.).
   \item
-    S počtem značek na osách by se nemělo přehánět.
+    Počet značek na osách by měl být přiměřený.
   \item
     Pokud je to vhodné, referenční linie mohou být použity, avšak
     nesmějí zasahovat do dat.
@@ -461,11 +469,11 @@ a obecné postupy. {[}10{]}
     Popisky by neměly zasahovat do kvantitativních dat a nesmějí
     znepřehledňovat graf.
   \item
-    Značky a klíče by měly vyskytovat mimo oblast grafu (případně v
+    Značky a klíče by se měly vyskytovat mimo oblast grafu (případně v
     legendě), totéž se týká poznámek a nadpisů, které mohou být také
     umístěny do textu.
   \item
-    Překrývající se data sety či symboly musí být vizuálně snadně
+    Překrývající se datasety či symboly musí být vizuálně snadně
     rozpoznatelné.
   \item
     Jasnost obrazu musí být zachována při reprodukci i při snížení
@@ -474,15 +482,16 @@ a obecné postupy. {[}10{]}
 \end{itemize}
 
 Cleveland jako příklad špatně zpracované vizualizace vybral graf
-\ref{fig07a}, na kterém je zobrazeno množství izotopu xenonu
+\ref{fig:ch1.7a}, na kterém je zobrazeno množství izotopu xenonu
 \({}^{133}\mbox{Xe}\) ve vzduchu (\(pCi.m^{-3}\)) po havárii elektrárny
 Three Mile Island v Albany, ve státě New York koncem března a začátkem
 dubna roku 1979. Vše, včetně popisků os, klíčů a popisků dat bylo
 umístěno do oblasti grafu, není dodržena žádná ze zásad Clevelanda.
 Výsledkem je matoucí graf, který je obtížně čitelný. Stejná data byla
-vizualizována Clevelandem na grafu \ref{fig07b} s dodržením veškerých
-zásad: odstranění zbytečných objektů a detailů z oblasti grafu, datasety
-se zobrazují ve vlastních panelech, oprava popisků popisujících měření.
+vizualizována Clevelandem na grafu \ref{fig:ch1.7b} s dodržením
+veškerých zásad: odstranění zbytečných objektů a detailů z oblasti
+grafu, datasety se zobrazují ve vlastních panelech, oprava popisků
+popisujících měření.
 
 \begin{figure}[H]
   \begin{subfigure}{0.57\textwidth}
@@ -491,18 +500,18 @@ se zobrazují ve vlastních panelech, oprava popisků popisujících měření.
       \includegraphics[width=\textwidth]{fig/cleveland_xenon_133}
       \vspace*{0.2cm}
       \caption{}
-      \label{fig07a}
+      \label{fig:ch1.7a}
   \end{subfigure}%
   \begin{subfigure}[H]{0.43\textwidth}
   \centering
       \includegraphics[width=\textwidth]{fig/cleveland_xenon_opr}
       \vspace*{-0.8cm}
       \caption{}
-      \label{fig07b}
+      \label{fig:ch1.7b}
   \end{subfigure}
 \vspace*{-0.25cm}
 \caption{Radioaktivní oblak při havárii elektrárny Three Mile Island: ${}^{133}\mbox{Xe}$ ve vzduchu ve vzdálenosti \SI{375}{\kilo\meter} (a) a stejný graf přepracovaný Clevelandem (b), 1994} 
-\label{fig07}
+\label{fig:ch1.7}
 \end{figure}
 
 \begin{itemize}
@@ -516,7 +525,7 @@ se zobrazují ve vlastních panelech, oprava popisků popisujících měření.
     Hlavní závěry by měly být obsaženy v grafické formě. Legenda a
     nadpisy by měly být srozumitelné a vyčerpávající.
   \item
-    Grafy by měli být zkontrolovány.
+    Grafy by měly být zkontrolovány.
   \item
     Mělo by se usilovat o přehlednost (viz \enquote{jasná víze}).
   \end{itemize}
@@ -571,14 +580,15 @@ se zobrazují ve vlastních panelech, oprava popisků popisujících měření.
 prohlížení komplexních datových sad s více proměnnými, kterým se říká
 \textit{Trellis Graphics} nebo \textit{Trellis Plots}. Technika obdržela
 svůj název \textit{trellis} kvůli obvyklému výsledku řady obdélníkových
-grafů, připomínajících zahradní mříž. Na obrázku \ref{fig08} je ukázka
-\emph{trellis} grafu, zobrazující údaje o emisích motoru. {[}11{]}
+grafů, připomínajících zahradní mříž. Na obrázku \ref{fig:ch1.8} je
+ukázka \emph{trellis} grafu, zobrazující údaje o emisích motoru (Becker
+et al. 1996).
 
 \begin{figure}[H]
 \centering
     \includegraphics[height = 0.4\textheight]{fig/trellis}
     \caption{\textit{Trellis} graf, zobrazující údaje o emisích motoru, Becker et al., 1996}
-    \label{fig08}
+    \label{fig:ch1.8}
  \end{figure}
 
 \newpage
@@ -586,21 +596,21 @@ grafů, připomínajících zahradní mříž. Na obrázku \ref{fig08} je ukázk
 \hypertarget{gg}{\subsubsection{1.3 Grammar of graphics}\label{gg}}
 
 \vspace*{-0.35cm} \qquad \textit{The Grammar of Graphics} publikována
-Lelandem Wilkinsonem v roce 2005 {[}12{]} detailně popisuje prvky, které
-tvoří základ všech statistických grafů a odpovídá na základní otázku: co
-je statistická grafika? {[}13{]} Tato publikace měla extrémně velký vliv
-na myšlení o grafech. Hadley Wickham na základě Wilkinsonovy gramatiky
-publikoval v roce 2009 článek \emph{A Layered Grammar of Graphics}
-{[}14{]}, který se zaměřuje primárně na vrstvy a jejich zapojení do
-jazyka R. Následně také pro něj posloužila jako inspirace pro tvorbu
-balíčku \texttt{ggplot} (viz kapitola
-\protect\hyperlink{ggplot}{4.2.1}).
+Lelandem Wilkinsonem v roce 2005 (Wilkinson 2005) detailně popisuje
+prvky, které tvoří základ všech statistických grafů a odpovídá na
+základní otázku: co je statistická grafika? (Wickham 2010b) Tato
+publikace měla extrémně velký vliv na myšlení o grafech. Hadley Wickham
+na základě Wilkinsonovy gramatiky publikoval v roce 2009 článek \emph{A
+Layered Grammar of Graphics} (Wickham 2010a), který se zaměřuje primárně
+na vrstvy vizualizační grafiky a jejich zapojení do jazyka R. Následně
+také pro něj posloužila jako inspirace pro tvorbu balíčku
+\texttt{ggplot} (viz kapitola \protect\hyperlink{ggplot}{4.1.3}).
 
 \qquad \textit{The Grammar of Graphics} říká, že statistická grafika je
 mapováním dat k estetickým atributům (barva, tvar, velikost)
 geometrických objektů (body, linie, sloupce). Graf také může obsahovat
 statistickou transformaci dat a být vykreslen ve specifickém
-souřadnicovém systému. \emph{Faceting} může být použito k vygenerování
+souřadnicovém systému. \emph{Faceting} může být použit k vygenerování
 stejného grafu pro různé podmnožiny datasetu. Kombinace těchto
 nezávislých komponent tvoří grafiku. Jednotlivé komponenty tvořící graf,
 dle Wilkinsonovy syntaxe, lze zapsat následovně:
@@ -633,44 +643,47 @@ dle Wilkinsonovy syntaxe, lze zapsat následovně:
   dispozici i řada dalších systémů včetně polárních souřadnic a mapových
   projekcí.
 \item
-  Specifikace \textbf{facet}ing popisuje, jaké proměnné by měli být
-  použity k rozdělení dat na podmnožiny a jak tyto podmnožiny by měly
+  Specifikace \textbf{facet}ingu popisuje, jaké proměnné by měli být
+  použity k rozdělení dat na podmnožiny a jak by tyto podmnožiny měly
   být uspořádány. Jedná se o mocný nástroj pro zkoumání toho, zda jsou
-  modely stejné nebo odlišné v různých podmínkách.
+  statistické modely stejné nebo odlišné v různých podmínkách.
 \end{itemize}
 
 \qquad Je také důležité zmínit, o čem Wilkinsova gramatika není.
 Nenaznačuje jaký typ grafů by se měl použít k zodpovězení otázek o
-datech, jak to dělali Cleveland {[}15{]} nebo Tukey {[}4{]}, zaměřuje se
-konkrétně na jejich tvorbu. Ironií je, že
+datech, jak to dělali Cleveland (Cleveland 1993) nebo Tukey (Tukey
+1977), zaměřuje se konkrétně na jejich tvorbu. Ironií je, že
 \textit{The Grammar of Graphics} neurčuje, jak by měla vypadat grafika,
-nespecifikuje velikost písma ani barvu pozadí. {[}13{]} Otázkou vzhledu
-grafů se zabývali Tufte a Cleveland (kapitoly
+nespecifikuje velikost písma ani barvu pozadí (Wickham 2010b). Otázkou
+vzhledu grafů se zabývali Tufte a Cleveland (kapitoly
 \protect\hyperlink{tufte}{1.2.1} a
 \protect\hyperlink{cleveland}{1.2.2}). Dále Wilkinsova gramatika
 nepopisuje interaktivní ani dynamické vizualizace, obsahuje pouze
 statické grafy. Při tvorbě dynamických či interaktivních grafů je třeba
 se obrátit na jiný zdroj, například \emph{Interactive Data Visualization
-for the Web} od Scottea Murrayho {[}16{]} nebo \emph{Interactive
-Visualization} od Billa Ferstera~{[}17{]}. \newpage
+for the Web} od Scottea Murrayho (Murray 2013) nebo \emph{Interactive
+Visualization} od Billa Ferstera~(Ferster 2012).
 
 \hypertarget{base}{\subsection{2 Základní grafy v R}\label{base}}
 
 \qquad Pro vytváření základních grafů v R používáme vestavěný balíček
-\texttt{graphics} {[}18{]}, který obsahuje mnoho užitečných funkcí pro
-tvorbu grafických prvků. První kapitola se soustředí na tyto funkce
-tohoto balíčku a~v~dalších kapitolách jsou popsány funkce balíčků
-dalších (například \texttt{lattice}, \texttt{ggplot2},\ldots{}), které
-zastávají podobné funkce, avšak s různým rozsahem nastavení {[}19{]}.
+\texttt{graphics} (R-Documentation {[}vid. 22.4.2017{]}), který obsahuje
+mnoho užitečných funkcí pro tvorbu grafických prvků. Tato kapitola se
+soustředí na tento balíček, zatímco v kapitole
+\protect\hyperlink{pokrocila}{4} jsou popsány funkce dalších široce
+používaných balíčků (například \texttt{lattice}
+\protect\hyperlink{lattice}{4.1.2} či \texttt{ggplot2}
+\protect\hyperlink{ggplot}{4.1.3}), které nabízí podobné funkce, avšak s
+různým rozsahem nastavení (Teetor 2011).
 
 \qquad V následujících příkladech nejsou grafy doplněny o barvy, popisky
 os, legendy ani názvy a to především proto, že záměrem této kapitoly je
 popsat základní grafy a funkce pro jejich tvorbu v prostředí R. Všechny
-tyto prvky mohou být přidány do grafu, ale tím by příkazy obsahovali
+tyto prvky mohou být přidány do grafu, ale tím by příklady obsahovali
 irelevantní parametry vzhledem k zaměření této kapitoly. Základní funkce
 \texttt{plot(x)} jejímž voláním se obdrží pole s grafickou reprezentaci
 proměnné \enquote{x}, by při doplnění kódu o veškeré parametry vypadala
-následovaně {[}19{]}:
+následovaně (Teetor 2011):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -686,7 +699,7 @@ graf}\label{scatterplot}}
 
 \qquad Bodový graf je rychlým způsobem, jak znázornit vztahy a
 souvislosti mezi proměnnými datasetu, případně k zjištění jejich
-neexistence. Data jsou zobrazeny v~kartézském souřadném systému a mají
+neexistence. Data jsou zobrazena v~kartézském souřadném systému a mají
 pro každou hodnotu proměnné dané místo na vodorovné a svislé ose. V
 případě existence závislostí mezi proměnnými lze tuto závislost
 interpolovat přímkou, křivkou či dalším vhodným vyobrazením této
@@ -694,8 +707,8 @@ závislosti.
 
 \qquad Pro vytvoření bodového grafu v základním prostředí R (pomocí
 \texttt{graphics}) použijeme funkci \texttt{plot()}, která má tento typ
-grafu předdefinovaný pro numerické hodnoty. Viz obrázek \ref{fig1} (a).
-Nečíselná data vytvoří jiný typ grafu.
+grafu předdefinovaný jako výchozí pro numerické hodnoty. Viz obrázek
+\ref{fig:ch2.1} (a). Nečíselná data vytvoří jiný typ grafu.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -706,9 +719,10 @@ Nečíselná data vytvoří jiný typ grafu.
 \subsubsection{2.2 Liniový graf}\label{liniovy-graf}
 
 \qquad Jediný rozdíl mezi bodovým a liniovým grafem je, že jeden
-zobrazuje body a~druhý je spojuje.{[}19{]} (viz. obrázek \ref{fig1} (a),
-(b)). Pro vykreslení liniového grafu se používá již několikrát zmíněná
-funkce \texttt{plot()}, kterou doplníme o požadovaný typ vykreslení:
+zobrazuje body a~druhý je spojuje (Teetor 2011) (viz obrázek
+\ref{fig:ch2.1} (a), (b)). Pro vykreslení liniového grafu se používá již
+několikrát zmíněná funkce \texttt{plot()}, kterou doplníme o požadovaný
+typ vykreslení:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -717,18 +731,19 @@ funkce \texttt{plot()}, kterou doplníme o požadovaný typ vykreslení:
 \end{Shaded}
 
 V tabulce \ref{tab1} jsou uvedené některé základní atributy parametru
-\texttt{type}, které mohou být použity {[}20{]}:
+\texttt{type}, které mohou být použity (R-Documentation {[}vid.
+11.5.2017{]}):
 
 \begin{table}[H]
 \centering
-\begin{tabular}{@{}ccc@{}}
-\toprule
-  & Anglický popis & Český popis    \\ \midrule
-p & points         & bodový         \\
-l & lines          & liniový        \\
-b & both           & složený        \\
-h & histogram      & histogram      \\
-n & no plotting    & bez vykreslení \\ \bottomrule
+\begin{tabular}{|c|c|c|}
+\hline
+  & Anglický popis & Český popis    \\ \hline
+p & points         & bodový         \\ \hline
+l & lines          & liniový        \\ \hline
+b & both           & složený        \\ \hline
+h & histogram      & tyčkový        \\ \hline
+n & no plotting    & bez vykreslení \\ \hline
 \end{tabular}
 \caption{Základní atributy parametru `type`}
 \label{tab1}
@@ -740,7 +755,7 @@ n & no plotting    & bez vykreslení \\ \bottomrule
 
 }
 
-\caption{\label{fig1} Porovnání základních typů grafů: (a) - bodový, (b) - liniový, (c) - složený, (d) - histogram}\label{fig:graf_typy}
+\caption{\label{fig:ch2.1} Porovnání základních typů grafů: (a) - bodový, (b) - liniový, (c) - složený, (d) - histogram}\label{fig:graf_typy}
 \end{figure}
 
 Popis a všechny atributy dalších parametrů funkce \texttt{plot()} lze
@@ -750,22 +765,22 @@ nalézt v nápovědě zadáním příkazu \texttt{?plot()}.
 R}\label{distribution}}
 
 \qquad Teorie pravděpodobnosti je základem statistiky a R má hodně
-nástrojů pro práci s pravděpodobnosti, rozdělením pravděpodobnosti a
+nástrojů pro práci s pravděpodobností, rozdělením pravděpodobnosti a
 náhodnými proměnnými. R má zkrácený název pro každé rozdělení
-pravděpodobnosti. {[}19{]} Tyto názvy slouží k~identifikaci funkcí
+pravděpodobnosti (Teetor 2011). Tyto názvy slouží k~identifikaci funkcí
 spojených s rozděleními. Například zkrácený název \enquote{norm} pro
 normální rozdělení, \enquote{exp} pro exponenciální rozdělení a další.
 Funkce pak mají formu:
 
 \begin{table}[H]
 \centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-Funkce & \multicolumn{1}{c}{Účel}                     \\ \midrule
-dxxxx  & Hustota pravděpodobnosti                     \\
-pxxxx  & Distribuční funkce                           \\
-qxxxx  & Kvantilová funkce                            \\
-rxxxx  & Generátor náhodných čísel z daného rozdělení \\ \bottomrule
+\begin{tabular}{|l|l|}
+\hline
+Funkce & \multicolumn{1}{c|}{Účel}                    \\ \hline
+dxxxx  & Hustota pravděpodobnosti                     \\ \hline
+pxxxx  & Distribuční funkce                           \\ \hline
+qxxxx  & Kvantilová funkce                            \\ \hline
+rxxxx  & Generátor náhodných čísel z daného rozdělení \\ \hline
 \end{tabular}
 \caption{Funkce pro práci s rozděleními}
 \label{tab2}
@@ -775,7 +790,7 @@ Funkce v R lze vykreslovat pomocí funkce \texttt{curve()} z balíčku
 \texttt{graphics}. Lze vykreslit jak standardní funkce, tak i funkce
 definované uživatelem. Například hustotu pravděpodobnosti normálního
 rozdělení a její distribuční funkci můžeme vykreslit tímto způsobem
-(Obrázek \ref{fig2}):
+(Obrázek \ref{fig:ch2.2}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -790,7 +805,7 @@ rozdělení a její distribuční funkci můžeme vykreslit tímto způsobem
 
 }
 
-\caption{\label{fig2} Hustota pravděpodobnosti normálního rozdělení (a) a její distribuční funkce (b)}\label{fig:normal}
+\caption{\label{fig:ch2.2} Hustota pravděpodobnosti normálního rozdělení (a) a její distribuční funkce (b)}\label{fig:normal}
 \end{figure}
 
 \newpage
@@ -799,25 +814,26 @@ rozdělení a její distribuční funkci můžeme vykreslit tímto způsobem
 
 \qquad Q-Q (\emph{quantile-quantile}) graf a P-P
 (\emph{probability--probability} nebo \emph{percent--percent}) graf
-(Obrázek \ref{fig3}) se používají hlavně k testování normality při
+(Obrázek \ref{fig:ch2.3}) se používají hlavně k testování normality při
 průzkumové analýze dat \protect\hyperlink{normtests}{3.4}. Další způsob,
 jak zjistit zda-li data mají normální rozdělení je sestrojení histogramu
-(viz. sekce \protect\hyperlink{hist}{1.4.1}), avšak použití Q-Q grafu je
+(viz. sekce \protect\hyperlink{hist}{2.4.1}), avšak použití Q-Q grafu je
 přesnější.
 
 \qquad Princip Q-Q grafu spočívá v porovnání dvou rozdělení
 pravděpodobnosti pomocí vykreslení jejich kvantilů proti sobě. Na jedné
-ose se nacházejí teoretické kvantily normálního rozdělení a na druhé ose
-kvantily naměřené (pozorované). Pokud data mají přesně normální
-rozdělení, všechny body grafu leží na přímce 45°. Vztah hustoty
-rozdělení a Q-Q grafu je znázorněn na obrázku \ref{fig12}. {[}19{]}
-{[}10{]}
+ose se nacházejí teoretické kvantily normálního rozdělení (nebo jiného
+vybraného rozdělení) a na druhé ose kvantily naměřené (pozorované).
+Pokud data mají přesně požadované rozdělení, všechny body grafu leží na
+přímce pod úhlem 45°. Vztah hustoty rozdělení a Q-Q grafu je znázorněn
+na obrázku \ref{fig:ch3.4}. (Teetor 2011) (Cleveland 1994)
 
 \qquad Princip P-P grafu je obdobný jako u Q-Q grafu: vykreslují se dvě
-distribuční funkcí proti sobě (jedná teoretická a jedná pozorovaná) a
-pokud všechny body grafu leží přibližně na přímce, jedná se o normální
-rozdělení. Z velké části se P-P graf používá k vyhodnocení koeficientu
-šikmosti rozdělení.{[}21{]}
+distribuční funkce proti sobě (jedná teoretická a jedná pozorovaná) a
+pokud všechny body grafu leží přibližně na přímce, jedná se
+pravděpodobně o požadované rozdělení. P-P graf se často používá k
+vyhodnocení koeficientu šikmosti rozdělení.(Wikipedia {[}vid.
+11.8.2017{]})
 
 V R se Q-Q graf vykreslí takto:
 
@@ -843,7 +859,7 @@ P-P graf v R lze vykreslit například následovně:
 
 }
 
-\caption{\label{fig3} Q-Q Graf (a) a P-P Graf (b)}\label{fig:pp-qq plots}
+\caption{\label{fig:ch2.3} Q-Q Graf (a) a P-P Graf (b)}\label{fig:pp-qq plots}
 \end{figure}
 
 \newpage
@@ -852,11 +868,11 @@ P-P graf v R lze vykreslit například následovně:
 
 \qquad Krabicový graf poskytuje rychlé a jednoduché vizuální shrnutí
 datasetu. V základním prostředí R se vykreslí pomocí funkce
-\texttt{boxplot()} z balíčku \texttt{graphics}. Obrázek \ref{fig4}
+\texttt{boxplot()} z balíčku \texttt{graphics}. Obrázek \ref{fig:ch2.4}
 znázorňuje typický krabicový graf, kde silná čára je medián, krabice
-kolem ní určuje polohu prvního a třetího kvartilů (dolní
+kolem ní určuje polohu prvního a třetího kvartilu (dolní
 Q\textsubscript{1} kvantil 25\% a horní Q\textsubscript{3} kvantil
-75\%). ''Vousy`` (\emph{whiskers}) nad a pod krabici znázorňují rozpětí
+75\%). ''Vousy`` (\emph{whiskers}) nad a pod krabicí znázorňují rozpětí
 dat bez odlehlých hodnot. Odlehlé hodnoty jsou definovaný jako hodnoty
 ležící ve větší vzdálenosti od krabice než 1,5 \(\times\) IQR, kde IQR
 je mezikvartilové rozpětí (\emph{interquartile range}) neboli
@@ -874,7 +890,7 @@ je mezikvartilové rozpětí (\emph{interquartile range}) neboli
 
 }
 
-\caption{\label{fig4} Boxplot}\label{fig:boxplot_img}
+\caption{\label{fig:ch2.4} Boxplot}\label{fig:boxplot_img}
 \end{figure}
 
 \newpage
@@ -884,11 +900,12 @@ je mezikvartilové rozpětí (\emph{interquartile range}) neboli
 \qquad Sloupcový graf je jedním z nejvíce používaných způsobů
 vizualizace dat. Obvykle se používá pro zobrazení kvantitativních hodnot
 na ose y a kvalitativních na ose x. Výška sloupců může reprezentovat jak
-četnosti výskytu hodnot, tak i samotné hodnoty.{[}22{]}
+četnosti výskytu hodnot, tak i samotné hodnoty.(Chang 2012)
 
 \qquad V R lze tento typ grafu vykreslit pomocí funkce
-\texttt{barplot()}. V příkladu (Obrázek \ref{fig5}) je použit data set
-\texttt{mtcars}, konkretně atribut \texttt{cyl} - počet válců v motoru.
+\texttt{barplot()}. V příkladu (Obrázek \ref{fig:ch2.5}) je použit data
+set \texttt{mtcars}, konkretně atribut \texttt{cyl} - počet válců v
+motoru.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -914,21 +931,22 @@ na ose y a kvalitativních na ose x. Výška sloupců může reprezentovat jak
 
 }
 
-\caption{\label{fig5} Ukázka jednoduchého sloupcového grafu}\label{fig:barplot}
+\caption{\label{fig:ch2.5} Ukázka jednoduchého sloupcového grafu}\label{fig:barplot}
 \end{figure}
 
 \hypertarget{hist}{\subsubsection{2.4.1 Histogram}\label{hist}}
 
-\qquad Sloupcový graf s četnostmi na souvislé ose je taky známý jako
-histogram.{[}22{]} Četnosti mohou být absolutní či relativní. Absolutní
-četnost zobrazuje počet statistických jednotek s hodnotou znaku, který
-patří do určitého intervalu. Podíl příslušné četnosti a rozsahu datového
-souboru se nazývá relativní četnost.{[}23{]} Šířka sloupce reprezentuje
-jednotlivé intervaly, které mají stejnou délku. Pro výpočet optimální
-délky intervalu existují různé metody. Základní histogram se vytváří
-pomocí funkci \texttt{hist()} a její atribut \texttt{breaks} udává buď
-hranice intervalů, jejich preferovaný počet nebo metodu výpočtu
-intervalu. V R jsou vestavěny 3 metody výpočtu:
+\qquad Sloupcový graf s četnostmi na souvislé ose je také známý jako
+histogram (Chang 2012). Četnosti mohou být absolutní či relativní.
+Absolutní četnost zobrazuje počet statistických jednotek s hodnotou
+znaku, který patří do určitého intervalu. Podíl příslušné četnosti a
+rozsahu datového souboru se nazývá relativní četnost (Novovičová 2006).
+Šířka sloupce reprezentuje jednotlivé intervaly, které mají stejnou
+délku. Pro výpočet optimální délky intervalu existují různé metody.
+Základní histogram se vytváří pomocí funkci \texttt{hist()} a její
+atribut \texttt{breaks} udává buď hranice intervalů, jejich preferovaný
+počet nebo metodu výpočtu intervalu. V R jsou vestavěny 3 metody
+výpočtu:
 
 \newpage
 
@@ -936,7 +954,7 @@ intervalu. V R jsou vestavěny 3 metody výpočtu:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Sturges {[}24{]}
+  Sturges (Maciejewski 2011)
 \end{enumerate}
 
 \begin{Shaded}
@@ -954,7 +972,7 @@ neboli počet pozorování výběru \(x\). Tato metoda je výchozí pro funkci
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Scott {[}24{]}
+  Scott (Maciejewski 2011)
 \end{enumerate}
 
 \begin{Shaded}
@@ -978,7 +996,7 @@ Případně oba vztahy lze shrnout do jednoho:
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Freedman--Diaconis {[}25{]}
+  Freedman--Diaconis (Wikipedia {[}vid. 6.8.2017{]})
 \end{enumerate}
 
 \begin{Shaded}
@@ -1000,7 +1018,7 @@ Histogram je jedním ze standardních způsobů, používaných k odhadu tvaru
 rozdělení, přesto se ale tento způsob považuje za nepřesný, vzhledem k
 ovlivnění tvaru počtem použitých intervalů. Při normálním rozdělení by
 měl histogram mít zvoncovitý tvar schodný s Gaussovou křivkou (Obrázek
-\ref{fig6}).
+\ref{fig:ch2.6}).
 
 \begin{figure}[H]
 
@@ -1008,7 +1026,7 @@ měl histogram mít zvoncovitý tvar schodný s Gaussovou křivkou (Obrázek
 
 }
 
-\caption{\label{fig6} Histogram s odhadem hustoty pravděpodobnosti}\label{fig:hist_example}
+\caption{\label{fig:ch2.6} Histogram s odhadem hustoty pravděpodobnosti}\label{fig:hist_example}
 \end{figure}
 
 \paragraph{2.4.2 Koláčový graf}\label{kolacovy-graf}
@@ -1016,7 +1034,8 @@ měl histogram mít zvoncovitý tvar schodný s Gaussovou křivkou (Obrázek
 \qquad Koláčový graf představuje plný kruh (360°), který je rozdělen na
 jednotlivé výseče pro znázornění číselných proporci mezi proměnnými.
 Koláčový graf je tvořen transformaci skládaného sloupcového grafu do
-polárního souřadnicového systému (Obrázek \ref{fig7}). {[}12{]}
+polárního souřadnicového systému (Obrázek \ref{fig:ch2.7}) (Wilkinson
+2005).
 
 \begin{figure}[H]
 
@@ -1024,11 +1043,11 @@ polárního souřadnicového systému (Obrázek \ref{fig7}). {[}12{]}
 
 }
 
-\caption{\label{fig7} Skládaný sloupcový graf transformovaný do polárního souřadnicového systému}\label{fig:barplot_to_pie}
+\caption{\label{fig:ch2.7} Skládaný sloupcový graf transformovaný do polárního souřadnicového systému}\label{fig:barplot_to_pie}
 \end{figure}
 
 \qquad Jednoduché koláčové grafy se vykreslují pomoci funkci
-\texttt{pie()} (Obrázek \ref{fig8}).
+\texttt{pie()} (Obrázek \ref{fig:ch2.8}).
 
 \begin{figure}[H]
 
@@ -1036,7 +1055,7 @@ polárního souřadnicového systému (Obrázek \ref{fig7}). {[}12{]}
 
 }
 
-\caption{\label{fig8} Ukázka jednoduchého koláčového grafu}\label{fig:pie_example}
+\caption{\label{fig:ch2.8} Ukázka jednoduchého koláčového grafu}\label{fig:pie_example}
 \end{figure}
 
 \hypertarget{stem-and-leaf}{\paragraph{\texorpdfstring{2.4.3 Číslicový
@@ -1046,15 +1065,15 @@ histogram
 \qquad Číslicový histogram, jinak známy jako \emph{stem-and-leaf plot},
 podobně jako histogram pomáhá vizualizovat tvar rozdělení. Jedná se
 spíše o historický typ grafu, který byl populární v osmdesátých letech,
-kvůli obtížnějšímu vykreslování velkých datasetu. Vstupní údaje jsou
+kvůli obtížnějšímu vykreslování velkých datasetů. Vstupní údaje jsou
 rozdělené vertikální linií na dva sloupce. Pravý sloupec obsahuje listy
 (\emph{leaf})~-~poslední číslice po desetinné čárce a levý sloupec
 obsahuje stonek (\emph{stem})~-~číslice před desetinnou čárkou. Každý
 stonek je uveden pouze jednou i pokud neobsahuje žádné listy. Listy se
-uvádějí od nejmenšího po největší. {[}4{]} Proto v příkladu uvedeném
-níže je v prvním řádku stonkem číslice -2 a listy jsou číslice 9 a 2.
-Víme tak, že v datasetu se vyskytli čísla -2.9 a -2.2. Tento typ grafu v
-prostředí R se vykresluje pomoci funkce \texttt{stem()}:
+uvádějí od nejmenšího po největší. (Tukey 1977) Proto v příkladu
+uvedeném níže je v prvním řádku stonkem číslice -2 a listy jsou číslice
+9 a 2. Víme tak, že v datasetu se vyskytli čísla -2.9 a -2.2. Tento typ
+grafu v prostředí R se vykresluje pomoci funkce \texttt{stem()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1084,7 +1103,7 @@ prostředí R se vykresluje pomoci funkce \texttt{stem()}:
 
 }
 
-\caption{\label{fig9} Posloupnost datové analýzy}\label{fig:diagram_img}
+\caption{\label{fig:ch3.1} Posloupnost datové analýzy}\label{fig:diagram_img}
 \end{figure}
 
 \qquad Úkolem průzkumové analýzy dat (\emph{Explanatory Data Analysis},
@@ -1094,15 +1113,15 @@ jejích kvality. EDA je důležitou části datové analýzy a měla by být
 jedním z jejích prvních kroků.
 
 \qquad Zařazení průzkumové analýzy dat do procesu datové analýzy je
-zobrazeno v diagramu \ref{fig9}. Prvním krokem datové analýzy je
+zobrazeno v diagramu \ref{fig:ch3.1}. Prvním krokem datové analýzy je
 \textbf{import} dat. Obecně to v tomto případě znamená nahrání
 obdržených dat ze souboru či databáze do prostředí R. Bez tohoto kroku
 datová analýza nemůže být vykonána. V momentě když data jsou importována
-do R je vhodné je \textbf{očístit} neboli \textbf{přípravit}. Tím je
-myšleno ukládání dat v konzistentní a systematické formě, odpovídající
-sémantice původního datasetu. Zkrátka očištěná data jsou taková data, ve
-kterých sloupce odpovídají proměnným a řádky odpovídají pozorováním.
-Takováto příprava dat usnadňuje další práci s nimi.
+do R je vhodné je \textbf{očístit} neboli \textbf{přípravit}. Připravou
+dat je myšleno ukládání dat v konzistentní a systematické formě,
+odpovídající sémantice původního datasetu. Očištěná data jsou taková
+data, ve kterých sloupce odpovídají proměnným, řádky odpovídají
+pozorováním. Takováto příprava dat usnadňuje další práci s nimi.
 
 \qquad Jakmile jsou data očištěna, je obvyklým krokem jejich
 \textbf{transformace}. Transformací se rozumí omezení pozorování
@@ -1112,8 +1131,7 @@ kroku), výpočet souhrnných statistik (středních hodnot, kvantilů atd.),
 odstranění odlehlých pozorování a normalizace. Poté, co jsou data
 očištěná a obsahují veškeré potřebné proměnné, je možné na ně aplikovat
 dva nejdůležitější nástroje k zjištění informací: vizualizaci a
-modelování. Jakákoliv analýza tyto nástroje opakovaně využívá, ačkoliv
-samozřejmě mají své výhody a nevýhody.
+modelování. Jakákoliv analýza tyto nástroje opakovaně využívá.
 
 \qquad \textbf{Vizualizace} je schopná odhalit neočekávané chování dat a
 napovědět další směr analýzy. Vizualizaci lze odhalit nevhodně zvolená
@@ -1122,15 +1140,16 @@ vizualizace je dobrým nástrojem datové analýzy, její aplikace na větší
 datasety je značně náročná a interpretace výsledků je subjektivní, tudíž
 závisí na analytikovi.
 
-\qquad \textbf{Modelování} je v ramci průzkumové analýzy dat doplňkem
+\qquad \textbf{Modelování} je v rámci průzkumové analýzy dat doplňkem
 vizualizace. Jedná se o zásadně matematický a výpočetní nástroj, který
 se obecně hodí i na větší datasety. Téměř každý model musí splňovat své
 předpoklady, které by měli být ověřeny před jejich aplikací, na rozdíl
-od vizualizace, která žádné předpoklady nevyžaduje.{[}26{]}
+od vizualizace, která žádné předpoklady nevyžaduje (Wickham a Grolemund
+2017).
 
 \qquad Důležitou součástí analýzy je \textbf{interpretace} výsledků a
 formulace závěrů. Vyhodnocuje, jak dobře zvolený model či vizualizace
-slouží k pochopení dat a jejich popisu. Je také důležité si uvědomit
+slouží k pochopení dat a jejich popisu. Je také důležité si uvědomit,
 komu jsou výsledky interpretovány, kdo je cílová skupina. Dobře
 provedené grafické výstupy podložené jejich správnou interpretaci jsou
 jedním z nejlepších způsobů prezentace dat.
@@ -1165,7 +1184,7 @@ výsledek analýzy ovlivněn, případně zdali je předpoklady metody
 připouštějí.
 
 \qquad Hledání odlehlých, vybočujících, pozorování a jiných anomálií pro
-jednotlivé veličiny lze provést graficky například pomoci boxplotu (viz.
+jednotlivé veličiny lze provést graficky například pomoci boxplotu (viz
 sekce \protect\hyperlink{boxplot}{2.3.2}), bodových grafů
 (\protect\hyperlink{scatterplot}{2.1}) nebo číslicových histogramů
 (\protect\hyperlink{stem-and-leaf}{2.4.3}). Dají se také vypočítat
@@ -1180,11 +1199,11 @@ vícerozměrné, například Mahalanobisovy vzdálenosti
 \hypertarget{jackknife}{\paragraph{\texorpdfstring{3.1.1
 \emph{Jackknife}}{3.1.1 Jackknife}}\label{jackknife}}
 
-\qquad Metoda byla původně představená Johnem W. Tukey v roce 1958 v
-\enquote{\emph{The Annals of Mathematical Statistic}} {[}27{]} a jedná
-se o speciální případ metody \emph{bootstrap} (více o metodě B. Efron a
-R. Tibshirani v \enquote{\emph{An Introduction to the Bootstrap}}
-{[}28{]}).
+\qquad Metoda byla původně představená Johnem W. Tukeyem v roce 1958 v
+\enquote{\emph{The Annals of Mathematical Statistic}} (Tukey 1958) a
+jedná se o speciální případ metody \emph{bootstrap} (více o metodě B.
+Efron a R. Tibshirani v \enquote{\emph{An Introduction to the
+Bootstrap}} (Efron a Tibshirani 1994)).
 
 \qquad Postup metody \emph{jackknife} je založen na celkem jednoduché
 myšlence. Zjišťují se souhrnné statistiky podsouborů (\emph{Jackknife
@@ -1195,7 +1214,7 @@ vektor.
 
 \qquad Pomocí porovnání souhrnných statistik původního datasetu a
 vytvořených Jackknife podsouborů se odhadne vliv jednotlivých pozorování
-na původní dataset. Jedná ze souhrnných statistik, kterou lze použít je
+na původní dataset. Jedna ze souhrnných statistik, kterou lze použít je
 střední hodnota \(\bar{x}\). Pro původní dataset obsahující \(n\)
 pozorování lze střední hodnotu odhadnout dle vzorce
 \(\bar{x} = \frac{1}{n} \sum \limits_{i=1}^{n} \bar{x}_i\). Střední
@@ -1206,7 +1225,7 @@ Porovnání lze provést dle vzorce
 kde \(\textit{Var}(\bar{x})\) je odhad rozptylu, který indikuje, jak moc
 jednotlivá pozorování ovlivňují dataset, tj. přítomnost odlehlých
 pozorování. Metoda může být také použita k odhadu skutečné, neovlivněné
-střední hodnoty datasetu. {[}29{]}
+střední hodnoty datasetu. (McIntosh 2016)
 
 \hypertarget{mbdist}{\paragraph{3.1.2 Mahalanobisovy
 vzdálenosti}\label{mbdist}}
@@ -1222,22 +1241,22 @@ matice \(\bm{X}(n \times p)\), obsahující \(n\) objektů \(\bm{x}_i\) a
 \[ED_i = \sqrt{(\bm{x}_i - \bar{\bm{x}})(\bm{x}_i - \bar{\bm{x}})^T}, \quad \text{pro } i = 1,\dots,n\]
 zatímco mahalanobisova vzdálenost se spočítá jako
 \[MD_i = \sqrt{(\bm{x}_i - \bar{\bm{x}}) \bm{C}^{-1}_x (\bm{x}_i - \bar{\bm{x}})^T}, \quad \text{pro } i = 1,\dots,n\]
-kde \(\bm{C}_x\) je kovarianční matice. {[}30{]}
+kde \(\bm{C}_x\) je kovarianční matice. (De Maesschalck et al. 2000)
 
-\qquad Na obrázku \ref{fig10} jsou znázorněny elipsy mahalanobisových
-vzdáleností, kde každá elipsa představuje vzdálenost od průměru. Z
-tohoto je zřejmé, že vzdálenost roste pomaleji ve směru korelace.
-Pozorování, které je výrazně vzdáleno od středu, ale leží ve směru
-závislosti, má nižší mahalanobisovou vzdálenost než pozorování, které je
-stejně vzdáleno od středu, ale neleží ve směru závislosti. Tato
+\qquad Na obrázku \ref{fig:ch3.2} jsou znázorněny elipsy
+mahalanobisových vzdáleností, kde každá elipsa představuje vzdálenost od
+průměru. Z tohoto je zřejmé, že vzdálenost roste pomaleji ve směru
+korelace. Pozorování, které je výrazně vzdáleno od středu, ale leží ve
+směru závislosti, má nižší mahalanobisovou vzdálenost než pozorování,
+které je stejně vzdáleno od středu, ale neleží ve směru závislosti. Tato
 vlastnost mahalanobisových vzdálenosti umožňuje identifikaci odlehlých
 pozorování.
 
 \qquad Metoda byla představena P.C. Mahalanobisem v roce 1936 ve článku
-\emph{\enquote{On the Generalized Distance in Statistics}} {[}31{]}.
-Mahalanobisové vzdálenosti se používají nejenom k nalezení odlehlých
-pozorování, ale i ke zkoumání reprezentativity mezi dvěma data sety,
-aplikuje se v algoritmu \(k\)-nejbližších sousedů, v diskriminační
+\emph{\enquote{On the Generalized Distance in Statistics}} (Mahalanobis
+1936). Mahalanobisové vzdálenosti se používají nejenom k nalezení
+odlehlých pozorování, ale i ke zkoumání reprezentativity mezi dvěma data
+sety, aplikuje se v algoritmu \(k\)-nejbližších sousedů, v diskriminační
 analýze a má mnoho dalších uplatnění.
 
 \begin{figure}[H]
@@ -1246,7 +1265,7 @@ analýze a má mnoho dalších uplatnění.
 
 }
 
-\caption{\label{fig10} Mahalanobisovy vzdálenosti}\label{fig:mbdist_img}
+\caption{\label{fig:ch3.2} Mahalanobisovy vzdálenosti}\label{fig:mbdist_img}
 \end{figure}
 
 \hypertarget{leverages}{\paragraph{3.1.3 Leverages}\label{leverages}}
@@ -1266,7 +1285,7 @@ poskytuje řešení regresních rovnic:
 \[\bm{\beta} = (\bm{X}^T\bm{X})^{-1} \bm{X}^T \bm{y}.\] Lze dosadit:
 \[\hat{\bm{y}} = \bm{X \beta} = \bm{X}(\bm{X}^T\bm{X})^{-1} \bm{X}^T \bm{y}.\]
 Výsledný vektor má tvar \(\hat{\bm{y}} = \bm{Hy}\), kde \(\bm{H}\) je
-projekční matice. {[}32{]}
+projekční matice. (Cardinali 2014)
 
 \subsubsection{3.2 Náhrada chybějících
 pozorování}\label{nahrada-chybejicich-pozorovani}
@@ -1281,11 +1300,11 @@ zkresleným odhadům (neplatí-li předpoklad, že chybějící údaje jsou zcel
 náhodné) a podhodnocuje variabilitu a kovarianci datasetu, a proto se
 nedoporučuje v případě vyššího podílu chybějících údajů. Další možnou
 metodou je náhrada náhodným číslem generovaným z příslušného rozdělení
-(parametry jsou odhaduty z výběru). V tomto případě se respektuje
+(parametry jsou odhadnuty z výběru). V tomto případě se respektuje
 variabilita datasetu, ale nerespektuje se jeho kovariance. Chybějící
 údaje lze také odvodit pomocí známých hodnot na základě pomocné
 jednoduché lineární regresní funkce. Tato metoda respektuje nejenom
-variabilitu vzorku, ale i jeho korelační strukturu. {[}33{]}
+variabilitu vzorku, ale i jeho korelační strukturu. (Pecáková 2014)
 
 \subsubsection{3.3 Transformace dat}\label{transformace-dat}
 
@@ -1293,9 +1312,9 @@ variabilitu vzorku, ale i jeho korelační strukturu. {[}33{]}
 proměnných: sjednocení měřítka, variace a typu proměnných. Hlavním
 využitím je splnění podmínek vyžadovaných metodami, například podmínky
 normality, kde je snaha převést data na normální rozdělení, snížení
-vlivu rušivých proměnných (odlehlých hodnot) atd. {[}34{]} Rozdělujeme
-transformaci lineární (centrování, normování) a nelineární (plynoucí z
-typu a charakteru dat).
+vlivu rušivých proměnných (odlehlých hodnot) atd. (Hebák et al. 2007).
+Rozdělujeme transformaci lineární (centrování, normování) a nelineární
+(plynoucí z typu a charakteru dat).
 
 \qquad Lineární transformace zachovává lineární vztahy mezi proměnnými.
 Jedním z příkladů takovéto úpravy dat je metoda centrování, která se
@@ -1305,14 +1324,14 @@ proměnné (od prvků sloupce se odečte jejich sloupcový průměr), průměry
 získaných nových proměnných se tudíž rovnají nule. Toto lze zapsat
 následovně: \[v_{ij} = x_{ij} - \bar{x}_j\] Vektor průměrů
 \(\bar{\bm{v}}\) je nulový, kovariance a korelace proměnných zůstává
-nezměněna. {[}35{]} Další často využívanou metodou je metoda normalizace
-dat. Tato metoda transformuje měřítka vzorků pro možnost jejich
-porovnání (eliminuje jednotky měření), po úpravě střední hodnota vzorku
-tedy odpovídá nule a odchylka jedničce (normální rozdělení).
+nezměněna. (Hebák et al. 2007) Další často využívanou metodou je metoda
+normalizace dat. Tato metoda transformuje měřítka vzorků pro možnost
+jejich porovnání (eliminuje jednotky měření), po úpravě střední hodnota
+vzorku tedy odpovídá nule a směrodatná odchylka jedničce.
 \[z_{ij} = \frac{x_{ij} - \bar{x}_j}{\sigma(x_j)}\] \(\sigma(x_j)\) je
 směrodatná odchylka sloupce proměnné, vektor průměrů \(\bar{\bm{z}}\) je
 nulový a kovariance vektoru nových proměnných se shoduje s korelací
-původního vektoru. {[}36{]}
+původního vektoru. (Abdi a Williams 2010)
 
 \qquad Nelineární transformace vyplývá z typu dat a mění (snižuje či
 zvyšuje) lineární vztahy mezi proměnnými a to znamená, že nezachovává
@@ -1321,8 +1340,8 @@ používá se odmocninová transformace \(X^{\prime} = \sqrt{X}\), pokud
 odpovídají log-normálnímu rozdělení, používá se logaritmická
 transformace \(X^{\prime} = \log_{10}X\) atd. Logaritmus náhodné
 veličiny s log-normálním rozdělením má normální rozdělení (viz obrázek
-\ref{fig11}). Logaritmická transformace může být použita pouze u
-nezáporných rozdělení. {[}37{]} {[}38{]}
+\ref{fig:ch3.3}). Logaritmická transformace může být použita pouze u
+nezáporných rozdělení. (Zumel a Mount 2014) (Kutner et al. 2004)
 
 \begin{figure}[H]
 
@@ -1330,7 +1349,7 @@ nezáporných rozdělení. {[}37{]} {[}38{]}
 
 }
 
-\caption{\label{fig11} Log-normální rozdělení transformováné na normální rozdělení}\label{fig:lognormal_to_normal}
+\caption{\label{fig:ch3.3} Log-normální rozdělení transformováné na normální rozdělení}\label{fig:lognormal_to_normal}
 \end{figure}
 
 \hypertarget{normtests}{\subsubsection{3.4 Ověřování
@@ -1348,8 +1367,8 @@ grafického posouzení normality se řadí histogram rozdělení četnosti
 (kapitola \protect\hyperlink{hist}{2.4.1}), graf výběrové distribuční
 funkce (\protect\hyperlink{distribution}{2.3}), Q-Q graf a P-P graf
 (\protect\hyperlink{qqpp}{2.3.1}). Vztah hustoty rozdělení a Q-Q grafu
-je znázorněn na obrázku \ref{fig12}. Dále existuje řada testů normality,
-zde jsou popsany testy Shapiro-Wilk (SW) a Jarqua-Bera (JB).
+je znázorněn na obrázku \ref{fig:ch3.4}. Dále existuje řada testů
+normality, zde jsou popsány testy Shapiro-Wilk (SW) a Jarqua-Bera (JB).
 
 \begin{figure}[H]
 
@@ -1357,74 +1376,171 @@ zde jsou popsany testy Shapiro-Wilk (SW) a Jarqua-Bera (JB).
 
 }
 
-\caption{\label{fig12} Vztah hustoty rozdělení a Q-Q grafu pro různá narušení normality}\label{fig:density_qq_plot}
+\caption{\label{fig:ch3.4} Vztah hustoty rozdělení a Q-Q grafu pro různá narušení normality}\label{fig:density_qq_plot}
 \end{figure}
 
 \qquad Shapiro-Wilk test byl poprvé představen v roce 1965 S. S.
-Shapirem a M. Wilkem {[}39{]}. Metoda dokáže pracovat se vzorky
-velikosti 12 až 5000 pozorování. Nulová hypotéza tohoto testu
+Shapirem a M. Wilkem (SHAPIRO a WILK 1965). Metoda dokáže pracovat se
+vzorky velikosti 12 až 5000 pozorování. Nulová hypotéza tohoto testu
 předpokládá, že vzorek má normální rozdělení. Pokud \(p\)-hodnota je
 menší, než zvolená hladina významnosti, zamítá se nulová hypotéza,
 jinými slovy vzorek nemá normální rozdělení. Statistika testu vypadá
 následovně:
 \[W = \frac{\big(\sum \limits^n_{i=1} a_i x_{(i)}\big)^2}{\sum \limits^n_{i=1}(x_i - \bar{x})^2},\]
 kde \(x_{(i)}\) je \(i\)-tý nejmenší prvek (statistika \(i\)-tého řádu),
-\(\bar{x}\) je průměr vzorku, \(n\) je počet pozorování.
+\(\bar{x}\) je průměr vzorku, \(n\) je počet pozorování. Kritické
+hodnoty pro tento test jsou tabelovány.
 
 \qquad Jarqua-Bera test závisí na koeficientech šikmosti a špičatosti.
 Statistika JB testu může být zapsána:
-\[T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg),\]
+\[T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg) \sim \chi^2(2),\]
 kde \(n\) je velikost vzorku, \(\sqrt{b_1}\) je koeficient šikmosti
-vzorku a \(b_2\) je koeficient špičatosti. Nulová a alternativní
+vzorku a \(b_2\) je koeficient špičatosti. \(T\) statistika má přibližně
+chi-kvadrát rozdělení s dvěma stupni volnosti. Nulová a alternativní
 hypotéza se schoduje s SW testem. Používá se pro větší datasety nad 2000
-pozorování. {[}40{]} \newpage
+pozorování. (Öztuna et al. 2006)
 
-\subsection{4 Pokročilá vizualizace v
-R}\label{pokrocila-vizualizace-v-r}
+\subsubsection{3.5 Tidy data}\label{tidy-data}
 
-\hypertarget{base}{\subsubsection{4.1 Balíčky pro vizualizaci
-dat}\label{base}}
+\qquad Průzkumovou analýzou dat se například zabýval Hadley Wickham ve
+svým članku \emph{Tidy data} z roku 2014 (Wickham 2014). Poskytuje
+standardy a koncepty pro čištění dat, spolu se základními metody a
+nástroje pro jejich připravu. Hlavním cílem \emph{tidy dat}, aby každá
+proměnná odpovídala sloupci, každý pozorování odpovídalo řadku a každá
+hodnota měla vlastní buňku (viz obrázek \ref{fig:ch3.5}).
 
-\qquad Vestavený balíček \texttt{base} byl vyvinut Rossem Ihaka na
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/tidy}
+      \caption{Tří základní pravidla pro \textit{tidy data}.}
+      \label{fig:ch3.5}
+\end{figure}
+
+Mezi těmito nástroje jsou takové balíčky R jako \texttt{tidyr},
+\texttt{plyr} a \texttt{dplyr}. \texttt{tidyr} (tidyr {[}vid.
+17.4.2018{]}) je balíček vytvořený přesně pro tvorbu \emph{tidy dat} a
+to pomocí dvou hlavních funkcí \texttt{gather()} a \texttt{spread()}.
+Funkce \texttt{gather()} převádí vícesloupcové (víceproměnné) data do
+formátu \enquote{klíč-hodnota} resp. do \enquote{dlouhého} formátu,
+zatímco funkce \texttt{spread()} číní přesný opak. Viz tabulky
+\ref{tab3} a \ref{tab4}. Balíček \texttt{plyr} (plyr {[}vid.
+17.4.2018{]}) je soubor nástrojů sloužící k rozdělení velkých souborů
+dat do stejnorodých menších podsouborů, aplikací funkcí na jednotlivé
+podsoubory a kombinací vysledků zpatky do jednoho souboru.
+\texttt{dplyr} (dplyr {[}vid. 17.4.2018{]}) je další iteraci
+\texttt{plyr} představenou Hadley Wickhamem v roce 2014. Balíček
+poskytuje sadu nástrojů pro efektivní manipulaci s datasety v R, je
+rychlejší a jednodušší na použítí.
+
+\begin{minipage}[c]{0.48\textwidth}
+\begin{table}[H]
+\begin{tabular}{|ccccc|}
+  \hline
+DTM & P & E & R & T \\ 
+  \hline
+1948-01-01 & 5.86 & 1.14 & 1.54 & 15.48 \\ 
+   \hline
+\end{tabular}
+\vspace*{1.5mm}
+\caption{Soubor ve "vícesloupcovém" \\ formátu.}
+\label{tab3}
+\vspace*{12mm}
+\end{table}
+\end{minipage}\begin{minipage}[c]{0.14\textwidth}
+\includegraphics[width=\textwidth]{fig/blank_v}
+\end{minipage}\begin{minipage}[c]{0.39\textwidth}
+\begin{table}[H]
+\begin{tabular}{|ccc|}
+  \hline
+DTM & variable & value \\ 
+  \hline
+1948-01-01 & P & 5.86 \\ 
+1948-01-01 & E & 1.14 \\ 
+1948-01-01 & R & 1.54 \\ 
+1948-01-01 & T & 15.48 \\ 
+   \hline
+\end{tabular}
+\caption{Soubor v "dlouhém" \\ formátu.}
+\label{tab4}
+\end{table}
+\end{minipage}
+
+\newpage
+
+\hypertarget{pokrocila}{\subsection{4 Pokročilá vizualizace v
+R}\label{pokrocila}}
+
+\qquad Před samotným popisem nástrojů pro pokročilou vizualizaci je
+vhodné vysvětlit pár důležitých pojmů, které jsou v této kapitole
+použity. Tyto pojmy se tykají vizualizace pouze okrajově, avšak v praxi
+jsou často používány právě v kombinaci s vizualizačními prostředky.
+
+\qquad \texttt{R\ Studio} je volné přístupné open source vývojové
+prostředí (\emph{Integrated Development Environment} nebo \emph{IDE})
+pro programovací jazyk R. \texttt{R\ Studio} bylo založeno v roce 2008
+J.J. Allairem a hlavním vývojářem je Hadley Wickham. Jedná se o vývojové
+prostředí obsahující veškeré potřebné nástroje pro práci s R (RStudio
+{[}vid. 16.4.2018{]}). \texttt{R\ Studio} kromě vývoje samotného
+\emph{IDE} vyvíjí jedny z nepopulárnějších balíčků (např.
+\texttt{ggplot2}, \texttt{tidyverse}, \texttt{rmakrdown}, \(\dots\)) a
+servery pro \texttt{Shiny}. \texttt{R\ Studio} je dostupné ve verzi
+zdarma, která poskytuje všechny klíčové funkce a v komerční verzi, pro
+kterou je navíc dostupná oficiální podpora (RStudio {[}vid.
+16.4.2018{]}).
+
+\qquad \texttt{R\ Markdown} je založen na značkovacím jazyku
+\texttt{Markdown} a slouží pro úpravu prostého textu a jeho následný
+převod do HTML, PDF, MS Word a dalších formátů a to rovnou z prostředí R
+(rmarkdown {[}vid. 16.4.2018{]}). Balíček využívá univerzální nástroj
+pro převod souborů \texttt{pandoc}, díky čemuž lze v rámci souboru
+používat \LaTeX ~příkazy pro pokročilou úpravu PDF výstupů. Dále díky
+balíčku \texttt{knitr} je umožněna integrace R kódu do výstupů. Více o
+\texttt{R\ Markdown} píše autor a spoluautor těchto balíčků Yihui Xie
+například (Xie 2018) a (Xie 2015).
+
+\hypertarget{baseviz}{\subsubsection{4.1 Balíčky pro vizualizaci
+dat}\label{baseviz}}
+
+\qquad Vestavěný balíček \texttt{base} byl vyvinut Rossem Ihaka na
 základě zkušeností s implementací grafických ovladačů do S (předchůdce
 R). Grafy v \texttt{base} mají charakter grafů na papíře: stávající
 obsah nelze modifikovat ani odstranit. Do grafu lze přidávat potřebné
 prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou
 být dále měněny. V \texttt{base} neexistuje jiná uživateli přístupná
-reprezentace, než ta, co se objeví na obrazovce. \texttt{base} obsahuje
-nástroje pro kreslení jak primitivních, tak i kompletních výkresů.
-Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti.
-Vykreslení základních grafů v R je popsáno v kapitole
-\protect\hyperlink{base}{2}.
+reprezentace, než ta, co se objeví na obrazovce (není např. možné uložit
+graf jako proměnnou). \texttt{base} obsahuje nástroje pro kreslení jak
+základních, tak i kompletních grafik. Funkce tohoto balíčku jsou obecně
+rychlé, ale mají omezené možnosti. Vykreslení základních grafů v R je
+popsáno v kapitole \protect\hyperlink{base}{2}.
 
 \qquad Mimo \texttt{base} má uživatel možnost využít rozsáhlou nabídku
-dalších balíčků. Následující kapitoly obsahují kratký popis vybraných
-balíčku (\texttt{grid}, \texttt{lattice}, \texttt{ggplot2}). V R
-existuje mnoho dalších balíčků, například \texttt{vcd}, \texttt{plotrix}
-a \texttt{gplot}, které implementují speciální grafiku, avšak žádný z
-nich neposkytuje rámec pro tvorbu statistických grafů. Pro instalaci
-balíčků se používá příkaz \texttt{install.packages()}. Komplexní zdroj,
-úvádějící všechny grafické funkce dostupné v ostatních balíčcích
-vyvinutých komunitou lze nalézt na stránce
-\url{http://cran.r-project.org/web/views/Graphics.html}. {[}12{]}
+dalších balíčků. Následující kapitoly obsahují krátký popis vybraných,
+široce využívaných, balíčku (\texttt{grid}, \texttt{lattice},
+\texttt{ggplot2}). V R existuje mnoho dalších balíčků, například
+\texttt{vcd}, \texttt{plotrix} a \texttt{gplot}, které implementují
+speciální grafiku, avšak žádný z nich neposkytuje rámec pro tvorbu
+statistických grafů. Pro instalaci balíčků se používá příkaz
+\texttt{install.packages()}. Komplexní zdroj, uvádějící všechny grafické
+funkce dostupné v ostatních balíčcích vyvinutých komunitou lze nalézt na
+stránce \mbox{http://cran.r-project.org/web/views/Graphics.html}.
+(Wilkinson 2005)
 
 \paragraph{\texorpdfstring{4.1.1 \texttt{grid}}{4.1.1 grid}}\label{grid}
 
 \qquad \texttt{grid} je alternativou jednoduché grafiky z \texttt{base}
-s rozsáhlejšími možnosti pro úprávu grafu. Vývoj balíčku začal v roce
+s rozsáhlejšími možnosti pro úpravu grafu. Vývoj balíčku začal v roce
 2000. Autorem je Paul Murrell a balíček vznikl na základě jeho doktorské
-práce \emph{Investigations in Graphical Statistics} z roku 1998
-{[}41{]}. Grafické objekty v \texttt{grid} mohou být reprezentovány
+práce \emph{Investigations in Graphical Statistics} z roku 1998 (Murrell
+1998). Grafické objekty v \texttt{grid} mohou být reprezentovány
 nezávislé na grafu a později upraveny. Systém \emph{viewport}ů (každý
-obsahuje vlastní souřadnicový systém) usnadňuje rozvržení komlexní
+obsahuje vlastní souřadnicový systém) usnadňuje rozvržení komplexní
 grafiky. Balíček umožňuje vykreslení jednotlivých výkresů, avšak nemá
-nástroje pro tvorbu statistických grafů. {[}42{]}
+explicitní nástroje pro tvorbu statistických grafů (Murrell 2003).
 
-\paragraph{\texorpdfstring{4.1.2
-\texttt{lattice}}{4.1.2 lattice}}\label{lattice}
+\hypertarget{lattice}{\paragraph{\texorpdfstring{4.1.2
+\texttt{lattice}}{4.1.2 lattice}}\label{lattice}}
 
 \qquad Deepayanem Sarkarem vyvinutý balíček \texttt{lattice} používá
-grafiku \texttt{grid} k implementaci Clevelandového \emph{trellis}
+grafiku \texttt{grid} k implementaci Clevelandova \emph{trellis}
 grafického systému (viz kapitola \protect\hyperlink{cleveland}{1.2.2}),
 což vedlo k značnému vylepšení grafiky oproti \texttt{base}. Pomocí
 \texttt{lattice} lze jednoduše vykreslit \emph{trellis} graf a některé
@@ -1432,33 +1548,31 @@ detaily výkresu, jako například legenda, se vytváří automaticky. Avšak
 \texttt{lattice} postrádá formální model, což může ztížit jeho
 rozšíření. Tento balíček je dostačující pro typické grafické potřeby a
 je dostatečně flexibilní i pro zvládnutí většiny nestandardních
-požádavků.
-
-\newpage
+požadavků.
 
 \hypertarget{ggplot}{\paragraph{\texorpdfstring{4.1.3
 \texttt{ggplot2}}{4.1.3 ggplot2}}\label{ggplot}}
 
 \qquad Balíček \texttt{ggplot2} byl vyvinut v roce 2005 Hadley Wickhamem
-na základě \emph{The Grammar of Graphics} Lelanda Wilkinsona.
-\texttt{ggplot2} přebírá přednosti balíčků \texttt{base} a
+na základě \emph{The Grammar of Graphics} Lelanda Wilkinsona (Wilkinson
+2005). \texttt{ggplot2} přebírá přednosti balíčků \texttt{base} a
 \texttt{lattice} a vylepšuje je silným základním modelem, který
 podporuje tvorbu libovolného statistického grafu založeného na
 principech popsaných v kapitole \protect\hyperlink{gg}{1.3}. Silný
 základní model \texttt{ggplot2} umožňuje popsat širokou škálu grafiky
 pomocí kompaktní syntaxe a nezávislé komponenty zjednodušují rozšíření.
 Obdobně jako \texttt{lattice}, využívá \texttt{ggplot2} mřížky k
-vykreslení grafiky, což znamená, že umožňuje úpravu vyhledu na mnohem
+vykreslení grafiky, což znamená, že umožňuje úpravu vzhledu na mnohem
 nižší úrovni.
 
 \qquad Jako ukázku lze předvést graf vykreslený pomocí různých balíčků
-(obrázky \ref{fig1a}, \ref{fig1b}, \ref{fig1c}). V představeném kódu
-byly použity denní časové řady srážek z roku 2010 v oblasti povodí Labe
-od pramene po Svatopetrský potok včetně. ID tohoto útvaru povrchových
-vod je \texttt{HSL\_0010}. \texttt{DTM} odpovídá datumu v denním kroce a
-\texttt{P} odpovídá úhrnu srážek v milimetrech. Každý balíček má
-přednastavený počáteční vzhled, který lze úpravovat dle požádavků, avšak
-pro tuto ukázku je nutno počáteční rozdíly naopak ponechat.
+(obrázky \ref{fig:ch4.1a}, \ref{fig:ch4.1b}, \ref{fig:ch4.1c}). V
+představeném kódu byly použity denní časové řady srážek z roku 2010 v
+oblasti povodí Labe od pramene po Svatopetrský potok včetně. ID tohoto
+útvaru povrchových vod je \texttt{HSL\_0010}. \texttt{DTM} odpovídá datu
+v denním kroku a \texttt{P} odpovídá úhrnu srážek v milimetrech. Každý
+balíček má přednastavený počáteční vzhled, který lze upravovat dle
+požadavků, avšak pro tuto ukázku bylo ponecháno základní nastavení.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1471,10 +1585,8 @@ pro tuto ukázku je nutno počáteční rozdíly naopak ponechat.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/1base}
       \caption{Časová řada srážek na zvoleným povodí v roce 2010, \texttt{base}}
-      \label{fig1a}
+      \label{fig:ch4.1a}
 \end{figure}
-
-\newpage
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1487,7 +1599,7 @@ pro tuto ukázku je nutno počáteční rozdíly naopak ponechat.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/2lattice}
       \caption{Časová řada srážek na zvoleným povodí v roce 2010, \texttt{lattice}}
-      \label{fig1b}
+      \label{fig:ch4.1b}
 \end{figure}
 
 \begin{Shaded}
@@ -1501,10 +1613,8 @@ pro tuto ukázku je nutno počáteční rozdíly naopak ponechat.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/3ggplot}
       \caption{Časová řada srážek na zvoleným povodí v roce 2010, \texttt{ggplot2}}
-      \label{fig1c}
+      \label{fig:ch4.1c}
 \end{figure}
-
-\newpage
 
 \subsubsection{4.2 Balíčky pro prostorovou
 vizualizaci}\label{balicky-pro-prostorovou-vizualizaci}
@@ -1513,64 +1623,68 @@ vizualizaci}\label{balicky-pro-prostorovou-vizualizaci}
 nástrojů k jejich vykreslení. Důležitý rozdíl mezi R a tradičními
 desktopovými GIS (\emph{geographical information system}) softwary je
 ten, že GIS je primárně vytvořen k prostorové vizualizaci a zpracovává
-data jedním přednastaveným způsobem, zatímco v R uživatel si sám musí
-zvolit vhodné nástroje a odpovídající nastavení. Dále R neobsahuje GUI,
-které by usnadňoválo práci s prostorovými daty. Z tohoto důvodu může být
-R pro nové uživatele naročné. Hlavní výhodou R je, že přínáší do tvorby
-prostorové vizualizace silné výpočetní prostředky pro úpravu dat a
-možnost uložení skriptů a jejich další modifikace. {[}43{]}
+data jedním přednastaveným způsobem, zatímco v R si uživatel sám musí
+zvolit vhodné nástroje a odpovídající nastavení. Dále R neobsahuje
+grafické uživatelské rozhraní (GUI), které by usnadňovalo práci s
+prostorovými daty. Z tohoto důvodu může být R jako nástroj GIS pro nové
+uživatele náročné. Hlavní výhodou R je, že přináší do tvorby prostorové
+vizualizace silné výpočetní prostředky pro úpravu a statistickou analýzu
+dat a možnost uložení skriptů a jejich další modifikace (Cheshire a
+Lovelace 2015).
+
+\qquad Prostorové objekty jsou často reprezentovány \emph{vektorovými}
+daty. Takováto data obsahují popis \enquote{geometrie} nebo
+\enquote{tvaru} území (body, linie a polygony) a většinou také obsahují
+proměnné s dodatečnými informacemi o území (atributovou tabulkou). Dále
+se také používají prostorová pole, která jsou obvykle reprezentována
+pomocí \emph{rastrů}. Rastrová data se obvykle používají pro prostorově
+kontinuální proměnné. Rastry dělí území mřížkou na buňky o stejné
+velikosti neboli na \emph{pixely}, kterým je přiřazená hodnota dle
+zájmové proměnné. Většinou se jedná o průměr či většinovou hodnotu pro
+oblast spadající do konkretního pixelu. Na rozdíl od vektorových dat, v
+rastrových datech není informace o geometrii objektu uložená jako
+souřadnice, ale v rámci buněk. Velikost rastrových buněk neboli
+prostorové rozlišení je dáno počtem řádků a sloupců, na které je území
+rozdělené. (Hijmans {[}vid. 13.4.2018{]})
 
 \begin{figure}[H]
   \centering
       \includegraphics[width=\textwidth]{fig/ggplot_map2}
       \caption{Úhrn srážek (v mm) na povodích ČR za srpen 2010, vykresleno pomocí balíčků \texttt{ggplot2}}
-      \label{fig02}
+      \label{fig:ch4.2}
 \end{figure}
 
-\qquad Prostorové objekty jsou částo reprezentovány \emph{vektorovými}
-daty. Takováto data obsahují popis \enquote{geometrie} nebo
-\enquote{tvaru} území (body, linie a polygony) a většinou také obsahují
-proměnné s dodatečnými informacemi o území. Dále se také používají
-prostorová pole, která jsou obvýkle reprezentována pomocí \emph{rastrů}.
-Rastrová data se obvykle použivají pro kontinuálná proměnné. Rastry dělí
-území mřížkou na buňky o stejné velikosti neboli na \emph{pixely},
-kterým je přiřazená hodnota dle zajmové proměnné. Většinou se jedná o
-průměr či většinovou hodnotu pro oblast spadájící do konkretního pixelu.
-Na rozdíl od vektorových dat, v rastrových datech není informace o
-geometrii objektu uložená jako souřadnice, ale v rámci buňek. Velikost
-rastrových buňěk neboli prostorové rozlišení je dáno počtem řadků a
-sloupců, na které je území rozdělené. {[}44{]}
-
 \qquad Vektorová data mohou být vykreslena v R pomocí celé řady balíčků
-a to jak pomocí již zminěných \texttt{base} (kapitola
-\protect\hyperlink{base}{4.1}) a \texttt{ggplot2} (kapitola
-\protect\hyperlink{gg}{4.1.2}), tak i pomocí \texttt{Leaflet} (kapitola
-\protect\hyperlink{leaflet}{4.3.3}). Příkladem vizualizace vektorových
-dat pomocí balíčku \texttt{ggplot2} je zobrazeno na obrázku \ref{fig02}.
+a to jak pomocí již zmíněných \texttt{base} (kapitola
+\protect\hyperlink{baseviz}{4.1}) a \texttt{ggplot2} (kapitola
+\protect\hyperlink{ggplot}{4.1.3}), tak i pomocí \texttt{Leaflet}
+(kapitola \protect\hyperlink{leaflet}{4.3.3}). Příkladem vizualizace
+vektorových dat pomocí balíčku \texttt{ggplot2} je vizualizace na
+obrázku \ref{fig:ch4.2}.
 
 \begin{figure}[H]
   \centering
       \includegraphics[width=\textwidth]{fig/raster_map2}
       \caption{Úhrn srážek (v mm) na povodích ČR za srpen 2010, vykresleno pomocí balíčků \texttt{raster}} 
-      \label{fig03}
+      \label{fig:ch4.3}
 \end{figure}
 
-\qquad Balíček \texttt{raster} obsahuje funkce pro vytvaření, čtení,
-manipulaci, modelování, popis a analýzu rastrových dat. Podporuje prácí
-s velkými soubory a vytvaření vlastních specifických funkcí. {[}45{]}
-Balíček \texttt{rasterVis} představuje metody pro vylepšenou vizualizaci
-a interakci s rastrovými daty. Implementuje vizualizační metody pro
-kvantitativní a kvalitativní data a to jak pro jednorozměrné, tak i
-vícerozměrné rastry. Dále poskytuje metody k zobrazení rastrů, měnících
-se v čase, a vektorových polí.~{[}46{]} Vykreslení dat pomocí balíčku
-\texttt{raster} lze nalézt na obrázku \ref{fig03}.
+\qquad Balíček \texttt{raster} obsahuje funkce pro vytváření, čtení,
+manipulaci, modelování, popis a analýzu rastrových dat. Podporuje práci
+s velkými soubory a vytváření vlastních specifických funkcí (Hijmans
+2017). Balíček \texttt{rasterVis} představuje metody pro vylepšenou
+vizualizaci a interakci s rastrovými daty. Implementuje vizualizační
+metody pro kvantitativní a kvalitativní data a to jak pro jednorozměrné,
+tak i vícerozměrné rastry. Dále poskytuje metody k zobrazení rastrů,
+měnících se v čase, a vektorových polí~(Lamigueiro 2018). Vykreslení dat
+pomocí balíčku \texttt{raster} lze nalézt na obrázku \ref{fig:ch4.3}.
 
-\subsubsection{4.3 Balíčky pro interaktivní vizualizaci
-dat}\label{balicky-pro-interaktivni-vizualizaci-dat}
+\hypertarget{htmlwidgets}{\subsubsection{4.3 Balíčky pro interaktivní
+vizualizaci dat}\label{htmlwidgets}}
 
-\qquad Možnost příblížit, filtrovat či zobrazit podrobnosti grafu na
-požádání je výhodou dynamických a interakticních grafů. Interakticní
-grafy dokažou zobrazovat více informací a tím umožňují i hlubší
+\qquad Možnost přiblížit, filtrovat či zobrazit podrobnosti grafu na
+požádání je výhodou dynamických a interaktivních grafů. Interaktivní
+grafy dokážou zobrazovat více informací a tím umožňují i hlubší
 pochopení dat. Pro R existuje široká nabídka balíčků a nástrojů k
 vytváření interaktivních grafů. Jednou z nejpopulárnějších\footnote{Dle
   žebříčku \href{https://www.rdocumentation.org/}{rdocumentation.org} je
@@ -1578,40 +1692,42 @@ vytváření interaktivních grafů. Jednou z nejpopulárnějších\footnote{Dle
 \texttt{htmlwidgets}, jehož knihovna obsahuje užitečné nástroje pro
 tvorbu téměř jakéhokoliv typu grafiky.
 
-\qquad Balíček \texttt{htmlwidgets} poskýtuje rozhrání pro snadné
-propojení jazyku R a knihoven programovácího jazyku JavaScript,
-používáného zejména pro webové aplikace. Tímto je umožněna bezproblemová
+\qquad Balíček \texttt{htmlwidgets} poskytuje rozhraní pro snadné
+propojení jazyka R a knihoven programovacího jazyka JavaScript,
+používaného zejména pro webové aplikace. Tímto je umožněna bezproblémová
 a konzistentní práce interaktivních map, grafů a tabulek a to jak v
 dokumentech \texttt{R\ Markdown} a v aplikacích \texttt{Shiny} (kapitola
 \protect\hyperlink{shiny}{4.4.2}), tak i v rámci samotného R Studio.
 \texttt{htmlwidgets} umožňuje vytváření vlastních \emph{widgets}, ale
 především nabízí řadů již vytvořených, například \texttt{Plotly},
 \texttt{Leaflet} a \texttt{dygraphs}. Tyto nástroje jsou dostupné
-nejenom pro R, ale i pro další programovácí jazyky (například Python).
-{[}47{]}
+nejenom pro R, ale i pro další programovací jazyky (například Python)
+(Vaidyanathan et al. 2018).
 
-\paragraph{\texorpdfstring{4.3.1
-\texttt{Plotly}}{4.3.1 Plotly}}\label{plotly}
+\hypertarget{plotly}{\paragraph{\texorpdfstring{4.3.1
+\texttt{Plotly}}{4.3.1 Plotly}}\label{plotly}}
 
-\qquad Balíček \texttt{Plotly} je vysokoúrovňové rozhrání pro open
+\qquad Balíček \texttt{Plotly} je vysokoúrovňové rozhraní pro open
 source JavaScript vizualizační knihovnu \texttt{plotly.js}. Pro tvorbu
 interaktivních vizualizací využívá jako základ balíček
 \texttt{htmlwidgets}. Dále umožňuje jednoduchý převod \texttt{ggplot2}
-grafů na interaktivní verzi. \texttt{Plotly} objekt lze vytvořit dvěmi
+grafů na interaktivní verzi. \texttt{Plotly} objekt lze vytvořit dvěma
 způsoby, a to pomocí funkce \texttt{plot\_ly()}, která převádí data na
 \texttt{Plotly} objekt, případně pomocí funkce \texttt{ggplotly()},
 která převádí \texttt{ggplot2} objekt na \texttt{Plotly} objekt. Bez
 ohledu na to, jak je \texttt{Plotly} objekt vytvořen, výsledkem je
 interaktivní vizualizace, která ve své přednastavené verzi obsahuje
-nástrojovou líštu a umožňuje přiblížení a pohyb po vizualizaci. {[}48{]}
+nástrojovou lištu a umožňuje přiblížení a pohyb po vizualizaci (Sievert
+2018).
 
-\paragraph{\texorpdfstring{4.3.2
-\texttt{dygraphs}}{4.3.2 dygraphs}}\label{dygraphs}
+\hypertarget{dygraphs}{\paragraph{\texorpdfstring{4.3.2
+\texttt{dygraphs}}{4.3.2 dygraphs}}\label{dygraphs}}
 
-\qquad Balíček \texttt{dygraphs} je R rozhráním pro práci s
+\qquad Balíček \texttt{dygraphs} je R rozhraním pro práci s
 JavaScriptovou vizualizační knihovnou \texttt{dygraphs}. Poskytuje
 bohaté možnosti k vykreslení časových řad v R, včetně podpory
-interaktivních funkcí. Mezi tyto funkce patří například {[}49{]}:
+interaktivních funkcí. Mezi tyto funkce patří například (RStudio {[}vid.
+11.4.2018{]}):
 
 \begin{itemize}
 \tightlist
@@ -1623,11 +1739,11 @@ interaktivních funkcí. Mezi tyto funkce patří například {[}49{]}:
   Vysoce konfigurovatelná nastavení os a vykreslení řad (včetně
   volitelné další osy~\(y\))
 \item
-  Zvyraznění, přiblížení řad či bodů
+  Zvýraznění, přiblížení řad či bodů
 \item
-  Zobrázení predikčních interválů kolem řad
+  Zobrazení predikčních intervalů kolem řad
 \item
-  Umožnuje vykreslování překrývájících se grafů, vyznačení oblastí
+  Umožňuje vykreslování překrývajících se grafů, vyznačení oblastí
   zastíněním a označení určitých událostí svislými liniemi a popisky.
 \end{itemize}
 
@@ -1648,32 +1764,31 @@ také využíván GIS platformami jako jsou
 \href{https://www.mapbox.com/}{\emph{Mapbox}} a
 \href{https://carto.com/}{\emph{CartoDB}}.
 
-\qquad Tento R balíček umožňuje integrování a ovladání \texttt{Leaflet}
+\qquad Tento R balíček umožňuje integrování a ovládaní \texttt{Leaflet}
 map. Mezi jeho funkce patří pohyb/přiblížení v rámci mapy, možnost
 vytvářet mapy z libovolných kombinací (polygony, linie, markery, atd.).
 Dále snadno vykresluje prostorové objekty z balíčků \texttt{sp} nebo
 \texttt{sf} a datové soubory se sloupci zeměpisné šířky a délky.
 \texttt{Leaflet} také poskytuje možnost ovládání interakcí v
-\texttt{Shiny} aplikacích přes stavající hranice mapového výřezu či
+\texttt{Shiny} aplikacích přes stávající hranice mapového výřezu či
 reakce na kliknutí myši uživatelem. Umožňuje zobrazení map v nesférickým
-Mercatorově zobrazení a má mnoho dalších funkcí a doplňků. {[}50{]}
+Mercatorově zobrazení a má mnoho dalších funkcí a doplňků (RStudio
+{[}vid. 11.4.2018{]}).
 
-\newpage
-
-\subsubsection{4.4 Balíčky pro webové
-aplikace}\label{balicky-pro-webove-aplikace}
+\hypertarget{webviz}{\subsubsection{4.4 Balíčky pro webové
+aplikace}\label{webviz}}
 
 \paragraph{\texorpdfstring{4.4.1
 \texttt{flexdashboard}}{4.4.1 flexdashboard}}\label{flexdashboard}
 
 \qquad \texttt{flexdashboard} slouží k publikaci dat a jejích přehledné
 vizualizaci v rámci webového prohlížeče. Využívá \texttt{R\ Markdown} k
-publikaci souvisejících vizualizací do jednotného zobrázení neboli
+publikaci souvisejících vizualizací do jednotného zobrazení neboli
 \emph{dashboard}u. Balíček podporuje široký výběr komponentů, včetně
 \texttt{htmlwidgets}, \texttt{base}, \texttt{lattice} a \texttt{grid}
 grafiky, tabulek, textových poznámek a dalších. Vyznačuje se mimo jiné i
 jednoduchým a flexibilním nastavením samotného rozvržení dashboardu a to
-definováním řadků a sloupců. Komponenty takového dashboardu se pak
+definováním řádků a sloupců. Komponenty takového dashboardu se pak
 inteligentně přizpůsobí oknu prohlížeče, případně obrazovce mobilního
 zařízení. Dále balíček umožňuje nastavení a přepínání mezi jednotlivými
 záložkami dashboardu. Pro dynamické vizualizace lze kombinovat
@@ -1685,13 +1800,13 @@ záložkami dashboardu. Pro dynamické vizualizace lze kombinovat
 \qquad \texttt{Shiny} je balíček, umožňující jednoduché vytváření
 interaktivních webových aplikací kombinací výpočetních možností R s
 interaktivitou moderních webových stránek. Pomocí \texttt{Shiny} lze
-vytvořit jak samostatnou aplikaci, běžící na webových strankách, tak i
+vytvořit jak samostatnou aplikaci, běžící na webových stránkách, tak i
 lokální aplikaci bežící v prostředí R. Vzhled \texttt{Shiny} aplikace
 lze modifikovat pomocí kaskádových stylů\footnote{Kaskádové styly (CSS)
-  jazyk určený pro popis vzhledu elementů napsaných ve značkovácích
-  jazycích (například HTML).}. {[}51{]}
+  jazyk určený pro popis vzhledu elementů napsaných ve značkovacích
+  jazycích (například HTML).}. (RStudio {[}vid. 14.4.2018{]})
 
-\qquad Strukturou se \texttt{Shiny} aplikace líší od běžných skriptů.
+\qquad Strukturou se \texttt{Shiny} aplikace liší od běžných skriptů.
 Celá aplikace by měla být umístěna v jednom adresáři a celý skript by
 měl být obsažen v souboru nazvaném \texttt{app.R}.\footnote{V dřívějších
   verzích \texttt{Shiny} bylo nutné skript rozdělit do dvou částí
@@ -1723,9 +1838,7 @@ s aplikací. Skript \texttt{app.R} se skládá ze tří komponentů:
 \end{Highlighting}
 \end{Shaded}
 
-\newpage
-
-V rámci \texttt{ui} lze používat širokou řadu ovldácích prvků jako jsou
+V rámci \texttt{ui} lze používat širokou řadu ovládacích prvků jako jsou
 například tlačítka, zatrhávací políčka, přepínače, textové vstupy, atd.
 Běžně se \texttt{ui} dělí do tří částí:
 
@@ -1735,19 +1848,19 @@ Běžně se \texttt{ui} dělí do tří částí:
   Titulní panel, který obsahuje metadata, název aplikace a další
   relevantní informace.
 \item
-  Postraní panel, který nejčastěji obsahuje ovládací prvky.
+  Postranní panel, který nejčastěji obsahuje ovládací prvky.
 \item
   Hlavní panel, který obsahuje výstupy generované funkcí
   \texttt{server}.
 \end{itemize}
 
-Příkladem ovladacího prvku vytvořeného v \texttt{ui} může být číselný
+Příkladem ovládacího prvku vytvořeného v \texttt{ui} může být číselný
 vstup, který umožňuje uživateli vložit libovolné číslo. Tento vstup je
-označen pomocí \texttt{InputId} a v ramcí \texttt{server} funkcí lze na
+označen pomocí \texttt{InputId} a v rámci \texttt{server} funkcí lze na
 něj dle toho id odkázat. Konkretně tento vstup lze získat z proměnné
 \texttt{input\$num}. Obecně by to tedy mělo tvar
-\texttt{input\$inputId}. Vstup z \texttt{ui} lze použit pouze v ramci
-funkce \texttt{render*()}, případně v ramcí funkce \texttt{reactive()}
+\texttt{input\$inputId}. Vstup z \texttt{ui} lze použit pouze v rámci
+funkce \texttt{render*()}, případně v rámci funkce \texttt{reactive()}
 (viz dále).
 
 \begin{Shaded}
@@ -1773,46 +1886,44 @@ Tato funkce generuje grafický výstup v podobě histogramu normálního
 rozdělení s interaktivním počtem pozorování. Obecně pro generování
 výstupu se používá funkce \texttt{render*()}. Tyto funkce mohou
 obsahovat libovolný kód (například příprava dat, doprovodné výpočty,
-atd.), ale je nutné, aby vráceli požadovaný typ výstupu. Základní
-\texttt{render*()} funkce jsou vypsáne v tabulce \ref{tab3}. Při změně
+atd.), ale je nutné, aby vraceli požadovaný typ výstupu. Základní
+\texttt{render*()} funkce jsou vypsány v tabulce \ref{tab5}. Při změně
 vstupu z \texttt{ui} v \texttt{render*()} dochází k přepočítání.
 
 \begin{table}[H]
 \centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-\multicolumn{1}{l}{Funkce}  & \multicolumn{1}{l}{Výstup}  \\ \midrule
-\texttt{renderDataTable()}  & Interaktivní tabulka  \\
-\texttt{renderImage()}  & Obrázek \\
-\texttt{renderPlot()} & Graf  \\
-\texttt{renderPrint()}  & Vytištěný blok kódu \\
-\texttt{renderTable()}  & Tabulka  \\
-\texttt{renderText()} & Text \\
-\texttt{renderUI()} & \texttt{Shiny ui} element \\ \bottomrule
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{Funkce} & \multicolumn{1}{c|}{Výstup} \\ \hline
+\texttt{renderDataTable()}   & Interaktivní tabulka        \\ \hline
+\texttt{renderImage()}       & Obrázek                     \\ \hline
+\texttt{renderPlot()}        & Graf                        \\ \hline
+\texttt{renderPrint()}       & Vytištěný blok kódu         \\ \hline
+\texttt{renderTable()}       & Tabulka                     \\ \hline
+\texttt{renderText()}        & Text                        \\ \hline
+\texttt{renderUI()}          & \texttt{Shiny ui} element   \\ \hline
 \end{tabular}
 \caption{Základní \texttt{render*()} funkce}
-\label{tab3}
+\label{tab5}
 \end{table}
-
-\newpage
 
 \qquad Pro komplexní \texttt{Shiny} aplikaci s větším počtem
 interaktivních prvků je vhodné použit funkce \texttt{reactive()} (tzv
 reaktivní výrazy). Tato funkce slouží zejména jako prostředník mezi
-\texttt{ui} a \texttt{render*()}. Na obrázku \ref{fig04} je znazorněn
-příklad struktury jednoduché \texttt{Shiny} aplikace s použítím
-\texttt{reactive()} funkce. V tomto příkladu při změně numerického
-vstupu (\texttt{input\$1}) se nejprvé přepočítá \texttt{reactive()} a
-následně \texttt{render*()\ A} a \texttt{B}, zatímco při změně vstupu
-\texttt{input\$2} či \texttt{input\$3} se přepočítají pouze přislušné
-\texttt{render*()} výstupy \texttt{A} či \texttt{B} se zachováním
-informací z \texttt{input\$1}.
+\texttt{ui} a \texttt{render*()}. Na obrázku \ref{fig:ch4.4} je
+znázorněn příklad struktury jednoduché \texttt{Shiny} aplikace s
+použitím \texttt{reactive()} funkce. V tomto příkladu při změně
+numerického vstupu (\texttt{input\$1}) se nejprve přepočítá
+\texttt{reactive()} a následně \texttt{render*()\ A} a \texttt{B},
+zatímco při změně vstupu \texttt{input\$2} či \texttt{input\$3} se
+přepočítají pouze příslušné \texttt{render*()} výstupy \texttt{A} či
+\texttt{B} se zachováním informací z \texttt{input\$1}.
 
 \begin{figure}[H]
   \centering
       \includegraphics[width=\textwidth]{fig/shiny}
-      \caption{Úkazka \texttt{Shiny} aplikace s použitím funkce \texttt{reactive()}.} 
-      \label{fig04}
+      \caption{Ukázka \texttt{Shiny} aplikace s použitím funkce \texttt{reactive()}.} 
+      \label{fig:ch4.4}
 \end{figure}
 
 \newpage
@@ -1820,40 +1931,50 @@ informací z \texttt{input\$1}.
 \section*{Praktická část}\label{prakticka-cast}
 \addcontentsline{toc}{section}{Praktická část}
 
+\qquad Součástí práce je vytvoření webové aplikace pro vizualizaci a
+analýzu hydrologické bilance a předpověď sucha v útvarech povrchových
+vod ČR. Aplikace je popsána v části \enquote{Metodika}, jejiž součásti
+je popis použitých dat a balíčků, technického řešení a
+postprocessingových funkci. Dále následuje popis jednotlivých položek
+aplikace se zaměřením na účel a funkčnost každé položky.
+
 \subsection{5 Metodika}\label{metodika}
 
 Aplikace je vytvořena prostřednictvím programovacího jazyka R. Jedná se
-o vizualizaci výsledků modelování projektu \textbf{\emph{HAMR}} (viz
-záložka \enquote{O projektu}). Jádro aplikace je postaveno na balíčcích
-\texttt{Shiny} a \texttt{flexdashboard}.
-
-\texttt{Shiny} umožňuje jednoduché vytváření webových aplikací,
-interaktivních vizualizací v prostředí R. Balíček \texttt{flexdashboard}
-je rozšířením \texttt{Shiny} a umožňuje pokročilé formátovaní vzhledu.
+o vizualizaci výsledků modelování systému pro předpoveď hydrologické
+situace \textbf{\emph{HAMR}}. Systém je založen na propojení modelu
+vláhové bilance půdy \texttt{SoilClim}, modelu hydrologické bilance
+\texttt{BILAN} a modelu vodohospodářské soustavy \texttt{WATERES}
+jednotlivých povodí. Jádro aplikace je postaveno na balíčcích
+\texttt{Shiny} a \texttt{flexdashboard}. Jak již bylo popsané v kapitole
+\protect\hyperlink{webviz}{4.4}, \texttt{Shiny} umožňuje jednoduché
+vytváření webových aplikací, interaktivních vizualizací v prostředí R a
+balíček \texttt{flexdashboard} umožňuje pokročilé formátovaní vzhledu.
 Společně slouží k publikaci dat a jejích přehledné vizualizaci v rámci
 webového prohlížeče.
 
 \subsubsection{5.1 Technické řešení}\label{technicke-reseni}
 
-Aplikace je přístupná na
-\href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru}\footnote{\url{https://shiny.fzp.czu.cz/KVHEM/HAMR/}}
-nebo ji lze také
-\href{https://github.com/KVHEM/Sucho}{stáhnout}\footnote{\url{https://github.com/KVHEM/Sucho}}.
-Repositář na \href{https://github.com/}{github}\footnote{\url{https://github.com/}}
-obsahuje následující soubory:
+Aplikace bude přístupná na
+\href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru fakulty}\footnote{Aplikace
+  na serveru fakulty: \url{https://shiny.fzp.czu.cz/KVHEM/HAMR/}}, lze
+ji také \href{https://github.com/KVHEM/Sucho}{stáhnout ze stránek
+GitHubu}\footnote{Repozitář na GitHub:
+  \url{https://github.com/KVHEM/Sucho}}, kde je pro aplikaci založen
+repozitář. Tento repositář obsahuje následující soubory:
 
 \begin{itemize}
 \tightlist
 \item
-  soubor s aplikací \enquote{flex\_app.Rmd}
+  soubor s aplikací \texttt{flex\_app.Rmd}
 \item
-  skript připravující vstupní data pro aplikací \enquote{prep.R}
+  skript připravující vstupní data pro aplikací \texttt{prep.R}
 \item
   skript pro automatickou instalaci potřebných balíčku
-  \enquote{install.packages.R}
+  \texttt{install.packages.R}
 \item
   soubor s kaskádovými styly pro nastavení vzhledu aplikace
-  \enquote{styles.css}
+  \texttt{styles.css}
 \end{itemize}
 
 Mimo již zmíněné balíčky \texttt{Shiny} a \texttt{flexdashboard} byly
@@ -1863,104 +1984,278 @@ použité následující balíčky:
 \tightlist
 \item
   \texttt{leaflet}, umožňující vizualizaci prostorových dat v
-  interaktivních mapách
+  interaktivních mapách (kapitola \protect\hyperlink{leaflet}{4.3.3})
 \item
-  \texttt{ggplot2}, \texttt{dygraphs} k vykreslení časových řad a čar
-  překročení
-\item
-  \texttt{sp}, \texttt{rgeos} pro práci s prostorovými daty
+  \texttt{ggplot2}, \texttt{dygraphs} a \texttt{Plotly} k vykreslení
+  časových řad a čar překročení (kapitoly
+  \protect\hyperlink{ggplot}{4.1.3}, \protect\hyperlink{dygraphs}{4.3.2}
+  a \protect\hyperlink{plotly}{4.3.1})
 \item
   \texttt{data.table}, \texttt{dplyr} sloužící k transformaci dat
+\item
+  \texttt{DT} je jedním z \emph{widgets} balíčku \texttt{htmlwidgets}
+  (popsáno v kapitole \protect\hyperlink{htmlwidgets}{4.3}), sloužící k
+  vytvaření interaktivních tabulek.
 \end{itemize}
 
-\subsubsection{5.2 Postprocessing}\label{postprocessing}
+Veškerý R kód použítý k vytvoření aplikace je úveden v příloze na stáně
+\pageref{prilohy}.
 
-Na základě kalibrovaných parametrů modelu Bilan jsou vygenerovány denní
-časové řady odtoku a ostatních bilančních veličin pro období 1961-2015.
-Pro aplikaci jsou dále vygenerovány další datové produkty:
+\subsubsection{5.2 Data}\label{data}
 
-\begin{itemize}
-\tightlist
-\item
-  měsíční data - pro teplotu jsou průměry z denních hodnot, pro ostatní
-  ukazatele jsou součty denních hodnot
-\item
-  data pro čáru překročení - pochází z měsíčních dat, které jsou řazeny
-  dle celého období, měsíců a sezon
-\end{itemize}
+\qquad Data použitá k vykreslení lze rozdělit do několika skupin:
+prostorová data, data potřebná pro hydrologickou bilanci, data pro
+indikátory sucha, data pro užívání vod a data pro validaci. Skupina
+prostorových dat obsahuje soubory s informacemi o útvarech povrchových
+vod (UPOV) ČR (\texttt{povodi.rds}, \texttt{reky.rds},
+\texttt{jezera.rds}, \texttt{nadrze.rds}) a soubory administrativního
+členění ČR (\texttt{kraje.rds}, \texttt{okresy.rds} a povodí 3. řadu
+\texttt{povodi\_III.rds}) viz obrázek \ref{fig:ch5.0}. Přesná struktura
+složek aplikace je vyobrazená na diagramu \ref{fig:ch5.1}. Tyto soubory
+byli v rámci připravy dat převedeny z formatu .shp do formátu .rds. Dále
+pro rychlejší načítání a jednodušší manipulaci byly tyto soubory
+transformovány do souřadnicového systému WGS84 (pomocí funkce
+\texttt{spTransform()} z balíčku \texttt{sp} a atributu \texttt{CRS} -
+\emph{Coordinate Reference System} - nastaveného na identifikátor pro
+WGS84 - EPSG:4326) a zjednodušeny (pomocí funkce \texttt{ms\_simplify()}
+z balíčku \texttt{rmapshaper}) pro snížení náročnosti při vykreslování.
+Soubor \texttt{popis.rds} obsahuje informace o jednotlivých útvarech
+jako jsou název útvaru, název povodí, název oblasti, kategorie útvaru a
+typ utvaru. Následně soubor \texttt{popis.rds} je spojen pomocí funkce
+\texttt{merge()} z balíčku \texttt{sp} se souborem \texttt{povodi.rds}
+přes identy jednotlivých útvaru (\texttt{UPOV\_ID}). K vykreslení
+horního povodí se používá soubor \texttt{TABB.rds} obsahující informace
+o tom, která povodí přitékají do jednotlivých UPOVů.
 
-Na základě evidence užívání vod, kterou spravuje VÚV T. G. M., jsou
-generovány měsíční časové řady pro období 2006-2016 a tabulky:
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/povodi-kraje}
+      \caption{Útvary povrchových vod (UPOV) (vyznačené černě) a kraje (vyznačené červeně) ČR}
+      \label{fig:ch5.0}
+\end{figure}
 
-\begin{itemize}
-\tightlist
-\item
-  data pro časovou řadu za vybrané povodí jsou sumami jednotlivých
-  odběratelů seskupenými podle jevů
-\item
-  tabulka \enquote{Suma dle odběratele} obsahuje sumy za celé období za
-  každého odběratele dle jevu
-\end{itemize}
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/struktura2}
+      \caption{Struktura složek aplikace}
+      \label{fig:ch5.1}
+\end{figure}
 
-Aplikace pracuje s velkým množstvím dat, které se v rámci aplikace
-filtrují, agregují a průměrují. Pro snížení výpočetního času a
-náročnosti by bylo vhodné některé z těchto úkonů předpočítat a uložit
-jako datový soubor Rds. Téměř všechny výpočty mohou být předpočítany,
-ale implementace tohoto postupu proběhne v budoucnu. Je nutné nejdříve
-změřit a kvantifikovat rozdíl ve výkonu před a po implementaci.
+\qquad Další skupinou jsou data potřebná pro vyhodnocení hydrologické
+bilance. Pomocí modelu Bilan (Vizina et al. 2015) bylo v rámci projektu
+kalibrováno 1112 UPOVů a výstupem je 18 proměnných pro každý UPOV v
+denním kroku pro období 1981-2010. Tyto proměnné jsou uvedeny v tabulce
+\ref{tab6} (VÚV TGM 2015). Z důvodů šetření vnitřní paměti aplikace se
+soubory s daty pro hydrologickou bilanci nacházejí na uložišti ve složce
+\enquote{res} a jsou uloženy ve formátu .rds s názvy odpovídající
+identům jednotlivých povrchových útvarů (\texttt{UPOV\_ID}). Aplikace
+tyto soubory načítá pouze při požadavku uživatele. Měsíční bilance je
+agregací denních dat a načítá se ze souboru
+\texttt{bilan\_month\_data\_table.rds} (ukládá se do proměnné
+\texttt{BM}). Do teto skupiny lze zařadit i soubor
+\texttt{cara\_prekroceni\_dt.rds} (v aplikaci proměnná \texttt{cp}).
+Soubor obsahuje předpočítané roční, měsíční a sezónní pravděpodobnosti
+spočítané přes jednotlivé proměnné dle vzorce \(p = (m-0.3)/(n+0.4)\),
+kde po seřazení souboru dle velikosti v klesajícím pořadí je \(n\) počet
+prvků a \(m\) je pořadové číslo.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+zkratka      & význam                       & zkratka       & význam                                                                                   \\ \hline
+\texttt{P}   & srážky na povodí             & \texttt{SW}   & \begin{tabular}[c]{@{}c@{}}půdní vlhkost (zásoba \\ vody v nenasycené zóně)\end{tabular} \\ \hline
+\texttt{R}   & odtok (pozorovaný)           & \texttt{SS}   & zásoba vody ve sněhu                                                                     \\ \hline
+\texttt{RM}  & celkový odtok (simulovaný)   & \texttt{GS}   & zásoba podzemní vody                                                                     \\ \hline
+\texttt{BF}  & základní odtok (simulovaný)  & \texttt{INF}  & infiltrace do půdy                                                                       \\ \hline
+\texttt{B}   & základní odtok (odvozený)    & \texttt{PERC} & perkolace z půdní vrstvy                                                                 \\ \hline
+\texttt{DS}  & zásoba pro přímý odtok       & \texttt{RC}   & dotace zásoby podzemní vody                                                              \\ \hline
+\texttt{DR}  & přímý odtok                  & \texttt{T}    & teplota vzduchu                                                                          \\ \hline
+\texttt{PET} & potenciální evapotranspirace & \texttt{H}    & vlhkost vzduchu                                                                          \\ \hline
+\texttt{ET}  & územní výpar                 & \texttt{WEI}  & váhy pro kalibraci odtoku                                                                \\ \hline
+\end{tabular}
+\caption{Výstupy kalibrace denního modelu Bilan}
+\label{tab6}
+\end{table}
+
+\qquad Data pro vykreslení indikátorů sucha se nacházejí ve samostatné
+složce \enquote{indikatory}. Při zvolení uživatelem indikátoru sucha (v
+nabídce momentálně jsou pouze indikátory SPI a SPEI spočítány klouzavě s
+krokem 1, 3, 6, 9 a 12 měsíců) se načte .rds soubor dle odpovídajícího
+indikátoru a kroku.
+
+\qquad Data užívání vod za období 2006-2016
+(\texttt{uzivani\_na\_nahraz\_dt.rds} ve složce \enquote{uzivani})
+pocházejí z evidence užívání vod, kterou spravuje VÚV T. G. M. a v rámci
+aplikace se ukládají do proměnné \texttt{u}. Data obsahují informace o
+poloze odběru ve formě souřadnic (\texttt{X} a \texttt{Y}),
+identifikačním čísle odběru (\texttt{ICOC}), názvu místa odběru
+(\texttt{NAZICO}) a také o jevu (odběry z podzemních vod \texttt{POD},
+odběry z povrchových vod \texttt{POV} či vypouštění \texttt{VYP}). V
+rámci přípravy dat byly \texttt{ICOC}ům, které obsahovali pozorované
+údaje, ale měli chybějící souřadnice, přiřazeny průměry souřadnic mezi
+odběry se stejným \texttt{ICOC} a jiným jevem. Tyto data slouží k
+vykreslení časových řad a tabulek. Pro vykreslení bodů do mapy bylo
+nutné vytvořit soubor (\texttt{u\_leaflet.rds} ve stejné složce), který
+obsahuje pouze jeden zaznam pro každý \texttt{ICOC}. Souřadnice těchto
+\texttt{ICOC}ů byly transformovány do souřadnicového systému WGS84 a
+následně byly uloženy ve formátu \texttt{SpatialPointsDataFrame}.
+
+\qquad Kalibrace modelu Bilan proběhla s nastavením modelu na denní
+časový krok při použití šesti volných parametrů (\emph{Spa}, \emph{Alf},
+\emph{Dgm}, \emph{Soc}, \emph{Mec}, \emph{Grd}). Parametry jsou popsány
+v tabulce \ref{tab7} (VÚV TGM 2015). Soubor s parametry
+\texttt{pars.rds} se nahrává v aplikaci do stejnojmenné proměnné a
+obsahuje počáteční hodnoty parametrů (\texttt{initial}), jejích dolní a
+horní meze (\texttt{lower}, \texttt{upper}) a stávající hodnotu
+(\texttt{current}). Tyto proměnné jsou dány pro každý UPOV. K stanovení
+hodnot parametrů byl použit globální optimalizační algoritmus
+diferenciální evoluce (VÚV TGM 2015).
+
+\qquad Model byl kalibrován na hydrologické charakteristiky (m-denní
+průtoky a dlouhodobý průměrný průtok) povodí UPOV poskytnuté ČHMÚ.
+M-denní průtoky vypočítané na základě pozorovaných hodnot lze načíst ze
+souboru \texttt{chars\_mm.rds}, zatímco m-denní průtoky pro simulována
+data se počítají rovnou v aplikaci z denních simulovaných průtoků.
+
+\qquad K validaci denních průtoků (soubor \texttt{QD.rds} ze složky
+\enquote{chmu}) bylo využito 156 měrných stanic. Po propojení
+databankového čísla \texttt{DBCN} s povodím \texttt{UPOV\_ID} zbylo 153
+stanic. Mimo \texttt{DBCN} a \texttt{UPOV\_ID} soubor obsahuje hodnoty
+pozorovaných denních průtoků (\texttt{value}) za období 1980-2010
+(\texttt{DTM}). Simulované průtoky se nacházejí ve složce
+\enquote{routed-0\_bilan\_bez\_VN} a obdobně jako u denních dat
+hydrologické bilance obdrží se při zvolení konkrétní stanice (dle
+patřičného \texttt{UPOV\_ID} aplikace načte odpovídající .rds soubor).
+Pro prostorový vykreslení stanic se používá soubor \texttt{QD\_stanice}
+(složka \enquote{geo\_rds}, soubor \texttt{stanice.rds}). Původní
+shapefile byl převeden do souřadnicového systému WGS84 a uložen ve
+formátu .rds. Soubor obsahuje nejen prostorové informace, ale i
+informace o názvech toku, ploše povodí atd.
+
+\qquad Validace měsíčních průtoků využívá záznamy 542 měrných stanic z
+období 1982-2010. Prostorová data jsou uložená do proměnné
+\texttt{stanice} (soubor \texttt{E04\_Vodomerne\_stanice.rds} ze složky
+\enquote{geo\_rds}). Data s naměřenými (\texttt{QMER}) a simulovanými
+(\texttt{QNEX}, \texttt{QNEY}) průtoky lze načíst ze souboru
+\texttt{data\_validace.rds} ze složky \enquote{chmu}. Tento soubor byl
+vytvořen agregací denních dat ze složky
+\enquote{routed-0\_bilan\_bez\_VN}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|l|l|l|}
+\hline
+název  & \multicolumn{1}{c|}{\texttt{Alf}}                                                                                                                  & \multicolumn{1}{c|}{\texttt{Dgm}}                                                                                                                                                  & \multicolumn{1}{c|}{\texttt{Grd}}                                                             \\ \hline
+význam & \begin{tabular}[c]{@{}l@{}}parametr určující \\ odtok ze zásoby \\ pro přímý odtok\end{tabular}                                                    & \begin{tabular}[c]{@{}l@{}}koeficient mezi teplotou\\  a táním sněhu\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}parametr určující \\ odtok ze zásoby \\ podzemní vody\end{tabular} \\ \hline
+název  & \multicolumn{1}{c|}{\texttt{Mec}}                                                                                                                  & \multicolumn{1}{c|}{\texttt{Soc}}                                                                                                                                                  & \multicolumn{1}{c|}{\texttt{Spa}}                                                             \\ \hline
+význam & \begin{tabular}[c]{@{}l@{}}parametr rozdělující\\ perkolaci na přímý \\ odtok a na dotaci \\ podzemní vody pro \\ podmínky tání sněhu\end{tabular} & \begin{tabular}[c]{@{}l@{}}koeficient mezi teplotou \\ a táním parametr \\ rozdělující perkolaci na \\ přímý odtok a na dotaci \\ podzemní vody pro letní \\ podmínky\end{tabular} & \begin{tabular}[c]{@{}l@{}}kapacita zásoby\\  půdní vlhkosti\end{tabular}                     \\ \hline
+\end{tabular}
+\caption{Parametry denního modelu Bilan}
+\label{tab7}
+\end{table}
+
+\subsubsection{5.3 Postprocessing}\label{postprocessing}
+
+\qquad Pro podporu projektu Voda-Sucho byl vytvořen balíček
+\texttt{CatCa}\footnote{Repozitář na GitHub:
+  \url{https://github.com/KVHEM/CatCa}.}, který obsahuje některé
+důležité funkce pro práci s útvary povrchových vod, vypočet bilanci,
+m-denních vod atd. Nainstalovat balíček lze pomocí příkazu
+\texttt{devtools::install\_github("KVHEM/CatCa")}. V rámci tvorby
+aplikace byly do tohoto balíčků přidány také funkce pro připravů dat.
+Tyto funkce upravují vstupní data do potřebného formátu a vybírají pouze
+potřebné proměnné pro snížení využívané paměti a výpočetní náročností.
+Přehled funkcí k přípravě dat je v tabulce~\ref{tab8}. Dále balíček
+obsahuje funkci \enquote{getpath} pro nastavení pracovních cest k
+uložišti dat. Pokud cesta není nastavena pomocí funkce \enquote{getpath}
+je nutné jí uložit manuálně do proměnné \texttt{.datadir}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\texttt{prep\_spatial\_data()}   & příprava prostorových dat pro aplikaci                     \\ \hline
+\texttt{prep\_bilan\_month()}    & příprava měsíční bilance pro aplikaci                      \\ \hline
+\texttt{prep\_QD()}             & příprava denních průtoku (validace) pro aplikaci  \\ \hline
+\texttt{prep\_uzivani()}        & příprava užívaní pro aplikaci                              \\ \hline
+\texttt{prep\_uzivani\_upovid()} & příprava připojeni \texttt{UPOV\_ID} k užívaní pro aplikaci \\ \hline
+\end{tabular}
+\caption{Přehled funkcí z balíčku \texttt{CatCa} pro přípravu dat}
+\label{tab8}
+\end{table}
 
 \subsection{6 Základní rozvržení}\label{zakladni-rozvrzeni}
+
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/rozlozeni2}
+      \caption{Základní rozlozeni okna aplikace}
+      \label{fig:ch5.2}
+\end{figure}
+
+\qquad Nejdřívé by bylo vhodné úvest některé pojmy, které budou
+používány pro popis základního rozvržení aplikace. Okno aplikace je
+většinou rozděleno do několiká hlavních části: boční panel, panel s
+mapovým výstupem a panel s grafickými výstupy. V bočním panelu se
+nastavují vstupy pro vykreslení mapy, požádované vrstvy a lze také
+použit pole pro vyhledávaní útvaru. Pole \enquote{Výhledávání útvaru}
+nabízí seznam všech výkreslených útvarů, ale lze ho také použít k
+ručnímu vyhledávání; stačí vymazat momentálně zobrazený název a napsát
+název toku či jeho \texttt{UPOV\_ID}. Pole \enquote{Vrstvy} v bočním
+panelu je k dispozici pro každý panel s mapovým výstupem aplikace a
+umožňuje výběr následujících vrstev: povodí, řeky, jezera, nádrží,
+mapový podklad, povodí 3. řádu a administrativní členění České republiky
+(kraje a okresy). Boční panel některých záložek také obsahuje tlačítka
+\enquote{Reset} a \enquote{Zobrazit}. Tlačítko \enquote{Reset} vrácí
+mapový panel na počátečně nastavené souřadnice. Tlačítko
+\enquote{Zobrazit} slouží k obnovení/spouštění vykreslení po nastavení
+vstupů. Horní lišta aplikace obsahuje přepináč mezi jednotlivými
+záložkami aplikace: \enquote{Základní mapa}, \enquote{Indikátory sucha},
+\enquote{Užívání}, \enquote{Validace} a \enquote{O projektu}. Grafy
+zpravidla mají vlastní výběr proměnných, který se na obrázku
+\ref{fig:ch5.2} nachází v pravém horním rohu grafického panelu. Tento
+výběr má tvar srolovácího ololo tlačítka. Dále grafický panel může
+obsahovat vlastní lištu se záložky pro přepinání mezi jednotlivými typy
+grafů a tabulek.
 
 \subsubsection{6.1 Základní mapa}\label{zakladni-mapa}
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_ZM}
       \caption{Okno "základní mapa"}
-      \label{fig1}
+      \label{fig:ch5.3}
 \end{figure}
 
-Okno prohlížeče je rozděleno do tří části: boční panel, panel s mapovým
-výstupem a panel s grafickými výstupy.
+\qquad V bočním panelu se nacházejí pole \enquote{Výhledávání útvaru},
+\enquote{Prvky hydrologické bilance}, \enquote{Filtrace dle hodnoty},
+\enquote{Vrstvy} a tlačítka \enquote{Reset} a \enquote{Zobrazit}.
+Užívatel volí proměnnou hydrologické bilance, podle níž budou zbarveny
+jednotlivá povodí zobrazené na mapě. Hodnoty jsou agregovány do
+měsíčních a ročních kroků, lze také vykreslit dlouhodobé průměry, tzn.
+průměry za celé období nebo za konkretní periody po 29 letech:
+1961-1990, 1971-2000 a 1981-2010. \enquote{Filtrace dle hodnoty} v
+počátečním stavu obsahuje všechny hodnoty zvolené proměnné. Po nastavení
+rozsahu hodnot se vykreslí pouze povodí odpovídající požadavku.
+\enquote{Vyhledávání útvaru} je jedinou částí bočního panelu, která je
+propojená nejenom s mapou, ale i s grafickými výstupy a to pomocí funkce
+\texttt{renderUI()} z balíčků \texttt{Shiny}, do které je
 
-V bočním panelu se nastavují vstupy pro vykreslení mapy. Volí se zde
-proměnná hydrologické bilance, podle níž budou zbarveny jednotlivá
-povodí zobrazené na mapě. Hodnoty jsou agregovány do měsíčních a ročních
-kroků, lze také vykreslit dlouhodobé průměry, tzn. průměry za celé
-období a za periody 1961-1990, 1971-2000 a 1981-2010.
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{renderUI}\NormalTok{(\{}\KeywordTok{selectizeInput}\NormalTok{(}\DataTypeTok{inputId =} \StringTok{"search.id"}\NormalTok{, }
+                         \DataTypeTok{label =} \StringTok{"Vyhledávání útvaru"}\NormalTok{,}
+                         \DataTypeTok{selected =}\NormalTok{ input}\OperatorTok{$}\NormalTok{map_shape_click}\OperatorTok{$}\NormalTok{id,}
+                         \DataTypeTok{choices =}\NormalTok{ search.choices)\})}
+\end{Highlighting}
+\end{Shaded}
 
-Filtrace dle hodnoty v počátečním stavu obsahuje všechny hodnoty zvolené
-proměnné. Po nastavení rozsahu hodnot se vykreslí pouze povodí
-odpovídající požadavku.
+Pro zvolené povodí se vypočítají časové řady z měsíčních a denních dat a
+čára překročení pro celé období, roční období a měsíce (dlouhodobé
+charakteristiky). Zvolené povodí se zvýrazní v mapě červeným okrajem.
+Kliknutím na jiné povodí se přepočítají grafické výstupy a název nově
+zvoleného povodí s jeho \texttt{UPOV\_ID} se promítne do pole
+\enquote{Vyhledávání útvaru}.
 
-Vyhledávání útvaru je jedinou částí bočního panelu, která je propojená
-nejenom s mapou, ale i s grafickými výstupy. Pro zvolené povodí se
-vypočítají časové řady z měsíčních a denních dat a čára překročení pro
-celé období, roční období a měsíce (dlouhodobé charakteristiky). Zvolené
-povodí se zvýrazní v mapě červeným okrajem. Kliknutím na jiné povodí se
-přepočítají grafické výstupy a název nově zvoleného povodí s jeho
-UPOV\_ID se promítne do pole \enquote{Vyhledávání útvaru}. Toto pole lze
-také použít k ručnímu vyhledávání; stačí vymazat momentálně zobrazený
-název a začít psát název toku či jeho UPOV\_ID.
-
-Grafy mají vlastní výběr proměnných z prvků hydrologické bilance, který
-se nachází v pravém horním rohu grafického panelu.
-
-Po nastavení údajů k vykreslení lze použít tlačítko \enquote{Zobrazit}.
-
-Tlačítko \enquote{Reset} vrací mapový panel na počátečně nastavené
-souřadnice
-
-Mapový panel obsahuje základní vrstvy (jsou obsaženy v každém mapovém
-výstupu aplikace), jsou to vrstvy řek, jezer a nádrží a vrstva mapového
-podkladu. Vrstva povodí se zbarví dle nastavení v bočním panelu. Dále
-jsou k dispozici vrstvy administrativního členění ČR, vrstva povodí 3.
-řádu a vrstva horního povodí. Vrstva horního povodí zobrazuje pouze
-povodí přitékající do vybraného povodí.
-
-V budoucnu bude umožněno přiblížení zvoleného polygonu a jemu
-odpovídacího okresu, kraje či oblasti povodí 3. řádu. Tento systém
-přibližování by pak měl být použít i u ostatních mapových výstupů v
-aplikaci.
+Dále je k dispozici vrstva horního povodí. Vrstva horního povodí
+zobrazuje pouze povodí přitékající do vybraného povodí.
 
 Momentálně jsou v grafickém panelu u časových řad zobrazeny trendy pro
 celé pozorované období. V budoucnu budou grafické výstupy rozšířeny o
@@ -1972,7 +2267,7 @@ vyhodnocení statistické významnosti pro vybrané období.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_indikatory}
       \caption{Okno "indikatory"}
-      \label{fig2}
+      \label{fig:ch5.4}
 \end{figure}
 
 Záložka indikátory sucha se skládá z bočního panelu, mapového panelu a
@@ -2002,7 +2297,7 @@ povodí.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_uzivani}
       \caption{Okno "uzivani"}
-      \label{fig3}
+      \label{fig:ch5.5}
 \end{figure}
 
 Záložka užívání je rozdělena do čtyř části: panel s mapovým výstupem,
@@ -2023,7 +2318,7 @@ Tento panel lze přetáhnout na libovolné místo v rámci okna prohlížeče.
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_validace}
       \caption{Okno "validace"}
-      \label{fig4}
+      \label{fig:ch5.6}
 \end{figure}
 
 V současné verzi záložka \enquote{Validace} se dělí na dvě částí: mapový
@@ -2050,7 +2345,7 @@ V dalších verzích bude umožněno porovnání výstupu modelu s pozorováním
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_o_projektu}
       \caption{Okno "o projektu"}
-      \label{fig5}
+      \label{fig:ch5.7}
 \end{figure}
 
 Krátký popis projektu a veškeré kontakty.V budoucnu bude rozšířeno o
@@ -2073,246 +2368,324 @@ metodiky k jednotlivým součástem systému.
 
 \newpage
 
+\section{Literatura}\label{literatura}
+
+\label{literatura}
+
+\hypertarget{refs}{}
+\hypertarget{ref-normalizing}{}
+ABDI, Herve a LJ WILLIAMS, 2010. Normalizing data. Encyclopedia of
+research design. \emph{Thousand Oaks, CA: Sage}.
+
+\hypertarget{ref-trellisplot}{}
+BECKER, Richard A, William S CLEVELAND, Ming-Jen SHYU, Stephen P KALUZNY
+a OTHERS, 1996. A tour of Trellis graphics. \emph{Murray Hill, NJ: AT \&
+T Bell Laboratories}.
+
+\hypertarget{ref-brinton_1919}{}
+BRINTON, Willard Cope, 1919. \emph{Graphic Methods for Presenting
+Facts}. B.m.: The Engineering Magazine Company, New York.
+ISBN~978-1155058870.
+
+\hypertarget{ref-leverages_regression}{}
+CARDINALI, C, 2014. Observation influence diagnostic of a data
+assimilation system. \emph{Advanced Data Assimilation for Geosciences:
+Lecture Notes of the Les Houches School of Physics: Special Issue}.
+B.m.: Lecture Notes of the Les Houch.
+
+\hypertarget{ref-chang2012}{}
+CHANG, W., 2012. \emph{R Graphics Cookbook: Practical Recipes for
+Visualizing Data}. B.m.: O'Reilly Media. ISBN~9781449363116.
+
+\hypertarget{ref-spatial}{}
+CHESHIRE, James a Robin LOVELACE, 2015. Spatial data visualisation with
+R. \emph{Geocomputation: A Practical Primer}. B.m.: Sage.
+
+\hypertarget{ref-cleveland1993}{}
+CLEVELAND, William S., 1993. \emph{Visualizing Data}. B.m.: Hobart
+Press. ISBN~978-0963488404.
+
+\hypertarget{ref-cleveland1994}{}
+CLEVELAND, William S., 1994. \emph{The Elements of Graphing Data}. B.m.:
+Hobart Press. ISBN~0963488414.
+
+\hypertarget{ref-cleveland_mcgill}{}
+CLEVELAND, William S. a Robert MCGILL, 1984. Graphical Perception:
+Theory, Experimentation, and Application to the Development of Graphical
+Methods. \emph{Journal of the American Statistical Association}. B.m.:
+Taylor \& Francis.
+
+\hypertarget{ref-mbdist2}{}
+DE MAESSCHALCK, Roy, Delphine JOUAN-RIMBAUD a Désiré L MASSART, 2000.
+The mahalanobis distance. \emph{Chemometrics and intelligent laboratory
+systems}. B.m.: Elsevier.
+
+\hypertarget{ref-dplyr}{}
+DPLYR, {[}vid. 17.4.2018{]}. \emph{A grammar of data manipulation.}
+{[}online{]}. Dostupné z:~\url{https://github.com/tidyverse/dplyr}
+
+\hypertarget{ref-bootstrap}{}
+EFRON, B. a R.J. TIBSHIRANI, 1994. \emph{An Introduction to the
+Bootstrap}. B.m.: Taylor \& Francis Ltd. ISBN~0-412-04231-2.
+
+\hypertarget{ref-ferster}{}
+FERSTER, Bill, 2012. \emph{Interactive Visualization: Insight through
+Inquiry (MIT Press)}. B.m.: The MIT Press. ISBN~978-0262018159.
+
+\hypertarget{ref-dataviz_history}{}
+FRIENDLY, M., 2006. A Brief History of Data Visualization.
+In:~\emph{Handbook of Computational Statistics: Data Visualization}.
+B.m.: Springer-Verlag. ISBN~978-3-540-32825-4.
+
+\hypertarget{ref-vicerozm_stat}{}
+HEBÁK, P, J HUSTOPECKÝ, E JAROŠOVÁ a I PECÁKOVÁ, 2007.
+\emph{Vícerozměrné statistické metody (1)}. B.m.: Informatorium, Praha.
+ISBN~80-7333-025-3.
+
+\hypertarget{ref-spatial2}{}
+HIJMANS, Robert, {[}vid. 13.4.2018{]}. \emph{Spatial Data Analysis and
+Modeling with R} {[}online{]}. Dostupné z:~\url{http://rspatial.org/}
+
+\hypertarget{ref-raster}{}
+HIJMANS, Robert J., 2017. raster: Geographic Data Analysis and Modeling.
+\emph{R package version 2.6-7} {[}online{]}. Dostupné
+z:~\url{https://cran.r-project.org/web/packages/raster/raster.pdf}
+
+\hypertarget{ref-kutner_transform}{}
+KUTNER, Michael H, Christopher J. NACHTSHEIM, John NETER a William LI,
+2004. \emph{Applied Linear Statistical Models}. B.m.: McGraw-Hill/Irwin.
+ISBN~0-07-238688-6.
+
+\hypertarget{ref-rasterVis}{}
+LAMIGUEIRO, Oscar Perpinan, 2018. rasterVis: Visualization Methods for
+Raster Data. \emph{R package version 0.44} {[}online{]}. Dostupné
+z:~\url{https://cran.r-project.org/web/packages/rasterVis/rasterVis.pdf}
+
+\hypertarget{ref-datarep2011}{}
+MACIEJEWSKI, Ross, 2011. \emph{Data Representations, Transformations,
+and Statistics for Visual Reasoning}. B.m.: Morgan \& Claypool
+Publishers. ISBN~978-1-608-45625-3.
+
+\hypertarget{ref-mbdist}{}
+MAHALANOBIS, P. C., 1936. On the generalised distance in statistics.
+\emph{Proceedings National Institute of Science}.
+
+\hypertarget{ref-mcintosh2016}{}
+MCINTOSH, Avery, 2016. The Jackknife Estimation Method. \emph{arXiv}.
+
+\hypertarget{ref-minard1858}{}
+MINARD, Charles Joseph, 1858. \emph{Carte figurative et approximative
+représentant pour l'année 1858 les émigrants du globe, les pays dóu ils
+partent et ceux oú ils arrivent} {[}online{]}. Dostupné
+z:~\url{https://www.loc.gov/resource/g3201e.ct000242/}
+
+\hypertarget{ref-murray}{}
+MURRAY, Scott, 2013. \emph{Interactive Data Visualization for the Web}.
+B.m.: O'Reilly Media. ISBN~978-1449339739.
+
+\hypertarget{ref-murrell2003}{}
+MURRELL, Paul, 2003. \emph{grid: The grid graphics package}.
+červenec~2003.
+
+\hypertarget{ref-murrell1998}{}
+MURRELL, Paul R., 1998. \emph{Investigations in Graphical Statistics}.
+B.m. PhD thesis. The University of Auckland.
+
+\hypertarget{ref-novovic2006}{}
+NOVOVIČOVÁ, Jana, 2006. \emph{Pravděpodobnost a matematická statistika}.
+B.m.: Praha: Vydavatelství ČVUT, ISBN~80-01-01980-2.
+
+\hypertarget{ref-normality_tests}{}
+ÖZTUNA, Derya, Atilla Halil ELHAN a Ersöz TÜCCAR, 2006. Investigation of
+four different normality tests in terms of type 1 error rate and power
+under different distributions. \emph{Turkish Journal of Medical
+Sciences}. B.m.: The Scientific; Technological Research Council of
+Turkey.
+
+\hypertarget{ref-palsky1996}{}
+PALSKY, Gilles, 1996. \emph{Des chiffres et des cartes: naissance et
+développement de la cartographie quantitative française au XIXe siecle}.
+B.m.: Comité des travaux historiques et scientifiques-CTHS.
+
+\hypertarget{ref-pecakova}{}
+PECÁKOVÁ, Iva, 2014. Problém chybějících dat v dotazníkových šetřeních.
+\emph{Politická ekonomie}. ISSN~2336-8225.
+
+\hypertarget{ref-playfair1786}{}
+PLAYFAIR, William, 1786. \emph{The Commercial and Political Atlas:
+Representing, by Means of Stained Copper-plate Charts, the Exports,
+Imports, and General Trade of England; the National Debt, And Other
+Public Accounts; With Observations And Remarks: by William
+Playfair,(author Of Regulations For The Interest Of Money.) To which are
+Added, Charts of the Revenue and Debts of Ireland, Done In The Same
+Manner, by James Corry, Esq. The Commercial Part is Taken from the
+Custom-House Books, and the Public Accounts from the Journals of the
+House of Commons, and Other Papers Belonging to that House Not Yet
+Published}. B.m.: J. Debrett, Piccadilly; GG; J. Robinson, Pater-Noster
+Row; J. Sewell, Cornhill; the engraver, SJ Neele, NO. 352, Strand; W.
+Creech; C. Elliot, Edinburgh;; L. White, Dublin.
+
+\hypertarget{ref-playfair1801}{}
+PLAYFAIR, William, 1801. \emph{The Statistical Breviary: Shewing, on a
+Principle Entirely New, the Resources of Every State and Kingdom in
+Europe; Illustrated with Stained Copper-plate Charts the Physical Powers
+of Each Distinct Nation with Ease and Perspicuity: to which is Added, a
+Similar Exhibition of the Ruling Powers of Hindoostan}. B.m.: T.
+Bensley, Bolt Court, Fleet Street.
+
+\hypertarget{ref-plyr}{}
+PLYR, {[}vid. 17.4.2018{]}. \emph{A R package for splitting, applying
+and combining large problems into simpler problems.} {[}online{]}.
+Dostupné z:~\url{https://github.com/hadley/plyr}
+
+\hypertarget{ref-plot}{}
+R-DOCUMENTATION, {[}vid. 11.5.2017{]}. \emph{Generic X-Y Plotting}
+{[}online{]}. Dostupné
+z:~\url{https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html}
+
+\hypertarget{ref-graphics}{}
+R-DOCUMENTATION, {[}vid. 22.4.2017{]}. \emph{The R Graphics Package}
+{[}online{]}. Dostupné
+z:~\url{https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/graphics-package.html}
+
+\hypertarget{ref-datavis_rahlf}{}
+RAHLF, Thomas, 2017. \emph{Data Visualisation with R: 100 Examples}.
+B.m.: Springer. ISBN~978-3-319-49751-8.
+
+\hypertarget{ref-rmarkdown}{}
+RMARKDOWN, {[}vid. 16.4.2018{]}. \emph{Dynamic Documents for R}
+{[}online{]}. Dostupné z:~\url{https://github.com/rstudio/rmarkdown}
+
+\hypertarget{ref-dygraphs}{}
+RSTUDIO, {[}vid. 11.4.2018{]}. \emph{dygraphs for R} {[}online{]}.
+Dostupné z:~\url{http://rstudio.github.io/dygraphs/}
+
+\hypertarget{ref-leaflet}{}
+RSTUDIO, {[}vid. 11.4.2018{]}. \emph{Leaflet for R} {[}online{]}.
+Dostupné z:~\url{http://rstudio.github.io/leaflet/}
+
+\hypertarget{ref-shiny}{}
+RSTUDIO, {[}vid. 14.4.2018{]}. \emph{Shiny from R Studio} {[}online{]}.
+Dostupné z:~\url{https://shiny.rstudio.com/}
+
+\hypertarget{ref-rstudio}{}
+RSTUDIO, {[}vid. 16.4.2018{]}. \emph{RStudio - Open source and
+enterprise-ready professional software for R} {[}online{]}. Dostupné
+z:~\url{https://www.rstudio.com/}
+
+\hypertarget{ref-SW_test}{}
+SHAPIRO, S. S. a M. B. WILK, 1965. An analysis of variance test for
+normality (complete samples)†. \emph{Biometrika}.
+
+\hypertarget{ref-plotly}{}
+SIEVERT, Carson, 2018. \emph{plotly for R} {[}online{]}. B.m.: bookdown.
+Dostupné z:~\url{https://plotly-book.cpsievert.me/}
+
+\hypertarget{ref-teetor2011}{}
+TEETOR, P., 2011. \emph{R Cookbook: Proven Recipes for Data Analysis,
+Statistics, and Graphics}. B.m.: O'Reilly Media. ISBN~9781449307264.
+
+\hypertarget{ref-tidyr}{}
+TIDYR, {[}vid. 17.4.2018{]}. \emph{Easily tidy data with spread and
+gather functions.} {[}online{]}. Dostupné
+z:~\url{https://github.com/tidyverse/tidyr}
+
+\hypertarget{ref-tufte1983}{}
+TUFTE, Edward R., 1983. \emph{The Visual Display of Quantitative
+Information}. B.m.: Graphics Press. ISBN~978-0961392109.
+
+\hypertarget{ref-tufte1990}{}
+TUFTE, Edward R., 1990. \emph{Envisioning Information}. B.m.: Graphics
+Pr. ISBN~978-0961392116.
+
+\hypertarget{ref-jackknife_tukey}{}
+TUKEY, John W., 1958. Bias and Confidence in Not Quite Large Samples.
+\emph{Annals of Mathematical Statistics}.
+
+\hypertarget{ref-tukey1962}{}
+TUKEY, John W., 1962. The Future of Data Analysis. \emph{Annals of
+Mathematical Statistics}. B.m.: The Institute of Mathematical
+Statistics.
+
+\hypertarget{ref-tukey1977}{}
+TUKEY, John W., 1977. \emph{Exploratory Data Analysis}. B.m.:
+Addison-Wesley. ISBN~0201076160.
+
+\hypertarget{ref-htmlwidgets}{}
+VAIDYANATHAN, Ramnath, Yihui XIE, JJ ALLAIRE, Joe CHENG a Kenton
+RUSSELL, 2018. htmlwidgets: HTML Widgets for R. \emph{R package version
+1.0} {[}online{]}. Dostupné
+z:~\url{https://cran.r-project.org/web/packages/htmlwidgets/htmlwidgets.pdf}
+
+\hypertarget{ref-bilan}{}
+VIZINA, Adam, Stanislav HORÁČEK a Martin HANEL, 2015. Nové možnosti
+modelu Bilan. \emph{Vodohospodářské technicko-ekonomické informace}.
+B.m.: Výzkumný ústav vodohospodářský TG Masaryka, veřejná výzkumná
+instituce.
+
+\hypertarget{ref-bilan_man}{}
+VÚV TGM, 2015. \emph{Model hydrologické bilance Bilan}. B.m.: Výzkumný
+ústav vodohospodářský TG Masaryka, veřejná výzkumná instituce.
+
+\hypertarget{ref-layered-grammar}{}
+WICKHAM, Hadley, 2010a. A layered grammar of graphics. \emph{Journal of
+Computational and Graphical Statistics}.
+
+\hypertarget{ref-wickham_ggplot}{}
+WICKHAM, Hadley, 2010b. \emph{ggplot2: Elegant Graphics for Data
+Analysis (Use R!)}. B.m.: Springer. ISBN~978-0387981406.
+
+\hypertarget{ref-tidydata}{}
+WICKHAM, Hadley, 2014. Tidy data. \emph{The Journal of Statistical
+Software} {[}online{]}. Dostupné
+z:~\url{http://www.jstatsoft.org/v59/i10/}
+
+\hypertarget{ref-grolemund_wickham2017}{}
+WICKHAM, Hadley a Garrett GROLEMUND, 2017. \emph{R for Data Science}.
+B.m.: O'Reilly Media. ISBN~1491910399.
+
+\hypertarget{ref-pp_wiki}{}
+WIKIPEDIA, {[}vid. 11.8.2017{]}. \emph{P--P plot - Wikipedia}
+{[}online{]}. Dostupné
+z:~\url{https://en.wikipedia.org/wiki/P\%E2\%80\%93P_plot}
+
+\hypertarget{ref-hist_wiki}{}
+WIKIPEDIA, {[}vid. 6.8.2017{]}. \emph{Histogram} {[}online{]}. Dostupné
+z:~\url{https://en.wikipedia.org/wiki/Histogram}
+
+\hypertarget{ref-wilkinson2005}{}
+WILKINSON, Leland, 2005. \emph{The Grammar of Graphics}. B.m.: Springer.
+ISBN~9780387286952.
+
+\hypertarget{ref-knitr}{}
+XIE, Yihui, 2015. \emph{Dynamic Documents with R and Knitr}
+{[}online{]}. B.m.: Boca Raton, Florida: Chapman; Hall/CRC. Dostupné
+z:~\href{\%20http://yihui.name/knitr/}{ http://yihui.name/knitr/}
+
+\hypertarget{ref-rmd:bookdown}{}
+XIE, Yihui, 2018. \emph{Authoring Books and Technical Documents with R
+Markdown}. B.m.: bookdown.
+
+\hypertarget{ref-zumel_2014}{}
+ZUMEL, Nina a John MOUNT, 2014. \emph{Practical Data Science with R}.
+B.m.: Manning. ISBN~9781617291562.
+
+\newpage
+
 \section*{Přílohy}\label{prilohy}
 \addcontentsline{toc}{section}{Přílohy}
 
-\addcontentsline{toc}{subsection}{\listfigurename}
-
-\listoffigures
-
-\newpage
+\label{prilohy}
 
 \subsection{R kód}\label{r-kod}
 
 \newpage
 
-\subsection*{Literatura}\label{literatura}
-\addcontentsline{toc}{subsection}{Literatura}
+\section*{Poznamky}
 
-\hypertarget{refs}{}
-\hypertarget{ref-dataviz_history}{}
-{[}1{]} FRIENDLY, M. A Brief History of Data Visualization. In:
-\emph{Handbook of Computational Statistics: Data Visualization}. B.m.:
-Springer-Verlag, 2006. ISBN 978-3-540-32825-4.
+\thispagestyle{empty}
 
-\hypertarget{ref-brinton_1919}{}
-{[}2{]} BRINTON, W.C. \emph{Graphic Methods for Presenting Facts}. B.m.:
-The Engineering Magazine Company, New York, 1919. ISBN 978-1155058870.
-
-\hypertarget{ref-tukey1962}{}
-{[}3{]} TUKEY, J.W. The Future of Data Analysis. \emph{Annals of
-Mathematical Statistics}. 1962.
-
-\hypertarget{ref-tukey1977}{}
-{[}4{]} TUKEY, J.W. \emph{Exploratory Data Analysis}. B.m.:
-Addison-Wesley, 1977. ISBN 0201076160.
-
-\hypertarget{ref-cleveland_priceonomics}{}
-{[}5{]} \emph{How William Cleveland Turned Data Visualization Into a
-Science {[}vid. 2.11.2017{]}} {[}online{]}. Dostupné z:
-\url{https://priceonomics.com/}
-
-\hypertarget{ref-datavis_rahlf}{}
-{[}6{]} RAHLF, T. \emph{Data Visualisation with R: 100 Examples}. B.m.:
-Springer, 2017. ISBN 978-3-319-49751-8.
-
-\hypertarget{ref-tufte1990}{}
-{[}7{]} TUFTE, E.R. \emph{Envisioning Information}. B.m.: Graphics Pr,
-1990. ISBN 978-0961392116.
-
-\hypertarget{ref-tufte1983}{}
-{[}8{]} TUFTE, E.R. \emph{The Visual Display of Quantitative
-Information}. B.m.: Graphics Press, 1983. ISBN 978-0961392109.
-
-\hypertarget{ref-cleveland_mcgill}{}
-{[}9{]} CLEVELAND, W.S. a R. MCGILL. Graphical Perception: Theory,
-Experimentation, and Application to the Development of Graphical
-Methods. \emph{Journal of the American Statistical Association}. 1984.
-
-\hypertarget{ref-cleveland1994}{}
-{[}10{]} CLEVELAND, W.S. \emph{The Elements of Graphing Data}. B.m.:
-Hobart Press, 1994. ISBN 0963488414.
-
-\hypertarget{ref-trellisplot}{}
-{[}11{]} BECKER, R.A., W.S. CLEVELAND, M.-J. SHYU, aj. A tour of Trellis
-graphics. \emph{Murray Hill, NJ: AT \& T Bell Laboratories}. 1996.
-
-\hypertarget{ref-wilkinson2005}{}
-{[}12{]} WILKINSON, L. \emph{The Grammar of Graphics}. B.m.: Springer,
-2005. ISBN 9780387286952.
-
-\hypertarget{ref-wickham_ggplot}{}
-{[}13{]} WICKHAM, H. \emph{ggplot2: Elegant Graphics for Data Analysis
-(Use R!)}. B.m.: Springer, 2010. ISBN 978-0387981406.
-
-\hypertarget{ref-layered-grammar}{}
-{[}14{]} WICKHAM, H. A layered grammar of graphics. \emph{Journal of
-Computational and Graphical Statistics}. 2010.
-
-\hypertarget{ref-cleveland1993}{}
-{[}15{]} CLEVELAND, W.S. \emph{Visualizing Data}. B.m.: Hobart Press,
-1993. ISBN 978-0963488404.
-
-\hypertarget{ref-murray}{}
-{[}16{]} MURRAY, S. \emph{Interactive Data Visualization for the Web}.
-B.m.: O'Reilly Media, 2013. ISBN 978-1449339739.
-
-\hypertarget{ref-ferster}{}
-{[}17{]} FERSTER, B. \emph{Interactive Visualization: Insight through
-Inquiry (MIT Press)}. B.m.: The MIT Press, 2012. ISBN 978-0262018159.
-
-\hypertarget{ref-graphics}{}
-{[}18{]} \emph{R: The R Graphics Package {[}vid. 22.4.2017{]}}
-{[}online{]}. Dostupné z:
-\url{https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/graphics-package.html}
-
-\hypertarget{ref-teetor2011}{}
-{[}19{]} TEETOR, P. \emph{R Cookbook: Proven Recipes for Data Analysis,
-Statistics, and Graphics}. B.m.: O'Reilly Media, 2011. ISBN
-9781449307264.
-
-\hypertarget{ref-plot}{}
-{[}20{]} \emph{R: Generic X-Y Plotting {[}vid. 11.5.2017{]}}
-{[}online{]}. Dostupné z:
-\url{https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html}
-
-\hypertarget{ref-pp_wiki}{}
-{[}21{]} \emph{P--P plot - Wikipedia {[}vid. 11.8.2017{]}} {[}online{]}.
-Dostupné z: \url{https://en.wikipedia.org/wiki/P\%E2\%80\%93P_plot}
-
-\hypertarget{ref-chang2012}{}
-{[}22{]} CHANG, W. \emph{R Graphics Cookbook: Practical Recipes for
-Visualizing Data}. B.m.: O'Reilly Media, 2012. ISBN 9781449363116.
-
-\hypertarget{ref-novovic2006}{}
-{[}23{]} NOVOVIČOVÁ, J. \emph{Pravděpodobnost a matematická statistika}.
-B.m.: Praha: Vydavatelství ČVUT, 2006. ISBN 80-01-01980-2.
-
-\hypertarget{ref-datarep2011}{}
-{[}24{]} MACIEJEWSKI, R. \emph{Data Representations, Transformations,
-and Statistics for Visual Reasoning}. B.m.: Morgan \& Claypool
-Publishers, 2011. ISBN 978-1-608-45625-3.
-
-\hypertarget{ref-hist_wiki}{}
-{[}25{]} \emph{Histogram - Wikipedia {[}vid. 6.8.2017{]}} {[}online{]}.
-Dostupné z: \url{https://en.wikipedia.org/wiki/Histogram}
-
-\hypertarget{ref-grolemund_wickham2017}{}
-{[}26{]} WICKHAM, H. a G. GROLEMUND. \emph{R for Data Science}. B.m.:
-O'Reilly Media, 2017. ISBN 1491910399.
-
-\hypertarget{ref-jackknife_tukey}{}
-{[}27{]} TUKEY, J.W. Bias and Confidence in Not Quite Large Samples.
-\emph{Annals of Mathematical Statistics}. 1958, roč. 29.
-
-\hypertarget{ref-bootstrap}{}
-{[}28{]} EFRON, B. a R. TIBSHIRANI. \emph{An Introduction to the
-Bootstrap}. B.m.: Taylor \& Francis Ltd, 1994. ISBN 0-412-04231-2.
-
-\hypertarget{ref-mcintosh2016}{}
-{[}29{]} MCINTOSH, A. The Jackknife Estimation Method. \emph{arXiv}.
-2016.
-
-\hypertarget{ref-mbdist2}{}
-{[}30{]} DE MAESSCHALCK, R., D. JOUAN-RIMBAUD a D.L. MASSART. The
-mahalanobis distance. \emph{Chemometrics and intelligent laboratory
-systems}. 2000, roč. 50, č. 1.
-
-\hypertarget{ref-mbdist}{}
-{[}31{]} MAHALANOBIS, P.C. On the generalised distance in statistics.
-\emph{Proceedings National Institute of Science}. 1936.
-
-\hypertarget{ref-leverages_regression}{}
-{[}32{]} CARDINALI, C. Observation influence diagnostic of a data
-assimilation system. \emph{Advanced Data Assimilation for Geosciences:
-Lecture Notes of the Les Houches School of Physics: Special Issue}.
-2014.
-
-\hypertarget{ref-pecakova}{}
-{[}33{]} PECÁKOVÁ, I. Problém chybějících dat v dotazníkových šetřeních.
-\emph{Politická ekonomie}. 2014. ISSN 2336-8225.
-
-\hypertarget{ref-transformation}{}
-{[}34{]} \emph{Transformation of Data {[}vid. 3.2.2018{]}} {[}online{]}.
-Dostupné z:
-\url{http://statisticalconcepts.blogspot.cz/2010/02/transformation-of-data-validity-of.html}
-
-\hypertarget{ref-vicerozm_stat}{}
-{[}35{]} HEBÁK, P., J. HUSTOPECKÝ, E. JAROŠOVÁ, aj. \emph{Vícerozměrné
-statistické metody (1)}. B.m.: Informatorium, Praha, 2007. ISBN
-80-7333-025-3.
-
-\hypertarget{ref-normalizing}{}
-{[}36{]} ABDI, H. a L. WILLIAMS. Normalizing data. Encyclopedia of
-research design. \emph{Thousand Oaks, CA: Sage}. 2010.
-
-\hypertarget{ref-zumel_2014}{}
-{[}37{]} ZUMEL, N. a J. MOUNT. \emph{Practical Data Science with R}.
-B.m.: Manning, 2014. ISBN 9781617291562.
-
-\hypertarget{ref-kutner_transform}{}
-{[}38{]} KUTNER, M.H., C.J. NACHTSHEIM, J. NETER, aj. \emph{Applied
-Linear Statistical Models}. B.m.: McGraw-Hill/Irwin, 2004. ISBN
-0-07-238688-6.
-
-\hypertarget{ref-SW_test}{}
-{[}39{]} SHAPIRO, S.S. a M.B. WILK. An analysis of variance test for
-normality (complete samples)†. \emph{Biometrika}. 1965.
-
-\hypertarget{ref-normality_tests}{}
-{[}40{]} ÖZTUNA, D., A.H. ELHAN a E. TÜCCAR. Investigation of four
-different normality tests in terms of type 1 error rate and power under
-different distributions. \emph{Turkish Journal of Medical Sciences}.
-2006.
-
-\hypertarget{ref-murrell1998}{}
-{[}41{]} MURRELL, P.R. \emph{Investigations in Graphical Statistics}.
-B.m., 1998. PhD thesis. The University of Auckland.
-
-\hypertarget{ref-murrell2003}{}
-{[}42{]} MURRELL, P. \emph{grid: The grid graphics package}. červenec
-2003
-
-\hypertarget{ref-spatial}{}
-{[}43{]} CHESHIRE, J. a R. LOVELACE. Spatial data visualisation with R.
-\emph{Geocomputation: A Practical Primer}. 2015.
-
-\hypertarget{ref-spatial2}{}
-{[}44{]} HIJMANS, R. \emph{Spatial Data Analysis and Modeling with R
-{[}vid. 13.4.2018{]}} {[}online{]}. 2016. Dostupné z:
-\url{http://rspatial.org/}
-
-\hypertarget{ref-raster}{}
-{[}45{]} HIJMANS, R.J. raster: Geographic Data Analysis and Modeling.
-\emph{R package version 2.6-7} {[}online{]}. 2017. Dostupné z:
-\url{https://cran.r-project.org/web/packages/raster/raster.pdf}
-
-\hypertarget{ref-rasterVis}{}
-{[}46{]} LAMIGUEIRO, O.P. rasterVis: Visualization Methods for Raster
-Data. \emph{R package version 0.44} {[}online{]}. 2018. Dostupné z:
-\url{https://cran.r-project.org/web/packages/rasterVis/rasterVis.pdf}
-
-\hypertarget{ref-htmlwidgets}{}
-{[}47{]} VAIDYANATHAN, R., Y. XIE, J. ALLAIRE, aj. htmlwidgets: HTML
-Widgets for R. \emph{R package version 1.0} {[}online{]}. 2018. Dostupné
-z:
-\url{https://cran.r-project.org/web/packages/htmlwidgets/htmlwidgets.pdf}
-
-\hypertarget{ref-plotly}{}
-{[}48{]} SIEVERT, C. \emph{plotly for R} {[}online{]}. B.m.: bookdown,
-2018. Dostupné z: \url{https://plotly-book.cpsievert.me/}
-
-\hypertarget{ref-dygraphs}{}
-{[}49{]} \emph{dygraphs for R {[}vid. 11.4.2018{]}} {[}online{]}.
-Dostupné z: \url{http://rstudio.github.io/dygraphs/}
-
-\hypertarget{ref-leaflet}{}
-{[}50{]} \emph{Leaflet for R {[}vid. 11.4.2018{]}} {[}online{]}.
-Dostupné z: \url{http://rstudio.github.io/leaflet/}
-
-\hypertarget{ref-shiny}{}
-{[}51{]} \emph{Shiny from R Studio {[}vid. 14.4.2018{]}} {[}online{]}.
-Dostupné z: \url{https://shiny.rstudio.com/}
+(Minard 1858) (Palsky 1996)
 
 
 \end{document}

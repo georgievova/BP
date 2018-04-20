@@ -1,0 +1,28 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+# Úvod
+\pagestyle{plain}
+\setcounter{page}{1}
+
+<!-- \qquad Vizualizace dat vždy hrála významnou roli ve vědě. Je to jeden z nejlepších a nejjednoduších způsobů pro pochopení dat. Vizualizace poskytuje jasnou představu o konfiguraci dat, odhaluje skryte struktury v datech a shrnuje informace. Proces vizualizací je nedílnou součásti mnoha  -->
+
+<!--#lékařských -->  
+
+<!-- analýz a téměř všechna odvětví  -->
+
+<!-- #přírodní -->
+
+<!-- vědy využívají grafického zobrazení dat k vizualizaci a komunikaci svých výsledků. -->
+
+<!-- #Dlouhou tradici prezentace dat se vyznačuje i ekonomika. -->
+
+<!-- Data, která jsou sbírána a analyzována po dobu mnoha let data se v současné době převádějí do grafické formy. Masivní příliv dat a jejich dostupnost vedly k novým metodám a novým přístupům. Kombinace programovacích dovedností, matematických a statistických znalostí a jiných odborných znalostí týkajících se obsahu přijala název "*Data Science*". Objevily se pozice takzvaných "*information designers*", které vyvíjí vlastní softwary pro vizualizaci dat, zakládají poradenské firmy, pořádají globální workshopy nebo vytvářejí blogy s tisíci registrovanými uživateli. [@datavis_rahlf]  Přes všechny výhody vizualizace, jedná se pouze o nástroj datové analýzy, obecně dostupný každému. Nesprávné či nevhodné použití tohoto nástrojů vede k tomu, že existují grafy, které se považují za moc barevné a rušivý, postrádající smysl až zavádějící. Z tohoto důvodů se obracíme na takzvané zásady vizualizace.  -->
+
+<!-- \qquad Táto bakalářská práce se zabývá shrnutím klíčových poznatků o vizualizaci a průzkumové analýze dat a to jak z teoretického hlediska, tak i z hlediska praktické implementace v programovacím jazyku R.  Budou popsány zásady vizualizace, její zařazení do datové analýzy, moderní způsoby vizualizace (současně používané baličky v R, interaktivní grafy). Součásti práce je také webová aplikace pro vizualizaci a analýzu hydrologické bilance a předpověď sucha v útvarech povrchových vod ČR. -->
+
+\newpage
+
+# Cíle práce
