@@ -6,9 +6,17 @@ output:
 
 # Výsledky {-}
 
+\qquad Výsledkem práce je shrnutí klíčových poznatků týkajících se vizualizace a průzkumové analýzy dat s jejich následnou praktickou implementaci v R a to v podobě webové interaktivní aplikace. Aplikace slouží k analýze hydrologické bilance a předpovedi sucha v útvarech povrchových vod České republiky. Hlavní funkcionalita aplikace spočívá v její interaktivitě. Uživatel má možnost si prohlednout data v různých reprezentacích a to například vizualizace prostorového rozložení prvků hydrologické bilance na území ČR, jejich časových řad a čar překročení pro jednotlivé útvary či plošné rozložení indikátorů sucha. Díky tomu by si uživatel může snadno vyvodit vlastní výsledky či otázky pro další analýzu připadného řešení problematiky. Možnosti vlastního průzkumu dat, bez potřeby znalosti programovácího jazyka, případně struktury souborů, v ramcí přehledné interaktivní aplikace je jedním z hlavních přínosu této prace. 
+
+\qquad Aplikace je dostupná v digitální podobě jak na příloženým datovém nosiče, tak i na [serveru fakulty](https://shiny.fzp.czu.cz/KVHEM/HAMR/)^[Aplikace na serveru fakulty: https://shiny.fzp.czu.cz/KVHEM/HAMR/] (viz kapitola [5.1](#techres)). Složky a soubory datového nosiče jsou popsany v kapitole [5.2](#data) a přehled jejich struktury je znazorněn na obrázku \ref{fig:ch5.1}.
+
 \newpage
 
 # Diskuse {-}
+
+\qquad Přestože se aplikace zdá být plně fukční, existuje prostor k její vylepšení. Je možné odhalení drobných chyb či nefunkčností, které byli vyvojařem přelednuté. Chyby se mohou výskytnout stálé se vyvijejícího se programového jazyka. 
+
+\qquad První načtení aplikace trvá cca 40 vteřin a načtení jednotlivých záložek není okamžité. Lepšího výsledků by mohlo být dosaženo pomocí načtení dat z databazy typu `PostgreSQL`, `mongoDB` či jiného systému s rozhraním pro R (postředníctvím balíčků `DBI` a `dbplyr`) místo lokálního disku. Tento přechod by avšak potřeboval odporných ználostí a měl by být důkladně zvažen před bezprostřední implementaci. Problem rychlostí aplikace by mohlo také vyřešit její rozdělení do jednotlivých menších aplikací, tento krok avšak vyvolává otázky o přehledností a komfortu uživatele. 
 
 \newpage
 

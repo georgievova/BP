@@ -117,18 +117,21 @@ ggplot(data=HSL_0010, aes(DTM,P)) +
 * Zobrazení predikčních intervalů kolem řad 
 * Umožňuje vykreslování překrývajících se grafů, vyznačení oblastí zastíněním a označení určitých událostí svislými liniemi a popisky.
 
+\vspace*{-0.4cm}
+
 #### 4.3.3 `Leaflet` {#leaflet}
 
 \qquad `Leaflet` je další z populárních open source JavaScript vizualizačních knihoven pro interaktivní mapy. Využívají ji takové webové stránky jako jsou [*The New York Times*](http://www.nytimes.com/projects/elections/2013/nyc-primary/mayor/map.html) a [*The Washington Post*](http://www.washingtonpost.com/sf/local/2013/11/09/washington-a-world-apart/?utm_term=.906188040dc1), ale i [*GitHub*](https://blog.github.com/2013-06-13-there-s-a-map-for-that/) a [*Flickr*](https://www.flickr.com/map). `Leaflet` je také využíván GIS platformami jako jsou [*OpenStreetMap*](http://www.openstreetmap.org/#map=7/49.714/15.060), [*Mapbox*](https://www.mapbox.com/) a [*CartoDB*](https://carto.com/).
 
 \qquad Tento R balíček umožňuje integrování a ovládaní `Leaflet` map. Mezi jeho funkce patří pohyb/přiblížení v rámci mapy, možnost vytvářet mapy z libovolných kombinací (polygony, linie, markery, atd.). Dále snadno vykresluje prostorové objekty z balíčků `sp` nebo `sf` a datové soubory se sloupci zeměpisné šířky a délky. `Leaflet` také poskytuje možnost ovládání interakcí v `Shiny` aplikacích přes stávající hranice mapového výřezu či reakce na kliknutí myši uživatelem. Umožňuje zobrazení map v nesférickým Mercatorově zobrazení a má mnoho dalších funkcí a doplňků [@leaflet].
-
+\vspace*{-0.2cm}
 
 ### 4.4 Balíčky pro webové aplikace {#webviz}
 
 #### 4.4.1 `flexdashboard` 
 
 \qquad `flexdashboard` slouží k publikaci dat a jejích přehledné vizualizaci v rámci webového prohlížeče. Využívá `R Markdown` k publikaci souvisejících vizualizací do jednotného zobrazení neboli *dashboard*u. Balíček podporuje široký výběr komponentů, včetně `htmlwidgets`, `base`, `lattice` a `grid` grafiky, tabulek, textových poznámek a dalších. Vyznačuje se mimo jiné i jednoduchým a flexibilním nastavením samotného rozvržení dashboardu a to definováním řádků a sloupců. Komponenty takového dashboardu se pak inteligentně přizpůsobí oknu prohlížeče, případně obrazovce mobilního zařízení. Dále balíček umožňuje nastavení a přepínání mezi jednotlivými záložkami dashboardu. Pro dynamické vizualizace lze kombinovat `flexdashboard` a `Shiny` aplikace.
+\vspace*{-0.2cm}
 
 #### 4.4.2 `Shiny` {#shiny}
 
@@ -191,13 +194,14 @@ Tato funkce generuje grafický výstup v podobě  histogramu normálního rozdě
 \caption{Základní \texttt{render*()} funkce}
 \label{tab5}
 \end{table}
-
+\vspace*{-0.7cm}
 
 \qquad Pro komplexní `Shiny` aplikaci s větším počtem interaktivních prvků je vhodné použit funkce `reactive()` (tzv reaktivní výrazy). Tato funkce slouží zejména jako prostředník mezi `ui` a `render*()`. Na obrázku \ref{fig:ch4.4} je znázorněn příklad struktury jednoduché `Shiny` aplikace s použitím `reactive()` funkce. V tomto příkladu při změně numerického vstupu (`input$1`) se nejprve přepočítá `reactive()` a následně `render*() A` a `B`, zatímco při změně vstupu `input$2` či `input$3` se přepočítají pouze příslušné `render*()` výstupy `A` či `B` se zachováním informací z `input$1`.
+\vspace*{-0.15cm}
  
 \begin{figure}[H]
   \centering
-      \includegraphics[width=\textwidth]{fig/shiny}
+      \includegraphics[width=0.7\textwidth]{fig/shiny}
       \caption{Ukázka \texttt{Shiny} aplikace s použitím funkce \texttt{reactive()}.} 
       \label{fig:ch4.4}
 \end{figure} 

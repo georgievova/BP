@@ -142,9 +142,56 @@
 
 \pagestyle{plain} \setcounter{page}{1}
 
+\qquad Vizualizace dat vždy hrála významnou roli v datové analýze. Je to
+jeden z nejlepších a nejjednoduších (nejpřímějších?) způsobů pro
+pochopení a prezentaci dat. Vizualizace poskytuje jasnou představu o
+složení dat, odhaluje skryté struktury v datech a shrnuje informace.
+Proces vizualizací je nedílnou součásti mnoha analýz a téměř všechna
+odvětví využívají grafického zobrazení dat k vizualizaci a komunikaci
+svých výsledků.
+
+\qquad Data z těchto odvětví, která jsou sbírána a analyzována po dobu
+mnoha let se čím dat častějí převádějí do grafické formy. Masivní příliv
+dat a jejich dostupnost vedly k novým metodám a novým přístupům.
+Kombinace programovacích dovedností, matematických a statistických
+znalostí a jiných odborných znalostí týkajících se obsahu přijala název
+\enquote{\emph{Data Science}} (Rahlf 2017). V oblasti environmentálních
+dat to znamená možnost modelování klimatických změn a odhalení
+ekologických rizík s následným tlumočením výsledků široké veřejností.
+
+\qquad Hlavní výhodou vizualizace je její relativní jednoduchost na
+zpracování a dostupnost různých nástrojů k její tvorbě. Avšak nesprávné
+či nevhodné použití těchto nástrojů vede k existenci grafů, které lze
+považovat za nepřehledné, postrádající smysl až zavádějící. Z tohoto
+důvodů je vhodné se obracet na takzvané zásady vizualizace.
+
+\qquad Táto bakalářská práce se zabývá shrnutím klíčových poznatků o
+vizualizaci a průzkumové analýze dat a to jak z teoretického hlediska,
+tak i z hlediska praktické implementace v programovacím jazyku R. Budou
+popsány zásady vizualizace, její zařazení do datové analýzy, moderní
+způsoby vizualizace (současně používané baličky v R, interaktivní
+grafy). Součásti práce je také webová aplikace pro vizualizaci a analýzu
+hydrologické bilance a předpověď sucha v útvarech povrchových vod ČR.
+
 \newpage
 
 \section{Cíle práce}\label{cile-prace}
+
+\qquad Práce má dva hlavní cíle. Prvním cílem se zabývá teoretická část,
+která shrnuje klíčové poznátky týkajících se zásad vizualizace,
+průzkumové analýzy dat a vizualizace v statistickém programovacím jazyku
+R. Nejdříve je popsána kratká historie vizualizace, výsledkém které bylo
+stanovení jejích zásad. Vývoj vizualizace je těsně propojen s vývojem
+statistiky a výpočetní techniky, což se projevilo na vývoji analýzy dat.
+Postupně se vizualizace stala jedním z klíčových nástrojů průzkumové
+analýzy, která výužívá statistické grafy a modelování k lepšímu
+pochopení dat. Dále teoretická část obsahuje informace o nastrojích
+současné vizualizace dat v jazyku R, který je v současnosti jeden z
+nejpopulárnějších nástrojů analýzy dat (Developer Survey Results 2017).
+Popsány jsou jak základní možností, tak i nejčastěji používáné balíčky.
+Další cíl této bakalářské práce staví na teoretické částí a využívá
+informace v ní obsažené k vytvoření webové aplikace s interaktivními
+prvky pro demonstraci možností moderní vizualizace enviromentálních dat.
 
 \newpage
 
@@ -1747,6 +1794,8 @@ interaktivních funkcí. Mezi tyto funkce patří například (RStudio {[}vid.
   zastíněním a označení určitých událostí svislými liniemi a popisky.
 \end{itemize}
 
+\vspace*{-0.4cm}
+
 \hypertarget{leaflet}{\paragraph{\texorpdfstring{4.3.3
 \texttt{Leaflet}}{4.3.3 Leaflet}}\label{leaflet}}
 
@@ -1773,7 +1822,7 @@ Dále snadno vykresluje prostorové objekty z balíčků \texttt{sp} nebo
 \texttt{Shiny} aplikacích přes stávající hranice mapového výřezu či
 reakce na kliknutí myši uživatelem. Umožňuje zobrazení map v nesférickým
 Mercatorově zobrazení a má mnoho dalších funkcí a doplňků (RStudio
-{[}vid. 11.4.2018{]}).
+{[}vid. 11.4.2018{]}). \vspace*{-0.2cm}
 
 \hypertarget{webviz}{\subsubsection{4.4 Balíčky pro webové
 aplikace}\label{webviz}}
@@ -1792,7 +1841,7 @@ definováním řádků a sloupců. Komponenty takového dashboardu se pak
 inteligentně přizpůsobí oknu prohlížeče, případně obrazovce mobilního
 zařízení. Dále balíček umožňuje nastavení a přepínání mezi jednotlivými
 záložkami dashboardu. Pro dynamické vizualizace lze kombinovat
-\texttt{flexdashboard} a \texttt{Shiny} aplikace.
+\texttt{flexdashboard} a \texttt{Shiny} aplikace. \vspace*{-0.2cm}
 
 \hypertarget{shiny}{\paragraph{\texorpdfstring{4.4.2
 \texttt{Shiny}}{4.4.2 Shiny}}\label{shiny}}
@@ -1907,6 +1956,8 @@ vstupu z \texttt{ui} v \texttt{render*()} dochází k přepočítání.
 \label{tab5}
 \end{table}
 
+\vspace*{-0.7cm}
+
 \qquad Pro komplexní \texttt{Shiny} aplikaci s větším počtem
 interaktivních prvků je vhodné použit funkce \texttt{reactive()} (tzv
 reaktivní výrazy). Tato funkce slouží zejména jako prostředník mezi
@@ -1918,22 +1969,21 @@ numerického vstupu (\texttt{input\$1}) se nejprve přepočítá
 zatímco při změně vstupu \texttt{input\$2} či \texttt{input\$3} se
 přepočítají pouze příslušné \texttt{render*()} výstupy \texttt{A} či
 \texttt{B} se zachováním informací z \texttt{input\$1}.
+\vspace*{-0.15cm}
 
 \begin{figure}[H]
   \centering
-      \includegraphics[width=\textwidth]{fig/shiny}
+      \includegraphics[width=0.7\textwidth]{fig/shiny}
       \caption{Ukázka \texttt{Shiny} aplikace s použitím funkce \texttt{reactive()}.} 
       \label{fig:ch4.4}
 \end{figure}
-
-\newpage
 
 \section*{Praktická část}\label{prakticka-cast}
 \addcontentsline{toc}{section}{Praktická část}
 
 \qquad Součástí práce je vytvoření webové aplikace pro vizualizaci a
 analýzu hydrologické bilance a předpověď sucha v útvarech povrchových
-vod ČR. Aplikace je popsána v části \enquote{Metodika}, jejiž součásti
+vod ČR. Aplikace je popsána v části \enquote{Metodika}, jejíž součásti
 je popis použitých dat a balíčků, technického řešení a
 postprocessingových funkci. Dále následuje popis jednotlivých položek
 aplikace se zaměřením na účel a funkčnost každé položky.
@@ -1941,7 +1991,7 @@ aplikace se zaměřením na účel a funkčnost každé položky.
 \subsection{5 Metodika}\label{metodika}
 
 Aplikace je vytvořena prostřednictvím programovacího jazyka R. Jedná se
-o vizualizaci výsledků modelování systému pro předpoveď hydrologické
+o vizualizaci výsledků modelování systému pro předpověď hydrologické
 situace \textbf{\emph{HAMR}}. Systém je založen na propojení modelu
 vláhové bilance půdy \texttt{SoilClim}, modelu hydrologické bilance
 \texttt{BILAN} a modelu vodohospodářské soustavy \texttt{WATERES}
@@ -1953,7 +2003,8 @@ balíček \texttt{flexdashboard} umožňuje pokročilé formátovaní vzhledu.
 Společně slouží k publikaci dat a jejích přehledné vizualizaci v rámci
 webového prohlížeče.
 
-\subsubsection{5.1 Technické řešení}\label{technicke-reseni}
+\hypertarget{techres}{\subsubsection{5.1 Technické řešení
+4}\label{techres}}
 
 Aplikace bude přístupná na
 \href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru fakulty}\footnote{Aplikace
@@ -1961,7 +2012,7 @@ Aplikace bude přístupná na
 ji také \href{https://github.com/KVHEM/Sucho}{stáhnout ze stránek
 GitHubu}\footnote{Repozitář na GitHub:
   \url{https://github.com/KVHEM/Sucho}}, kde je pro aplikaci založen
-repozitář. Tento repositář obsahuje následující soubory:
+repozitář. Tento repozitář obsahuje následující soubory:
 
 \begin{itemize}
 \tightlist
@@ -1995,13 +2046,13 @@ použité následující balíčky:
 \item
   \texttt{DT} je jedním z \emph{widgets} balíčku \texttt{htmlwidgets}
   (popsáno v kapitole \protect\hyperlink{htmlwidgets}{4.3}), sloužící k
-  vytvaření interaktivních tabulek.
+  vytváření interaktivních tabulek.
 \end{itemize}
 
-Veškerý R kód použítý k vytvoření aplikace je úveden v příloze na stáně
+Veškerý R kód použitý k vytvoření aplikace je uveden v příloze na stráně
 \pageref{prilohy}.
 
-\subsubsection{5.2 Data}\label{data}
+\hypertarget{data}{\subsubsection{5.2 Data}\label{data}}
 
 \qquad Data použitá k vykreslení lze rozdělit do několika skupin:
 prostorová data, data potřebná pro hydrologickou bilanci, data pro
@@ -2012,7 +2063,7 @@ vod (UPOV) ČR (\texttt{povodi.rds}, \texttt{reky.rds},
 členění ČR (\texttt{kraje.rds}, \texttt{okresy.rds} a povodí 3. řadu
 \texttt{povodi\_III.rds}) viz obrázek \ref{fig:ch5.0}. Přesná struktura
 složek aplikace je vyobrazená na diagramu \ref{fig:ch5.1}. Tyto soubory
-byli v rámci připravy dat převedeny z formatu .shp do formátu .rds. Dále
+byli v rámci přípravy dat převedeny z formátu .shp do formátu .rds. Dále
 pro rychlejší načítání a jednodušší manipulaci byly tyto soubory
 transformovány do souřadnicového systému WGS84 (pomocí funkce
 \texttt{spTransform()} z balíčku \texttt{sp} a atributu \texttt{CRS} -
@@ -2021,7 +2072,7 @@ WGS84 - EPSG:4326) a zjednodušeny (pomocí funkce \texttt{ms\_simplify()}
 z balíčku \texttt{rmapshaper}) pro snížení náročnosti při vykreslování.
 Soubor \texttt{popis.rds} obsahuje informace o jednotlivých útvarech
 jako jsou název útvaru, název povodí, název oblasti, kategorie útvaru a
-typ utvaru. Následně soubor \texttt{popis.rds} je spojen pomocí funkce
+typ útvaru. Následně soubor \texttt{popis.rds} je spojen pomocí funkce
 \texttt{merge()} z balíčku \texttt{sp} se souborem \texttt{povodi.rds}
 přes identy jednotlivých útvaru (\texttt{UPOV\_ID}). K vykreslení
 horního povodí se používá soubor \texttt{TABB.rds} obsahující informace
@@ -2044,7 +2095,7 @@ bilance. Pomocí modelu Bilan (Vizina et al. 2015) bylo v rámci projektu
 kalibrováno 1112 UPOVů a výstupem je 18 proměnných pro každý UPOV v
 denním kroku pro období 1981-2010. Tyto proměnné jsou uvedeny v tabulce
 \ref{tab6} (VÚV TGM 2015). Z důvodů šetření vnitřní paměti aplikace se
-soubory s daty pro hydrologickou bilanci nacházejí na uložišti ve složce
+soubory s daty pro hydrologickou bilanci nacházejí na úložišti ve složce
 \enquote{res} a jsou uloženy ve formátu .rds s názvy odpovídající
 identům jednotlivých povrchových útvarů (\texttt{UPOV\_ID}). Aplikace
 tyto soubory načítá pouze při požadavku uživatele. Měsíční bilance je
@@ -2095,7 +2146,7 @@ rámci přípravy dat byly \texttt{ICOC}ům, které obsahovali pozorované
 odběry se stejným \texttt{ICOC} a jiným jevem. Tyto data slouží k
 vykreslení časových řad a tabulek. Pro vykreslení bodů do mapy bylo
 nutné vytvořit soubor (\texttt{u\_leaflet.rds} ve stejné složce), který
-obsahuje pouze jeden zaznam pro každý \texttt{ICOC}. Souřadnice těchto
+obsahuje pouze jeden záznam pro každý \texttt{ICOC}. Souřadnice těchto
 \texttt{ICOC}ů byly transformovány do souřadnicového systému WGS84 a
 následně byly uloženy ve formátu \texttt{SpatialPointsDataFrame}.
 
@@ -2110,11 +2161,11 @@ horní meze (\texttt{lower}, \texttt{upper}) a stávající hodnotu
 hodnot parametrů byl použit globální optimalizační algoritmus
 diferenciální evoluce (VÚV TGM 2015).
 
-\qquad Model byl kalibrován na hydrologické charakteristiky (m-denní
-průtoky a dlouhodobý průměrný průtok) povodí UPOV poskytnuté ČHMÚ.
-M-denní průtoky vypočítané na základě pozorovaných hodnot lze načíst ze
-souboru \texttt{chars\_mm.rds}, zatímco m-denní průtoky pro simulována
-data se počítají rovnou v aplikaci z denních simulovaných průtoků.
+\qquad Model byl kalibrován na hydrologické charakteristiky povodí UPOV
+(m-denní průtoky a dlouhodobý průměrný průtok) poskytnuté ČHMÚ. M-denní
+průtoky vypočítané na základě pozorovaných hodnot lze načíst ze souboru
+\texttt{chars\_mm.rds} a m-denní průtoky pro simulována data ze souboru
+\texttt{chars\_mm\_sim.rds}.
 
 \qquad K validaci denních průtoků (soubor \texttt{QD.rds} ze složky
 \enquote{chmu}) bylo využito 156 měrných stanic. Po propojení
@@ -2158,16 +2209,17 @@ význam & \begin{tabular}[c]{@{}l@{}}parametr rozdělující\\ perkolaci na př�
 \qquad Pro podporu projektu Voda-Sucho byl vytvořen balíček
 \texttt{CatCa}\footnote{Repozitář na GitHub:
   \url{https://github.com/KVHEM/CatCa}.}, který obsahuje některé
-důležité funkce pro práci s útvary povrchových vod, vypočet bilanci,
+důležité funkce pro práci s útvary povrchových vod, výpočet bilanci,
 m-denních vod atd. Nainstalovat balíček lze pomocí příkazu
 \texttt{devtools::install\_github("KVHEM/CatCa")}. V rámci tvorby
-aplikace byly do tohoto balíčků přidány také funkce pro připravů dat.
+aplikace byly do tohoto balíčků přidány také funkce pro přípravu dat.
 Tyto funkce upravují vstupní data do potřebného formátu a vybírají pouze
 potřebné proměnné pro snížení využívané paměti a výpočetní náročností.
 Přehled funkcí k přípravě dat je v tabulce~\ref{tab8}. Dále balíček
-obsahuje funkci \enquote{getpath} pro nastavení pracovních cest k
-uložišti dat. Pokud cesta není nastavena pomocí funkce \enquote{getpath}
-je nutné jí uložit manuálně do proměnné \texttt{.datadir}.
+obsahuje funkci \texttt{give\_paths()} pro nastavení pracovních cest k
+úložišti dat. Pokud cesta není nastavena pomocí funkce
+\texttt{give\_paths()} je nutné jí uložit manuálně do proměnné
+\texttt{.datadir}.
 
 \begin{table}[H]
 \centering
@@ -2187,56 +2239,72 @@ je nutné jí uložit manuálně do proměnné \texttt{.datadir}.
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/rozlozeni2}
-      \caption{Základní rozlozeni okna aplikace}
+      \caption{Základní rozloženi okna aplikace}
       \label{fig:ch5.2}
 \end{figure}
 
-\qquad Nejdřívé by bylo vhodné úvest některé pojmy, které budou
+\qquad Nejdříve by bylo vhodné uvést některé pojmy, které budou
 používány pro popis základního rozvržení aplikace. Okno aplikace je
-většinou rozděleno do několiká hlavních části: boční panel, panel s
+většinou rozděleno do několika hlavních části: boční panel, panel s
 mapovým výstupem a panel s grafickými výstupy. V bočním panelu se
-nastavují vstupy pro vykreslení mapy, požádované vrstvy a lze také
-použit pole pro vyhledávaní útvaru. Pole \enquote{Výhledávání útvaru}
-nabízí seznam všech výkreslených útvarů, ale lze ho také použít k
-ručnímu vyhledávání; stačí vymazat momentálně zobrazený název a napsát
+nastavují vstupy pro vykreslení mapy, požadované vrstvy a lze také
+použit pole pro vyhledávaní útvaru. Pole \enquote{Vyhledávaní útvaru}
+nabízí seznam všech vykreslených útvarů, ale lze ho také použít k
+ručnímu vyhledávání; stačí vymazat momentálně zobrazený název a napsat
 název toku či jeho \texttt{UPOV\_ID}. Pole \enquote{Vrstvy} v bočním
 panelu je k dispozici pro každý panel s mapovým výstupem aplikace a
 umožňuje výběr následujících vrstev: povodí, řeky, jezera, nádrží,
 mapový podklad, povodí 3. řádu a administrativní členění České republiky
 (kraje a okresy). Boční panel některých záložek také obsahuje tlačítka
-\enquote{Reset} a \enquote{Zobrazit}. Tlačítko \enquote{Reset} vrácí
+\enquote{Reset} a \enquote{Zobrazit}. Tlačítko \enquote{Reset} vrací
 mapový panel na počátečně nastavené souřadnice. Tlačítko
-\enquote{Zobrazit} slouží k obnovení/spouštění vykreslení po nastavení
-vstupů. Horní lišta aplikace obsahuje přepináč mezi jednotlivými
-záložkami aplikace: \enquote{Základní mapa}, \enquote{Indikátory sucha},
-\enquote{Užívání}, \enquote{Validace} a \enquote{O projektu}. Grafy
-zpravidla mají vlastní výběr proměnných, který se na obrázku
-\ref{fig:ch5.2} nachází v pravém horním rohu grafického panelu. Tento
-výběr má tvar srolovácího ololo tlačítka. Dále grafický panel může
-obsahovat vlastní lištu se záložky pro přepinání mezi jednotlivými typy
+\enquote{Zobrazit} slouží k vykreslení po novém nastavení vstupů. Horní
+lišta aplikace obsahuje přepínač mezi jednotlivými záložkami aplikace:
+\enquote{Základní mapa}, \enquote{Indikátory sucha}, \enquote{Užívání},
+\enquote{Validace} a \enquote{O projektu}. Záložka \enquote{O projektu}
+obsahuje krátký popis projektu a veškeré kontakty. V budoucnu bude
+rozšířena o metodiky k jednotlivým součástem systému.
+
+\qquad Grafy zpravidla mají vlastní výběr proměnných, který se na
+obrázku \ref{fig:ch5.2} nachází v pravém horním rohu grafického panelu.
+Tento výběr má tvar srolovatelného menu. Dále grafický panel může
+obsahovat vlastní lištu se záložky pro přepínání mezi jednotlivými typy
 grafů a tabulek.
 
 \subsubsection{6.1 Základní mapa}\label{zakladni-mapa}
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_ZM}
-      \caption{Okno "základní mapa"}
+      \caption{Záložka aplikace "Základní mapa"}
       \label{fig:ch5.3}
 \end{figure}
 
-\qquad V bočním panelu se nacházejí pole \enquote{Výhledávání útvaru},
+\qquad \enquote{Základní mapa} (obrázek \ref{fig:ch5.3}) je první
+záložkou a zobrazí se ihned po spuštění aplikace. Obsahuje informace o
+hydrologické bilanci povodí České republiky. Záložka základní mapa je
+rozložena na boční panel, panel s mapovým výstupem a panel s grafickým
+výstupem.
+
+\qquad V bočním panelu se nacházejí pole \enquote{Vyhledávání útvaru},
 \enquote{Prvky hydrologické bilance}, \enquote{Filtrace dle hodnoty},
 \enquote{Vrstvy} a tlačítka \enquote{Reset} a \enquote{Zobrazit}.
-Užívatel volí proměnnou hydrologické bilance, podle níž budou zbarveny
-jednotlivá povodí zobrazené na mapě. Hodnoty jsou agregovány do
-měsíčních a ročních kroků, lze také vykreslit dlouhodobé průměry, tzn.
-průměry za celé období nebo za konkretní periody po 29 letech:
-1961-1990, 1971-2000 a 1981-2010. \enquote{Filtrace dle hodnoty} v
-počátečním stavu obsahuje všechny hodnoty zvolené proměnné. Po nastavení
-rozsahu hodnot se vykreslí pouze povodí odpovídající požadavku.
+Uživatel volí proměnnou hydrologické bilance, dle níž budou zbarveny
+jednotlivá povodí zobrazená na mapě. Hodnoty proměnné jsou agregovány do
+měsíčních a ročních kroků, lze je také vykreslit jako dlouhodobé
+průměry, tzn. průměry za celé období nebo za konkrétní periody po 29
+letech: 1961-1990, 1971-2000 a 1981-2010. \enquote{Filtrace dle hodnoty}
+v počátečním stavu obsahuje všechny hodnoty zvolené proměnné a dále
+umožňuje nastavení rozsahu hodnot, který omezí vykreslená povodí.
 \enquote{Vyhledávání útvaru} je jedinou částí bočního panelu, která je
-propojená nejenom s mapou, ale i s grafickými výstupy a to pomocí funkce
-\texttt{renderUI()} z balíčků \texttt{Shiny}, do které je
+propojená nejenom s mapou, ale i s grafickými výstupy, a to pomocí
+funkce \texttt{renderUI()} z balíčků \texttt{Shiny} (kapitola
+\protect\hyperlink{shiny}{4.4.2}), která umožňuje, aby element
+uživatelského rozhraní \texttt{ui} obsahoval vstup
+\texttt{input\$map\_shape\_click\$id}. Tento vstup je získán po kliknutí
+na mapový objekt, vytvořený pomocí \texttt{Leaflet} (kapitola
+\protect\hyperlink{leaflet}{4.3.3}) a vrací \texttt{UPOV\_ID} příslušný
+tomuto mapovému objektu. Objekt \texttt{search.choices} obsahuje seznam
+všech \texttt{UPOV\_ID} s přiřazenými názvy toků.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2247,119 +2315,232 @@ propojená nejenom s mapou, ale i s grafickými výstupy a to pomocí funkce
 \end{Highlighting}
 \end{Shaded}
 
-Pro zvolené povodí se vypočítají časové řady z měsíčních a denních dat a
-čára překročení pro celé období, roční období a měsíce (dlouhodobé
-charakteristiky). Zvolené povodí se zvýrazní v mapě červeným okrajem.
-Kliknutím na jiné povodí se přepočítají grafické výstupy a název nově
-zvoleného povodí s jeho \texttt{UPOV\_ID} se promítne do pole
-\enquote{Vyhledávání útvaru}.
+\qquad Mapové objekty jsou vykresleny pomocí \texttt{Leaflet}. V rámci
+objektu \texttt{leaflet()} lze použit tyto funkce k nastavení:
+\texttt{setView()} nastaví počáteční souřadnice a přiblížení,
+\texttt{addTiles()} vykreslí mapový podklad. Aplikace používá
+přednastavený podklad OpenStreetMap (RStudio {[}vid. 11.4.2018{]}).
+Objekty jsou vykresleny pomocí funkce \texttt{add*()}, která v názvu
+obsahuje typ objektu, například \texttt{addPolylines()},
+\texttt{addPolygons()} atd. Struktura objektu \texttt{leaflet()} pak
+může vypadat například následovně
 
-Dále je k dispozici vrstva horního povodí. Vrstva horního povodí
-zobrazuje pouze povodí přitékající do vybraného povodí.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{map <-}\StringTok{ }\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{          }\KeywordTok{setView}\NormalTok{(...) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{          }\KeywordTok{addTiles}\NormalTok{(...) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{          }\KeywordTok{addPolygons}\NormalTok{(...)}
+\end{Highlighting}
+\end{Shaded}
 
-Momentálně jsou v grafickém panelu u časových řad zobrazeny trendy pro
-celé pozorované období. V budoucnu budou grafické výstupy rozšířeny o
-záložku \enquote{Trendy}, kde bude umožněna vizualizace trendů a
-vyhodnocení statistické významnosti pro vybrané období.
+\qquad Při změně vstupu v bočním panelů je nutné znovu překreslit mapový
+objekt. Tento přístup může být pro jiné interaktivní funkce příliš
+výpočetně náročný. Například vrstva \enquote{Horní povodí}, která
+zobrazuje povodí přitékající do momentálně vybraného povodí, je z toho
+důvodu vykreslována pomocí \texttt{leafletProxy()}. Tento příkaz
+umožňuje okamžité změny, na již vykresleném mapovém objektu. Konkrétně
+kód pro aktualizaci horního povodí je uveden níže.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{observe}\NormalTok{(\{}
+  \KeywordTok{leafletProxy}\NormalTok{(}\StringTok{"map"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{clearGroup}\NormalTok{(}\StringTok{"Horní povodí"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{addPolylines}\NormalTok{(}\DataTypeTok{data=}\KeywordTok{horni.povodi}\NormalTok{(),}
+                 \DataTypeTok{color =} \StringTok{"#00264d"}\NormalTok{, }\DataTypeTok{weight =} \FloatTok{2.5}\NormalTok{, }
+                 \DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{stroke =} \OtherTok{TRUE}\NormalTok{,}
+                 \DataTypeTok{group =} \StringTok{"Horní povodí"}\NormalTok{) }
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\qquad Pro zvolené povodí se vypočítají časové řady z měsíčních a
+denních dat (pomocí balíčku \texttt{dygraphs}), čára překročení pro celé
+období, roční období a měsíce (pomocí balíčku \texttt{Plotly}) a trendy:
+grafické znázornění a tabulka s vyhodnocením statistické významnosti
+(\texttt{ggplot2}). Zvolené povodí se zvýrazní v mapě červeným okrajem
+pomocí \texttt{leafletProxy()}. Kliknutím na jiné povodí se přepočítají
+grafické výstupy a název nově zvoleného povodí s jeho \texttt{UPOV\_ID}
+se promítne do pole \enquote{Vyhledávání útvaru}.
 
 \subsubsection{6.2 Indikátory sucha}\label{indikatory-sucha}
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_indikatory}
-      \caption{Okno "indikatory"}
+      \caption{Záložka aplikace "Indikátory"}
       \label{fig:ch5.4}
 \end{figure}
 
-Záložka indikátory sucha se skládá z bočního panelu, mapového panelu a
-grafického panelu. V bočním panelu si lze zvolit indikátor, krok, do
-kterého budou data agregována a datum. Momentálně v mapě je zobrazen
-indikátor SPI počítány klouzavě s krokem 1, 3, 6 a 12 měsíců. Časem
-budou přidány indikátory SPEI, PDSI, SGI, SRI a nedostatkové objemy ve
-stejném kroku. Povodí se rozdělují do 4 kategorií dle hodnot indexu:
+\vspace*{-0.3cm}
 
-\begin{itemize}
-\tightlist
-\item
-  0 - bez výskytu sucha (-0,7 a vyšší)
-\item
-  1 - slabé sucho (-0,8 až -1,3)
-\item
-  2 - silné sucho (-1,4 až -1,9)
-\item
-  3 - mimořádné sucho (- 2,0 a nižší)
-\end{itemize}
+\qquad Záložka \enquote{Indikátory sucha} (obrázek \ref{fig:ch5.4}) se
+skládá z bočního panelu, mapového panelu a grafického panelu. V bočním
+panelu se obdobně jako v záložce \enquote{Základní mapa} nachází pole
+\enquote{Vyhledávání útvaru} a \enquote{Vrstvy}. Dále v bočním panelu
+lze zvolit indikátor a krok, do kterého budou data agregována. Dále lze
+zvolit datum pro vykresleni mapy. Protože data mají měsíční časové
+měřítko, volba konkrétního dne v kalendáře nehraje pro vykreslení žádnou
+roli, ale v rámci \texttt{ui} volba data ve formátu \enquote{mm-YYYY}
+zatím není možná. Momentálně v mapě jsou zobrazeny indikátory SPI
+(\emph{Standardized Precipitation Index}) s SPEI (\emph{Standardized
+Precipitation Evapotranspiration Index}), které jsou počítány klouzavě s
+krokem 1, 3, 6, 9 a 12 měsíců. V budoucích verzích aplikace je plánováno
+přidání indikátorů PDSI (\emph{Palmer Drought Severity Index}), SGI
+(\emph{Standardized Groundwater Index}), SRI (\emph{Standardized Runoff
+Index}) a nedostatkových objemů ve stejném kroku (Vlnas et al. 2014).
+Povodí se dělí do 7 kategorií tak, aby se dostatečně projevila
+variabilita:
 
-V grafický panelu se vykresluje časová řada indikátoru v konkretním
-povodí.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$\infty$ až $2,0$   & ?                 \\ \hline
+$2,0$ až $1,4$      & ?                 \\ \hline
+$1,4$ až $0,5$      & ?                 \\ \hline
+$0,5$ až $-0,5$     & bez výskytu sucha \\ \hline
+$-0,5$ až $-1,4$    & slabé sucho       \\ \hline
+$-1,4$ až $-2,0$    & silné sucho       \\ \hline
+$-2,0$ až $-\infty$ & mimořádné sucho   \\ \hline
+\end{tabular}
+\caption{Rozdělení indikátorů sucha do kategorií.}
+\label{tab9}
+\end{table}
+
+\vspace*{-0.3cm}
+
+\qquad Mapové objekty jsou vykresleny pomocí \texttt{Leaflet}. V
+grafický panelu se vykresluje časová řada indikátoru pro zvolené povodí
+pomocí baličku \texttt{dygraphs}.
 
 \subsubsection{6.3 Užívání}\label{uzivani}
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_uzivani}
-      \caption{Okno "uzivani"}
+      \caption{Záložka aplikace "Užívání"}
       \label{fig:ch5.5}
 \end{figure}
 
-Záložka užívání je rozdělena do čtyř části: panel s mapovým výstupem,
-dva panely s grafickými výstupy a jeden panel s tabulkovým výstupem.
+\vspace*{-0.3cm}
 
-Mapový panel obsahuje informace o užívání vody v ČR. Místa užívání se
-spojují do shluků. Po přiblížení lze na bod kliknout. Po kliknutí se
-zobrazí informace o odběrateli a jeho časová řada. Kliknutím na povodí
-je možno obdržet informace o všech odběratelích v tabulkovém panelu a
-časovou řadu pro jednotlivé jevy v grafickém panelu.
-
-Podobně jako v záložce \enquote{Základní mapa} zde existuje panel s
-názvem povodí a jeho UPOV\_ID, ve kterém lze nalézt požadovaná povodí.
-Tento panel lze přetáhnout na libovolné místo v rámci okna prohlížeče.
+\qquad Záložka \enquote{Užívání} (obrázek \ref{fig:ch5.5}) obsahuje
+informace o užívání vody v ČR a je rozdělena do pěti části: boční panel,
+panel s mapovým výstupem, dva panely s grafickými výstupy a jeden panel
+s tabulkovým výstupem. Boční panel obsahuje pole \enquote{Vyhledávání
+útvaru} a \enquote{Vrstvy}. Pole \enquote{Vrstvy} je rozšířeno o vrstvu
+\enquote{Odběratele}, avšak postrádá administrativní členění České
+republiky. Mapový panel spojuje místa odběru do shluků pomoci atributu
+\texttt{clusterOptions\ =\ markerClusterOptions()} v rámci funkce
+\texttt{addCircleMarkers()} v \texttt{Leaflet}u. Po přiblížení lze na
+bod kliknout. Po kliknutí se zobrazí popisek s informací o odběrateli a
+vykreslí se časová řada odběrů. Kliknutím na povodí se obdrží informace
+o všech odběratelích v tabulkovém panelu a časová řada pro jednotlivé
+jevy v grafickém panelu (odběry z podzemních vod \texttt{POD}, odběry z
+povrchových vod \texttt{POV} či vypouštění \texttt{VYP}). Grafické
+panely jsou vytvořený pomocí \texttt{dygraphs}. Tabulka je vytvořená
+pomocí balíčku \texttt{DT} a je interaktivní.
 
 \subsubsection{6.4 Validace}\label{validace}
 
+\qquad Záložka \enquote{Validace} (obrázek \ref{fig:ch5.6}) se dělí na
+tří částí: boční panel, panel s mapovým výstupem a panel s grafickými
+výstupem. Boční panel obsahuje standardní pole \enquote{Vrstvy} a
+přepínač mezi následujícími možnostmi: denní průtoky, měsíční průtoky,
+přepínání parametrů a m-denní průtoky.
+
+\qquad Mapový výstup denních průtoků obsahuje polohu 153 měrných stanic
+(viz kapitola \protect\hyperlink{data}{5.2}) a grafický panel po zvolení
+konkrétní měrné stanice vytvoří časovou řadou pozorovaných a
+simulovaných průtoků, které lze vykreslit v denním, měsíčním a ročním
+kroku pomocí menu \enquote{Výběr časových řad} (nachází se v oblastí
+bočního panelu). Záložku grafického panelu lze přepnout z grafů na
+tabulky, které nejsou interaktivní. Tabulka denních průtoků obsahuje
+pouze základní přehled o datech (počet pozorování, střední hodnotu
+atd.).
+
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/P_validace}
-      \caption{Okno "validace"}
+      \caption{Záložka aplikace "Validace"}
       \label{fig:ch5.6}
 \end{figure}
 
-V současné verzi záložka \enquote{Validace} se dělí na dvě částí: mapový
-výstup denních průtoků/parametrů (lze přepnout v příslušném panelu) a
-grafický panel s časovou řadou zvoleného povodí (lze vykreslit v denním,
-měsíčním a ročním kroku pomocí panelu \enquote{Výběr časových řad}).
+\vspace*{-0.3cm}
 
-V dalších verzích bude umožněno porovnání výstupu modelu s pozorováním:
+\qquad Mapový výstup měsíčních průtoků obsahuje pozice 542 měrných
+stanic. Body měrných stanic jsou propojeny s informacemi o UPOVu, do
+kterého spadají. Kliknutím na bod se objeví popisek stanice a vykreslí
+se horní povodí, obdobně jako v záložce \enquote{Základní mapa}. Graf
+obsahuje časové řady pozorovaných a simulovaných průtoků a tabulka
+obsahuje číselné vyhodnocení přesností simulovaných dat vůči pozorovaným
+datům. Výpočet je uskutečněn pomocí funkce \texttt{gof()} z balíčku
+\texttt{hydroGOR}\footnote{Dokumentace balíčku je dostupná na adrese
+  \url{https://cran.r-project.org/web/packages/hydroGOF/hydroGOF.pdf}}.
 
-\begin{itemize}
-\tightlist
-\item
-  ve vodoměrných stanicích
-\item
-  v profilech nádrží
-\item
-  charakteristiky UPOVu (m-denni vody)
-\item
-  plošné rozložení parametrů
-\end{itemize}
+\qquad Po zvolení \enquote{Přepínání parametrů} se v bočním panelu
+objeví pole s nabídkou parametrů (\emph{Spa}, \emph{Alf}, \emph{Dgm},
+\emph{Soc}, \emph{Mec}, \emph{Grd}). Momentálně \enquote{Přepínání
+parametrů} obsahuje pouze panel s mapovým výstupem pro vizualizaci
+plošného rozložení parametrů. UPOVy jsou zbarveny dle stávajících hodnot
+parametru (\texttt{current}).
 
-\subsubsection{6.5 O projektu}\label{o-projektu}
-
-\begin{figure}[H]
-      \includegraphics[width=\textwidth]{fig/P_o_projektu}
-      \caption{Okno "o projektu"}
-      \label{fig:ch5.7}
-\end{figure}
-
-Krátký popis projektu a veškeré kontakty.V budoucnu bude rozšířeno o
-metodiky k jednotlivým součástem systému.
+\qquad Po zvolení m-denních průtoků se objeví v bočním panelu nabídka
+m-denních vod (\(Q30d\), \(Q60d\), \(Q90d\), \(Q120d\), \(Q150d\),
+\(Q180d\), \(Q210d\), \(Q240d\), \(Q270d\), \(Q300d\), \(Q330d\),
+\(Q355d\), \(Q364d\)). Také se objeví pole \enquote{Vyhledávání útvaru},
+které propojuje mapový a grafický panel. Útvary mapového výstupu se
+zbarvují dle hodnoty proměnné, kterou zvolí uživatel. Grafickým výstupem
+je \texttt{Plotly} objekt, který obsahuje seřazené hodnoty pozorovaných
+a simulovaných m-denních průtoků pro zvolené povodí. Tabulkový výstup
+obsahuje tytéž hodnoty.
 
 \newpage
 
 \section*{Výsledky}\label{vysledky}
 \addcontentsline{toc}{section}{Výsledky}
 
+\qquad Výsledkem práce je shrnutí klíčových poznatků týkajících se
+vizualizace a průzkumové analýzy dat s jejich následnou praktickou
+implementaci v R a to v podobě webové interaktivní aplikace. Aplikace
+slouží k analýze hydrologické bilance a předpovedi sucha v útvarech
+povrchových vod České republiky. Hlavní funkcionalita aplikace spočívá v
+její interaktivitě. Uživatel má možnost si prohlednout data v různých
+reprezentacích a to například vizualizace prostorového rozložení prvků
+hydrologické bilance na území ČR, jejich časových řad a čar překročení
+pro jednotlivé útvary či plošné rozložení indikátorů sucha. Díky tomu by
+si uživatel může snadno vyvodit vlastní výsledky či otázky pro další
+analýzu připadného řešení problematiky. Možnosti vlastního průzkumu dat,
+bez potřeby znalosti programovácího jazyka, případně struktury souborů,
+v ramcí přehledné interaktivní aplikace je jedním z hlavních přínosu
+této prace.
+
+\qquad Aplikace je dostupná v digitální podobě jak na příloženým datovém
+nosiče, tak i na \href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru
+fakulty}\footnote{Aplikace na serveru fakulty:
+  \url{https://shiny.fzp.czu.cz/KVHEM/HAMR/}} (viz kapitola
+\protect\hyperlink{techres}{5.1}). Složky a soubory datového nosiče jsou
+popsany v kapitole \protect\hyperlink{data}{5.2} a přehled jejich
+struktury je znazorněn na obrázku \ref{fig:ch5.1}.
+
 \newpage
 
 \section*{Diskuse}\label{diskuse}
 \addcontentsline{toc}{section}{Diskuse}
+
+\qquad Přestože se aplikace zdá být plně fukční, existuje prostor k její
+vylepšení. Je možné odhalení drobných chyb či nefunkčností, které byli
+vyvojařem přelednutý, přip. chyby stálé se vyvijejícího se programového
+jazyka.
+
+\qquad První načtení aplikace trvá cca 40 vteřin a načtení jednotlivých
+záložek není okamžité. Lepšího výsledků by mohlo být dosaženo pomocí
+načtení dat z databazy typu \texttt{PostgreSQL}, \texttt{mongoDB} či
+jiného systému s rozhraním pro R (postředníctvím balíčků \texttt{DBI} a
+\texttt{dbplyr}) místo lokálního disku. Tento přechod by avšak
+potřeboval odporných ználostí a měl by být důkladně zvažen před
+bezprostřední implementaci. Problem rychlostí aplikace by mohlo také
+vyřešit její rozdělení do jednotlivých menších aplikací, tento krok
+avšak vyvolává otázky o přehledností a komfortu uživatele.
 
 \newpage
 
@@ -2419,6 +2600,11 @@ Taylor \& Francis.
 DE MAESSCHALCK, Roy, Delphine JOUAN-RIMBAUD a Désiré L MASSART, 2000.
 The mahalanobis distance. \emph{Chemometrics and intelligent laboratory
 systems}. B.m.: Elsevier.
+
+\hypertarget{ref-stackover}{}
+DEVELOPER SURVEY RESULTS, 2017. \emph{Most Popular Languages by
+Occupation} {[}online{]}. Dostupné
+z:~\url{https://insights.stackoverflow.com/survey/2017\#technologies-and-occupations}
 
 \hypertarget{ref-dplyr}{}
 DPLYR, {[}vid. 17.4.2018{]}. \emph{A grammar of data manipulation.}
@@ -2623,6 +2809,14 @@ modelu Bilan. \emph{Vodohospodářské technicko-ekonomické informace}.
 B.m.: Výzkumný ústav vodohospodářský TG Masaryka, veřejná výzkumná
 instituce.
 
+\hypertarget{ref-sucho}{}
+VLNAS, Radek, Adam BERAN, Martin HANEL, Anna HRABÁNKOVÁ, Tomáš HRDINKA,
+Ladislav KAŠPÁREK, Marta MARTÍNKOVÁ, Martina PELÁKOVÁ, Pavel TREML, Adam
+VIZINA, Petr BAŠTA, Lukáš JAČKA, Petr MÁCA, Jiří PAVLÁSEK a Pavel PECH,
+2014. \emph{Metodika pro stanovení mezních hodnot indikátorů
+hydrologického sucha}. Praha: Výzkumný ústav vodohospodářský TG
+Masaryka, veřejná výzkumná instituce.
+
 \hypertarget{ref-bilan_man}{}
 VÚV TGM, 2015. \emph{Model hydrologické bilance Bilan}. B.m.: Výzkumný
 ústav vodohospodářský TG Masaryka, veřejná výzkumná instituce.
@@ -2669,15 +2863,6 @@ Markdown}. B.m.: bookdown.
 \hypertarget{ref-zumel_2014}{}
 ZUMEL, Nina a John MOUNT, 2014. \emph{Practical Data Science with R}.
 B.m.: Manning. ISBN~9781617291562.
-
-\newpage
-
-\section*{Přílohy}\label{prilohy}
-\addcontentsline{toc}{section}{Přílohy}
-
-\label{prilohy}
-
-\subsection{R kód}\label{r-kod}
 
 \newpage
 

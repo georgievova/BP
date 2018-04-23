@@ -19,6 +19,8 @@ header-includes: \usepackage[czech]{babel}
                  \MakeOuterQuote{"}
                  \usepackage{natbib}
                  
+
+                 
 output:
   pdf_document: 
     keep_tex: yes
@@ -68,7 +70,6 @@ x <- rnorm(100, 0, 1)
 ```{r, child = 'Chapter_4.Rmd'}
 ```
 
-\newpage
 
 ```{r, child = 'Chapter_5.Rmd'}
 ```
@@ -84,13 +85,6 @@ x <- rnorm(100, 0, 1)
 \label{literatura}
 
 <div id="refs"></div>
-
-\newpage
-
-# Přílohy {-}
-\label{prilohy}
-
-## R kód
 
 \newpage
 
