@@ -6,15 +6,15 @@ output:
 ---
 ## 4 Pokročilá vizualizace v R {#pokrocila}
 
-\qquad Před samotným popisem nástrojů pro pokročilou vizualizaci je vhodné vysvětlit pár důležitých pojmů, které jsou v této kapitole použity. Tyto pojmy se tykají vizualizace pouze okrajově, avšak v praxi jsou často používány právě v kombinaci s vizualizačními prostředky. 
+\qquad Před samotným popisem nástrojů pro pokročilou vizualizaci je vhodné vysvětlit pár důležitých pojmů, které jsou v této kapitole použity. Tyto pojmy se tykají vizualizace pouze okrajově, avšak v praxi jsou často používány právě v kombinaci s&nbsp;vizualizačními prostředky. 
 
-\qquad `R Studio` je volné přístupné open source vývojové prostředí (*Integrated Development Environment* nebo *IDE*) pro programovací jazyk R.  `R Studio` bylo založeno v roce 2008 J.J. Allairem a hlavním vývojářem je Hadley Wickham. Jedná se o vývojové prostředí obsahující veškeré potřebné nástroje pro práci s R [@rstudio]. `R Studio` kromě vývoje samotného *IDE* vyvíjí jedny z nepopulárnějších balíčků (např. `ggplot2`, `tidyverse`, `rmakrdown`, $\dots$) a servery pro `Shiny`. `R Studio` je dostupné ve verzi  zdarma, která poskytuje všechny klíčové funkce a v komerční verzi, pro kterou je navíc dostupná oficiální podpora [@rstudio].  
+\qquad `R Studio` je volné přístupné open source vývojové prostředí (*Integrated Development Environment* nebo *IDE*) pro programovací jazyk R.  `R Studio` bylo založeno v&nbsp;roce 2008 J.J. Allairem a hlavním vývojářem je Hadley Wickham. Jedná se o&nbsp;vývojové prostředí obsahující veškeré potřebné nástroje pro práci s R [@rstudio]. `R Studio` kromě vývoje samotného *IDE* vyvíjí jedny z nepopulárnějších balíčků (např. `ggplot2`, `tidyverse`, `rmakrdown`, $\dots$) a servery pro `Shiny`. `R Studio` je dostupné ve verzi  zdarma, která poskytuje všechny klíčové funkce a v komerční verzi, pro kterou je navíc dostupná oficiální podpora [@rstudio].  
 
 \qquad `R Markdown` je založen na značkovacím jazyku `Markdown` a slouží pro úpravu prostého textu a jeho následný převod do HTML, PDF, MS Word a dalších formátů a to rovnou z prostředí R [@rmarkdown]. Balíček využívá univerzální nástroj pro převod souborů `pandoc`, díky čemuž lze v rámci souboru používat \LaTeX &nbsp;příkazy pro pokročilou úpravu PDF výstupů. Dále díky balíčku `knitr` je umožněna integrace R kódu do výstupů. Více o `R Markdown` píše autor a spoluautor těchto balíčků Yihui Xie například [@rmd:bookdown] a [@knitr].
 
 ### 4.1 Balíčky pro vizualizaci dat {#baseviz}
 
-\qquad Vestavěný balíček `base` byl vyvinut Rossem Ihaka na základě zkušeností s implementací grafických ovladačů do S (předchůdce R). Grafy v `base` mají charakter grafů na papíře: stávající obsah nelze modifikovat ani odstranit. Do grafu lze přidávat potřebné prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou být dále měněny. V `base` neexistuje jiná uživateli přístupná reprezentace, než ta, co se objeví na obrazovce  (není např. možné uložit graf jako proměnnou). `base` obsahuje nástroje pro kreslení jak základních, tak i kompletních grafik. Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti. Vykreslení základních grafů v R je popsáno v kapitole [2](#base).
+\qquad Vestavěný balíček `base` byl vyvinut Rossem Ihaka na základě zkušeností s&nbsp;implementací grafických ovladačů do S (předchůdce R). Grafy v `base` mají charakter grafů na papíře: stávající obsah nelze modifikovat ani odstranit. Do grafu lze přidávat potřebné prvky, které jsou vykreslovány na povrch grafu a po vykreslení nemohou být dále měněny. V `base` neexistuje jiná uživateli přístupná reprezentace, než ta, co se objeví na obrazovce  (není např. možné uložit graf jako proměnnou). `base` obsahuje nástroje pro kreslení jak základních, tak i kompletních grafik. Funkce tohoto balíčku jsou obecně rychlé, ale mají omezené možnosti. Vykreslení základních grafů v R je popsáno v kapitole [2](#base).
 
 \qquad Mimo `base` má uživatel možnost využít rozsáhlou nabídku dalších balíčků. Následující kapitoly obsahují krátký popis vybraných, široce využívaných, balíčku (`grid`, `lattice`, `ggplot2`). V R existuje mnoho dalších balíčků, například `vcd`, `plotrix` a `gplot`, které implementují speciální grafiku, avšak žádný z nich neposkytuje rámec pro tvorbu statistických grafů. Pro instalaci balíčků se používá příkaz `install.packages()`. Komplexní zdroj, uvádějící všechny grafické funkce dostupné v ostatních balíčcích vyvinutých komunitou lze nalézt na stránce \mbox{http://cran.r-project.org/web/views/Graphics.html}. [@wilkinson2005]
 
@@ -24,13 +24,13 @@ output:
 
 #### 4.1.2 `lattice` {#lattice}
 
-\qquad Deepayanem Sarkarem vyvinutý balíček `lattice` používá grafiku `grid` k implementaci Clevelandova *trellis* grafického systému (viz kapitola [1.2.2](#cleveland)), což vedlo k značnému vylepšení grafiky oproti `base`. Pomocí  `lattice` lze jednoduše vykreslit *trellis* graf a některé detaily výkresu, jako například legenda, se vytváří automaticky. Avšak `lattice` postrádá formální model, což může ztížit jeho rozšíření. Tento balíček je dostačující pro typické grafické potřeby a je dostatečně flexibilní i pro zvládnutí většiny nestandardních požadavků.
+\qquad Deepayanem Sarkarem vyvinutý balíček `lattice` používá grafiku `grid` k implementaci Clevelandova *trellis* grafického systému (viz kapitola [1.2.2](#cleveland)), což vedlo k&nbsp;značnému vylepšení grafiky oproti `base`. Pomocí  `lattice` lze jednoduše vykreslit *trellis* graf a některé detaily výkresu, jako například legenda, se vytváří automaticky. Avšak `lattice` postrádá formální model, což může ztížit jeho rozšíření. Tento balíček je dostačující pro typické grafické potřeby a je dostatečně flexibilní i pro zvládnutí většiny nestandardních požadavků.
 
 #### 4.1.3 `ggplot2` {#ggplot}
 
 \qquad Balíček `ggplot2` byl vyvinut v roce 2005 Hadley Wickhamem na základě *The Grammar of Graphics* Lelanda Wilkinsona [@wilkinson2005]. `ggplot2` přebírá přednosti balíčků `base` a `lattice` a vylepšuje je silným základním modelem, který podporuje tvorbu libovolného statistického grafu založeného na principech popsaných v kapitole [1.3](#gg). Silný základní model `ggplot2` umožňuje popsat širokou škálu grafiky pomocí kompaktní syntaxe a nezávislé komponenty zjednodušují rozšíření. Obdobně jako `lattice`, využívá `ggplot2` mřížky k vykreslení grafiky, což znamená, že umožňuje úpravu vzhledu na mnohem nižší úrovni. 
 
-\qquad Jako ukázku lze předvést graf vykreslený pomocí různých balíčků (obrázky \ref{fig:ch4.1a}, \ref{fig:ch4.1b}, \ref{fig:ch4.1c}). V představeném kódu byly použity denní časové řady srážek z roku 2010 v oblasti povodí Labe od pramene po Svatopetrský potok včetně. ID tohoto útvaru povrchových vod je `HSL_0010`. `DTM` odpovídá datu v denním kroku a `P` odpovídá úhrnu srážek v milimetrech. Každý balíček má přednastavený počáteční vzhled, který lze upravovat dle požadavků, avšak pro tuto ukázku bylo ponecháno základní nastavení.
+\qquad Jako ukázku lze předvést graf vykreslený pomocí různých balíčků (obrázky \ref{fig:ch4.1a}, \ref{fig:ch4.1b}, \ref{fig:ch4.1c}). V představeném kódu byly použity denní časové řady srážek z roku 2010 v&nbsp;oblasti povodí Labe od pramene po Svatopetrský potok včetně. ID tohoto útvaru povrchových vod je `HSL_0010`. `DTM` odpovídá datu v denním kroku a `P` odpovídá úhrnu srážek v milimetrech. Každý balíček má přednastavený počáteční vzhled, který lze upravovat dle požadavků, avšak pro tuto ukázku bylo ponecháno základní nastavení.
 
 
 ```{r, eval=FALSE}
@@ -73,9 +73,9 @@ ggplot(data=HSL_0010, aes(DTM,P)) +
 
 ### 4.2 Balíčky pro prostorovou vizualizaci
 
-\qquad V R existuje celá řada možností pro analýzu prostorových dat a nástrojů k jejich vykreslení. Důležitý rozdíl mezi R a tradičními desktopovými GIS (*geographical information system*) softwary je ten, že GIS je primárně vytvořen k prostorové vizualizaci a zpracovává data jedním přednastaveným způsobem, zatímco v R si uživatel sám musí zvolit vhodné nástroje a odpovídající nastavení. Dále R neobsahuje grafické uživatelské rozhraní (GUI), které by usnadňovalo práci s prostorovými daty. Z tohoto důvodu může být R jako nástroj GIS pro nové uživatele náročné. Hlavní výhodou R je, že přináší do tvorby prostorové vizualizace silné výpočetní prostředky pro úpravu a statistickou analýzu dat a možnost uložení skriptů a jejich další modifikace [@spatial].
+\qquad V R existuje celá řada možností pro analýzu prostorových dat a nástrojů k&nbsp;jejich vykreslení. Důležitý rozdíl mezi R a tradičními desktopovými GIS (*geographical information system*) softwary je ten, že GIS je primárně vytvořen k prostorové vizualizaci a zpracovává data jedním přednastaveným způsobem, zatímco v R si uživatel sám musí zvolit vhodné nástroje a odpovídající nastavení. Dále R neobsahuje grafické uživatelské rozhraní (GUI), které by usnadňovalo práci s prostorovými daty. Z tohoto důvodu může být R jako nástroj GIS pro nové uživatele náročné. Hlavní výhodou R je, že přináší do tvorby prostorové vizualizace silné výpočetní prostředky pro úpravu a statistickou analýzu dat a možnost uložení skriptů a jejich další modifikace [@spatial].
 
-\qquad Prostorové objekty jsou často reprezentovány *vektorovými* daty. Takováto data obsahují popis "geometrie" nebo "tvaru" území (body, linie a polygony) a většinou také obsahují proměnné s dodatečnými informacemi o území (atributovou tabulkou). Dále se také používají prostorová pole, která jsou obvykle reprezentována pomocí *rastrů*. Rastrová data se obvykle používají pro prostorově kontinuální proměnné. Rastry dělí území mřížkou na buňky o stejné velikosti neboli na *pixely*, kterým je přiřazená hodnota dle zájmové proměnné. Většinou se jedná o průměr či většinovou hodnotu pro oblast spadající do konkretního pixelu. Na rozdíl od vektorových dat, v rastrových datech není informace o geometrii objektu uložená jako souřadnice, ale v rámci buněk. Velikost rastrových buněk neboli prostorové rozlišení je dáno počtem řádků a sloupců, na které je území rozdělené. [@spatial2]
+\qquad Prostorové objekty jsou často reprezentovány *vektorovými* daty. Takováto data obsahují popis "geometrie" nebo "tvaru" území (body, linie a polygony) a většinou také obsahují proměnné s dodatečnými informacemi o území (atributovou tabulkou). Dále se také používají prostorová pole, která jsou obvykle reprezentována pomocí *rastrů*. Rastrová data se obvykle používají pro prostorově kontinuální proměnné. Rastry dělí území mřížkou na buňky o stejné velikosti neboli na *pixely*, kterým je přiřazená hodnota dle zájmové proměnné. Většinou se jedná o průměr či většinovou hodnotu pro oblast spadající do konkretního pixelu. Na rozdíl od vektorových dat, v&nbsp;rastrových datech není informace o geometrii objektu uložená jako souřadnice, ale v&nbsp;rámci buněk. Velikost rastrových buněk neboli prostorové rozlišení je dáno počtem řádků a sloupců, na které je území rozdělené. [@spatial2]
 
 \begin{figure}[H]
   \centering
@@ -93,13 +93,13 @@ ggplot(data=HSL_0010, aes(DTM,P)) +
       \label{fig:ch4.3}
 \end{figure} 
 
-\qquad Balíček `raster` obsahuje funkce pro vytváření, čtení, manipulaci, modelování, popis a analýzu rastrových dat. Podporuje práci s velkými soubory a vytváření vlastních specifických funkcí [@raster]. Balíček `rasterVis` představuje metody pro vylepšenou vizualizaci a interakci s rastrovými daty. Implementuje vizualizační metody pro kvantitativní a kvalitativní data a to jak pro jednorozměrné, tak i vícerozměrné rastry. Dále poskytuje metody k zobrazení rastrů, měnících se v čase, a vektorových polí&nbsp;[@rasterVis]. Vykreslení dat pomocí balíčku `raster` lze nalézt na obrázku \ref{fig:ch4.3}.
+\qquad Balíček `raster` obsahuje funkce pro vytváření, čtení, manipulaci, modelování, popis a analýzu rastrových dat. Podporuje práci s velkými soubory a vytváření vlastních specifických funkcí [@raster]. Balíček `rasterVis` představuje metody pro vylepšenou vizualizaci a interakci s rastrovými daty. Implementuje vizualizační metody pro kvantitativní a kvalitativní data a to jak pro jednorozměrné, tak i&nbsp;vícerozměrné rastry. Dále poskytuje metody k zobrazení rastrů, měnících se v čase, a&nbsp;vektorových polí&nbsp;[@rasterVis]. Vykreslení dat pomocí balíčku `raster` lze nalézt na obrázku \ref{fig:ch4.3}.
 
 ### 4.3 Balíčky pro interaktivní vizualizaci dat {#htmlwidgets}
 
 \qquad Možnost přiblížit, filtrovat či zobrazit podrobnosti grafu na požádání je výhodou dynamických a interaktivních grafů. Interaktivní grafy dokážou zobrazovat více informací a tím umožňují i hlubší pochopení dat. Pro R existuje široká nabídka balíčků a nástrojů k vytváření interaktivních grafů. Jednou z nejpopulárnějších ^[Dle žebříčku [rdocumentation.org](https://www.rdocumentation.org/) je `htmlwidgets` 58. nejstahovanější balíček.] možností je balíček `htmlwidgets`, jehož knihovna obsahuje užitečné nástroje pro tvorbu téměř jakéhokoliv typu grafiky. 
 
-\qquad Balíček `htmlwidgets` poskytuje rozhraní pro snadné propojení jazyka R a knihoven programovacího jazyka JavaScript, používaného zejména pro webové aplikace. Tímto je umožněna bezproblémová a konzistentní práce interaktivních map, grafů a tabulek a to jak v dokumentech `R Markdown` a v aplikacích `Shiny` (kapitola [4.4.2](#shiny)), tak i v rámci samotného R Studio. `htmlwidgets` umožňuje vytváření vlastních *widgets*, ale především nabízí řadů již vytvořených, například `Plotly`, `Leaflet` a `dygraphs`. Tyto nástroje jsou dostupné nejenom pro R, ale i pro další programovací jazyky (například Python) [@htmlwidgets].
+\qquad Balíček `htmlwidgets` poskytuje rozhraní pro snadné propojení jazyka R a knihoven programovacího jazyka JavaScript, používaného zejména pro webové aplikace. Tímto je umožněna bezproblémová a konzistentní práce interaktivních map, grafů a&nbsp;tabulek a to jak v dokumentech `R Markdown` a v aplikacích `Shiny` (kapitola [4.4.2](#shiny)), tak i v rámci samotného R Studio. `htmlwidgets` umožňuje vytváření vlastních *widgets*, ale především nabízí řadů již vytvořených, například `Plotly`, `Leaflet` a `dygraphs`. Tyto nástroje jsou dostupné nejenom pro R, ale i pro další programovací jazyky (například Python) [@htmlwidgets].
 
 #### 4.3.1 `Plotly` {#plotly}
 
@@ -115,7 +115,7 @@ ggplot(data=HSL_0010, aes(DTM,P)) +
 * Vysoce konfigurovatelná nastavení os a vykreslení řad (včetně volitelné další osy&nbsp;$y$) 
 * Zvýraznění, přiblížení řad či bodů
 * Zobrazení predikčních intervalů kolem řad 
-* Umožňuje vykreslování překrývajících se grafů, vyznačení oblastí zastíněním a označení určitých událostí svislými liniemi a popisky.
+* Umožňuje vykreslování překrývajících se grafů, vyznačení oblastí zastíněním a&nbsp;označení určitých událostí svislými liniemi a popisky.
 
 \vspace*{-0.4cm}
 
@@ -123,19 +123,19 @@ ggplot(data=HSL_0010, aes(DTM,P)) +
 
 \qquad `Leaflet` je další z populárních open source JavaScript vizualizačních knihoven pro interaktivní mapy. Využívají ji takové webové stránky jako jsou [*The New York Times*](http://www.nytimes.com/projects/elections/2013/nyc-primary/mayor/map.html) a [*The Washington Post*](http://www.washingtonpost.com/sf/local/2013/11/09/washington-a-world-apart/?utm_term=.906188040dc1), ale i [*GitHub*](https://blog.github.com/2013-06-13-there-s-a-map-for-that/) a [*Flickr*](https://www.flickr.com/map). `Leaflet` je také využíván GIS platformami jako jsou [*OpenStreetMap*](http://www.openstreetmap.org/#map=7/49.714/15.060), [*Mapbox*](https://www.mapbox.com/) a [*CartoDB*](https://carto.com/).
 
-\qquad Tento R balíček umožňuje integrování a ovládaní `Leaflet` map. Mezi jeho funkce patří pohyb/přiblížení v rámci mapy, možnost vytvářet mapy z libovolných kombinací (polygony, linie, markery, atd.). Dále snadno vykresluje prostorové objekty z balíčků `sp` nebo `sf` a datové soubory se sloupci zeměpisné šířky a délky. `Leaflet` také poskytuje možnost ovládání interakcí v `Shiny` aplikacích přes stávající hranice mapového výřezu či reakce na kliknutí myši uživatelem. Umožňuje zobrazení map v nesférickým Mercatorově zobrazení a má mnoho dalších funkcí a doplňků [@leaflet].
+\qquad Tento R balíček umožňuje integrování a ovládaní `Leaflet` map. Mezi jeho funkce patří pohyb/přiblížení v rámci mapy, možnost vytvářet mapy z libovolných kombinací (polygony, linie, markery, atd.). Dále snadno vykresluje prostorové objekty z balíčků `sp` nebo `sf` a datové soubory se sloupci zeměpisné šířky a délky. `Leaflet` také poskytuje možnost ovládání interakcí v `Shiny` aplikacích přes stávající hranice mapového výřezu či reakce na kliknutí myši uživatelem. Umožňuje zobrazení map v&nbsp;nesférickým Mercatorově zobrazení a má mnoho dalších funkcí a doplňků [@leaflet].
 \vspace*{-0.2cm}
 
 ### 4.4 Balíčky pro webové aplikace {#webviz}
 
 #### 4.4.1 `flexdashboard` 
 
-\qquad `flexdashboard` slouží k publikaci dat a jejích přehledné vizualizaci v rámci webového prohlížeče. Využívá `R Markdown` k publikaci souvisejících vizualizací do jednotného zobrazení neboli *dashboard*u. Balíček podporuje široký výběr komponentů, včetně `htmlwidgets`, `base`, `lattice` a `grid` grafiky, tabulek, textových poznámek a dalších. Vyznačuje se mimo jiné i jednoduchým a flexibilním nastavením samotného rozvržení dashboardu a to definováním řádků a sloupců. Komponenty takového dashboardu se pak inteligentně přizpůsobí oknu prohlížeče, případně obrazovce mobilního zařízení. Dále balíček umožňuje nastavení a přepínání mezi jednotlivými záložkami dashboardu. Pro dynamické vizualizace lze kombinovat `flexdashboard` a `Shiny` aplikace.
+\qquad `flexdashboard` slouží k publikaci dat a jejích přehledné vizualizaci v rámci webového prohlížeče. Využívá `R Markdown` k publikaci souvisejících vizualizací do jednotného zobrazení neboli *dashboard*u. Balíček podporuje široký výběr komponentů, včetně `htmlwidgets`, `base`, `lattice` a `grid` grafiky, tabulek, textových poznámek a&nbsp;dalších. Vyznačuje se mimo jiné i jednoduchým a flexibilním nastavením samotného rozvržení dashboardu a to definováním řádků a sloupců. Komponenty takového dashboardu se pak inteligentně přizpůsobí oknu prohlížeče, případně obrazovce mobilního zařízení. Dále balíček umožňuje nastavení a přepínání mezi jednotlivými záložkami dashboardu. Pro dynamické vizualizace lze kombinovat `flexdashboard` a&nbsp;`Shiny` aplikace.
 \vspace*{-0.2cm}
 
 #### 4.4.2 `Shiny` {#shiny}
 
-\qquad `Shiny` je balíček, umožňující jednoduché vytváření interaktivních webových aplikací kombinací výpočetních možností R s interaktivitou moderních webových stránek. Pomocí `Shiny` lze vytvořit jak samostatnou aplikaci, běžící na webových stránkách, tak i lokální aplikaci bežící v prostředí R. Vzhled `Shiny` aplikace lze modifikovat pomocí kaskádových stylů^[Kaskádové styly (CSS) jazyk určený pro popis vzhledu elementů napsaných ve značkovacích jazycích (například HTML).]. [@shiny]
+\qquad `Shiny` je balíček, umožňující jednoduché vytváření interaktivních aplikací kombinací výpočetních možností R s interaktivitou moderních webových stránek. Pomocí `Shiny` lze vytvořit jak samostatnou aplikaci, běžící na webových stránkách, tak i&nbsp;lokální aplikaci bežící v prostředí R. Vzhled `Shiny` aplikace lze modifikovat pomocí kaskádových stylů^[Kaskádové styly (CSS) jazyk určený pro popis vzhledu elementů napsaných ve značkovacích jazycích (například HTML).]. [@shiny]
 
 \qquad Strukturou se `Shiny` aplikace liší od běžných skriptů. Celá aplikace by měla být umístěna v jednom adresáři a celý skript by měl být obsažen v souboru nazvaném `app.R` ^[V dřívějších verzích `Shiny` bylo nutné skript rozdělit do dvou částí `ui` a `server`.]. Aplikaci pak lze spustit pomocí příkazu `runApp("cesta")`, kde `cesta` je cesta k adresáři s aplikací. Skript `app.R` se skládá ze tří komponentů:
 
@@ -159,7 +159,7 @@ V rámci `ui` lze používat širokou řadu ovládacích prvků jako jsou např�
 * Postranní panel, který nejčastěji obsahuje ovládací prvky. 
 * Hlavní panel, který obsahuje výstupy generované funkcí `server`. 
 
-Příkladem ovládacího prvku vytvořeného v `ui` může být číselný vstup, který umožňuje uživateli vložit libovolné číslo. Tento vstup je označen pomocí `InputId` a v rámci `server` funkcí lze na něj dle toho id odkázat. Konkretně tento vstup lze získat z proměnné `input$num`. Obecně by to tedy mělo tvar `input$inputId`. Vstup z `ui` lze použit pouze v rámci funkce `render*()`, případně v rámci funkce `reactive()` (viz dále).
+Příkladem ovládacího prvku vytvořeného v `ui` může být číselný vstup, který umožňuje uživateli vložit libovolné číslo. Tento vstup je označen pomocí `InputId` a v rámci `server` funkcí lze na něj dle toho id odkázat. Konkretně tento vstup lze získat z&nbsp;proměnné `input$num`. Obecně by to tedy mělo tvar `input$inputId`. Vstup z `ui` lze použit pouze v rámci funkce `render*()`, případně v rámci funkce `reactive()` (viz dále).
 
 
 ```{r, eval=F}
@@ -168,7 +168,7 @@ ui <- fluidPage(numericInput(inputId = "num",
                              value = 10))
 ```
 
-Funkce `server` přebírá vstupy z ovládacích prvků `ui` a mapuje jednotlivé funkce k výstupům. Příkladem takové funkce může být:
+Funkce `server` přebírá vstupy z ovládacích prvků `ui` a mapuje jednotlivé funkce k&nbsp;výstupům. Příkladem takové funkce může být:
 
 ```{r, eval=F}
 output$histPlot <- renderPlot({
@@ -176,19 +176,19 @@ output$histPlot <- renderPlot({
   })
 ```
 
-Tato funkce generuje grafický výstup v podobě  histogramu normálního rozdělení s interaktivním počtem pozorování. Obecně pro generování výstupu se používá funkce `render*()`. Tyto funkce mohou obsahovat libovolný kód (například příprava dat, doprovodné výpočty, atd.), ale je nutné, aby vraceli požadovaný typ výstupu. Základní `render*()` funkce jsou vypsány v tabulce \ref{tab5}. Při změně vstupu z `ui` v `render*()` dochází k přepočítání.
+Tato funkce generuje grafický výstup v podobě  histogramu normálního rozdělení s&nbsp;interaktivním počtem pozorování. Obecně pro generování výstupu se používá funkce `render*()`. Tyto funkce mohou obsahovat libovolný kód (například příprava dat, doprovodné výpočty, atd.), ale je nutné, aby vraceli požadovaný typ výstupu. Základní `render*()` funkce jsou vypsány v tabulce \ref{tab5}. Při změně vstupu z `ui` v `render*()` dochází k přepočítání.
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\multicolumn{1}{|c|}{Funkce} & \multicolumn{1}{c|}{Výstup} \\ \hline
-\texttt{renderDataTable()}   & Interaktivní tabulka        \\ \hline
-\texttt{renderImage()}       & Obrázek                     \\ \hline
-\texttt{renderPlot()}        & Graf                        \\ \hline
-\texttt{renderPrint()}       & Vytištěný blok kódu         \\ \hline
-\texttt{renderTable()}       & Tabulka                     \\ \hline
-\texttt{renderText()}        & Text                        \\ \hline
+\multicolumn{1}{|c|}{funkce} & \multicolumn{1}{c|}{výstup} \\ \hline
+\texttt{renderDataTable()}   & interaktivní tabulka        \\ \hline
+\texttt{renderImage()}       & obrázek                     \\ \hline
+\texttt{renderPlot()}        & graf                        \\ \hline
+\texttt{renderPrint()}       & vytištěný blok kódu         \\ \hline
+\texttt{renderTable()}       & tabulka                     \\ \hline
+\texttt{renderText()}        & text                        \\ \hline
 \texttt{renderUI()}          & \texttt{Shiny ui} element   \\ \hline
 \end{tabular}
 \caption{Základní \texttt{render*()} funkce}
