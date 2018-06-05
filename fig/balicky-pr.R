@@ -11,8 +11,7 @@ UPOV_ID <- UPOV_ID[year == 2010, ]
 #UPOV_ID <- UPOV_ID[year %in% seq(1995,2010,1), ]
 length(unique(year(UPOV_ID$DTM)))
 
-UPOV_ID.m <-
-  UPOV_ID %>%  select(DTM, T, year) %>% melt(id.vars = c("DTM", "year")) %>% group_by(year) %>% mutate(dtm2 = 1:n())
+UPOV_ID.m <- UPOV_ID %>%  select(DTM, P, year) %>% melt(id.vars = c("DTM", "year")) %>% group_by(year) %>% mutate(dtm2 = 1:n())
 UPOV_ID.m$year <- as.factor(UPOV_ID.m$year)
 
 
@@ -59,6 +58,7 @@ xyplot(
 
 
 ## prostorova data
+par(mfrow=c(1,1))
 
 povodi <- readRDS(file.path(.datadir, "webapp_data/geo_rds/povodi.rds"))
 BM_orig <- readRDS(file.path(.datadir, "webapp_data/mbilan/bilan_month_data_table.rds"))

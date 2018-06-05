@@ -143,31 +143,28 @@
 \pagestyle{plain} \setcounter{page}{1}
 
 \qquad Vizualizace dat vždy hrála významnou roli v datové analýze. Je to
-jeden z nejlepších a nejjednodušších (nejpřímějších?) způsobů pro
-pochopení a prezentaci dat. Vizualizace poskytuje jasnou představu o
-složení dat, odhaluje skryté struktury v datech a shrnuje informace.
-Proces vizualizací je nedílnou součásti mnoha analýz a téměř všechna
-odvětví využívají grafického zobrazení dat k vizualizaci a komunikaci
-svých výsledků.
+jeden z~nejlepších, nejjednodušších způsobů pro pochopení a prezentaci
+dat. Vizualizace poskytuje jasnou představu o složení dat, odhaluje
+skryté struktury v datech a~shrnuje informace. Proces vizualizace je
+nedílnou součásti mnoha analýz a téměř všechna odvětví využívají
+grafického zobrazení dat k sumarizaci a komunikaci svých výsledků.
 
 \qquad Data z těchto odvětví, která jsou sbírána a analyzována po dobu
 mnoha let se čím dat častěji převádějí do grafické formy. Masivní příliv
 dat a jejich dostupnost vedly k novým metodám a novým přístupům.
 Kombinace programovacích dovedností, matematických a statistických
 znalostí a jiných odborných znalostí týkajících se obsahu přijala název
-\enquote{\emph{Data Science}} (Rahlf 2017). V oblasti environmentálních
-dat to znamená možnost modelování klimatických změn a odhalení
-ekologických rizik s následným tlumočením výsledků široké veřejností.
+\enquote{\emph{Data Science}} (Rahlf 2017).
 
 \qquad Hlavní výhodou vizualizace je její relativní jednoduchost na
 zpracování a dostupnost různých nástrojů k její tvorbě. Avšak nesprávné
-či nevhodné použití těchto nástrojů vede k existenci grafů, které lze
+či nevhodné použití těchto nástrojů vede k tvorbě grafů, které lze
 považovat za nepřehledné, postrádající smysl až zavádějící. Z tohoto
-důvodů je vhodné se obracet na takzvané zásady vizualizace.
+důvodů je vhodné respektovat obecné zásady vizualizace dat a informací.
 
 \qquad Táto bakalářská práce se zabývá shrnutím klíčových poznatků o
-vizualizaci a průzkumové analýze dat, a to jak z teoretického hlediska,
-tak i z hlediska praktické implementace v programovacím jazyku R. Budou
+vizualizaci a~průzkumové analýze dat, a to jak z teoretického hlediska,
+tak i z hlediska praktické implementace v programovacím jazyku R. Jsou
 popsány zásady vizualizace, její zařazení do datové analýzy, moderní
 způsoby vizualizace a pokročilé R baličky. Součásti práce je také webová
 aplikace pro vizualizaci a analýzu hydrologické bilance a předpověď
@@ -186,12 +183,13 @@ statistiky a výpočetní techniky, což se projevilo na vývoji analýzy dat.
 Postupně se vizualizace stala jedním z klíčových nástrojů průzkumové
 analýzy, která využívá statistické grafy a modelování k lepšímu
 pochopení dat. Dále teoretická část obsahuje informace o nástrojích
-současné vizualizace dat v jazyku R, který je v současnosti jeden z
+moderní vizualizace dat v jazyku R, který je v~současnosti jeden z
 nejpopulárnějších nástrojů analýzy dat (Developer Survey Results 2017).
 Popsány jsou jak základní možností, tak i nejčastěji používané balíčky.
 Další cíl této bakalářské práce staví na teoretické částí a využívá
-informace v ní obsažené k vytvoření webové aplikace s interaktivními
-prvky pro demonstraci možností moderní vizualizace enviromentálních dat.
+informace v ní obsažené k~vytvoření webové aplikace s interaktivními
+prvky pro demonstraci možností moderní vizualizace environmentálních
+dat.
 
 \newpage
 
@@ -389,7 +387,7 @@ grafickou integritu.
 \begin{itemize}
 \tightlist
 \item
-  Pravidla pro \textbf{Grafickou integritu} neboli grafickou celistvost
+  Pravidla pro \textbf{grafickou integritu} neboli grafickou celistvost
   a jednoznačnost:
 
   \begin{itemize}
@@ -402,8 +400,6 @@ grafickou integritu.
     zkreslení, nejasností a dvojznačností
   \item
     popisky jsou důležité
-  \item
-    ukazovat variaci dat, nikoliv designu
   \item
     v případě časových řad, představujících peníze, používat obecně
     známé jednotky
@@ -879,8 +875,7 @@ na obrázku \ref{fig:ch3.4}. (Teetor 2011) (Cleveland 1994)
 distribuční funkce proti sobě (jedná teoretická a jedná pozorovaná) a
 pokud všechny body grafu leží přibližně na přímce, jedná se
 pravděpodobně o požadované rozdělení. \mbox{P-P}~graf se často používá k
-vyhodnocení koeficientu šikmosti rozdělení.(Wikipedia {[}vid.
-11.8.2017{]})
+vyhodnocení koeficientu šikmosti rozdělení (Gibbons a Chakraborti 2003).
 
 V R se Q-Q graf vykreslí takto:
 
@@ -1043,7 +1038,7 @@ Případně oba vztahy lze shrnout do jednoho:
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Freedman--Diaconis (Wikipedia {[}vid. 6.8.2017{]})
+  Freedman--Diaconis
 \end{enumerate}
 
 \begin{Shaded}
@@ -1164,11 +1159,12 @@ zobrazeno v~diagramu \ref{fig:ch3.1}. Prvním krokem datové analýzy je
 \textbf{import} dat. Obecně to v tomto případě znamená nahrání
 obdržených dat ze souboru či databáze do prostředí R. Bez tohoto kroku
 datová analýza nemůže být vykonána. V momentě když data jsou importována
-do R je vhodné je \textbf{očístit} neboli \textbf{přípravit}. Připravou
-dat je myšleno ukládání dat v konzistentní a systematické formě,
-odpovídající sémantice původního datasetu. Očištěná data jsou taková
-data, ve kterých sloupce odpovídají proměnným, řádky odpovídají
-pozorováním. Takováto příprava dat usnadňuje další práci s nimi.
+do R je vhodné je upravit do formátu vhodného pro analýzu - tzv.
+\emph{tidy data} (kapitola~\protect\hyperlink{tidydata}{3.5}). Tím je
+myšleno ukládání dat v konzistentní a systematické formě, odpovídající
+sémantice původního datasetu. Zkrátka, očištěná (\emph{tidy}) data jsou
+taková data, ve kterých sloupce odpovídají proměnným a řádky odpovídají
+pozorováním.
 
 \qquad Jakmile jsou data očištěna, je obvyklým krokem jejich
 \textbf{transformace}. Transformací se rozumí omezení pozorování
@@ -1429,10 +1425,10 @@ normality, zde jsou popsány testy Shapiro-Wilk (SW) a Jarqua-Bera (JB).
 \qquad Shapiro-Wilk test byl poprvé představen v roce 1965 S. S.
 Shapirem a M. Wilkem (SHAPIRO a WILK 1965). Metoda dokáže pracovat se
 vzorky velikosti 12 až 5000 pozorování. Nulová hypotéza tohoto testu
-předpokládá, že vzorek má normální rozdělení. Pokud \(p\)-hodnota je
-menší, než zvolená hladina významnosti, zamítá se nulová hypotéza,
-jinými slovy vzorek nemá normální rozdělení. Statistika testu vypadá
-následovně:
+předpokládá, že vzorek má normální rozdělení. Pokud je \(p\)-hodnota
+menší, než zvolená hladina významnosti, nulová hypotéza se zamítá,
+jinými slovy vzorek pravděpodobně nemá normální rozdělení. Statistika
+testu vypadá následovně:
 \[W = \frac{\big(\sum \limits^n_{i=1} a_i x_{(i)}\big)^2}{\sum \limits^n_{i=1}(x_i - \bar{x})^2},\]
 kde \(x_{(i)}\) je \(i\)-tý nejmenší prvek (statistika \(i\)-tého řádu),
 \(\bar{x}\) je průměr vzorku, \(n\) je počet pozorování. Kritické
@@ -1440,21 +1436,22 @@ hodnoty pro tento test jsou tabelovány.
 
 \qquad Jarqua-Bera test závisí na koeficientech šikmosti a špičatosti.
 Statistika JB testu může být zapsána:
-\[T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg) \sim \chi^2(2),\]
+\[T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg),\]
 kde \(n\) je velikost vzorku, \(\sqrt{b_1}\) je koeficient šikmosti
 vzorku a \(b_2\) je koeficient špičatosti. \(T\) statistika má přibližně
 chi-kvadrát rozdělení s dvěma stupni volnosti. Nulová a~alternativní
 hypotéza se schoduje s SW testem. Používá se pro větší datasety nad 2000
 pozorování. (Öztuna et al. 2006)
 
-\subsubsection{3.5 Tidy data}\label{tidy-data}
+\hypertarget{tidydata}{\subsubsection{3.5 Tidy data}\label{tidydata}}
 
-\qquad Průzkumovou analýzou dat se například zabýval Hadley Wickham ve
-svým članku \emph{Tidy data} z roku 2014 (Wickham 2014). Poskytuje
-standardy a koncepty pro čištění dat, spolu se základními metody a
-nástroje pro jejich připravu. Hlavním cílem \emph{tidy dat}, aby každá
-proměnná odpovídala sloupci, každý pozorování odpovídalo řadku a každá
-hodnota měla vlastní buňku (viz obrázek \ref{fig:ch3.5}).
+\qquad Přípravou dat pro průzkumovou analýzu a vizualizaci se zabýval
+například Hadley Wickham ve svém članku \emph{Tidy data} z roku 2014
+(Wickham 2014). V tomto článku uvádí standardy, koncepty, základní
+metody a nástroje pro jejich přípravu. Hlavním cílem konceptu \emph{tidy
+dat} je, aby každá proměnná odpovídala sloupci, každé pozorování
+odpovídalo řádku a každá hodnota byla uložena ve vlastní buňce (viz
+obrázek \ref{fig:ch3.5}).
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/tidy}
@@ -1462,21 +1459,25 @@ hodnota měla vlastní buňku (viz obrázek \ref{fig:ch3.5}).
       \label{fig:ch3.5}
 \end{figure}
 
-Mezi těmito nástroje jsou takové balíčky R jako \texttt{tidyr},
-\texttt{plyr} a \texttt{dplyr}. \texttt{tidyr} (tidyr {[}vid.
-17.4.2018{]}) je balíček vytvořený přesně pro tvorbu \emph{tidy dat} a
-to pomocí dvou hlavních funkcí \texttt{gather()} a \texttt{spread()}.
-Funkce \texttt{gather()} převádí vícesloupcové (víceproměnné) data do
-formátu \enquote{klíč-hodnota} resp. do \enquote{dlouhého} formátu,
-zatímco funkce \texttt{spread()} číní přesný opak. Viz tabulky
-\ref{tab3} a \ref{tab4}. Balíček \texttt{plyr} (plyr {[}vid.
-17.4.2018{]}) je soubor nástrojů sloužící k rozdělení velkých souborů
-dat do stejnorodých menších podsouborů, aplikací funkcí na jednotlivé
-podsoubory a kombinací vysledků zpatky do jednoho souboru.
-\texttt{dplyr} (dplyr {[}vid. 17.4.2018{]}) je další iteraci
-\texttt{plyr} představenou Hadley Wickhamem v roce 2014. Balíček
-poskytuje sadu nástrojů pro efektivní manipulaci s datasety v R, je
-rychlejší a jednodušší na použítí.
+\qquad Mezi nástroje pro \emph{tidy data} patří R balíčky:
+\texttt{tidyr}, \texttt{plyr} a \texttt{dplyr}. \texttt{tidyr} (tidyr
+{[}vid. 17.4.2018{]}) je balíček vytvořený konkrétně pro tvorbu
+\emph{tidy dat} a to pomocí dvou hlavních funkcí \texttt{gather()} a
+\texttt{spread()}. Funkce \texttt{gather()} převádí vícesloupcová
+(víceproměnná) data do formátu \enquote{klíč-hodnota} resp. do
+\enquote{dlouhého} formátu, zatímco funkce \texttt{spread()} číní přesný
+opak a tedy převádí data do takzvaného \enquote{širokého} formátu.
+Rozdíl mezi \enquote{širokým} a \enquote{dlouhým} formátem dat je
+ilustrován v tabulkách \ref{tab3} a \ref{tab4}. Balíček \texttt{plyr}
+(plyr {[}vid. 17.4.2018{]}) je soubor nástrojů sloužící k rozdělení
+velkých souborů dat do stejnorodých menších podsouborů. S jednotlivými
+podsoubory lze libovolně manipulovat (počítat souhrnné statistiky,
+standardizovat hodnoty, atd.) a~následně lze výsledky pomocí
+\texttt{plyr} funkcí kombinovat zpět do jednoho souboru. \texttt{dplyr}
+(dplyr {[}vid. 17.4.2018{]}) je další verzí balíku \texttt{plyr}
+představenou Hadley Wickhamem v~roce 2014. Balíček poskytuje sadu
+nástrojů pro efektivní manipulaci s~datasety v~R, je rychlejší a
+jednodušší na použití. \vspace*{-0.9cm}
 
 \begin{minipage}[c]{0.48\textwidth}
 \begin{table}[H]
@@ -1488,7 +1489,7 @@ DTM & P & E & R & T \\
    \hline
 \end{tabular}
 \vspace*{1.5mm}
-\caption{Soubor ve "vícesloupcovém" \\ formátu.}
+\caption{Soubor v "širokém" formátu.}
 \label{tab3}
 \vspace*{12mm}
 \end{table}
@@ -1517,21 +1518,23 @@ DTM & variable & value \\
 R}\label{pokrocila}}
 
 \qquad Před samotným popisem nástrojů pro pokročilou vizualizaci je
-vhodné vysvětlit pár důležitých pojmů, které jsou v této kapitole
-použity. Tyto pojmy se tykají vizualizace pouze okrajově, avšak v praxi
-jsou často používány právě v kombinaci s~vizualizačními prostředky.
+vhodné vysvětlit pár důležitých pojmů, které jsou v této kapitole dále
+používány. Tyto pojmy se tykají vizualizace pouze okrajově, avšak v
+praxi jsou často využívány právě v kombinaci s~vizualizačními
+prostředky.
 
-\qquad \texttt{R\ Studio} je volné přístupné open source vývojové
-prostředí (\emph{Integrated Development Environment} nebo \emph{IDE})
-pro programovací jazyk R. \texttt{R\ Studio} bylo založeno v~roce 2008
-J.J. Allairem a hlavním vývojářem je Hadley Wickham. Jedná se o~vývojové
-prostředí obsahující veškeré potřebné nástroje pro práci s R (RStudio
-{[}vid. 16.4.2018{]}). \texttt{R\ Studio} kromě vývoje samotného
-\emph{IDE} vyvíjí jedny z nepopulárnějších balíčků (např.
-\texttt{ggplot2}, \texttt{tidyverse}, \texttt{rmakrdown}, \(\dots\)) a
-servery pro \texttt{Shiny}. \texttt{R\ Studio} je dostupné ve verzi
-zdarma, která poskytuje všechny klíčové funkce a v komerční verzi, pro
-kterou je navíc dostupná oficiální podpora (RStudio {[}vid.
+\qquad \texttt{R\ Studio} je volně přístupné open source vývojové
+prostředí (\emph{Integrated Development Environment} neboli \emph{IDE})
+pro programovací jazyk R. Společnost \texttt{R\ Studio} bylo založeno v
+roce 2008 J.J. Allairem a v současnosti je hlavním vývojářem Hadley
+Wickham. Hlavním produktem společnosti je IDE Rstudio - jedná se o
+vývojové prostředí obsahující veškeré potřebné nástroje pro práci s R
+(RStudio {[}vid. 16.4.2018{]}). Společnost \texttt{R\ Studio} kromě
+vývoje samotného \emph{IDE} vyvíjí jedny z nepopulárnějších balíčků
+(např. \texttt{ggplot2}, \texttt{tidyverse}, \texttt{rmakrdown},
+\(\dots\)) a servery pro \texttt{Shiny}. \texttt{R\ Studio} je dostupné
+ve verzi zdarma, která poskytuje všechny klíčové funkce a v komerční
+verzi, pro kterou je navíc dostupná oficiální podpora (RStudio {[}vid.
 16.4.2018{]}).
 
 \qquad \texttt{R\ Markdown} je založen na značkovacím jazyku
@@ -1983,16 +1986,24 @@ přepočítají pouze příslušné \texttt{render*()} výstupy \texttt{A} či
 
 \qquad Součástí práce je vytvoření webové aplikace pro vizualizaci a
 analýzu hydrologické bilance a předpověď sucha v útvarech povrchových
-vod ČR. Aplikace je popsána v~části \enquote{Metodika}, jejíž součásti
-je popis použitých dat a balíčků, technického řešení
-a~postprocessingových funkci. Dále následuje popis jednotlivých položek
-aplikace se zaměřením na účel a funkčnost každé položky.
+vod ČR. Technické řešení aplikace je popsáno v části \enquote{Metodika},
+jejíž součásti je i popis použitých dat a balíčků a postprocessingových
+funkci. Dále následuje popis jednotlivých položek aplikace se zaměřením
+na účel a funkčnost každé položky. Webová aplikace je výstupem řešení
+projektu Činnosti k podpoře státní správy v problematice sucho v roce
+2017 a 2018. Hlavním řešitelem je Výzkumný ústav vodohospodářský T. G.
+Masaryka, v.v.i. Katedra vodního hospodářství a environmentálního
+modelování (KVHEM) se na řešení projektu podílí subdodávkou tvořenou
+zejména webovou aplikací \textbf{\emph{HAMR}}, kalibrací hydrologického
+modelu Bilan a dalšími analýzami dat. Na řešení subdodávky se podílí
+rozsáhlý tým KVHEM, v němž autorka této práce figuruje jako vývojářka
+webové aplikace \textbf{\emph{HAMR}}.
 
 \subsection{5 Metodika}\label{metodika}
 
 \qquad Aplikace je vytvořena prostřednictvím programovacího jazyka R.
 Jedná se o~vizualizaci výsledků modelování systému pro předpověď
-hydrologické situace \textbf{\emph{HAMR}}. Systém je založen na
+hydrologické bilance \textbf{\emph{HAMR}}. Systém je založen na
 propojení modelu vláhové bilance půdy \texttt{SoilClim}, modelu
 hydrologické bilance \texttt{BILAN} a modelu vodohospodářské soustavy
 \texttt{WATERES} jednotlivých povodí. Jádro aplikace je postaveno na
@@ -2049,33 +2060,21 @@ použité následující balíčky:
   vytváření interaktivních tabulek.
 \end{itemize}
 
-Veškerý R kód použitý k vytvoření aplikace se nachází datovém nosiče.
+Veškerý R kód použitý k vytvoření aplikace se nachází na datovém nosiči
+jako příloha práce.
 
 \hypertarget{data}{\subsubsection{5.2 Data}\label{data}}
 
-\qquad Data použitá k vykreslení lze rozdělit do několika skupin:
-prostorová data, data potřebná pro hydrologickou bilanci, data pro
-indikátory sucha, data pro užívání vod a~data pro validaci. Skupina
-prostorových dat obsahuje soubory s informacemi o útvarech povrchových
-vod (UPOV) ČR (\texttt{povodi.rds}, \texttt{reky.rds},
-\texttt{jezera.rds}, \texttt{nadrze.rds}) a soubory administrativního
-členění ČR (\texttt{kraje.rds}, \texttt{okresy.rds} a~povodí 3. řadu
-\texttt{povodi\_III.rds}) viz obrázek \ref{fig:ch5.0}. Přesná struktura
-složek aplikace je vyobrazená na diagramu \ref{fig:ch5.1}. Tyto soubory
-byli v rámci přípravy dat převedeny z~formátu .shp do formátu .rds. Dále
-pro rychlejší načítání a jednodušší manipulaci byly tyto soubory
-transformovány do souřadnicového systému WGS84 (pomocí funkce
-\texttt{spTransform()} z~balíčku \texttt{sp} a atributu \texttt{CRS} -
-\emph{Coordinate Reference System} - nastaveného na identifikátor pro
-WGS84 - EPSG:4326) a zjednodušeny (pomocí funkce \texttt{ms\_simplify()}
-z balíčku \texttt{rmapshaper}) pro snížení náročnosti při vykreslování.
-Soubor \texttt{popis.rds} obsahuje informace o jednotlivých útvarech
-jako jsou název útvaru, název povodí, název oblasti, kategorie útvaru a
-typ útvaru. Následně soubor \texttt{popis.rds} je spojen pomocí funkce
-\texttt{merge()} z balíčku \texttt{sp} se souborem \texttt{povodi.rds}
-přes identy jednotlivých útvaru (\texttt{UPOV\_ID}). K vykreslení
-horního povodí se používá soubor \texttt{TABB.rds} obsahující informace
-o tom, která povodí přitékají do jednotlivých UPOVů.
+\qquad Data, která využívá aplikace jsou velká, přibližně 1.17 GB, a
+jsou chráněna licencí. Většinou se totiž jedná o majetek ČHMU a VÚV
+T.M.G. Z těchto důvodů data jsou zatím uložena zvlášť na
+OwnCloud\footnote{OwnCloud je open source cloudová služba, více o této
+  službě zde: \url{https://owncloud.org/features/}} úložišti, ke kterému
+mají přístup pouze řešitelé projektu. Pro offline chod aplikace je tedy
+nezbytné, mít přístup na toto úložiště. Pro účely této bakalářské práce
+se veškerá potřebná data nachází na datovém nosiči jako příloha práce.
+Verze publikovaná na serveru KVHEM pochopitelně využívá vlastní kopii
+dat.
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/povodi-kraje}
@@ -2089,23 +2088,48 @@ o tom, která povodí přitékají do jednotlivých UPOVů.
       \label{fig:ch5.1}
 \end{figure}
 
+\qquad Vizualizovaná data lze rozdělit do několika skupin: prostorová
+data, data potřebná pro hydrologickou bilanci, data pro indikátory
+sucha, data pro užívání vod a data pro validaci. Skupina prostorových
+dat obsahuje soubory s informacemi o útvarech povrchových vod (UPOV) ČR
+(\texttt{povodi.rds}, \texttt{reky.rds}, \texttt{jezera.rds},
+\texttt{nadrze.rds}) a soubory administrativního členění ČR
+(\texttt{kraje.rds}, \texttt{okresy.rds} a povodí 3. řadu
+\texttt{povodi\_III.rds}) viz obrázek \ref{fig:ch5.0}. Přesná struktura
+složek aplikace je vyobrazená na diagramu \ref{fig:ch5.1}. Tyto soubory
+byly v rámci přípravy dat převedeny z formátu .shp do formátu .rds. Dále
+pro rychlejší načítání a jednodušší manipulaci byly tyto soubory
+transformovány do souřadnicového systému WGS84 (pomocí funkce
+\texttt{spTransform()} z~balíčku \texttt{sp} a atributu \texttt{CRS} -
+\emph{Coordinate Reference System} - nastaveného na identifikátor pro
+WGS84 - EPSG:4326) a zjednodušeny (pomocí funkce \texttt{ms\_simplify()}
+z balíčku \texttt{rmapshaper}) pro snížení náročnosti při vykreslování.
+Soubor \texttt{popis.rds} obsahuje informace o jednotlivých útvarech
+jako jsou název útvaru, název povodí, název oblasti, kategorie útvaru a
+typ útvaru. Následně soubor \texttt{popis.rds} je propojen pomocí funkce
+\texttt{merge()} z balíčku \texttt{sp} se souborem \texttt{povodi.rds}
+přes identy jednotlivých útvaru (\texttt{UPOV\_ID}). K vykreslení
+horního povodí se používá soubor \texttt{TABB.rds} obsahující informace
+o tom, která povodí přitékají do jednotlivých UPOVů.
+
 \qquad Další skupinou jsou data potřebná pro vyhodnocení hydrologické
 bilance. Pomocí modelu Bilan (Vizina et al. 2015) bylo v rámci projektu
-kalibrováno 1112 UPOVů a~výstupem je 18 proměnných pro každý UPOV v
-denním kroku pro období \mbox{1981-2010}. Tyto proměnné jsou uvedeny v
-tabulce \ref{tab6} (VÚV TGM 2015). Z důvodů šetření vnitřní paměti
-aplikace se soubory s daty pro hydrologickou bilanci nacházejí na
-úložišti ve složce \enquote{res} a jsou uloženy ve formátu .rds s názvy
-odpovídající identům jednotlivých povrchových útvarů
-(\texttt{UPOV\_ID}). Aplikace tyto soubory načítá pouze při požadavku
-uživatele. Měsíční bilance je agregací denních dat a načítá se ze
-souboru \texttt{bilan\_month\_data\_table.rds} (ukládá se do proměnné
+kalibrováno 1112 UPOVů a~výstupem je 18 proměnných (složky hydrologické
+bilance a meteorologické vstupy) pro každý UPOV v denním kroku pro
+období \mbox{1981-2010}. Tyto proměnné jsou uvedeny v tabulce \ref{tab6}
+(VÚV TGM 2015). Z důvodů šetření vnitřní paměti aplikace se soubory
+s~daty pro hydrologickou bilanci nacházejí na úložišti ve složce
+\enquote{res} a jsou uloženy ve formátu .rds s názvy odpovídající
+identům jednotlivých povrchových útvarů (\texttt{UPOV\_ID}). Aplikace
+tyto soubory načítá pouze při požadavku uživatele. Měsíční bilance je
+agregací denních dat a načítá se ze souboru
+\texttt{bilan\_month\_data\_table.rds} (ukládá se do proměnné
 \texttt{BM}). Do teto skupiny lze zařadit i soubor
-\texttt{cara\_prekroceni\_dt.rds} (v aplikaci proměnná \texttt{cp}).
+\texttt{cara\_prekroceni\_dt.rds} (v~aplikaci proměnná \texttt{cp}).
 Soubor obsahuje předpočítané roční, měsíční a sezónní pravděpodobnosti
-spočítané přes jednotlivé proměnné dle vzorce \(p = (m-0.3)/(n+0.4)\),
-kde po seřazení souboru dle velikosti v klesajícím pořadí je \(n\) počet
-prvků a \(m\) je pořadové číslo.
+spočítané přes jednotlivé proměnné dle vzorce
+\mbox{$p = (m-0.3)/(n+0.4)$}, kde po seřazení souboru dle velikosti v
+klesajícím pořadí je \(n\) počet prvků a \(m\) je pořadové číslo.
 
 \begin{table}[H]
 \centering
@@ -2134,20 +2158,21 @@ indikátoru a kroku.
 
 \qquad Data užívání vod za období 2006-2016
 (\texttt{uzivani\_na\_nahraz\_dt.rds} ve složce \enquote{uzivani})
-pocházejí z evidence užívání vod, kterou spravuje VÚV T. G. M. a v rámci
-aplikace se ukládají do proměnné \texttt{u}. Data obsahují informace o
-poloze odběru ve formě souřadnic (\texttt{X} a \texttt{Y}),
+pocházejí z evidence užívání vod, kterou spravuje VÚV T. G. Masaryka a v
+rámci aplikace se ukládají do proměnné \texttt{u}. Data obsahují
+informace o poloze odběru ve formě souřadnic (\texttt{X} a \texttt{Y}),
 identifikačním čísle odběru (\texttt{ICOC}), názvu místa odběru
-(\texttt{NAZICO}) a také o jevu (odběry z podzemních vod \texttt{POD},
-odběry z povrchových vod \texttt{POV} či vypouštění \texttt{VYP}). V
-rámci přípravy dat byly \texttt{ICOC}ům, které obsahovali pozorované
-údaje, ale měli chybějící souřadnice, přiřazeny průměry souřadnic mezi
-odběry se stejným \texttt{ICOC} a jiným jevem. Tyto data slouží k
-vykreslení časových řad a tabulek. Pro vykreslení bodů do mapy bylo
-nutné vytvořit soubor (\texttt{u\_leaflet.rds} ve stejné složce), který
-obsahuje pouze jeden záznam pro každý \texttt{ICOC}. Souřadnice těchto
-\texttt{ICOC}ů byly transformovány do souřadnicového systému WGS84 a
-následně byly uloženy ve formátu \texttt{SpatialPointsDataFrame}.
+(\texttt{NAZICO}) a také informace o jevu (odběry z podzemních vod
+\texttt{POD}, odběry z povrchových vod \texttt{POV} či vypouštění
+\texttt{VYP}). V rámci přípravy dat byly \texttt{ICOC}ům, které
+obsahovali pozorované údaje, ale měli chybějící souřadnice, přiřazeny
+průměry souřadnic mezi odběry se stejným \texttt{ICOC} a jiným jevem.
+Tyto data slouží k vykreslení časových řad a tabulek. Pro vykreslení
+bodů do mapy bylo nutné vytvořit soubor (\texttt{u\_leaflet.rds} ve
+stejné složce), který obsahuje pouze jeden záznam pro každý
+\texttt{ICOC}. Souřadnice těchto \texttt{ICOC}ů byly transformovány do
+souřadnicového systému WGS84 a~následně byly uloženy ve formátu
+\texttt{SpatialPointsDataFrame}.
 
 \qquad Kalibrace modelu Bilan proběhla s nastavením modelu na denní
 časový krok při použití šesti volných parametrů (\emph{Spa}, \emph{Alf},
@@ -2159,36 +2184,6 @@ horní meze (\texttt{lower}, \texttt{upper}) a stávající hodnotu
 (\texttt{current}). Tyto proměnné jsou dány pro každý UPOV. K stanovení
 hodnot parametrů byl použit globální optimalizační algoritmus
 diferenciální evoluce (VÚV TGM 2015).
-
-\qquad Model byl kalibrován na hydrologické charakteristiky povodí UPOV
-(m-denní průtoky a dlouhodobý průměrný průtok) poskytnuté ČHMÚ. M-denní
-průtoky vypočítané na základě pozorovaných hodnot lze načíst ze souboru
-\texttt{chars\_mm.rds} a~m-denní průtoky pro simulována data ze souboru
-\texttt{chars\_mm\_sim.rds}.
-
-\qquad K validaci denních průtoků (soubor \texttt{QD.rds} ze složky
-\enquote{chmu}) bylo využito 156 měrných stanic. Po propojení
-databankového čísla \texttt{DBCN} s povodím \texttt{UPOV\_ID} zbylo 153
-stanic. Mimo \texttt{DBCN} a \texttt{UPOV\_ID} soubor obsahuje hodnoty
-pozorovaných denních průtoků (\texttt{value}) za období 1980-2010
-(\texttt{DTM}). Simulované průtoky se nacházejí ve složce
-\enquote{routed-0\_bilan\_bez\_VN} a obdobně jako u denních dat
-hydrologické bilance obdrží se při zvolení konkrétní stanice (dle
-patřičného \texttt{UPOV\_ID} aplikace načte odpovídající .rds soubor).
-Pro prostorový vykreslení stanic se používá soubor \texttt{QD\_stanice}
-(složka \enquote{geo\_rds}, soubor \texttt{stanice.rds}). Původní
-shapefile byl převeden do souřadnicového systému WGS84 a uložen ve
-formátu .rds. Soubor obsahuje nejen prostorové informace, ale i
-informace o názvech toku, ploše povodí atd.
-
-\qquad Validace měsíčních průtoků využívá záznamy 542 měrných stanic z
-období 1982-2010. Prostorová data jsou uložená do proměnné
-\texttt{stanice} (soubor \texttt{E04\_Vodomerne\_stanice.rds} ze složky
-\enquote{geo\_rds}). Data s naměřenými (\texttt{QMER}) a simulovanými
-(\texttt{QNEX}, \texttt{QNEY}) průtoky lze načíst ze souboru
-\texttt{data\_validace.rds} ze složky \enquote{chmu}. Tento soubor byl
-vytvořen agregací denních dat ze složky
-\enquote{routed-0\_bilan\_bez\_VN}.
 
 \begin{table}[H]
 \centering
@@ -2203,12 +2198,42 @@ význam & \begin{tabular}[c]{@{}l@{}}parametr rozdělující\\ perkolaci na př�
 \label{tab7}
 \end{table}
 
+\qquad Model byl kalibrován na hydrologické charakteristiky povodí UPOV
+(m-denní průtoky a dlouhodobý průměrný průtok) poskytnuté ČHMÚ. M-denní
+průtoky vypočítané na základě pozorovaných hodnot lze načíst ze souboru
+\texttt{chars\_mm.rds} a~m-denní průtoky pro simulována data ze souboru
+\texttt{chars\_mm\_sim.rds}.
+
+\qquad K validaci denních průtoků (soubor \texttt{QD.rds} ze složky
+\enquote{chmu}) bylo využito dat ze 156 vodoměrných stanic. Po propojení
+databankového čísla \texttt{DBCN} s povodím \texttt{UPOV\_ID} zbylo 153
+stanic. Mimo \texttt{DBCN} a \texttt{UPOV\_ID} soubor obsahuje hodnoty
+pozorovaných denních průtoků (\texttt{value}) za období 1980-2010
+(\texttt{DTM}). Simulované průtoky se nacházejí ve složce
+\enquote{routed-0\_bilan\_bez\_VN} a obdobně jako u denních dat
+hydrologické bilance obdrží se při zvolení konkrétní stanice (dle
+patřičného \texttt{UPOV\_ID} aplikace načte odpovídající .rds soubor).
+Pro prostorové vykreslení stanic se používá soubor \texttt{QD\_stanice}
+(složka \enquote{geo\_rds}, soubor \texttt{stanice.rds}). Původní
+shapefile byl převeden do souřadnicového systému WGS84 a uložen ve
+formátu .rds. Soubor obsahuje nejen prostorové informace, ale i
+informace o názvech toku, ploše povodí atd.
+
+\qquad Validace měsíčních průtoků využívá záznamy 542 vodoměrných stanic
+z~období 1982-2010. Prostorová data jsou uložená do proměnné
+\texttt{stanice} (soubor \texttt{E04\_Vodomerne\_stanice.rds} ze složky
+\enquote{geo\_rds}). Data s naměřenými (\texttt{QMER}) a simulovanými
+(\texttt{QNEX}, \texttt{QNEY}) průtoky lze načíst ze souboru
+\texttt{data\_validace.rds} ze složky \enquote{chmu}. Tento soubor byl
+vytvořen agregací denních dat ze složky
+\enquote{routed-0\_bilan\_bez\_VN}.
+
 \subsubsection{5.3 Postprocessing}\label{postprocessing}
 
-\qquad Pro podporu projektu Voda-Sucho byl vytvořen balíček
+\qquad Pro podporu projektu byl vytvořen balíček
 \texttt{CatCa}\footnote{Repozitář na GitHub:
   \url{https://github.com/KVHEM/CatCa}.}, který obsahuje některé
-důležité funkce pro práci s útvary povrchových vod, výpočet bilanci,
+důležité funkce pro práci s útvary povrchových vod, výpočet bilance,
 m-denních vod atd. Nainstalovat balíček lze pomocí příkazu
 \texttt{devtools::install\_github("KVHEM/CatCa")}. V rámci tvorby
 aplikace byly do tohoto balíčků přidány také funkce pro přípravu dat.
@@ -2236,25 +2261,19 @@ obsahuje funkci \texttt{give\_paths()} pro nastavení pracovních cest k
 
 \subsection{6 Základní rozvržení}\label{zakladni-rozvrzeni}
 
-\begin{figure}[H]
-      \includegraphics[width=\textwidth]{fig/rozlozeni2}
-      \caption{Základní rozloženi okna aplikace}
-      \label{fig:ch5.2}
-\end{figure}
-
-\qquad Nejdříve by bylo vhodné uvést některé pojmy, které budou
-používány pro popis základního rozvržení aplikace. Okno aplikace je
-většinou rozděleno do několika hlavních části: boční panel, panel s
-mapovým výstupem a panel s grafickými výstupy. V bočním panelu se
-nastavují vstupy pro vykreslení mapy, požadované vrstvy a lze také
-použit pole pro vyhledávaní útvaru. Pole \enquote{Vyhledávaní útvaru}
-nabízí seznam všech vykreslených útvarů, ale lze ho také použít k
-ručnímu vyhledávání; stačí vymazat momentálně zobrazený název a napsat
-název toku či jeho \texttt{UPOV\_ID}. Pole \enquote{Vrstvy} v bočním
-panelu je k dispozici pro každý panel s mapovým výstupem aplikace
-a~umožňuje výběr následujících vrstev: povodí, řeky, jezera, nádrží,
-mapový podklad, povodí 3. řádu a administrativní členění České republiky
-(kraje a okresy). Boční panel některých záložek také obsahuje tlačítka
+\qquad Na úvod je vhodné uvést některé pojmy, které budou používány pro
+popis základního rozvržení aplikace. Okno aplikace je většinou rozděleno
+do několika hlavních části: boční panel, panel s mapovým výstupem a
+panel s grafickými výstupy. V bočním panelu se nastavují vstupy pro
+vykreslení mapy, požadované vrstvy a lze také použit pole pro
+vyhledávaní útvaru. Pole \enquote{Vyhledávaní útvaru} nabízí seznam
+všech vykreslených útvarů, ale lze ho také použít k ručnímu vyhledávání;
+stačí vymazat momentálně zobrazený název a napsat název toku či jeho
+\texttt{UPOV\_ID}. Pole \enquote{Vrstvy} v bočním panelu je k dispozici
+pro každý panel s mapovým výstupem aplikace a~umožňuje výběr
+následujících vrstev: povodí, řeky, jezera, nádrží, mapový podklad,
+povodí 3. řádu a administrativní členění České republiky (kraje a
+okresy). Boční panel některých záložek také obsahuje tlačítka
 \enquote{Reset} a \enquote{Zobrazit}. Tlačítko \enquote{Reset} vrací
 mapový panel na počátečně nastavené souřadnice. Tlačítko
 \enquote{Zobrazit} slouží k~vykreslení po novém nastavení vstupů. Horní
@@ -2264,19 +2283,19 @@ lišta aplikace obsahuje přepínač mezi jednotlivými záložkami aplikace:
 obsahuje krátký popis projektu a~veškeré kontakty. V budoucnu bude
 rozšířena o metodiky k jednotlivým součástem systému.
 
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/rozlozeni2}
+      \caption{Základní rozloženi okna aplikace}
+      \label{fig:ch5.2}
+\end{figure}
+
 \qquad Grafy zpravidla mají vlastní výběr proměnných, který se na
 obrázku \ref{fig:ch5.2} nachází v pravém horním rohu grafického panelu.
 Tento výběr má tvar srolovatelného menu. Dále grafický panel může
-obsahovat vlastní lištu se záložky pro přepínání mezi jednotlivými typy
-grafů a tabulek.
+obsahovat vlastní lištu se záložkami pro přepínání mezi jednotlivými
+typy grafů a tabulek.
 
 \subsubsection{6.1 Základní mapa}\label{zakladni-mapa}
-
-\begin{figure}[H]
-      \includegraphics[width=\textwidth]{fig/P_ZM}
-      \caption{Záložka aplikace "Základní mapa"}
-      \label{fig:ch5.3}
-\end{figure}
 
 \qquad \enquote{Základní mapa} (obrázek \ref{fig:ch5.3}) je první
 záložkou a zobrazí se ihned po spuštění aplikace. Obsahuje informace o
@@ -2304,6 +2323,12 @@ na mapový objekt, vytvořený pomocí \texttt{Leaflet} (kapitola
 \protect\hyperlink{leaflet}{4.3.3}) a vrací \texttt{UPOV\_ID} příslušný
 tomuto mapovému objektu. Objekt \texttt{search.choices} obsahuje seznam
 všech \texttt{UPOV\_ID} s přiřazenými názvy toků.
+
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/P_ZM}
+      \caption{Záložka aplikace "Základní mapa"}
+      \label{fig:ch5.3}
+\end{figure}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2333,7 +2358,7 @@ může vypadat například následovně
 \end{Highlighting}
 \end{Shaded}
 
-\qquad Při změně vstupu v bočním panelů je nutné znovu překreslit mapový
+\qquad Při změně vstupu v bočním panelu je nutné znovu překreslit mapový
 objekt. Tento přístup může být pro jiné interaktivní funkce příliš
 výpočetně náročný. Například vrstva \enquote{Horní povodí}, která
 zobrazuje povodí přitékající do momentálně vybraného povodí, je z toho
@@ -2388,16 +2413,17 @@ jsou počítány klouzavě s krokem 1, 3, 6, 9 a 12 měsíců. V~budoucích
 verzích aplikace je plánováno přidání indikátorů PDSI (\emph{Palmer
 Drought Severity Index}), SGI (\emph{Standardized Groundwater Index}),
 SRI (\emph{Standardized Runoff Index}) a nedostatkových objemů ve
-stejném kroku (Vlnas et al. 2014). Povodí se dělí do 7 kategorií tak,
-aby se dostatečně projevila variabilita:
+stejném kroku (Vlnas et al. 2014). Povodí se dělí do 7 kategorií podle
+hodnoty příslušného indikátoru tak, aby se dostatečně projevila
+variabilita:
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
 \hline
-$\infty$ až $2,0$   & -                 \\ \hline
-$2,0$ až $1,4$      & -                 \\ \hline
-$1,4$ až $0,5$      & -                 \\ \hline
+$\infty$ až $2,0$   & extrémně vlhké    \\ \hline
+$2,0$ až $1,4$      & silně vlhké       \\ \hline
+$1,4$ až $0,5$      & mírně vlhké       \\ \hline
 $0,5$ až $-0,5$     & bez výskytu sucha \\ \hline
 $-0,5$ až $-1,4$    & slabé sucho       \\ \hline
 $-1,4$ až $-2,0$    & silné sucho       \\ \hline
@@ -2442,6 +2468,14 @@ pomocí balíčku \texttt{DT} a je interaktivní.
 
 \subsubsection{6.4 Validace}\label{validace}
 
+\begin{figure}[H]
+      \includegraphics[width=\textwidth]{fig/P_validace}
+      \caption{Záložka aplikace "Validace"}
+      \label{fig:ch5.6}
+\end{figure}
+
+\vspace*{-0.3cm}
+
 \qquad Záložka \enquote{Validace} (obrázek \ref{fig:ch5.6}) se dělí na
 tří částí: boční panel, panel s mapovým výstupem a panel s grafickými
 výstupem. Boční panel obsahuje standardní pole \enquote{Vrstvy} a
@@ -2458,19 +2492,11 @@ tabulky, které nejsou interaktivní. Tabulka denních průtoků obsahuje
 pouze základní přehled o datech (počet pozorování, střední hodnotu
 atd.).
 
-\begin{figure}[H]
-      \includegraphics[width=\textwidth]{fig/P_validace}
-      \caption{Záložka aplikace "Validace"}
-      \label{fig:ch5.6}
-\end{figure}
-
-\vspace*{-0.3cm}
-
-\qquad Mapový výstup měsíčních průtoků obsahuje pozice 542 měrných
-stanic. Body měrných stanic jsou propojeny s informacemi o UPOVu, do
+\qquad Mapový výstup měsíčních průtoků obsahuje pozice 542 vodoměrných
+stanic. Body vodoměrných stanic jsou propojeny s informacemi o UPOVu, do
 kterého spadají. Kliknutím na bod se objeví popisek stanice a vykreslí
 se horní povodí, obdobně jako v záložce \enquote{Základní mapa}. Graf
-obsahuje časové řady pozorovaných a simulovaných průtoků a~tabulka
+obsahuje časové řady pozorovaných a~simulovaných průtoků a tabulka
 obsahuje číselné vyhodnocení přesností simulovaných dat vůči pozorovaným
 datům. Výpočet je uskutečněn pomocí funkce \texttt{gof()} z balíčku
 \texttt{hydroGOR}\footnote{Dokumentace balíčku je dostupná na adrese
@@ -2506,15 +2532,14 @@ povrchových vod České republiky. Hlavní funkcionalita aplikace spočívá v
 její interaktivitě. Uživatel má možnost si prohlédnout data v různých
 reprezentacích, a to například prostorové rozložení prvků hydrologické
 bilance na území ČR, jejich časové řady, čáry překročení pro jednotlivé
-útvary či plošné rozložení indikátorů sucha. Díky tomu by si uživatel
-může snadno vyvodit vlastní výsledky či otázky pro další analýzu
-případného řešení problematiky. Možnosti vlastního průzkumu dat, bez
-potřeby znalosti programovacího jazyka, případně struktury souborů, v
-rámci přehledné interaktivní aplikace je jedním z hlavních přínosu této
-práce.
+útvary či plošné rozložení indikátorů sucha. Díky tomu si uživatel může
+snadno vyhledat potřebné informace pro další analýzu a případný návrh
+řešení problematiky sucha. Možnosti vlastního průzkumu dat, bez potřeby
+znalosti programovacího jazyka, případně struktury souborů, v rámci
+přehledné interaktivní aplikace je jedním z hlavních přínosu této práce.
 
 \qquad Aplikace je dostupná v digitální podobě jak na přiloženým datovém
-nosiče, tak i na \href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru
+nosiči, tak i~na \href{https://shiny.fzp.czu.cz/KVHEM/HAMR/}{serveru
 fakulty}\footnote{Aplikace na serveru fakulty:
   \url{https://shiny.fzp.czu.cz/KVHEM/HAMR/}} (viz kapitola
 \protect\hyperlink{techres}{5.1}). Složky a soubory datového nosiče jsou
@@ -2526,15 +2551,23 @@ struktury je znázorněn na obrázku \ref{fig:ch5.1}.
 \hypertarget{diskuse}{\section{Diskuse}\label{diskuse}}
 
 \qquad Přestože aplikace je plně funkční, existuje prostor k jejímu
-vylepšení a odladění nedostatků. V současné verzi aplikace stále
-obsahuje drobné chyby. Většina těchto chyb je způsobena chybami v
-používaných balíčcích, jelikož jsou stále ve vývoji. Celkově je to
-nedostatek R, který je distribuovaný pod všeobecnou veřejnou licenci GNU
-(\emph{GNU General Public License}) a neposkytuje absolutně žádnou
-záruku. Obdobně i většina balíčků neposkytuje záruky, ani uživatelskou
-podporů. Z tohoto důvodu pro aplikaci byly zvoleny balíčky, které jsou
-stále aktivně vyvíjeny, chyby jsou postupně odstraňovány a lze je
-vývojářům nahlásit (například pomocí GitHub).
+vylepšení a odladění nedostatků. Současná verze aplikace stále obsahuje
+drobné chyby. Většina těchto chyb je způsobena chybami v používaných
+balíčcích, jelikož jsou stále ve vývoji. Celkově je to nedostatek R,
+které je distribuováno pod všeobecnou veřejnou licencí GNU GPL
+(\emph{General Public License}) a neposkytuje absolutně žádné záruky.
+Obdobně i většina balíčků neposkytuje záruky, ani uživatelskou podporu.
+Z tohoto důvodu pro aplikaci byly zvoleny balíčky, které jsou stále
+aktivně vyvíjeny, chyby jsou postupně odstraňovány a lze je vývojářům
+nahlásit (například pomocí GitHub). Pro ostré nasazení systému (které se
+výhledově ze strany Ministerstva životního prostředí předpokládá) bude
+pravděpodobně nezbytné aplikaci přepsat do prostředí umožňujícího
+rychlou vizualizaci komplexních geodat a dlouhých časových řad a~zároveň
+zvládajícího vysokou návštěvnost uživatelů. Možností může být buď
+placená verze Shiny serveru nebo platforma typu
+\href{http://gisquick.org/}{GISQUICK}\footnote{GISQUICK je open source
+  platformou pro publikování geoprostorových dat, viz
+  \url{http://gisquick.org/}.}.
 
 \qquad Další problém se kterým se R potýká je reprodukovatelnost
 výsledků. S každou aktualizaci R a balíčků hrozí totiž ztráta plné
@@ -2548,12 +2581,12 @@ například balíček \texttt{checkpoint}, případně balíček
 přepínání mezi jednotlivými záložkami není okamžité. Lepšího výsledků by
 mohlo být dosaženo pomocí načítání dat z databáze typu
 \texttt{PostgreSQL}, \texttt{mongoDB} či jiného systému s rozhraním pro
-R (prostřednictvím balíčků \texttt{DBI} a \texttt{dbplyr}) místo
-lokálního disku. Tento přechod by avšak potřeboval odporných znalostí a
-měl by být důkladně zvážen před bezprostřední implementaci. Problém
-rychlostí aplikace by mohlo také vyřešit její rozdělení do jednotlivých
-menších aplikací, tento krok avšak vyvolává otázky o přehledností tohoto
-přístupu a komfortu uživatele.
+R~(prostřednictvím balíčků \texttt{DBI} a \texttt{dbplyr}). Tento
+přechod by avšak potřeboval odporných znalostí a měl by být důkladně
+zvážen před bezprostřední implementací. Problém rychlostí aplikace by
+mohlo také vyřešit její rozdělení do jednotlivých menších aplikací,
+tento krok avšak vyvolává otázky o přehledností tohoto přístupu a
+komfortu uživatele.
 
 \newpage
 
@@ -2566,18 +2599,18 @@ Na základě teoretické části je následně vytvořená interaktivní webová
 aplikace pro analýzu hydrologické bilance a předpověď sucha v útvarech
 povrchových vod ČR. Struktura a konkrétní řešení aplikace jsou podrobně
 popsány v praktické části. Tato aplikace umožňuje uživateli průzkum dat
-hydrologické bilance, časových řad prvků hydrologické bilanci a jejich
+hydrologické bilance, časových řad prvků hydrologické bilance a jejich
 čar překročení, plošné rozložení indikátorů sucha, míst užívání vod a
-informaci o odběratelích atd. Všechny tyto informace jsou v rámci
+informaci o~odběratelích atd. Všechny tyto informace jsou v rámci
 aplikace přehledně prezentovány a grafy jsou vytvořeny v souladu se
-zásady vizualizaci dat.
+zásadami vizualizace dat.
 
 \qquad Možné nedostatky jsou zmíněny v sekci
-\protect\hyperlink{diskuse}{\enquote{Diskuse}} a zároveň jsou předložené
-jejich možné řešení. Aplikace v současné verzi je plně funkční a
-připravená k používání. Další vývoj bude podmíněn požadavky uživatelů.
-Základní kostra aplikace umožňuje snadné rozšíření o další záložky a
-implementace nových funkcí nepředstavuje žádný problém.
+\protect\hyperlink{diskuse}{\enquote{Diskuse}} a zároveň jsou předložena
+jejich možná řešení. Aplikace je v současné verzi plně funkční a
+připravená k používání. Další vývoj bude podmíněn požadavky zadavatele a
+uživatelů. Základní kostra aplikace umožňuje snadné rozšíření o další
+záložky a implementace nových funkcí nepředstavuje žádný problém.
 
 \newpage
 
@@ -2654,6 +2687,11 @@ Inquiry (MIT Press)}. B.m.: The MIT Press. ISBN~978-0262018159.
 FRIENDLY, M., 2006. A Brief History of Data Visualization.
 In:~\emph{Handbook of Computational Statistics: Data Visualization}.
 B.m.: Springer-Verlag. ISBN~978-3-540-32825-4.
+
+\hypertarget{ref-pp_wiki}{}
+GIBBONS, Jean Dickinson a Subhabrata CHAKRABORTI, 2003.
+\emph{Nonparametric Statistical Inference, Fourth Edition: Revised and
+Expanded}. B.m.: CRC Press. ISBN~0-8247-4052-1.
 
 \hypertarget{ref-vicerozm_stat}{}
 HEBÁK, P, J HUSTOPECKÝ, E JAROŠOVÁ a I PECÁKOVÁ, 2007.
@@ -2869,15 +2907,6 @@ z:~\url{http://www.jstatsoft.org/v59/i10/}
 \hypertarget{ref-grolemund_wickham2017}{}
 WICKHAM, Hadley a Garrett GROLEMUND, 2017. \emph{R for Data Science}.
 B.m.: O'Reilly Media. ISBN~1491910399.
-
-\hypertarget{ref-pp_wiki}{}
-WIKIPEDIA, {[}vid. 11.8.2017{]}. \emph{P--P plot - Wikipedia}
-{[}online{]}. Dostupné
-z:~\url{https://en.wikipedia.org/wiki/P\%E2\%80\%93P_plot}
-
-\hypertarget{ref-hist_wiki}{}
-WIKIPEDIA, {[}vid. 6.8.2017{]}. \emph{Histogram} {[}online{]}. Dostupné
-z:~\url{https://en.wikipedia.org/wiki/Histogram}
 
 \hypertarget{ref-wilkinson2005}{}
 WILKINSON, Leland, 2005. \emph{The Grammar of Graphics}. B.m.: Springer.

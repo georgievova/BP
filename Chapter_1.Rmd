@@ -75,11 +75,10 @@ knitr::include_graphics("fig/brinton.png")
     
 \newpage
     
-* Pravidla pro **Grafickou integritu** neboli grafickou celistvost a jednoznačnost:
+* Pravidla pro **grafickou integritu** neboli grafickou celistvost a jednoznačnost:
     + reprezentace čísel zobrazených v grafu by měla být přímo úměrná číselným veličinám datasetu
     + jasná, detailní a svědomitá označení v grafech pro potlačení zkreslení, nejasností a dvojznačností
     + popisky jsou důležité
-    + ukazovat variaci dat, nikoliv designu
     + v případě časových řad, představujících peníze, používat obecně známé jednotky
     + počet rozměrů představených v grafu by neměl přesahovat počet proměnných datasetu
     + reprezentace by neměla zahrnovat zavádějící kontext

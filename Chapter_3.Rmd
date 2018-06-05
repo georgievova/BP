@@ -17,7 +17,7 @@ knitr::include_graphics("fig/EDA_diagram2.png")
 
 \qquad Úkolem průzkumové analýzy dat (*Explanatory Data Analysis*, zkráceně EDA) je vizualizace a transformace dat systematickým způsobem za účelem maximálního pochopení dat, určení vztahu mezi nimi a posouzení jejích kvality. EDA je důležitou části datové analýzy a měla by být jedním z jejích prvních kroků.
 
-\qquad Zařazení průzkumové analýzy dat do procesu datové analýzy je zobrazeno v&nbsp;diagramu \ref{fig:ch3.1}. Prvním krokem datové analýzy je **import** dat. Obecně to v tomto případě znamená nahrání obdržených dat ze souboru či databáze do prostředí R. Bez tohoto kroku datová analýza nemůže být vykonána. V momentě když data jsou importována do R je vhodné je **očístit** neboli **přípravit**. Připravou dat je myšleno ukládání dat v konzistentní a systematické formě, odpovídající sémantice původního datasetu. Očištěná data jsou taková data, ve kterých sloupce odpovídají proměnným, řádky odpovídají pozorováním. Takováto příprava dat usnadňuje další práci s nimi. 
+\qquad Zařazení průzkumové analýzy dat do procesu datové analýzy je zobrazeno v&nbsp;diagramu \ref{fig:ch3.1}. Prvním krokem datové analýzy je **import** dat. Obecně to v tomto případě znamená nahrání obdržených dat ze souboru či databáze do prostředí R. Bez tohoto kroku datová analýza nemůže být vykonána. V momentě když data jsou importována do R je vhodné je upravit do formátu vhodného pro analýzu - tzv. *tidy data* (kapitola&nbsp;[3.5](#tidydata)). Tím je myšleno ukládání dat v konzistentní a systematické formě, odpovídající sémantice původního datasetu. Zkrátka, očištěná (*tidy*) data jsou taková data, ve kterých sloupce odpovídají proměnným a řádky odpovídají pozorováním. 
 
 \qquad Jakmile jsou data očištěna, je obvyklým krokem jejich __transformace__. Transformací se rozumí omezení pozorování (například dle zájmového území či povodí), vytváření nových proměnných na základě již existujících, agregace (např. z denního do měsíčního kroku), výpočet souhrnných statistik (středních hodnot, kvantilů atd.), odstranění odlehlých pozorování a normalizace. Poté, co jsou data očištěná a obsahují veškeré potřebné proměnné, je možné na ně aplikovat dva nejdůležitější nástroje k&nbsp;zjištění informací: vizualizaci a modelování. Jakákoliv analýza tyto nástroje opakovaně využívá.
 
@@ -146,17 +146,17 @@ qqnorm(x4)
 qqline(x4)
 ```
 
-\qquad Shapiro-Wilk test byl poprvé představen v roce 1965 S. S. Shapirem a M. Wilkem [@SW_test]. Metoda dokáže pracovat se vzorky velikosti 12 až 5000 pozorování. Nulová hypotéza tohoto testu předpokládá, že vzorek má normální rozdělení. Pokud $p$-hodnota je menší, než zvolená hladina významnosti, zamítá se nulová hypotéza, jinými slovy vzorek nemá normální rozdělení. Statistika testu vypadá následovně:
+\qquad Shapiro-Wilk test byl poprvé představen v roce 1965 S. S. Shapirem a M. Wilkem [@SW_test]. Metoda dokáže pracovat se vzorky velikosti 12 až 5000 pozorování. Nulová hypotéza tohoto testu předpokládá, že vzorek má normální rozdělení. Pokud je $p$-hodnota menší, než zvolená hladina významnosti, nulová hypotéza se zamítá, jinými slovy vzorek pravděpodobně nemá normální rozdělení. Statistika testu vypadá následovně:
 $$W = \frac{\big(\sum \limits^n_{i=1} a_i x_{(i)}\big)^2}{\sum \limits^n_{i=1}(x_i - \bar{x})^2},$$
 kde $x_{(i)}$ je $i$-tý nejmenší prvek (statistika $i$-tého řádu), $\bar{x}$ je průměr vzorku, $n$ je počet pozorování. Kritické hodnoty pro tento test jsou tabelovány.
 
 \qquad Jarqua-Bera test závisí na koeficientech šikmosti a špičatosti. Statistika JB testu může být zapsána:
-$$T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg) \sim \chi^2(2),$$
+$$T = n \bigg( \frac{(\sqrt{b_1})^2}{6} + \frac{(b_2 - 3)^2}{24} \bigg),$$
 kde $n$ je velikost vzorku, $\sqrt{b_1}$ je koeficient šikmosti vzorku a $b_2$ je koeficient špičatosti. $T$ statistika má přibližně chi-kvadrát rozdělení s dvěma stupni volnosti. Nulová a&nbsp;alternativní hypotéza se schoduje s SW testem. Používá se pro větší datasety nad 2000 pozorování. [@normality_tests]
 
-### 3.5 Tidy data
+### 3.5 Tidy data {#tidydata}
 
-\qquad Průzkumovou analýzou dat se například zabýval Hadley Wickham ve svým članku *Tidy data* z roku 2014 [@tidydata]. Poskytuje standardy a koncepty pro čištění dat, spolu se základními metody a nástroje pro jejich připravu. Hlavním cílem *tidy dat*, aby každá proměnná odpovídala sloupci, každý pozorování odpovídalo řadku a každá hodnota měla vlastní buňku (viz obrázek \ref{fig:ch3.5}).
+\qquad Přípravou dat pro průzkumovou analýzu a vizualizaci se zabýval například Hadley Wickham ve svém članku *Tidy data* z roku 2014 [@tidydata]. V tomto článku uvádí standardy, koncepty, základní metody a nástroje pro jejich přípravu. Hlavním cílem konceptu *tidy dat* je, aby každá proměnná odpovídala sloupci, každé pozorování odpovídalo řádku a každá hodnota byla uložena ve vlastní buňce (viz obrázek \ref{fig:ch3.5}).
 
 \begin{figure}[H]
       \includegraphics[width=\textwidth]{fig/tidy}
@@ -164,7 +164,8 @@ kde $n$ je velikost vzorku, $\sqrt{b_1}$ je koeficient šikmosti vzorku a $b_2$ 
       \label{fig:ch3.5}
 \end{figure} 
 
-Mezi těmito nástroje jsou takové balíčky R jako `tidyr`, `plyr` a `dplyr`. `tidyr` [@tidyr] je balíček vytvořený přesně pro tvorbu *tidy dat* a to pomocí dvou hlavních funkcí `gather()` a `spread()`. Funkce `gather()` převádí vícesloupcové (víceproměnné) data do formátu "klíč-hodnota" resp. do "dlouhého" formátu, zatímco funkce `spread()` číní přesný opak. Viz tabulky \ref{tab3} a \ref{tab4}. Balíček `plyr` [@plyr] je soubor nástrojů sloužící k rozdělení velkých souborů dat do stejnorodých menších podsouborů, aplikací funkcí na jednotlivé podsoubory a kombinací vysledků zpatky do jednoho souboru. `dplyr` [@dplyr] je další iteraci `plyr` představenou Hadley Wickhamem v roce 2014. Balíček poskytuje sadu nástrojů pro efektivní manipulaci s datasety v R, je rychlejší a jednodušší na použítí.
+\qquad Mezi nástroje pro *tidy data* patří R balíčky: `tidyr`, `plyr` a `dplyr`. `tidyr` [@tidyr] je balíček vytvořený konkrétně pro tvorbu *tidy dat* a to pomocí dvou hlavních funkcí `gather()` a `spread()`. Funkce `gather()` převádí vícesloupcová (víceproměnná) data do formátu "klíč-hodnota" resp. do "dlouhého" formátu, zatímco funkce `spread()` číní přesný opak a tedy převádí data do takzvaného "širokého" formátu. Rozdíl mezi "širokým" a "dlouhým" formátem dat je ilustrován v tabulkách \ref{tab3} a \ref{tab4}. Balíček `plyr` [@plyr] je soubor nástrojů sloužící k rozdělení velkých souborů dat do stejnorodých menších podsouborů. S jednotlivými podsoubory lze libovolně manipulovat (počítat souhrnné statistiky, standardizovat hodnoty, atd.) a&nbsp;následně lze výsledky pomocí `plyr` funkcí kombinovat zpět do jednoho souboru. `dplyr` [@dplyr] je další verzí balíku `plyr` představenou Hadley Wickhamem v&nbsp;roce 2014. Balíček poskytuje sadu nástrojů pro efektivní manipulaci s&nbsp;datasety v&nbsp;R, je rychlejší a jednodušší na použití.
+\vspace*{-0.9cm}
 
 \begin{minipage}[c]{0.48\textwidth}
 \begin{table}[H]
@@ -176,7 +177,7 @@ DTM & P & E & R & T \\
    \hline
 \end{tabular}
 \vspace*{1.5mm}
-\caption{Soubor ve "vícesloupcovém" \\ formátu.}
+\caption{Soubor v "širokém" formátu.}
 \label{tab3}
 \vspace*{12mm}
 \end{table}
